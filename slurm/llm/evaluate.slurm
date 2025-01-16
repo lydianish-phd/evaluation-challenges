@@ -23,6 +23,7 @@ set -e
 EXPERIMENT_DIR=$EXPERIMENTS/robust-embeddings/sonar/experiment_049
 MODEL_NAME[0]=meta-llama/Llama-3.1-8B-Instruct
 MODEL_NAME[1]=google/gemma-2-9b-it
+MODEL_NAME[2]=facebook/nllb-200-3.3B
 
 # Non-standard English
 
@@ -36,7 +37,7 @@ CORPUS[1]=footweets
 DATA_DIR[1]=$DATASETS/${CORPUS[1]}
 SRC_FILE_NAME[1]=detok.twitter.sent.en.txt
 SRC_FILE[1]=${DATA_DIR[1]}/${SRC_FILE_NAME[1]}
-REF_FILE[1]=${DATA_DIR[1]}/detok.twitter.sent.fr.txt
+REF_FILE[1]=${DATA_DIR[1]}/detok.twitter.sent.de.txt
 
 # Non-standard French
 
