@@ -36,7 +36,8 @@ if __name__ == "__main__":
     )
         
     with open(args.input_file, "r") as f:
-        sentences = f.read().splitlines() # ensure there are no trailing newlines
+        # ensure there are no trailing newlines which might affect the output
+        sentences = [ line.strip() for line in f ] 
 
     for guideline in args.guidelines:
         if guideline not in GUIDELINE_NAMES:
