@@ -1,5 +1,7 @@
 # Description: Contains the prompt templates for the LLM evaluation challenges.
 
+GUIDELINE_NAMES = ["default", "standard", "general"]
+
 LLAMA_MODEL_NAME = "Meta-Llama-3.1-8B-Instruct"
 
 GENERAL_GUIDELINES = "Preserve the meaning, style and sentiment of the original text."
@@ -21,7 +23,7 @@ def get_instruction(sentence, target_lang, standard=False, extra_guidelines=""):
         f"{sentence}"
     )
 
-def get_prompt(sentence, target_lang, model_name=LLAMA_MODEL_NAME, guidelines="none"):
+def get_prompt(sentence, target_lang, model_name=LLAMA_MODEL_NAME, guidelines="default"):
     if guidelines == "standard":
         prompt = get_instruction(sentence, target_lang, standard=True)
     elif guidelines == "general":
