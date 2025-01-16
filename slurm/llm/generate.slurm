@@ -23,7 +23,7 @@ source $HOME/.bash_profile
 
 set -e
 
-EXPERIMENT_DIR=$EXPERIMENTS/robust-embeddings/sonar/experiment_049
+EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049
 
 MODEL_NAME[0]=meta-llama/Llama-3.1-8B-Instruct
 MODEL_DIR[0]=$MODELS/${MODEL_NAME[0]}
