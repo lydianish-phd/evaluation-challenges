@@ -22,6 +22,7 @@ LANG_PAIR[3]=fra_Latn-eng_Latn
 
 for i in {0..3}
 do
-    mkdir -p $LLM_EXPERIMENT_DIR/outputs/nllb3b/$CORPUS
-    cp $NLLB_EXPERIMENT_DIR/outputs/nllb3b/${CORPUS[$i]}/${LANG_PAIR[$i]}/*.out $LLM_EXPERIMENT_DIR/outputs/facebook/nllb-200-3.3B/$CORPUS
+    OUTPUT_DIR=$LLM_EXPERIMENT_DIR/facebook/nllb-200-3.3B/$CORPUS
+    mkdir -p $OUTPUT_DIR
+    cp -v $NLLB_EXPERIMENT_DIR/outputs/nllb3b/${CORPUS[$i]}/${LANG_PAIR[$i]}/*.out $OUTPUT_DIR
 done
