@@ -1,4 +1,4 @@
-import os, argparse, yaml, glob
+import os, argparse, yaml
 from vllm import LLM, SamplingParams
 from prompt_templates import (
     get_prompt,
@@ -6,14 +6,6 @@ from prompt_templates import (
     GUIDELINE_NAMES
 )
 import torch
-
-# expand path with * in it and return the first match which is a non empty directory
-def expand_path(path):
-    paths = glob.glob(path)
-    for p in paths:
-        if os.path.isdir(p):
-            return p
-    return None
 
 LLAMA_DIR = os.path.join(os.environ["MODELS"], f"meta-llama/{LLAMA_MODEL_NAME}")
 LLAMA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/llama.yaml")

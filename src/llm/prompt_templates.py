@@ -2,7 +2,7 @@
 
 GUIDELINE_NAMES = ["default", "standard", "general"]
 
-LLAMA_MODEL_NAME = "Meta-Llama-3.1-8B-Instruct"
+LLAMA_MODEL_NAME = "Llama-3.1-8B-Instruct"
 
 GENERAL_GUIDELINES = "Preserve the meaning, style and sentiment of the original text."
 
@@ -19,7 +19,7 @@ def get_instruction(sentence, target_lang, standard=False, extra_guidelines=""):
     standard_level = "standard " if standard else ""
     return (
         f"Translate the following text to {standard_level}{target_lang}. "
-        f"Give answer only. {extra_guidelines}:\n{sentence}"
+        f"{extra_guidelines} Output only the answer:\n"
         f"{sentence}"
     )
 

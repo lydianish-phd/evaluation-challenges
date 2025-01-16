@@ -25,8 +25,8 @@ set -e
 
 EXPERIMENT_DIR=$EXPERIMENTS/robust-embeddings/sonar/experiment_049
 
-MODEL_NAME[0]=Meta-Llama-3.1-8B-Instruct
-MODEL_DIR[0]=$DSDIR/HuggingFace_Models/meta-llama/${MODEL_NAME[0]}
+MODEL_NAME[0]=meta-llama/Llama-3.1-8B-Instruct
+MODEL_DIR[0]=$MODELS/${MODEL_NAME[0]}
 CONFIG[0]=$HOME/evaluation-challenges/src/llm/config/llama.yaml
 
 # Non-standard English
@@ -69,7 +69,7 @@ do
         -l ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
         -g ${GUIDELINES[@]} 
 
-done
+    done
 
 echo "Done..."
 
