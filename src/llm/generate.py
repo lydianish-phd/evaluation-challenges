@@ -26,7 +26,7 @@ if __name__ == "__main__":
     with open(args.config_file, "r") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
-    llm = LLM(model=args.model_dir, max_num_batched_tokens=config["max_tokens"])
+    llm = LLM(model=args.model_dir, max_num_batched_tokens=config["max_num_batched_tokens"])
     sampling_params = SamplingParams(
         n=config["n"],
         best_of=config["best_of"],
