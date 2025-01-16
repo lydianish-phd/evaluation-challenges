@@ -12,7 +12,7 @@ CORPUS[0]=rocsmt
 LANG_PAIR[0]=eng_Latn-fra_Latn
 
 CORPUS[1]=footweets
-LANG_PAIR[1]=eng_Latn-fra_Latn
+LANG_PAIR[1]=eng_Latn-deu_Latn
 
 CORPUS[2]=mmtc
 LANG_PAIR[2]=fra_Latn-eng_Latn
@@ -26,3 +26,5 @@ do
     mkdir -p $OUTPUT_DIR
     cp -v $NLLB_EXPERIMENT_DIR/outputs/nllb3b/${CORPUS[$i]}/${LANG_PAIR[$i]}/*.out $OUTPUT_DIR
 done
+
+echo "Done copying NLLB outputs to LLM experiment directory..."
