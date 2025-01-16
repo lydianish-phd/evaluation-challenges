@@ -67,9 +67,9 @@ do
         -m ${MODEL_DIR[$i]} \
         -c ${CONFIG[$i]} \
         -l ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
-        -g ${GUIDELINES[@]} \
+        -g ${GUIDELINES[@]} 
 
-    done
+done
 
 echo "Done..."
 

@@ -1,12 +1,21 @@
-import os, argparse, yaml
+import os, argparse, yaml, glob
 from vllm import LLM, SamplingParams
 from prompt_templates import (
     get_prompt,
     LLAMA_MODEL_NAME,
     GUIDELINE_NAMES
 )
+import torch
 
-LLAMA_DIR = os.path.join(os.environ["DSDIR"], f"HuggingFace_Models/meta-llama/{LLAMA_MODEL_NAME}")
+# expand path with * in it and return the first match which is a non empty directory
+def expand_path(path):
+    paths = glob.glob(path)
+    for p in paths:
+        if os.path.isdir(p):
+            return p
+    return None
+
+LLAMA_DIR = os.path.join(os.environ["MODELS"], f"meta-llama/{LLAMA_MODEL_NAME}")
 LLAMA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/llama.yaml")
 
 if __name__ == "__main__":
@@ -26,7 +35,11 @@ if __name__ == "__main__":
     with open(args.config_file, "r") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
-    llm = LLM(model=args.model_dir, max_num_batched_tokens=config["max_num_batched_tokens"])
+    llm = LLM(
+        model=args.model_dir, 
+        max_model_len=config["max_model_len"],
+        dtype=torch.bfloat16,
+    )
     sampling_params = SamplingParams(
         n=config["n"],
         best_of=config["best_of"],
