@@ -4,7 +4,7 @@ GUIDELINE_NAMES = ["default", "standard", "general"]
 
 LLAMA_MODEL_NAME = "Llama-3.1-8B-Instruct"
 GEMMA_MODEL_NAME = "gemma-2-9b-it"
-GENERAL_GUIDELINES = "Preserve the meaning, style and sentiment of the original text."
+GENERAL_GUIDELINES = "The text comes from user-generated content on social media. Preserve the meaning, style and sentiment of the original text."
 
 def get_llama_template(user_message, system_message="You are a translator."):
     return (
