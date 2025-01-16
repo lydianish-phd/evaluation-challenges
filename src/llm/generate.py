@@ -17,7 +17,6 @@ if __name__ == "__main__":
     parser.add_argument("-c", "--config-file", type=str, default=LLAMA_CONFIG)
     parser.add_argument("-l", "--target-lang", type=str, default="French")
     parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=GUIDELINE_NAMES)
-    parser.add_argument("-s", "--seed", type=int, default=None)
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -34,12 +33,8 @@ if __name__ == "__main__":
         temperature=config["temperature"], 
         top_p=config["top_p"],
         max_tokens=config["max_tokens"],
-        seed=config["seed"],
     )
         
-    if args.seed:
-        sampling_params.seed = args.seed
-
     with open(args.input_file, "r") as f:
         sentences = f.read().splitlines() # ensure there are no trailing newlines
 
@@ -52,7 +47,7 @@ if __name__ == "__main__":
         prompts = [ get_prompt(sentence, args.target_lang, model_name, guideline) for sentence in sentences ]
         outputs = llm.generate(prompts, sampling_params)
 
-        output_file = os.path.join(args.output_dir, f"{file_name}.{guideline}.{sampling_params.seed}.out")
+        output_file = os.path.join(args.output_dir, f"{file_name}.{guideline}.out")
         with open(output_file, "w") as f:
             for output in outputs:
                 generated_text = output.outputs[0].text.strip()

@@ -54,7 +54,6 @@ INPUT_FILE[3]=${DATA_DIR[3]}/test.fr
 TGT_LANG[3]=English
 
 GUIDELINES=(default standard general)
-SEED=100
 
 for i in {0..0}
 do
@@ -69,7 +68,6 @@ do
         -c ${CONFIG[$i]} \
         -l ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
         -g ${GUIDELINES[@]} \
-        -s $SEED
 
     done
 
