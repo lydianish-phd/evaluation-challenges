@@ -22,7 +22,6 @@ if __name__ == "__main__":
 
     os.makedirs(args.output_dir, exist_ok=True)
     file_name = os.path.basename(args.input_file)
-    output_file = os.path.join(args.output_dir, f"{file_name}.{args.guidelines}.out")
     model_name = os.path.basename(args.model_dir)
 
     with open(args.config_file, "r") as f:
@@ -48,12 +47,14 @@ if __name__ == "__main__":
         if guideline not in GUIDELINE_NAMES:
             raise ValueError(f"Invalid guideline: {guideline}, expected one of {GUIDELINE_NAMES}.")
         
+        print(f" - Generating translations with the {guideline} guidelines...")
+
         prompts = [ get_prompt(sentence, args.target_lang, model_name, guideline) for sentence in sentences ]
         outputs = llm.generate(prompts, sampling_params)
-        
+        output_file = os.path.join(args.output_dir, f"{file_name}.{guideline}.out")
         with open(output_file, "w") as f:
             for output in outputs:
                 generated_text = output.outputs[0].text.strip()
                 f.write(f"{generated_text}\n")
 
-        print(f"Generated translations saved to {output_file}")
+        print(f" - Output translations saved to {output_file}")

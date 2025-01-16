@@ -23,7 +23,7 @@ source $HOME/.bash_profile
 
 set -e
 
-EXPERIMENT_DIR=$EXPERIMENTS/robust-embeddings/sonar/experiment_047k
+EXPERIMENT_DIR=$EXPERIMENTS/robust-embeddings/sonar/experiment_049
 
 MODEL_NAME[0]=Meta-Llama-3.1-8B-Instruct
 MODEL_DIR[0]=$DSDIR/HuggingFace_Models/meta-llama/${MODEL_NAME[0]}
@@ -53,21 +53,21 @@ DATA_DIR[3]=$DATASETS/pfsmb
 INPUT_FILE[3]=${DATA_DIR[3]}/test.fr
 TGT_LANG[3]=English
 
-GUIDELINES=(default)
+GUIDELINES=(default standard general)
 
 for i in {0..0}
 do
-    echo "Model: ${MODEL_NAME[$i]}"
+echo "Model: ${MODEL_NAME[$i]}"
 
-    OUTPUT_DIR=$EXPERIMENT_DIR/outputs/${MODEL_NAME[$i]}/${CORPUS[$SLURM_ARRAY_TASK_ID]}    
+OUTPUT_DIR=$EXPERIMENT_DIR/outputs/${MODEL_NAME[$i]}/${CORPUS[$SLURM_ARRAY_TASK_ID]}    
 
-    python $HOME/evaluation-challenges/src/llm/generate.py \
-        -i ${INPUT_FILE[$SLURM_ARRAY_TASK_ID]} \
-        -o $OUTPUT_DIR \
-        -m ${MODEL_DIR[$i]}
-        -c ${CONFIG[$i]} \
-        -l ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
-        -g ${GUIDELINES[@]}
+python $HOME/evaluation-challenges/src/llm/generate.py \
+    -i ${INPUT_FILE[$SLURM_ARRAY_TASK_ID]} \
+    -o $OUTPUT_DIR \
+    -m ${MODEL_DIR[$i]} \
+    -c ${CONFIG[$i]} \
+    -l ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
+    -g ${GUIDELINES[@]}
 
 done
 
