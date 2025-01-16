@@ -8,14 +8,14 @@ from prompt_templates import (
 import torch
 
 LLAMA_DIR = os.path.join(os.environ["MODELS"], f"meta-llama/{LLAMA_MODEL_NAME}")
-LLAMA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/llama.yaml")
+GREEDY_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/greedy.yaml")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input-file", type=str, default="")
     parser.add_argument("-o", "--output-dir", type=str, default="")
     parser.add_argument("-m", "--model-dir", type=str, default=LLAMA_DIR)
-    parser.add_argument("-c", "--config-file", type=str, default=LLAMA_CONFIG)
+    parser.add_argument("-c", "--config-file", type=str, default=GREEDY_CONFIG)
     parser.add_argument("-l", "--target-lang", type=str, default="French")
     parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=GUIDELINE_NAMES)
     args = parser.parse_args()
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         output_file = os.path.join(args.output_dir, f"{file_name}.{guideline}.out")
         with open(output_file, "w") as f:
             for output in outputs:
-                generated_text = output.outputs[0].text.strip()
+                generated_text = output.outputs[0].text.strip().replace("\n", " ")
                 f.write(f"{generated_text}\n")
 
         print(f" - Output translations saved to {output_file}")

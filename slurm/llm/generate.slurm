@@ -27,7 +27,9 @@ EXPERIMENT_DIR=$EXPERIMENTS/robust-embeddings/sonar/experiment_049
 
 MODEL_NAME[0]=meta-llama/Llama-3.1-8B-Instruct
 MODEL_DIR[0]=$MODELS/${MODEL_NAME[0]}
-CONFIG[0]=$HOME/evaluation-challenges/src/llm/config/llama.yaml
+
+MODEL_NAME[1]=google/gemma-2-9b-it
+MODEL_DIR[1]=$MODELS/${MODEL_NAME[1]}
 
 # Non-standard English
 
@@ -54,8 +56,9 @@ INPUT_FILE[3]=${DATA_DIR[3]}/test.fr
 TGT_LANG[3]=English
 
 GUIDELINES=(default standard general)
+CONFIG=$HOME/evaluation-challenges/src/llm/config/greedy.yaml
 
-for i in {0..0}
+for i in {0..1}
 do
     echo "Model: ${MODEL_NAME[$i]}"
 
@@ -65,7 +68,7 @@ do
         -i ${INPUT_FILE[$SLURM_ARRAY_TASK_ID]} \
         -o $OUTPUT_DIR \
         -m ${MODEL_DIR[$i]} \
-        -c ${CONFIG[$i]} \
+        -c $CONFIG \
         -l ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
         -g ${GUIDELINES[@]} 
 
