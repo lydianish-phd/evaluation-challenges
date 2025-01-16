@@ -58,20 +58,20 @@ SEED=100
 
 for i in {0..0}
 do
-echo "Model: ${MODEL_NAME[$i]}"
+    echo "Model: ${MODEL_NAME[$i]}"
 
-OUTPUT_DIR=$EXPERIMENT_DIR/outputs/${MODEL_NAME[$i]}/${CORPUS[$SLURM_ARRAY_TASK_ID]}    
+    OUTPUT_DIR=$EXPERIMENT_DIR/outputs/${MODEL_NAME[$i]}/${CORPUS[$SLURM_ARRAY_TASK_ID]}    
 
-python $HOME/evaluation-challenges/src/llm/generate.py \
-    -i ${INPUT_FILE[$SLURM_ARRAY_TASK_ID]} \
-    -o $OUTPUT_DIR \
-    -m ${MODEL_DIR[$i]} \
-    -c ${CONFIG[$i]} \
-    -l ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
-    -g ${GUIDELINES[@]} \
-    -s $SEED
+    python $HOME/evaluation-challenges/src/llm/generate.py \
+        -i ${INPUT_FILE[$SLURM_ARRAY_TASK_ID]} \
+        -o $OUTPUT_DIR \
+        -m ${MODEL_DIR[$i]} \
+        -c ${CONFIG[$i]} \
+        -l ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
+        -g ${GUIDELINES[@]} \
+        -s $SEED
 
-done
+    done
 
 echo "Done..."
 
