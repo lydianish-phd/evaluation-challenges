@@ -1,0 +1,40 @@
+import os, argparse, json
+from sacrebleu.metrics import BLEU, CHRF
+from comet import download_model, load_from_checkpoint
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--src-file", type=str)
+    parser.add_argument("--sys-files", type=str, nargs="+")
+    parser.add_argument("--ref-file", type=str)
+    args = parser.parse_args()
+
+    print("Loading metric models...")
+    bleu_model = BLEU()
+    chrf_model = CHRF(word_order=2) # chrf++
+    comet_model_path = download_model("Unbabel/wmt22-comet-da")
+    comet_model = load_from_checkpoint(comet_model_path)
+    
+    print("Loading data...")
+    with open (args.src_file) as f:
+        src_data = [ line.strip() for line in f.readlines() ]
+
+    with open (args.ref_file) as f:
+        ref_data = [ line.strip() for line in f.readlines() ]
+
+    print("Computing BLEU and COMET scores...")
+    for sys_file in args.sys_files:
+        with open (sys_file) as f:
+            sys_data = [ line.strip() for line in f.readlines() ]
+        data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
+   
+        scores = {
+            "bleu": bleu_model.corpus_score(sys_data, [ref_data]).score,
+            "chrf2": chrf_model.corpus_score(sys_data, [ref_data]).score,
+            "comet": comet_model.predict(data, batch_size=32, gpus=1)[1]
+        }
+
+        output_file = f"{sys_file}.json"
+        with open(output_file, 'w') as f:
+            json.dump(scores, f)
+
