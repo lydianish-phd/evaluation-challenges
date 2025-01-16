@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
         prompts = [ get_prompt(sentence, args.target_lang, model_name, guideline) for sentence in sentences ]
         outputs = llm.generate(prompts, sampling_params)
-        output_file = os.path.join(args.output_dir, f"{file_name}.{guideline}.out")
+        output_file = os.path.join(args.output_dir, f"{file_name}.{guideline}.{sampling_params.seed}.out")
         with open(output_file, "w") as f:
             for output in outputs:
                 generated_text = output.outputs[0].text.strip()
