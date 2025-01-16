@@ -14,8 +14,7 @@
 echo "### Running $SLURM_JOB_NAME $SLURM_ARRAY_TASK_ID ###"
 
 module purge
-# Using pytorch-gpu/py3/2.5.0 which has pytorch 2.4.0 and vllm 0.6.1
-module load arch/a100 pytorch-gpu/py3/2.5.0
+module load arch/a100 pytorch-gpu/py3/2.3.0
 source $HOME/.bashrc 
 source $HOME/.bash_profile
 
