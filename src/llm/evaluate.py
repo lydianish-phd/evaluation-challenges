@@ -19,12 +19,12 @@ def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CO
         sys_files = []
         
         for model in models:
-            output_dir = os.path.join(output_dir, model, corpus)
+            src_file_prefix = os.path.join(output_dir, model, corpus)
             if model == NLLB:
-                sys_files.append(os.path.join(output_dir, f"{src_file_name}.out"))
+                sys_files.append(os.path.join(src_file_prefix, f"{src_file_name}.out"))
             else:
                 for guideline in guidelines:
-                    sys_files.append(os.path.join(output_dir, f"{src_file_name}.{guideline}.out"))
+                    sys_files.append(os.path.join(src_file_prefix, f"{src_file_name}.{guideline}.out"))
         
         files.append((src_file, ref_file, sys_files))
     
