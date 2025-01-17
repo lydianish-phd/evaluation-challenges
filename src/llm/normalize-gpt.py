@@ -1,4 +1,4 @@
-import os, argparse, yaml
+import os, argparse, yaml, time
 from openai import OpenAI
 from prompt_templates import (
     GPT_MODEL_NAME,
@@ -18,21 +18,26 @@ if __name__ == "__main__":
         # ensure there are no trailing newlines which might affect the output
 		sentences = [ line.strip() for line in f ]
 	
-	outputs = []
-	for sentence in sentences:
-		completion = client.chat.completions.create(
-			model=GPT_MODEL_NAME,
-			messages=get_prompt(sentence, args.target_lang, normalization=True, model_name=args.model_name),
-			temperature=0, 
-			top_p=1,
-			max_tokens=512,
-		)
-		outputs.append(completion.choices[0].message.content.strip().replace("\n", " "))
-
-	output_file = f"{args.input_file}.gpt"
+	file_name = os.path.basename(args.input_file)
+	output_file = os.path.join(os.path.dirname(args.input_file), f"gpt.{file_name}")
+	
+	print(f" - Normalizing {len(sentences)} sentences...")
+	start_time = time.time()
+	n = 0
 	with open(output_file, "w") as f:
-		for output in outputs:
-			generated_text = output.outputs[0].text.strip().replace("\n", " ")
-			f.write(f"{generated_text}\n")
+		for sentence in sentences:
+			completion = client.chat.completions.create(
+				model=GPT_MODEL_NAME,
+				messages=get_prompt(sentence, args.target_lang, normalization=True, model_name=args.model_name),
+				temperature=0, 
+				top_p=1,
+				max_tokens=512,
+			)
+			output = completion.choices[0].message.content.strip().replace("\n", " ")
+			f.write(f"{output}\n")
+			n += 1
+			if n % 100 == 0:
+				print(f" - {n} done...")
 
 	print(f" - Normalized sentences saved to {output_file}")
+	print(f" - Normalization took {time.time() - start_time:.2f} seconds")

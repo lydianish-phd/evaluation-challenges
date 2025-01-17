@@ -13,3 +13,19 @@ mmtc:
 pfsmb:
   src_file_path: $DATASETS/pfsmb/test.fr
   ref_file_path: $DATASETS/pfsmb/test.en
+
+rocsmt-gpt:
+  src_file_path: $DATASETS/rocsmt/test/raw.en.test
+  ref_file_path: $DATASETS/rocsmt/test/gpt.ref.fr.test
+
+footweets-gpt:
+  src_file_path: $DATASETS/footweets/detok.twitter.sent.en.txt
+  ref_file_path: $DATASETS/footweets/gpt.detok.twitter.sent.de.txt
+
+mmtc-gpt:
+  src_file_path: $DATASETS/mmtc/test.fr-en.fr
+  ref_file_path: $DATASETS/mmtc/gpt.test.fr-en.en
+
+pfsmb-gpt:
+  src_file_path: $DATASETS/pfsmb/test.fr
+  ref_file_path: $DATASETS/pfsmb/gpt.test.en

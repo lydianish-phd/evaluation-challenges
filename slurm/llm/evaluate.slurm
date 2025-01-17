@@ -28,7 +28,7 @@ LLAMA=meta-llama/Llama-3.1-8B-Instruct
 NLLB=facebook/nllb-200-3.3B
 
 MODELS=($NLLB $LLAMA $GEMMA)
-CORPORA=(rocsmt footweets mmtc pfsmb)
+CORPORA=(rocsmt footweets mmtc pfsmb rocsmt-gpt footweets-gpt mmtc-gpt pfsmb-gpt)
 GUIDELINES=(default standard general)
 
 echo "Models: ${MODELS[@]}"
