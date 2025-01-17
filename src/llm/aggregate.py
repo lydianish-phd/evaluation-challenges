@@ -17,6 +17,9 @@ def aggregate_scores(input_dir, corpus, models):
                 with open(score_file) as f:
                     scores.update(json.load(f))
                 
+                scores["comet"] *= 100
+                scores["xcomet"] *= 100
+
                 count_file = score_file.replace(".scores.json", ".counts.json")                
                 with open(count_file) as f:
                     scores.update(json.load(f))
