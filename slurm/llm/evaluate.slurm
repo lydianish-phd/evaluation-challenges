@@ -23,11 +23,11 @@ set -e
 EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049
 CORPORA_CONFIG=$HOME/evaluation-challenges/src/llm/config/corpora.yaml
 
-LLAMA=meta-llama/Llama-3.1-8B-Instruct
 GEMMA=google/gemma-2-9b-it
+LLAMA=meta-llama/Llama-3.1-8B-Instruct
 NLLB=facebook/nllb-200-3.3B
 
-MODELS=($LLAMA $GEMMA $NLLB)
+MODELS=($NLLB $LLAMA $GEMMA)
 CORPORA=(rocsmt footweets mmtc pfsmb)
 GUIDELINES=(default standard general)
 

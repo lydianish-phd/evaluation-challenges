@@ -13,7 +13,7 @@ def aggregate_scores(input_dir, corpus, models):
                     "model": model,
                     "filename": os.path.basename(score_file).removesuffix(".scores.json"),
                 }
-                
+
                 with open(score_file) as f:
                     scores.update(json.load(f))
                 
@@ -37,6 +37,7 @@ if __name__ == "__main__":
     os.makedirs(scores_dir, exist_ok=True)
 
     for corpus in args.corpora:
+        print(f"Aggregating scores for {corpus}...")
         scores = aggregate_scores(args.input_dir, corpus, args.models)
         scores_file = os.path.join(scores_dir, f"scores_{corpus}.csv")
         scores_df = pd.DataFrame(scores)
