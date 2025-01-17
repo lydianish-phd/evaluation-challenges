@@ -1,6 +1,6 @@
 import os, argparse, yaml
 from openai import OpenAI
-from generate import (
+from prompt_templates import (
     GPT_MODEL_NAME,
     get_prompt
 )
