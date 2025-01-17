@@ -35,6 +35,6 @@ do
     echo "Normalizing ${CORPUS[i]}..."
     python $HOME/evaluation-challenges/src/llm/normalize-gpt.py \
         --input-file ${REF_FILE[i]} \
-        --tgt-lang ${TGT_LANG[i]} \
+        --target-lang ${TGT_LANG[i]} \
         --model-name $GPT 
 done
