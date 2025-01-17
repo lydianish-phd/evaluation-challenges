@@ -1,0 +1,15 @@
+rocsmt:
+  src_file_path: "$DATASETS/rocsmt/test/raw.en.test"
+  ref_file_path: "$DATASETS/rocsmt/test/ref.fr.test"
+
+footweets:
+  src_file_path: "$DATASETS/footweets/detok.twitter.sent.en.txt"
+  ref_file_path: "$DATASETS/footweets/detok.twitter.sent.de.txt"
+
+mmtc:
+  src_file_path: "$DATASETS/mmtc/test.fr-en.fr"
+  ref_file_path: "$DATASETS/mmtc/test.fr-en.fr"
+
+pfsmb:
+  src_file_path: "$DATASETS/pfsmb/test.fr"
+  ref_file_path: "$DATASETS/pfsmb/test.en"

@@ -25,7 +25,7 @@ if __name__ == "__main__":
     model_name = os.path.basename(args.model_dir)
 
     with open(args.config_file, "r") as f:
-        config = yaml.load(f, Loader=yaml.FullLoader)
+        config = yaml.safe_load(f)
 
     llm = LLM(
         model=args.model_dir, 
