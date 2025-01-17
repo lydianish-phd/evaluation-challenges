@@ -8,7 +8,7 @@ footweets:
 
 mmtc:
   src_file_path: $DATASETS/mmtc/test.fr-en.fr
-  ref_file_path: $DATASETS/mmtc/test.fr-en.fr
+  ref_file_path: $DATASETS/mmtc/test.fr-en.en
 
 pfsmb:
   src_file_path: $DATASETS/pfsmb/test.fr
