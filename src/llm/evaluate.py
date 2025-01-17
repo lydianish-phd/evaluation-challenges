@@ -43,6 +43,7 @@ def count_error_types(errors):
     for error in errors:
         for span in error["spans"]:
             error_types[span["severity"]] += 1
+    error_types["total"] = sum(error_types.values())
     return error_types
 
 if __name__ == "__main__":
