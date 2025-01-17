@@ -7,12 +7,13 @@ def aggregate_scores(input_dir, corpus, models):
     for model in models:
         model_output_dir = os.path.join(input_dir, "outputs", model, corpus)
         if os.path.isdir(model_output_dir):
-            scores = {
-                "model": model,
-            }
             scores_files = [f.path for f in os.scandir(model_output_dir) if f.name.endswith(".scores.json")]
             for score_file in scores_files:
-                scores["filename"] = os.path.basename(score_file).removesuffix(".scores.json")
+                scores = {
+                    "model": model,
+                    "filename": os.path.basename(score_file).removesuffix(".scores.json"),
+                }
+                
                 with open(score_file) as f:
                     scores.update(json.load(f))
                 
