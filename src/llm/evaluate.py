@@ -55,7 +55,7 @@ if __name__ == "__main__":
     parser.add_argument("--overwrite", help="whether to overwrite existing output files", default=False, action="store_true")
     args = parser.parse_args()
 
-    print("Loading metric models...")
+    print("Loading metric models: BLEU, ChrF++, COMET, xCOMET-XL")
     bleu_model = BLEU()
     chrf_model = CHRF(word_order=2) # chrf++
     comet_model_path = download_model("Unbabel/wmt22-comet-da")
@@ -68,25 +68,27 @@ if __name__ == "__main__":
     for (src_file, ref_file, sys_files) in files:
         print(f"Evaluating outputs for {src_file} and {ref_file}...")
         
-        print(" - Loading data...")
         with open (src_file) as f:
             src_data = [ line.strip() for line in f.readlines() ]
 
         with open (ref_file) as f:
             ref_data = [ line.strip() for line in f.readlines() ]
-
-        print(" - Computing BLEU, ChrF++ and COMET scores...")
+        
         for sys_file in sys_files:
             scores_file = f"{sys_file}.scores.json"
             errors_file = f"{sys_file}.errors.json"
             counts_file = f"{sys_file}.counts.json"
+            
             if (not args.overwrite and 
                 os.path.exists(scores_file) and 
                 os.path.exists(errors_file) and 
                 os.path.exists(counts_file)
             ):
-                print(f" - Skipping {sys_file} as scores and errors already exist.")
+                print(f" - Skipping {sys_file}")
                 continue
+
+            print(f" - Computing scores for {sys_file}")
+            
             with open (sys_file) as f:
                 sys_data = [ line.strip() for line in f.readlines() ]
             data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
