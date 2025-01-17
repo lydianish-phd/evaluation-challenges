@@ -8,6 +8,10 @@ GEMMA = "google/gemma-2-9b-it"
 NLLB = "facebook/nllb-200-3.3B"
 CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
 
+MINOR = "minor"
+MAJOR = "major"
+CRITICAL = "critical"
+
 def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CONFIG):
     with open(corpora_config, "r") as f:
         config = yaml.safe_load(f)
@@ -30,6 +34,17 @@ def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CO
     
     return files
 
+def count_error_types(errors):
+    error_types = {
+        MINOR: 0,
+        MAJOR: 0,
+        CRITICAL: 0
+    }
+    for error in errors:
+        for span in error["spans"]:
+            error_types[span["severity"]] += 1
+    return error_types
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--corpora", type=str, nargs="+", default=["rocsmt", "footweets", "mmtc", "pfsmb"])
@@ -37,7 +52,7 @@ if __name__ == "__main__":
     parser.add_argument("--guidelines", type=str, nargs="+", default=GUIDELINE_NAMES)
     parser.add_argument("--output-dir", type=str)
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
-    parser.add_argument("--overwrite", help="whether to overwrite existing output files", type=bool, default=False, action="store_true")
+    parser.add_argument("--overwrite", help="whether to overwrite existing output files", default=False, action="store_true")
     args = parser.parse_args()
 
     print("Loading metric models...")
@@ -64,7 +79,12 @@ if __name__ == "__main__":
         for sys_file in sys_files:
             scores_file = f"{sys_file}.scores.json"
             errors_file = f"{sys_file}.errors.json"
-            if not args.overwrite and os.path.exists(scores_file) and os.path.exists(errors_file):
+            counts_file = f"{sys_file}.counts.json"
+            if (not args.overwrite and 
+                os.path.exists(scores_file) and 
+                os.path.exists(errors_file) and 
+                os.path.exists(counts_file)
+            ):
                 print(f" - Skipping {sys_file} as scores and errors already exist.")
                 continue
             with open (sys_file) as f:
@@ -80,15 +100,19 @@ if __name__ == "__main__":
             scores["xcomet"] = xcomet_output.system_score
 
             errors = []
-            for score, span in zip(xcomet_output.scores, xcomet_output.metadata.error_spans):
+            for score, spans in zip(xcomet_output.scores, xcomet_output.metadata.error_spans):
                 errors.append({
                     "score": score,
-                    "span": span
+                    "spans": spans
                 })
+            counts = count_error_types(errors)
         
             with open(scores_file, 'w') as f:
                 json.dump(scores, f)
 
             with open(errors_file, 'w') as f:
                 json.dump(errors, f)
+            
+            with open(counts_file, 'w') as f:
+                json.dump(counts, f)
 
