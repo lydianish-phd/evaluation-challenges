@@ -7,6 +7,11 @@ source $HOME/.bash_profile
 
 set -e
 
+INDEX=$1
+if [ -z $INDEX ]; then
+    INDEX=0
+fi
+
 GPT=gpt-4o-mini
 
 # Non-standard English
@@ -30,11 +35,8 @@ REF_FILE[3]=$DATASETS/pfsmb/test.en
 TGT_LANG[3]=English
 
 
-for i in {0..3}
-do
-    echo "Normalizing ${CORPUS[i]}..."
-    python $HOME/evaluation-challenges/src/llm/normalize-gpt.py \
-        --input-file ${REF_FILE[i]} \
-        --target-lang ${TGT_LANG[i]} \
-        --model-name $GPT 
-done
+echo "Normalizing ${CORPUS[$INDEX]}..."
+python $HOME/evaluation-challenges/src/llm/normalize-gpt.py \
+    --input-file ${REF_FILE[$INDEX]} \
+    --target-lang ${TGT_LANG[$INDEX]} \
+    --model-name $GPT 
