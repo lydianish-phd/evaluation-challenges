@@ -21,7 +21,7 @@ if __name__ == "__main__":
 	file_name = os.path.basename(args.input_file)
 	output_file = os.path.join(os.path.dirname(args.input_file), f"gpt.{file_name}")
 	
-	print(f" - Normalizing {len(sentences)} sentences...")
+	print(f" - Loaded {len(sentences)} sentences...")
 	start_time = time.time()
 	n = 0
 	with open(output_file, "w") as f:
@@ -36,7 +36,7 @@ if __name__ == "__main__":
 			output = completion.choices[0].message.content.strip().replace("\n", " ")
 			f.write(f"{output}\n")
 			n += 1
-			if n % 100 == 0:
+			if n % 10 == 0:
 				print(f" - {n} done...")
 
 	print(f" - Normalized sentences saved to {output_file}")
