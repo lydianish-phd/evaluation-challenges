@@ -37,6 +37,7 @@ if __name__ == "__main__":
     parser.add_argument("--guidelines", type=str, nargs="+", default=GUIDELINE_NAMES)
     parser.add_argument("--output-dir", type=str)
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
+    parser.add_argument("--overwrite", help="whether to overwrite existing output files", type=bool, default=False, action="store_true")
     args = parser.parse_args()
 
     print("Loading metric models...")
@@ -61,6 +62,11 @@ if __name__ == "__main__":
 
         print(" - Computing BLEU, ChrF++ and COMET scores...")
         for sys_file in sys_files:
+            scores_file = f"{sys_file}.scores.json"
+            errors_file = f"{sys_file}.errors.json"
+            if not args.overwrite and os.path.exists(scores_file) and os.path.exists(errors_file):
+                print(f" - Skipping {sys_file} as scores and errors already exist.")
+                continue
             with open (sys_file) as f:
                 sys_data = [ line.strip() for line in f.readlines() ]
             data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
@@ -80,9 +86,9 @@ if __name__ == "__main__":
                     "span": span
                 })
         
-            with open(f"{sys_file}.scores.json", 'w') as f:
+            with open(scores_file, 'w') as f:
                 json.dump(scores, f)
 
-            with open(f"{sys_file}.errors.json", 'w') as f:
+            with open(errors_file, 'w') as f:
                 json.dump(errors, f)
 
