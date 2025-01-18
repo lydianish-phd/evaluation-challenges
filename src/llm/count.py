@@ -24,14 +24,14 @@ def get_sentences_with_errors(errors, severity):
             if span["severity"] == severity:
                 sentence_ids.append(i)
                 break
-    return set(sentence_ids)
+    return sentence_ids
 
 def get_correct_sentences(errors):
     sentence_ids = []
     for i, sentence in enumerate(errors):
         if len(sentence["spans"]) == 0:
             sentence_ids.append(i)
-    return set(sentence_ids)
+    return sentence_ids
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
