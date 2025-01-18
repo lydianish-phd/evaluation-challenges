@@ -1,6 +1,6 @@
 # Description: Contains the prompt templates for the LLM evaluation challenges.
 
-
+NLLB_MODEL_NAME = "nllb-200-3.3B"
 LLAMA_MODEL_NAME = "Llama-3.1-8B-Instruct"
 GEMMA_MODEL_NAME = "gemma-2-9b-it"
 GPT_MODEL_NAME = "gpt-4o-mini"

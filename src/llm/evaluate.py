@@ -8,10 +8,6 @@ GEMMA = "google/gemma-2-9b-it"
 NLLB = "facebook/nllb-200-3.3B"
 CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
 
-MINOR = "minor"
-MAJOR = "major"
-CRITICAL = "critical"
-
 def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CONFIG):
     with open(corpora_config, "r") as f:
         config = yaml.safe_load(f)
@@ -33,18 +29,6 @@ def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CO
         files.append((src_file, ref_file, sys_files))
     
     return files
-
-def count_error_types(errors):
-    error_types = {
-        MINOR: 0,
-        MAJOR: 0,
-        CRITICAL: 0
-    }
-    for error in errors:
-        for span in error["spans"]:
-            error_types[span["severity"]] += 1
-    error_types["total"] = sum(error_types.values())
-    return error_types
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -78,12 +62,10 @@ if __name__ == "__main__":
         for sys_file in sys_files:
             scores_file = f"{sys_file}.scores.json"
             errors_file = f"{sys_file}.errors.json"
-            counts_file = f"{sys_file}.counts.json"
             
             if (not args.overwrite and 
                 os.path.exists(scores_file) and 
-                os.path.exists(errors_file) and 
-                os.path.exists(counts_file)
+                os.path.exists(errors_file)
             ):
                 print(f" - Skipping {sys_file}")
                 continue
@@ -108,7 +90,6 @@ if __name__ == "__main__":
                     "score": score,
                     "spans": spans
                 })
-            counts = count_error_types(errors)
         
             with open(scores_file, 'w') as f:
                 json.dump(scores, f)
@@ -116,6 +97,3 @@ if __name__ == "__main__":
             with open(errors_file, 'w') as f:
                 json.dump(errors, f)
             
-            with open(counts_file, 'w') as f:
-                json.dump(counts, f)
-
