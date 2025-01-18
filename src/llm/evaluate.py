@@ -30,6 +30,48 @@ def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CO
     
     return files
 
+
+MINOR = "minor"
+MAJOR = "major"
+CRITICAL = "critical"
+
+def count_error_types(errors):
+    counts = {
+        MINOR: 0,
+        MAJOR: 0,
+        CRITICAL: 0
+    }
+    for error in errors:
+        for span in error["spans"]:
+            counts[span["severity"]] += 1
+    counts["total"] = sum(counts.values())
+    return counts
+
+def get_sentences_with_errors(errors, severity):
+    sentence_ids = []
+    for i, sentence in enumerate(errors):
+        for span in sentence["spans"]:
+            if span["severity"] == severity:
+                sentence_ids.append(i)
+                break
+    return sentence_ids
+
+def get_correct_sentences(errors):
+    sentence_ids = []
+    for i, sentence in enumerate(errors):
+        if len(sentence["spans"]) == 0:
+            sentence_ids.append(i)
+    return sentence_ids
+
+def get_counts(errors):
+    counts = count_error_types(errors)
+    for severity in [MINOR, MAJOR, CRITICAL]:
+        counts[f"{severity}_sents_ids"] = get_sentences_with_errors(errors, severity)
+        counts[f"{severity}_sents"] = len(counts[f"{severity}_sents_ids"])
+    counts["correct_sents_ids"] = get_correct_sentences(errors)
+    counts["correct_sents"] = len(counts["correct_sents_ids"])
+    return counts
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--corpora", type=str, nargs="+", default=["rocsmt", "footweets", "mmtc", "pfsmb"])
@@ -62,10 +104,12 @@ if __name__ == "__main__":
         for sys_file in sys_files:
             scores_file = f"{sys_file}.scores.json"
             errors_file = f"{sys_file}.errors.json"
+            counts_file = f"{sys_file}.counts.json"
             
             if (not args.overwrite and 
                 os.path.exists(scores_file) and 
-                os.path.exists(errors_file)
+                os.path.exists(errors_file) and 
+                os.path.exists(counts_file)
             ):
                 print(f" - Skipping {sys_file}")
                 continue
@@ -90,10 +134,14 @@ if __name__ == "__main__":
                     "score": score,
                     "spans": spans
                 })
-        
+            counts = get_counts(errors)
+
             with open(scores_file, 'w') as f:
                 json.dump(scores, f)
 
             with open(errors_file, 'w') as f:
                 json.dump(errors, f)
+            
+            with open(counts_file, 'w') as f:
+                json.dump(counts, f)
             
