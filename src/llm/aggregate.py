@@ -22,7 +22,11 @@ def aggregate_scores(input_dir, corpus, models):
 
                 count_file = score_file.replace(".scores.json", ".counts.json")                
                 with open(count_file) as f:
-                    scores.update(json.load(f))
+                    counts = json.load(f)
+                
+                # remove any keys where the type is not int (some are lists)
+                counts = {k: v for k, v in counts.items() if isinstance(v, int)}
+                scores.update(counts)
                 
                 all_scores.append(scores)
     
