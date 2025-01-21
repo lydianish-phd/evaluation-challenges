@@ -55,7 +55,7 @@ DATA_DIR[3]=$DATASETS/pfsmb
 INPUT_FILE[3]=${DATA_DIR[3]}/test.fr
 TGT_LANG[3]=English
 
-GUIDELINES=(default standard general)
+GUIDELINES=(rocsmt footweets mmtc pfsmb)
 CONFIG=$HOME/evaluation-challenges/src/llm/config/greedy.yaml
 
 for i in {0..1}

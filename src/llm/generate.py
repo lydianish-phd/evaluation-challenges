@@ -3,7 +3,7 @@ from vllm import LLM, SamplingParams
 from prompt_templates import (
     get_prompt,
     LLAMA_MODEL_NAME,
-    GUIDELINE_NAMES
+    GUIDELINES
 )
 import torch
 
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     parser.add_argument("-m", "--model-dir", type=str, default=LLAMA_DIR)
     parser.add_argument("-c", "--config-file", type=str, default=GREEDY_CONFIG)
     parser.add_argument("-l", "--target-lang", type=str, default="French")
-    parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=GUIDELINE_NAMES)
+    parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=["default"])
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -45,8 +45,8 @@ if __name__ == "__main__":
         sentences = [ line.strip() for line in f ] 
 
     for guideline in args.guidelines:
-        if guideline not in GUIDELINE_NAMES:
-            raise ValueError(f"Invalid guideline: {guideline}, expected one of {GUIDELINE_NAMES}.")
+        if guideline not in GUIDELINES:
+            raise ValueError(f"Invalid guideline: {guideline}, expected one of {GUIDELINES.keys()}.")
         
         print(f" - Generating translations with the {guideline} guidelines...")
 
