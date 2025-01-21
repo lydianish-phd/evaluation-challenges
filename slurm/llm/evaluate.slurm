@@ -8,7 +8,7 @@
 #SBATCH --gres=gpu:1        # numper of GPUs per node
 #SBATCH --cpus-per-task=24	# number of cores per task (8x8 = 64 cores, or all the cores)
 #SBATCH --hint=multithread       # we get physical cores not logical
-#SBATCH --time=4:00:00                # Time limit hrs:min:sec
+#SBATCH --time=6:00:00                # Time limit hrs:min:sec
 #SBATCH --output=/lustre/fsn1/projects/rech/rnh/udc54vm/logs/evaluation-challenges/llm/%x/%x_%j.log # Standard output and error log
 
 echo "### Running $SLURM_JOB_NAME @ ###"
@@ -29,7 +29,7 @@ NLLB=facebook/nllb-200-3.3B
 
 MODELS=($NLLB $LLAMA $GEMMA)
 CORPORA=(rocsmt footweets mmtc pfsmb rocsmt-gpt footweets-gpt mmtc-gpt pfsmb-gpt)
-GUIDELINES=(default standard general)
+GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
 
 echo "Models: ${MODELS[@]}"
 echo "Corpora: ${CORPORA[@]}"
