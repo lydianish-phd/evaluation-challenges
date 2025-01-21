@@ -57,7 +57,7 @@ MMTC_GUIDELINES = GENERAL_GUIDELINES + (
     "12. Translate self-censored profanity without censorship. "
 )
 
-PFMSB_GUIDELINES = GENERAL_GUIDELINES + (
+PFSMB_GUIDELINES = GENERAL_GUIDELINES + (
     "Here are twelve translation guidelines: "
     "1. Normalize incorrect grammar. "
     "2. Normalize incorrect spelling. "
@@ -78,7 +78,7 @@ GUIDELINES = {
     "rocsmt": ROCSMT_GUIDELINES,
     "footweets": FOOTWEETS_GUIDELINES,
     "mmtc": MMTC_GUIDELINES,
-    "pfmsb": PFMSB_GUIDELINES,
+    "pfsmb": PFSMB_GUIDELINES,
     "general": GENERAL_GUIDELINES,
     "standard": "",
     "default": ""
