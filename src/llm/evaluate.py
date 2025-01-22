@@ -79,7 +79,7 @@ if __name__ == "__main__":
     parser.add_argument("--guidelines", type=str, nargs="+", default=["default"])
     parser.add_argument("--output-dir", type=str)
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
-    parser.add_argument("--overwrite", help="whether to overwrite existing output files", default=False, action="store_true")
+    parser.add_argument("--overwrite", help="whether to overwrite existing score files", default=False, action="store_true")
     args = parser.parse_args()
 
     print("Loading metric models: BLEU, ChrF++, COMET, xCOMET-XL")

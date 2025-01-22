@@ -18,6 +18,7 @@ if __name__ == "__main__":
     parser.add_argument("-c", "--config-file", type=str, default=GREEDY_CONFIG)
     parser.add_argument("-l", "--target-lang", type=str, default="French")
     parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=["default"])
+    parser.add_argument("--overwrite", help="whether to overwrite existing output files", default=False, action="store_true")    
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -48,12 +49,17 @@ if __name__ == "__main__":
         if guideline not in GUIDELINES:
             raise ValueError(f"Invalid guideline: {guideline}, expected one of {GUIDELINES.keys()}.")
         
+        output_file = os.path.join(args.output_dir, f"{file_name}.{guideline}.out")
+        
+        if not args.overwrite and os.path.exists(output_file):
+            print(f" - Skipping {output_file}")
+            continue
+        
         print(f" - Generating translations with the {guideline} guidelines...")
 
         prompts = [ get_prompt(sentence, args.target_lang, model_name=model_name, guidelines=guideline) for sentence in sentences ]
         outputs = llm.generate(prompts, sampling_params)
 
-        output_file = os.path.join(args.output_dir, f"{file_name}.{guideline}.out")
         with open(output_file, "w") as f:
             for output in outputs:
                 generated_text = output.outputs[0].text.strip().replace("\n", " ")
