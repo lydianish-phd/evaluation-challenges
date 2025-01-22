@@ -70,6 +70,7 @@ def get_counts(errors):
         counts[f"{severity}_sents"] = len(counts[f"{severity}_sents_ids"])
     counts["correct_sents_ids"] = get_correct_sentences(errors)
     counts["correct_sents"] = len(counts["correct_sents_ids"])
+    counts["total_sents"] = len(errors)
     return counts
 
 if __name__ == "__main__":
