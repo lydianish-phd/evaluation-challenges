@@ -1,5 +1,6 @@
 import os, argparse, json
 import pandas as pd
+from utils import read_json
 
 def aggregate_scores(input_dir, corpus, models):
     all_scores = []
@@ -14,15 +15,13 @@ def aggregate_scores(input_dir, corpus, models):
                     "file": os.path.basename(score_file).removesuffix(".scores.json"),
                 }
 
-                with open(score_file) as f:
-                    scores.update(json.load(f))
+                scores.update(read_json(score_file))
                 
                 scores["comet"] *= 100
                 scores["xcomet"] *= 100
 
                 count_file = score_file.replace(".scores.json", ".counts.json")                
-                with open(count_file) as f:
-                    counts = json.load(f)
+                counts = read_json(count_file)
                 
                 # remove any keys where the type is not int (some are lists)
                 counts = {k: v for k, v in counts.items() if isinstance(v, int)}

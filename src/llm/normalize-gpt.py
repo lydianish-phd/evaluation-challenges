@@ -4,6 +4,7 @@ from prompt_templates import (
     GPT_MODEL_NAME,
     get_prompt
 )
+from utils import read_file
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
@@ -14,9 +15,7 @@ if __name__ == "__main__":
 
 	client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
-	with open(args.input_file, "r") as f:
-        # ensure there are no trailing newlines which might affect the output
-		sentences = [ line.strip() for line in f ]
+	sentences = read_file(args.input_file)
 	
 	file_name = os.path.basename(args.input_file)
 	output_file = os.path.join(os.path.dirname(args.input_file), f"gpt.{file_name}")

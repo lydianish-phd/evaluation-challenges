@@ -2,6 +2,7 @@ import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU, CHRF
 from comet import download_model, load_from_checkpoint
 from prompt_templates import GUIDELINES
+from utils import read_file, read_yaml, write_json
 
 LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
 GEMMA = "google/gemma-2-9b-it"
@@ -9,8 +10,7 @@ NLLB = "facebook/nllb-200-3.3B"
 CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
 
 def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CONFIG):
-    with open(corpora_config, "r") as f:
-        config = yaml.safe_load(f)
+    config = read_yaml(corpora_config)
     files = []
     for corpus in corpora:
         src_file = os.path.expandvars(config[corpus]["src_file_path"])
@@ -95,11 +95,8 @@ if __name__ == "__main__":
     for (src_file, ref_file, sys_files) in files:
         print(f"Evaluating outputs for {src_file} and {ref_file}...")
         
-        with open (src_file) as f:
-            src_data = [ line.strip() for line in f.readlines() ]
-
-        with open (ref_file) as f:
-            ref_data = [ line.strip() for line in f.readlines() ]
+        src_data = read_file(src_file)
+        ref_data = read_file(ref_file)
         
         for sys_file in sys_files:
             scores_file = f"{sys_file}.scores.json"
@@ -116,8 +113,7 @@ if __name__ == "__main__":
 
             print(f" - Computing scores for {sys_file}")
             
-            with open (sys_file) as f:
-                sys_data = [ line.strip() for line in f.readlines() ]
+            sys_data = read_file(sys_file)
             data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
     
             scores = {
@@ -136,12 +132,6 @@ if __name__ == "__main__":
                 })
             counts = get_counts(errors)
 
-            with open(scores_file, 'w') as f:
-                json.dump(scores, f)
-
-            with open(errors_file, 'w') as f:
-                json.dump(errors, f)
-            
-            with open(counts_file, 'w') as f:
-                json.dump(counts, f)
-            
+            write_json(scores_file, scores)
+            write_json(errors_file, errors)
+            write_json(counts_file, counts)

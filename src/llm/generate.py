@@ -5,6 +5,7 @@ from prompt_templates import (
     LLAMA_MODEL_NAME,
     GUIDELINES
 )
+from utils import read_yaml, read_file
 import torch
 
 LLAMA_DIR = os.path.join(os.environ["MODELS"], f"meta-llama/{LLAMA_MODEL_NAME}")
@@ -25,8 +26,7 @@ if __name__ == "__main__":
     file_name = os.path.basename(args.input_file)
     model_name = os.path.basename(args.model_dir)
 
-    with open(args.config_file, "r") as f:
-        config = yaml.safe_load(f)
+    config = read_yaml(args.config_file)
 
     llm = LLM(
         model=args.model_dir, 
@@ -41,9 +41,7 @@ if __name__ == "__main__":
         max_tokens=config["max_tokens"],
     )
         
-    with open(args.input_file, "r") as f:
-        # ensure there are no trailing newlines which might affect the output
-        sentences = [ line.strip() for line in f ] 
+    sentences = read_file(args.input_file)
 
     for guideline in args.guidelines:
         if guideline not in GUIDELINES:
