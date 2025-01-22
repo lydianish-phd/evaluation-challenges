@@ -1,7 +1,7 @@
 import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU, CHRF
 from comet import download_model, load_from_checkpoint
-from prompt_templates import GUIDELINE_NAMES
+from prompt_templates import GUIDELINES
 
 LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
 GEMMA = "google/gemma-2-9b-it"
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--corpora", type=str, nargs="+", default=["rocsmt", "footweets", "mmtc", "pfsmb"])
     parser.add_argument("--models", type=str, nargs="+", default=[LLAMA, GEMMA, NLLB])
-    parser.add_argument("--guidelines", type=str, nargs="+", default=GUIDELINE_NAMES)
+    parser.add_argument("--guidelines", type=str, nargs="+", default=["default"])
     parser.add_argument("--output-dir", type=str)
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     parser.add_argument("--overwrite", help="whether to overwrite existing output files", default=False, action="store_true")
