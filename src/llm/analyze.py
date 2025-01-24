@@ -31,6 +31,7 @@ def get_outputs(line_ids, src, ref, sys, errors):
         output += f"SRC: {src[i]}\n"
         output += f"REF: {ref[i]}\n"
         for guideline in sys:
+            output += "------------------------------\n"
             output += f"SYS ({guideline}): {sys[guideline][i]}\n"
             output += f"ERRORS ({guideline}): {errors[guideline][i]}\n"
         output += "\n"
@@ -58,7 +59,7 @@ if __name__ == "__main__":
 
             sys = {}
             errors = {}
-            for guideline in ["baseline", "default", corpus]:
+            for guideline in ["baseline", "default", "rocsmt", "footweets", "mmtc", "pfsmb"]:
                 sys_model = NLLB if (guideline == "baseline") else model
                 guideline_ext = "out" if (guideline == "baseline") else  f"{guideline}.out"
                 sys_file = f"{args.input_dir}/outputs/{sys_model}/{corpus}/{src_file_name}.{guideline_ext}"
