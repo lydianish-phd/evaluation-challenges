@@ -47,5 +47,8 @@ python $HOME/evaluation-challenges/src/llm/aggregate.py \
     --models ${MODELS[@]} \
     --corpora ${CORPORA[@]} 
 
+python $HOME/evaluation-challenges/src/llm/analyze.py \
+    --input-dir $EXPERIMENT_DIR 
+
 echo "Done..."
 
