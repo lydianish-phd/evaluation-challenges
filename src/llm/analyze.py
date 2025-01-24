@@ -70,17 +70,18 @@ if __name__ == "__main__":
             output_dir = f"{args.input_dir}/analysis/{model}/{corpus}"
             os.makedirs(output_dir, exist_ok=True)
 
+            print(f" - Collecting selected examples")
             with open(f"{output_dir}/selected_examples.txt", "w") as f:
                 f.write(get_outputs(SELECTED_EXAMPLES[corpus], src, ref, sys, errors))
-                print(f" - Selected examples written to {output_dir}/selected_examples.txt")
             
             critical_errors = set()
             for guideline in errors:
-                critical_errors.union(get_sentences_with_errors(errors[guideline], CRITICAL))
+                critical_errors = critical_errors.union(get_sentences_with_errors(errors[guideline], CRITICAL))
             
+            print(f" - Collecting critical errors")
             with open(f"{output_dir}/critical_errors.txt", "w") as f:
                 f.write(get_outputs(critical_errors, src, ref, sys, errors))
-                print(f" - Critical errors written to {output_dir}/critical_errors.txt")
+                
 
 
 
