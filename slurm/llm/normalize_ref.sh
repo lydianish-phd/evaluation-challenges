@@ -17,7 +17,7 @@ GPT=gpt-4o-mini
 # Non-standard English
 
 CORPUS[0]=rocsmt
-REF_FILE[0]=$DATASETS/rocsmt/test/raw.en.test
+REF_FILE[0]=$DATASETS/rocsmt/test/ref.en.test
 TGT_LANG[0]=French
 
 CORPUS[1]=footweets
