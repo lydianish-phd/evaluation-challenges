@@ -1,13 +1,5 @@
 #!/bin/bash
 
-module purge
-# module load pytorch-gpu/py3/2.3.0
-source $HOME/.bashrc 
-source $HOME/.bash_profile
-source activate sonar_env
-
-set -e
-
 INDEX=$1
 if [ -z $INDEX ]; then
     INDEX=0
