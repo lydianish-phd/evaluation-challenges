@@ -11,7 +11,7 @@ GPT=gpt-4o-mini
 # Non-standard English
 
 CORPUS[0]=rocsmt
-REF_FILE[0]=$DATASETS/rocsmt/test/ref.en.test
+REF_FILE[0]=$DATASETS/rocsmt/test/ref.fr.test
 TGT_LANG[0]=French
 
 CORPUS[1]=footweets
@@ -33,4 +33,5 @@ echo "Normalizing ${CORPUS[$INDEX]}..."
 python $HOME/evaluation-challenges/src/llm/normalize-gpt.py \
     --input-file ${REF_FILE[$INDEX]} \
     --target-lang ${TGT_LANG[$INDEX]} \
-    --model-name $GPT 
+    --model-name $GPT \
+    --guidelines standard

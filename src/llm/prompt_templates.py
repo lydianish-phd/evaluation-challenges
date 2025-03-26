@@ -116,7 +116,7 @@ def get_gemma_template(user_message, system_message=TRANSLATION_SYSTEM_MESSAGE):
 
 def get_instruction(sentence, target_lang, normalization=False, standard=False, extra_guidelines=""):
     if normalization:
-        action = "Rewrite the text below in"
+        action = "Do lexical normalization on the text below in"
     else: 
         action = "Translate the text below to"
     standardness_level = "standard " if standard else ""

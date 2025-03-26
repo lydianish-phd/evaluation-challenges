@@ -11,6 +11,7 @@ if __name__ == "__main__":
 	parser.add_argument("-i", "--input-file", type=str)
 	parser.add_argument("-l", "--target-lang", type=str)
 	parser.add_argument("-m", "--model-name", type=str, default=GPT_MODEL_NAME)
+	parser.add_argument("-g", "--guidelines", type=str, default="default")
 	args = parser.parse_args()
 
 	client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
@@ -27,7 +28,7 @@ if __name__ == "__main__":
 		for sentence in sentences:
 			completion = client.chat.completions.create(
 				model=GPT_MODEL_NAME,
-				messages=get_prompt(sentence, args.target_lang, normalization=True, model_name=args.model_name, guidelines="standard"),
+				messages=get_prompt(sentence, args.target_lang, normalization=True, model_name=args.model_name, guidelines=args.guidelines),
 				temperature=0, 
 				top_p=1,
 				max_tokens=512,
