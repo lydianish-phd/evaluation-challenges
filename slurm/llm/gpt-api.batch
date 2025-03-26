@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#SBATCH --job-name=gpt      # Job name
+#SBATCH --ntasks=1                    # A single task (process)
+#SBATCH --cpus-per-task=16              # Using 32 CPUS
+#SBATCH --time=4:00:00               # Time limit hrs:min:sec
+#SBATCH --output=/scratch/lnishimw/logs/evaluation-challenges/llm/%x/%x_%j.log # Standard output and error log
+#SBATCH --array=0-3 #7
+
+echo "### Running $SLURM_JOB_NAME ###"
+
+module purge
+source $HOME/.bashrc 
+source $HOME/.bash_profile
+source activate sonar_env
+
+set -e
+
+bash $HOME/evaluation-challenges/slurm/llm/normalize_src.sh $SLURM_ARRAY_TASK_ID
+# bash $HOME/evaluation-challenges/slurm/llm/normalize_ref.sh $SLURM_ARRAY_TASK_ID
+
+echo "Done..."
