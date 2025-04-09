@@ -27,24 +27,24 @@ GEMMA=google/gemma-2-9b-it
 LLAMA=meta-llama/Llama-3.1-8B-Instruct
 NLLB=facebook/nllb-200-3.3B
 
-MODELS=($NLLB $LLAMA $GEMMA)
+ALL_MODELS=($NLLB $LLAMA $GEMMA)
 CORPORA=(rocsmt footweets mmtc pfsmb rocsmt-gpt footweets-gpt mmtc-gpt pfsmb-gpt)
 GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
 
-echo "Models: ${MODELS[@]}"
+echo "Models: ${ALL_MODELS[@]}"
 echo "Corpora: ${CORPORA[@]}"
 echo "Guidelines: ${GUIDELINES[@]}"
 
 python $HOME/evaluation-challenges/src/llm/evaluate.py \
     --output-dir $EXPERIMENT_DIR/outputs \
     --corpora-config $CORPORA_CONFIG \
-    --models ${MODELS[@]} \
+    --models ${ALL_MODELS[@]} \
     --corpora ${CORPORA[@]} \
     --guidelines ${GUIDELINES[@]}
 
 python $HOME/evaluation-challenges/src/llm/aggregate.py \
     --input-dir $EXPERIMENT_DIR \
-    --models ${MODELS[@]} \
+    --models ${ALL_MODELS[@]} \
     --corpora ${CORPORA[@]} 
 
 python $HOME/evaluation-challenges/src/llm/analyze.py \
