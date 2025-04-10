@@ -8,8 +8,7 @@
 #SBATCH --gres=gpu:1        # numper of GPUs per node
 #SBATCH --cpus-per-task=24	# number of cores per task (8x8 = 64 cores, or all the cores)
 #SBATCH --hint=multithread       # we get physical cores not logical
-#SBATCH --time=0:30:00                # Time limit hrs:min:sec
-##SBATCH --time=6:00:00                # Time limit hrs:min:sec
+#SBATCH --time=6:00:00                # Time limit hrs:min:sec
 #SBATCH --output=/lustre/fsn1/projects/rech/rnh/udc54vm/logs/evaluation-challenges/llm/%x/%x_%j.log # Standard output and error log
 
 echo "### Running $SLURM_JOB_NAME @ ###"
@@ -36,21 +35,22 @@ echo "Models: ${ALL_MODELS[@]}"
 echo "Corpora: ${CORPORA[@]}"
 echo "Guidelines: ${GUIDELINES[@]}"
 
-# python $HOME/evaluation-challenges/src/llm/evaluate.py \
-#     --output-dir $EXPERIMENT_DIR/outputs \
-#     --corpora-config $CORPORA_CONFIG \
-#     --models ${ALL_MODELS[@]} \
-#     --corpora ${CORPORA[@]} \
-#     --guidelines ${GUIDELINES[@]}
+python $HOME/evaluation-challenges/src/llm/evaluate.py \
+    --output-dir $EXPERIMENT_DIR/outputs \
+    --corpora-config $CORPORA_CONFIG \
+    --models ${ALL_MODELS[@]} \
+    --corpora ${CORPORA[@]} \
+    --guidelines ${GUIDELINES[@]}
 
-# python $HOME/evaluation-challenges/src/llm/aggregate.py \
-#     --input-dir $EXPERIMENT_DIR \
-#     --models ${ALL_MODELS[@]} \
-#     --corpora ${CORPORA[@]} 
+python $HOME/evaluation-challenges/src/llm/aggregate.py \
+    --input-dir $EXPERIMENT_DIR \
+    --models ${ALL_MODELS[@]} \
+    --corpora ${CORPORA[@]} 
 
-# python $HOME/evaluation-challenges/src/llm/analyze.py \
-#     --input-dir $EXPERIMENT_DIR 
+python $HOME/evaluation-challenges/src/llm/analyze.py \
+    --input-dir $EXPERIMENT_DIR 
 
-python $HOME/evaluation-challenges/src/llm/comet-robustness.py
+# python $HOME/evaluation-challenges/src/llm/comet-robustness.py
+
 echo "Done..."
 
