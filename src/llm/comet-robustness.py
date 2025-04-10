@@ -35,9 +35,10 @@ scores = {
     "xcomet": xcomet_model.predict(data, batch_size=32, gpus=1)
 }
 
-output_path = f"{os.environ['DATASETS']}/evaluation-challenges/experiment_049/analysis"
+output_dir = f"{os.environ['DATASETS']}/evaluation-challenges/experiment_049/analysis"
+os.makedirs(output_dir, exist_ok=True)
 
-write_json(f"{output_path}/comet_scores.json", scores["comet"])
+write_json(f"{output_dir}/comet_scores.json", scores["comet"])
 
 
 
