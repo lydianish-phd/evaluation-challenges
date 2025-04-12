@@ -126,7 +126,6 @@ if __name__ == "__main__":
             comet_output = comet_model.predict(data, batch_size=32, gpus=1)
             scores["comet"] = comet_output.system_score
             
-            write_json(scores_file, scores)
             write_json(comet_file, comet_output.scores)
 
             if args.xcomet:
@@ -141,6 +140,7 @@ if __name__ == "__main__":
                     print(f" - Skipping {sys_file}")
                     continue
                 
+
                 xcomet_output = xcomet_model.predict(data, batch_size=32, gpus=1)
                 scores["xcomet"] = xcomet_output.system_score
                 
@@ -154,5 +154,8 @@ if __name__ == "__main__":
                 
                 write_json(errors_file, errors)
                 write_json(counts_file, counts)
+            
+            write_json(scores_file, scores)
+
 
 
