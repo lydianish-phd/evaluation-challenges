@@ -7,7 +7,7 @@ GPT_MODEL_NAME = "gpt-4o-mini"
 
 GENERAL_GUIDELINES = "The text comes from user-generated content on social media. Preserve the meaning, style and sentiment of the original text."
 
-ROCSMT_GUIDELINES = GENERAL_GUIDELINES + (
+ROCSMT_GUIDELINES = (
     "Here are twelve specific translation guidelines: "
     "1. Normalize incorrect grammar. "
     "2. Normalize incorrect spelling. "
@@ -24,7 +24,7 @@ ROCSMT_GUIDELINES = GENERAL_GUIDELINES + (
     "12. Translate self-censored profanity without censorship. "
 )
 
-FOOTWEETS_GUIDELINES = GENERAL_GUIDELINES + (
+FOOTWEETS_GUIDELINES = (
     "Here are twelve translation guidelines: "
     "1. Normalize incorrect grammar. "
     "2. Normalize incorrect spelling. "
@@ -41,7 +41,7 @@ FOOTWEETS_GUIDELINES = GENERAL_GUIDELINES + (
     "12. Translate self-censored profanity without censorship. "
 )
 
-MMTC_GUIDELINES = GENERAL_GUIDELINES + (
+MMTC_GUIDELINES = (
     "Here are twelve translation guidelines: "
     "1. Normalize incorrect grammar. "
     "2. Normalize incorrect spelling. "
@@ -57,7 +57,7 @@ MMTC_GUIDELINES = GENERAL_GUIDELINES + (
     "12. Translate self-censored profanity without censorship. "
 )
 
-PFSMB_GUIDELINES = GENERAL_GUIDELINES + (
+PFSMB_GUIDELINES = (
     "Here are twelve translation guidelines: "
     "1. Normalize incorrect grammar. "
     "2. Normalize incorrect spelling. "

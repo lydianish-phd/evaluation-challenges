@@ -23,7 +23,7 @@ source $HOME/.bash_profile
 
 set -e
 
-EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049
+EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049b
 
 MODEL_NAME[0]=meta-llama/Llama-3.1-8B-Instruct
 MODEL_DIR[0]=$MODELS/${MODEL_NAME[0]}
@@ -55,7 +55,8 @@ DATA_DIR[3]=$DATASETS/pfsmb
 INPUT_FILE[3]=${DATA_DIR[3]}/test.fr
 TGT_LANG[3]=English
 
-GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
+# GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
+GUIDELINES=(rocsmt footweets mmtc pfsmb)
 CONFIG=$HOME/evaluation-challenges/src/llm/config/greedy.yaml
 
 for i in {0..1}

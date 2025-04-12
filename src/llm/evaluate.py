@@ -81,15 +81,18 @@ if __name__ == "__main__":
     parser.add_argument("--output-dir", type=str)
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     parser.add_argument("--overwrite", help="whether to overwrite existing score files", default=False, action="store_true")
+    parser.add_argument("--xcomet", help="whether to use xCOMET-XL", default=False, action="store_true")
     args = parser.parse_args()
 
-    print("Loading metric models: BLEU, ChrF++, COMET, xCOMET-XL")
+    print("Loading metric models: BLEU, ChrF++, COMET")
     bleu_model = BLEU()
     chrf_model = CHRF(word_order=2) # chrf++
     comet_model_path = download_model("Unbabel/wmt22-comet-da")
     comet_model = load_from_checkpoint(comet_model_path)
-    xcomet_model_path = download_model("Unbabel/XCOMET-XL")
-    xcomet_model = load_from_checkpoint(xcomet_model_path)
+    if args.xcomet:
+        print("Loading xCOMET-XL model")
+        xcomet_model_path = download_model("Unbabel/XCOMET-XL")
+        xcomet_model = load_from_checkpoint(xcomet_model_path)
     
     files = get_files(args.corpora, args.models, args.guidelines, args.output_dir, args.corpora_config)
     
@@ -101,13 +104,11 @@ if __name__ == "__main__":
         
         for sys_file in sys_files:
             scores_file = f"{sys_file}.scores.json"
-            errors_file = f"{sys_file}.errors.json"
-            counts_file = f"{sys_file}.counts.json"
+            comet_file = f"{sys_file}.comet.json"
             
             if (not args.overwrite and 
                 os.path.exists(scores_file) and 
-                os.path.exists(errors_file) and 
-                os.path.exists(counts_file)
+                os.path.exists(comet_file)
             ):
                 print(f" - Skipping {sys_file}")
                 continue
@@ -115,24 +116,43 @@ if __name__ == "__main__":
             print(f" - Computing scores for {sys_file}")
             
             sys_data = read_file(sys_file)
-            data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
-    
             scores = {
                 "bleu": bleu_model.corpus_score(sys_data, [ref_data]).score,
                 "chrf2": chrf_model.corpus_score(sys_data, [ref_data]).score,
-                "comet": comet_model.predict(data, batch_size=32, gpus=1)[1]
             }
-            xcomet_output = xcomet_model.predict(data, batch_size=32, gpus=1)
-            scores["xcomet"] = xcomet_output.system_score
-
-            errors = []
-            for score, spans in zip(xcomet_output.scores, xcomet_output.metadata.error_spans):
-                errors.append({
-                    "score": score,
-                    "spans": spans
-                })
-            counts = get_counts(errors)
-
+            
+            data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
+            
+            comet_output = comet_model.predict(data, batch_size=32, gpus=1)
+            scores["comet"] = comet_output.system_score
+            
             write_json(scores_file, scores)
-            write_json(errors_file, errors)
-            write_json(counts_file, counts)
+            write_json(comet_file, comet_output.scores)
+
+            if args.xcomet:
+                print(f" - Computing xCOMET scores for {sys_file}")
+                errors_file = f"{sys_file}.errors.json"
+                counts_file = f"{sys_file}.counts.json"
+                
+                if (not args.overwrite and 
+                    os.path.exists(errors_file) and 
+                    os.path.exists(counts_file)
+                ):
+                    print(f" - Skipping {sys_file}")
+                    continue
+                
+                xcomet_output = xcomet_model.predict(data, batch_size=32, gpus=1)
+                scores["xcomet"] = xcomet_output.system_score
+                
+                errors = []
+                for score, spans in zip(xcomet_output.scores, xcomet_output.metadata.error_spans):
+                    errors.append({
+                        "score": score,
+                        "spans": spans
+                    })
+                counts = get_counts(errors)
+                
+                write_json(errors_file, errors)
+                write_json(counts_file, counts)
+
+
