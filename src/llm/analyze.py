@@ -1,4 +1,5 @@
 import os, argparse, json, yaml
+from sacrebleu.metrics import BLEU
 
 from evaluate import (
     LLAMA,
@@ -24,7 +25,9 @@ SELECTED_EXAMPLES = {
     "pfsmb": [k - 1 for k in PFSMB_LINE_NUMBERS],
 }
 
-def get_outputs(line_ids, src, ref, sys, errors):
+bleu_metric = BLEU(effective_order=True)
+
+def get_outputs(line_ids, src, ref, sys, errors, comet_scores):
     output = ""
     for i in line_ids:
         output += f"Line {i+1}\n"
@@ -33,7 +36,9 @@ def get_outputs(line_ids, src, ref, sys, errors):
         for guideline in sys:
             output += "------------------------------\n"
             output += f"SYS ({guideline}): {sys[guideline][i]}\n"
-            output += f"ERRORS ({guideline}): {errors[guideline][i]}\n"
+            output += f"ERRORS ({guideline}): {errors[guideline][i]}\n" if errors[guideline] is not None else ""
+            output += f"BLEU ({guideline}): {bleu_metric.sentence_score(sys[guideline][i], [ref[i]]).score}\n"
+            output += f"COMET ({guideline}): {comet_scores[guideline][i]}\n"
         output += "\n"
     return output
 
@@ -59,13 +64,16 @@ if __name__ == "__main__":
 
             sys = {}
             errors = {}
+            comet_scores = {}
             for guideline in ["baseline", "default", "rocsmt", "footweets", "mmtc", "pfsmb"]:
                 sys_model = NLLB if (guideline == "baseline") else model
                 guideline_ext = "out" if (guideline == "baseline") else  f"{guideline}.out"
                 sys_file = f"{args.input_dir}/outputs/{sys_model}/{corpus}/{src_file_name}.{guideline_ext}"
                 error_file = f"{args.input_dir}/outputs/{sys_model}/{corpus}/{src_file_name}.{guideline_ext}.errors.json"
+                comet_file  = f"{args.input_dir}/outputs/{sys_model}/{corpus}/{src_file_name}.{guideline_ext}.comet.json"
                 sys[guideline] = read_file(sys_file)
-                errors[guideline] = read_json(error_file)
+                errors[guideline] = read_json(error_file) if os.path.exists(error_file) else None
+                comet_scores[guideline] = read_json(comet_file)
 
             output_dir = f"{args.input_dir}/analysis/{model}/{corpus}"
             os.makedirs(output_dir, exist_ok=True)
@@ -76,7 +84,8 @@ if __name__ == "__main__":
             
             critical_errors = set()
             for guideline in errors:
-                critical_errors = critical_errors.union(get_sentences_with_errors(errors[guideline], CRITICAL))
+                if errors[guideline] is not None:
+                    critical_errors = critical_errors.union(get_sentences_with_errors(errors[guideline], CRITICAL))
             
             print(f" - Collecting critical errors")
             with open(f"{output_dir}/critical_errors.txt", "w") as f:
