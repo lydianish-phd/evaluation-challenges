@@ -27,12 +27,11 @@ GEMMA=google/gemma-2-9b-it
 LLAMA=meta-llama/Llama-3.1-8B-Instruct
 NLLB=facebook/nllb-200-3.3B
 
-# ALL_MODELS=($NLLB $LLAMA $GEMMA)
+ALL_MODELS=($NLLB $LLAMA $GEMMA)
 # CORPORA=(rocsmt footweets mmtc pfsmb rocsmt-gpt footweets-gpt mmtc-gpt pfsmb-gpt)
 # GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
-ALL_MODELS=($LLAMA $GEMMA)
 CORPORA=(rocsmt footweets mmtc pfsmb)
-GUIDELINES=(rocsmt footweets mmtc pfsmb)
+GUIDELINES=(default rocsmt footweets mmtc pfsmb)
 
 echo "Models: ${ALL_MODELS[@]}"
 echo "Corpora: ${CORPORA[@]}"
