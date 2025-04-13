@@ -18,14 +18,16 @@ def aggregate_scores(input_dir, corpus, models):
                 scores.update(read_json(score_file))
                 
                 scores["comet"] *= 100
-                scores["xcomet"] *= 100
+                if "xcomet" in scores:
+                    scores["xcomet"] *= 100
 
                 count_file = score_file.replace(".scores.json", ".counts.json")                
-                counts = read_json(count_file)
+                if os.path.exists(count_file):
+                    counts = read_json(count_file)
                 
-                # remove any keys where the type is not int (some are lists)
-                counts = {k: v for k, v in counts.items() if isinstance(v, int)}
-                scores.update(counts)
+                    # remove any keys where the type is not int (some are lists)
+                    counts = {k: v for k, v in counts.items() if isinstance(v, int)}
+                    scores.update(counts)
                 
                 all_scores.append(scores)
     
