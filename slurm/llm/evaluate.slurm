@@ -37,17 +37,17 @@ echo "Models: ${ALL_MODELS[@]}"
 echo "Corpora: ${CORPORA[@]}"
 echo "Guidelines: ${GUIDELINES[@]}"
 
-python $HOME/evaluation-challenges/src/llm/evaluate.py \
-    --output-dir $EXPERIMENT_DIR/outputs \
-    --corpora-config $CORPORA_CONFIG \
-    --models ${ALL_MODELS[@]} \
-    --corpora ${CORPORA[@]} \
-    --guidelines ${GUIDELINES[@]}
+# python $HOME/evaluation-challenges/src/llm/evaluate.py \
+#     --output-dir $EXPERIMENT_DIR/outputs \
+#     --corpora-config $CORPORA_CONFIG \
+#     --models ${ALL_MODELS[@]} \
+#     --corpora ${CORPORA[@]} \
+#     --guidelines ${GUIDELINES[@]}
 
-python $HOME/evaluation-challenges/src/llm/aggregate.py \
-    --input-dir $EXPERIMENT_DIR \
-    --models ${ALL_MODELS[@]} \
-    --corpora ${CORPORA[@]} 
+# python $HOME/evaluation-challenges/src/llm/aggregate.py \
+#     --input-dir $EXPERIMENT_DIR \
+#     --models ${ALL_MODELS[@]} \
+#     --corpora ${CORPORA[@]} 
 
 python $HOME/evaluation-challenges/src/llm/analyze.py \
     --input-dir $EXPERIMENT_DIR 

@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
             print(f" - Collecting selected examples")
             with open(f"{output_dir}/selected_examples.txt", "w") as f:
-                f.write(get_outputs(SELECTED_EXAMPLES[corpus], src, ref, sys, errors))
+                f.write(get_outputs(SELECTED_EXAMPLES[corpus], src, ref, sys, errors, comet_scores))
             
             critical_errors = set()
             for guideline in errors:
@@ -89,7 +89,7 @@ if __name__ == "__main__":
             
             print(f" - Collecting critical errors")
             with open(f"{output_dir}/critical_errors.txt", "w") as f:
-                f.write(get_outputs(critical_errors, src, ref, sys, errors))
+                f.write(get_outputs(critical_errors, src, ref, sys, errors, comet_scores))
                 
 
 
