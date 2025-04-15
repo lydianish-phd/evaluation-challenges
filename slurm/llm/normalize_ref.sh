@@ -33,5 +33,4 @@ echo "Normalizing ${CORPUS[$INDEX]}..."
 python $HOME/evaluation-challenges/src/llm/normalize-gpt.py \
     --input-file ${REF_FILE[$INDEX]} \
     --target-lang ${TGT_LANG[$INDEX]} \
-    --model-name $GPT \
-    --guidelines standard
+    --model-name $GPT 
