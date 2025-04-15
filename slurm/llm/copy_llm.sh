@@ -19,10 +19,6 @@ CORPUS[0]=rocsmt
 CORPUS[1]=footweets
 CORPUS[2]=mmtc
 CORPUS[3]=pfsmb
-CORPUS[4]=rocsmt-gpt
-CORPUS[5]=footweets-gpt
-CORPUS[6]=mmtc-gpt
-CORPUS[7]=pfsmb-gpt
 
 
 for i in {0..2}
@@ -40,4 +36,4 @@ do
     done
 done
 
-echo "Done copying NLLB baseline and default LLM outputs..."
+echo "Done copying LLM and NLLB outputs to GPT-normalized corpora directories..."

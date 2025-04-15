@@ -20,6 +20,10 @@ CORPUS[0]=rocsmt
 CORPUS[1]=footweets
 CORPUS[2]=mmtc
 CORPUS[3]=pfsmb
+CORPUS[4]=rocsmt-gpt
+CORPUS[5]=footweets-gpt
+CORPUS[6]=mmtc-gpt
+CORPUS[7]=pfsmb-gpt
 
 echo "Copying baseline and default outputs from $INPUT_DIR to $OUTPUT_DIR"
 
