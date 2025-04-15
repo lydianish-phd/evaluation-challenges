@@ -31,7 +31,7 @@ for i in {0..2}
 do
     echo "Model: ${MODEL_NAME[$i]}"
 
-    for j in {0..3}
+    for j in {0..7}
     do
         echo " - Corpus: ${CORPUS[$j]}"
         
