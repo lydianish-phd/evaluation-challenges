@@ -31,6 +31,9 @@ MODEL_DIR[0]=$MODELS/${MODEL_NAME[0]}
 MODEL_NAME[1]=google/gemma-2-9b-it
 MODEL_DIR[1]=$MODELS/${MODEL_NAME[1]}
 
+MODEL_NAME[2]=Unbabel/TowerInstruct-7B-v0.2
+MODEL_DIR[2]=$MODELS/${MODEL_NAME[2]}
+
 # Non-standard English
 
 CORPUS[0]=rocsmt
@@ -56,10 +59,10 @@ INPUT_FILE[3]=${DATA_DIR[3]}/test.fr
 TGT_LANG[3]=English
 
 # GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
-GUIDELINES=(rocsmt footweets mmtc pfsmb)
+GUIDELINES=(default rocsmt footweets mmtc pfsmb)
 CONFIG=$HOME/evaluation-challenges/src/llm/config/greedy.yaml
 
-for i in {0..1}
+for i in {2..2}
 do
     echo "Model: ${MODEL_NAME[$i]}"
 

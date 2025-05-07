@@ -2,20 +2,18 @@ import os, argparse, yaml
 from vllm import LLM, SamplingParams
 from prompt_templates import (
     get_prompt,
-    LLAMA_MODEL_NAME,
     GUIDELINES
 )
 from utils import read_yaml, read_file
 import torch
 
-LLAMA_DIR = os.path.join(os.environ["MODELS"], f"meta-llama/{LLAMA_MODEL_NAME}")
 GREEDY_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/greedy.yaml")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--input-file", type=str, default="")
-    parser.add_argument("-o", "--output-dir", type=str, default="")
-    parser.add_argument("-m", "--model-dir", type=str, default=LLAMA_DIR)
+    parser.add_argument("-i", "--input-file", type=str, required=True, help="Path to the input file.")
+    parser.add_argument("-o", "--output-dir", type=str, required=True, help="Path to the output directory.")
+    parser.add_argument("-m", "--model-dir", type=str, required=True, help="Path to the model directory.")
     parser.add_argument("-c", "--config-file", type=str, default=GREEDY_CONFIG)
     parser.add_argument("-l", "--target-lang", type=str, default="French")
     parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=["default"])

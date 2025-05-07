@@ -23,14 +23,15 @@ set -e
 EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049b
 CORPORA_CONFIG=$HOME/evaluation-challenges/src/llm/config/corpora.yaml
 
+TOWER=Unbabel/TowerInstruct-7B-v0.2
 GEMMA=google/gemma-2-9b-it
 LLAMA=meta-llama/Llama-3.1-8B-Instruct
 NLLB=facebook/nllb-200-3.3B
 
-ALL_MODELS=($NLLB $LLAMA $GEMMA)
-CORPORA=(rocsmt footweets mmtc pfsmb rocsmt-gpt footweets-gpt mmtc-gpt pfsmb-gpt)
+ALL_MODELS=($NLLB $LLAMA $GEMMA $TOWER)
+# CORPORA=(rocsmt footweets mmtc pfsmb rocsmt-gpt footweets-gpt mmtc-gpt pfsmb-gpt)
 # GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
-# CORPORA=(rocsmt footweets mmtc pfsmb)
+CORPORA=(rocsmt footweets mmtc pfsmb)
 GUIDELINES=(default rocsmt footweets mmtc pfsmb)
 
 echo "Models: ${ALL_MODELS[@]}"

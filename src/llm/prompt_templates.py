@@ -3,6 +3,7 @@
 NLLB_MODEL_NAME = "nllb-200-3.3B"
 LLAMA_MODEL_NAME = "Llama-3.1-8B-Instruct"
 GEMMA_MODEL_NAME = "gemma-2-9b-it"
+TOWER_MODEL_NAME = "TowerInstruct-7B-v0.2"
 GPT_MODEL_NAME = "gpt-4o-mini"
 
 GENERAL_GUIDELINES = "The text comes from user-generated content on social media. Preserve the meaning, style and sentiment of the original text."
@@ -109,9 +110,16 @@ def get_llama_template(user_message, system_message=TRANSLATION_SYSTEM_MESSAGE):
 
 def get_gemma_template(user_message, system_message=TRANSLATION_SYSTEM_MESSAGE):
     return (
-        "<start_of_turn>user\n"
+        f"<start_of_turn>user\n"
         f"{system_message} {user_message}<end_of_turn>\n"
-        "<start_of_turn>model\n"
+        f"<start_of_turn>model\n"
+    )
+
+def get_tower_template(user_message):
+    return (
+        f"<|im_start|>user\n"
+        f"{user_message}<|im_end|>\n"
+        f"<|im_start|>assistant\n"
     )
 
 def get_instruction(sentence, target_lang, normalization=False, standard=False, extra_guidelines=""):
@@ -141,4 +149,6 @@ def get_prompt(sentence, target_lang, normalization=False, model_name=LLAMA_MODE
         return get_gemma_template(prompt)
     if model_name == GPT_MODEL_NAME:
         return get_gpt_template(prompt)
+    if model_name == TOWER_MODEL_NAME:
+        return get_tower_template(prompt)
     return prompt
