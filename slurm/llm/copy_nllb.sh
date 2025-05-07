@@ -24,7 +24,7 @@ for i in {0..3}
 do
     OUTPUT_DIR=$TGT_EXPERIMENT_DIR/outputs/facebook/nllb-200-3.3B/${CORPUS[$i]}
     mkdir -p $OUTPUT_DIR
-    cp -v $SRC_EXPERIMENT_DIR/outputs/facebook/nllb-200-3.3B/${CORPUS[$i]}/${LANG_PAIR[$i]}/*.out $OUTPUT_DIR
+    cp -v $SRC_EXPERIMENT_DIR/outputs/facebook/nllb-200-3.3B/${CORPUS[$i]}/* $OUTPUT_DIR
 done
 
 echo "Done copying NLLB outputs to LLM experiment directory..."
