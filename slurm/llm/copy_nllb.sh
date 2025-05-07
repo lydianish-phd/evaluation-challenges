@@ -6,7 +6,7 @@ source $HOME/.bash_profile
 set -e
 
 NLLB_EXPERIMENT_DIR=$EXPERIMENTS/robust-embeddings/sonar/experiment_047k
-LLM_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049
+LLM_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049c
 
 CORPUS[0]=rocsmt
 LANG_PAIR[0]=eng_Latn-fra_Latn
