@@ -5,8 +5,8 @@ source $HOME/.bash_profile
 
 set -e
 
-NLLB_EXPERIMENT_DIR=$EXPERIMENTS/robust-embeddings/sonar/experiment_047k
-LLM_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049c
+SRC_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049c
+TGT_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049d
 
 CORPUS[0]=rocsmt
 LANG_PAIR[0]=eng_Latn-fra_Latn
@@ -22,9 +22,9 @@ LANG_PAIR[3]=fra_Latn-eng_Latn
 
 for i in {0..3}
 do
-    OUTPUT_DIR=$LLM_EXPERIMENT_DIR/outputs/facebook/nllb-200-3.3B/${CORPUS[$i]}
+    OUTPUT_DIR=$TGT_EXPERIMENT_DIR/outputs/facebook/nllb-200-3.3B/${CORPUS[$i]}
     mkdir -p $OUTPUT_DIR
-    cp -v $NLLB_EXPERIMENT_DIR/outputs/nllb3b/${CORPUS[$i]}/${LANG_PAIR[$i]}/*.out $OUTPUT_DIR
+    cp -v $SRC_EXPERIMENT_DIR/outputs/facebook/nllb-200-3.3B/${CORPUS[$i]}/${LANG_PAIR[$i]}/*.out $OUTPUT_DIR
 done
 
 echo "Done copying NLLB outputs to LLM experiment directory..."
