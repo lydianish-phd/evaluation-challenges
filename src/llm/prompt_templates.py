@@ -122,22 +122,24 @@ def get_tower_template(user_message):
         f"<|im_start|>assistant\n"
     )
 
-def get_instruction(sentence, target_lang, normalization=False, standard=False, extra_guidelines=""):
+def get_instruction(sentence, source_lang, target_lang, normalization=False, standard=False, extra_guidelines=""):
     if normalization:
         action = "Do lexical normalization on the text below in"
     else: 
-        action = "Translate the text below to"
+        action = f"Translate the text below from {source_lang} to"
     standardness_level = "standard " if standard else ""
     return (
         f"{action} {standardness_level}{target_lang}." +
         (f" {extra_guidelines} " if extra_guidelines else " ") +
-        f"{NORMALIZATION_OUTPUT_SAFEGUARDS if normalization else TRANSLATION_OUTPUT_SAFEGUARDS}:\n"
-        f"{sentence}"
+        f"{NORMALIZATION_OUTPUT_SAFEGUARDS if normalization else TRANSLATION_OUTPUT_SAFEGUARDS}\n"
+        f"{source_lang}:\n{sentence}\n"
+        f"{target_lang}:\n"
     )
 
-def get_prompt(sentence, target_lang, normalization=False, model_name=LLAMA_MODEL_NAME, guidelines="default"):
+def get_prompt(sentence, source_lang, target_lang, normalization=False, model_name=LLAMA_MODEL_NAME, guidelines="default"):
     prompt = get_instruction(
         sentence, 
+        source_lang,
         target_lang, 
         normalization=normalization, 
         standard=(guidelines == "standard"), 

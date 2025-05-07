@@ -28,7 +28,7 @@ if __name__ == "__main__":
 		for sentence in sentences:
 			completion = client.chat.completions.create(
 				model=GPT_MODEL_NAME,
-				messages=get_prompt(sentence, args.target_lang, normalization=True, model_name=args.model_name, guidelines=args.guidelines),
+				messages=get_prompt(sentence, args.target_lang, args.target_lang, normalization=True, model_name=args.model_name, guidelines=args.guidelines),
 				temperature=0, 
 				top_p=1,
 				max_tokens=512,

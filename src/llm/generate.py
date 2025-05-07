@@ -15,7 +15,8 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output-dir", type=str, required=True, help="Path to the output directory.")
     parser.add_argument("-m", "--model-dir", type=str, required=True, help="Path to the model directory.")
     parser.add_argument("-c", "--config-file", type=str, default=GREEDY_CONFIG)
-    parser.add_argument("-l", "--target-lang", type=str, default="French")
+    parser.add_argument("--source-lang", type=str, default="English")
+    parser.add_argument("--target-lang", type=str, default="French")
     parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=["default"])
     parser.add_argument("--overwrite", help="whether to overwrite existing output files", default=False, action="store_true")    
     args = parser.parse_args()
@@ -53,7 +54,7 @@ if __name__ == "__main__":
         
         print(f" - Generating translations with the {guideline} guidelines...")
 
-        prompts = [ get_prompt(sentence, args.target_lang, model_name=model_name, guidelines=guideline) for sentence in sentences ]
+        prompts = [ get_prompt(sentence, args.source_lang, args.target_lang, model_name=model_name, guidelines=guideline) for sentence in sentences ]
         outputs = llm.generate(prompts, sampling_params)
 
         with open(output_file, "w") as f:
