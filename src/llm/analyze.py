@@ -2,6 +2,7 @@ import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU
 
 from evaluate import (
+    TOWER,
     LLAMA,
     GEMMA,
     NLLB,
@@ -46,7 +47,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
     parser.add_argument("-c", "--corpora", type=str, nargs="+", default=["rocsmt", "footweets", "mmtc", "pfsmb"])
-    parser.add_argument("-m", "--models", type=str, nargs="+", default=[LLAMA, GEMMA])
+    parser.add_argument("-m", "--models", type=str, nargs="+", default=[LLAMA, GEMMA, TOWER])
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     args = parser.parse_args()
 
