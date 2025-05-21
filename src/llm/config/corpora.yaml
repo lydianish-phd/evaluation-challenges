@@ -1,31 +1,47 @@
 rocsmt:
   src_file_path: $DATASETS/rocsmt/test/raw.en.test
   ref_file_path: $DATASETS/rocsmt/test/ref.fr.test
+  src_lang: English
+  tgt_lang: French
 
 footweets:
   src_file_path: $DATASETS/footweets/detok.twitter.sent.en.txt
   ref_file_path: $DATASETS/footweets/detok.twitter.sent.de.txt
+  src_lang: English
+  tgt_lang: German
 
 mmtc:
   src_file_path: $DATASETS/mmtc/test.fr-en.fr
   ref_file_path: $DATASETS/mmtc/test.fr-en.en
+  src_lang: French
+  tgt_lang: English
 
 pfsmb:
   src_file_path: $DATASETS/pfsmb/test.fr
   ref_file_path: $DATASETS/pfsmb/test.en
+  src_lang: French
+  tgt_lang: English
 
 rocsmt-gpt:
   src_file_path: $DATASETS/rocsmt/test/raw.en.test
   ref_file_path: $DATASETS/rocsmt/test/gpt.ref.fr.test
+  src_lang: English
+  tgt_lang: French
 
 footweets-gpt:
   src_file_path: $DATASETS/footweets/detok.twitter.sent.en.txt
   ref_file_path: $DATASETS/footweets/gpt.detok.twitter.sent.de.txt
+  src_lang: English
+  tgt_lang: German
 
 mmtc-gpt:
   src_file_path: $DATASETS/mmtc/test.fr-en.fr
   ref_file_path: $DATASETS/mmtc/gpt.test.fr-en.en
+  src_lang: French
+  tgt_lang: English
 
 pfsmb-gpt:
   src_file_path: $DATASETS/pfsmb/test.fr
   ref_file_path: $DATASETS/pfsmb/gpt.test.en
+  src_lang: French
+  tgt_lang: English

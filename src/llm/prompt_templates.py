@@ -201,6 +201,36 @@ def get_refusals():
     other_auxiliaries = ["'m not going to"]
     other_verbs = ["translate", "be able to", "let you do this", "do this", "do that"]
     refusals += _combine_substrings([subject, other_auxiliaries, other_verbs])
+    refusals += [
+        "Je ne peux pas traduire",
+        "pas de texte à traduire",
+        "pas trouvé de texte à traduire",
+        "Ich habe keine Übersetzung",
+        "Ich habe keine Informationen",
+        "Ich habe keine Texte",
+        "Ich habe kein Text",
+        "Ich kann nicht übersetzen",
+        "Ich kann diese Anfrage nicht",
+        "Ich kann diese Anweisung nicht",
+        "Ich kann diese Anweisungen nicht",
+        "Ich kann diese Übersetzung nicht",
+        "Ich kann diese URL nicht",
+        "Ich kann keine Übersetzung",
+        "Ich kann keine Anfrage",
+        "Ich kann keine Antwort",
+        "Ich kann keine Informationen",
+        "Ich kann keine Anleitung",
+        "Ich kann keine Texte",
+        "Ich kann keine Webseiten",
+        "Ich kann keine externen Links",
+        "Ich bin nicht in der Lage",
+        "Ich habe keine Eingabe",
+        "Ich kann nicht dabei helfen",
+        "kann ich nicht dabei helfen",
+        "Text ist zu kurz",
+        "Kein Text ist vorhanden",
+        "es kein Text gibt"
+    ]
     return refusals
 
 def get_failures():
@@ -208,7 +238,10 @@ def get_failures():
         "I don't have a translation", 
         "it seems like there is no text provided",
         "I don't understand what you want me to translate",
-        "I don't understand what you are asking me to do"
+        "I don't understand what you are asking me to do",
+        "Je ne comprends pas le texte d'origine",
+        "Ich verstehe nicht, was ich übersetzen soll",
+        "Ich denke, dass es ein Fehler ist"
         ]
 
 def get_preambles(source_lang, target_lang):
@@ -223,16 +256,29 @@ def get_preambles(source_lang, target_lang):
         f"Translation in {target_lang}:", 
         "Translation:",
         f"{target_lang}:",
-        f"{source_lang}:",
         "I'll translate the text according to the provided guidelines.",
         "I'll translate the text according to the guidelines.",
+        "Traduction :",
+        "Traduction du texte :",
+        "Je traduis comme suit :",
+        "traduire ce qui est disponible :",
+        "traduction de ce qui est disponible :",
+        "je vais essayer de traduire la phrase :",
+        "devient :",
+        "Übersetzt:",
+        "Übersetzung:",
+        "Übersetzung des Textes:",
+        "Übersetzung des vorherigen Textes:"
     ]
     return preambles
 
 def get_explanations(guidelines):
     explanations = [
         "(Note:",
-        "Note:"
+        "Note:",
+        "Notez que",
+        "Le guide de traduction devrait que",
+        "1. Korrigieren Sie"
     ]
     guidelines_list = GUIDELINES_LISTS.get(guidelines, [])
     if guidelines_list:
@@ -242,21 +288,23 @@ def get_explanations(guidelines):
     return explanations
 
 def extract_translation(llm_output, source_lang, target_lang, guidelines):
-    preambles = get_preambles(source_lang, target_lang)
-    for preamble in preambles:
-        # case-insensitive search for the preamble
-        index = llm_output.lower().find(preamble.lower())
-        if index != -1:
-            return llm_output[index + len(preamble):].strip()
-    explanations = get_explanations(guidelines)
-    for explanation in explanations:
-        # case-sensitive search for the explanation
-        index = llm_output.find(explanation)
-        if index != -1:
-            return llm_output[:index].strip()
-    if _contains_any_substring(llm_output, get_refusals() + get_failures()):
-        return ""
-    return llm_output
+    text = llm_output.strip()
+    if text:
+        preambles = get_preambles(source_lang, target_lang)
+        for preamble in preambles:
+            # case-insensitive search for the preamble
+            index = text.lower().find(preamble.lower())
+            if index != -1:
+                return text[index + len(preamble):].strip()
+        explanations = get_explanations(guidelines)
+        for explanation in explanations:
+            # case-sensitive search for the explanation
+            index = text.find(explanation)
+            if index != -1:
+                return text[:index].strip()
+        if _contains_any_substring(text, get_refusals() + get_failures()):
+            return ""
+    return text
 
 
     
