@@ -67,7 +67,7 @@ if __name__ == "__main__":
             comet_scores = {}
             for guideline in ["baseline", "default", "rocsmt", "footweets", "mmtc", "pfsmb"]:
                 sys_model = NLLB if (guideline == "baseline") else model
-                guideline_ext = "out" if (guideline == "baseline") else  f"{guideline}.out"
+                guideline_ext = "out.postproc" if (guideline == "baseline") else  f"{guideline}.out.postproc"
                 sys_file = f"{args.input_dir}/outputs/{sys_model}/{corpus}/{src_file_name}.{guideline_ext}"
                 error_file = f"{args.input_dir}/outputs/{sys_model}/{corpus}/{src_file_name}.{guideline_ext}.errors.json"
                 comet_file  = f"{args.input_dir}/outputs/{sys_model}/{corpus}/{src_file_name}.{guideline_ext}.comet.json"
