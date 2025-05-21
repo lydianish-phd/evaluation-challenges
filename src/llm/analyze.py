@@ -82,15 +82,17 @@ if __name__ == "__main__":
             with open(f"{output_dir}/selected_examples.txt", "w") as f:
                 f.write(get_outputs(SELECTED_EXAMPLES[corpus], src, ref, sys, errors, comet_scores))
             
+            
             critical_errors = set()
             for guideline in errors:
                 if errors[guideline] is not None:
                     critical_errors = critical_errors.union(get_sentences_with_errors(errors[guideline], CRITICAL))
-            
-            print(f" - Collecting critical errors")
-            with open(f"{output_dir}/critical_errors.txt", "w") as f:
-                f.write(get_outputs(critical_errors, src, ref, sys, errors, comet_scores))
-                
+
+            if len(critical_errors) > 0:   
+                print(f" - Collecting critical errors")
+                with open(f"{output_dir}/critical_errors.txt", "w") as f:
+                    f.write(get_outputs(critical_errors, src, ref, sys, errors, comet_scores))
+                    
 
 
 

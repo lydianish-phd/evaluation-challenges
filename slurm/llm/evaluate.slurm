@@ -50,8 +50,8 @@ python $HOME/evaluation-challenges/src/llm/aggregate.py \
     --models ${ALL_MODELS[@]} \
     --corpora ${CORPORA[@]} 
 
-# python $HOME/evaluation-challenges/src/llm/analyze.py \
-#     --input-dir $EXPERIMENT_DIR 
+python $HOME/evaluation-challenges/src/llm/analyze.py \
+    --input-dir $EXPERIMENT_DIR 
 
 echo "Done..."
 
