@@ -21,10 +21,10 @@ def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CO
         for model in models:
             src_file_prefix = os.path.join(output_dir, model, corpus)
             if model == NLLB:
-                sys_files.append(os.path.join(src_file_prefix, f"{src_file_name}.out"))
+                sys_files.append(os.path.join(src_file_prefix, f"{src_file_name}.out.postproc"))
             else:
                 for guideline in guidelines:
-                    sys_files.append(os.path.join(src_file_prefix, f"{src_file_name}.{guideline}.out"))
+                    sys_files.append(os.path.join(src_file_prefix, f"{src_file_name}.{guideline}.out.postproc"))
         
         files.append((src_file, ref_file, sys_files))
     
@@ -124,9 +124,13 @@ if __name__ == "__main__":
             data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
             
             comet_output = comet_model.predict(data, batch_size=32, gpus=1)
-            scores["comet"] = comet_output.system_score
-            
-            write_json(comet_file, comet_output.scores)
+            comet_scores = comet_output.scores
+            # loop through sys_data and comet_scores while enumerating
+            for i, (sys, comet) in enumerate(zip(sys_data, comet_scores)):
+                if not sys:
+                    comet_scores[i] = 0
+            scores["comet"] = comet_scores.mean()            
+            write_json(comet_file, comet_scores)
 
             if args.xcomet:
                 print(f" - Computing xCOMET scores for {sys_file}")

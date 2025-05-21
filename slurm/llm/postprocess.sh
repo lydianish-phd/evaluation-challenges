@@ -2,7 +2,6 @@
 
 source $HOME/.bashrc 
 source $HOME/.bash_profile
-source activate sonar_env
 
 set -e
 
