@@ -3,10 +3,13 @@ from sacrebleu.metrics import BLEU, CHRF
 from comet import download_model, load_from_checkpoint
 from prompt_templates import GUIDELINES
 from utils import read_file, read_yaml, write_json
+import numpy as np
 
+TOWER = "Unbabel/TowerInstruct-7B-v0.2"
 LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
 GEMMA = "google/gemma-2-9b-it"
 NLLB = "facebook/nllb-200-3.3B"
+
 CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
 
 def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CONFIG):
@@ -76,7 +79,7 @@ def get_counts(errors):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--corpora", type=str, nargs="+", default=["rocsmt", "footweets", "mmtc", "pfsmb"])
-    parser.add_argument("--models", type=str, nargs="+", default=[LLAMA, GEMMA, NLLB])
+    parser.add_argument("--models", type=str, nargs="+", default=[TOWER, LLAMA, GEMMA, NLLB])
     parser.add_argument("--guidelines", type=str, nargs="+", default=["default"])
     parser.add_argument("--output-dir", type=str)
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
@@ -129,7 +132,7 @@ if __name__ == "__main__":
             for i, (sys, comet) in enumerate(zip(sys_data, comet_scores)):
                 if not sys:
                     comet_scores[i] = 0
-            scores["comet"] = comet_scores.mean()            
+            scores["comet"] = np.mean(comet_scores)            
             write_json(comet_file, comet_scores)
 
             if args.xcomet:
