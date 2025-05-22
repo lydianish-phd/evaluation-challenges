@@ -18,6 +18,7 @@ def aggregate_scores(input_dir, corpus, models):
                 scores.update(read_json(score_file))
                 
                 scores["comet"] *= 100
+                scores["cometkiwi"] *= 100
                 if "xcomet" in scores:
                     scores["xcomet"] *= 100
 
