@@ -39,8 +39,8 @@ def get_outputs(line_ids, src, ref, sys, errors, comet_scores):
             output += f"SYS ({guideline}): {sys[guideline][i]}\n"
             output += f"ERRORS ({guideline}): {errors[guideline][i]}\n" if errors[guideline] is not None else ""
             output += f"BLEU ({guideline}): {bleu_metric.sentence_score(sys[guideline][i], [ref[i]]).score}\n"
-            output += f"COMET ({guideline}): {comet_scores[guideline]["comet"][i]*100}\n"
-            output += f"COMET-KIWI ({guideline}): {comet_scores[guideline]["cometkiwi"][i]*100}\n"
+            output += f"COMET ({guideline}): {comet_scores[guideline]['comet'][i]*100}\n"
+            output += f"COMET-KIWI ({guideline}): {comet_scores[guideline]['cometkiwi'][i]*100}\n"
         output += "\n"
     return output
 
