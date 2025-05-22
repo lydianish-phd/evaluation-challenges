@@ -8,7 +8,7 @@ def aggregate_scores(input_dir, corpus, models):
     for model in models:
         model_output_dir = os.path.join(input_dir, "outputs", model, corpus)
         if os.path.isdir(model_output_dir):
-            scores_files = [f.path for f in os.scandir(model_output_dir) if f.name.endswith(".scores.json")]
+            scores_files = [f.path for f in os.scandir(model_output_dir) if f.name.endswith("postproc.scores.json")]
             for score_file in scores_files:
                 scores = {
                     "model": model,
