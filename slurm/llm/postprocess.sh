@@ -5,7 +5,7 @@ source $HOME/.bash_profile
 
 set -e
 
-EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049d
+EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049b
 CORPORA_CONFIG=$HOME/evaluation-challenges/src/llm/config/corpora.yaml
 
 TOWER=Unbabel/TowerInstruct-7B-v0.2
