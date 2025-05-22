@@ -252,6 +252,7 @@ def get_preambles(source_lang, target_lang):
         "Here's the translation:", 
         "Here's a translation of the text:", 
         f"Translation in {target_lang}:", 
+        "Translation provided:",
         "Translation:",
         f"{target_lang}:",
         "I'll translate the text according to the provided guidelines.",
