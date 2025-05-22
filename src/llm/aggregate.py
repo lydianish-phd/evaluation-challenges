@@ -17,10 +17,9 @@ def aggregate_scores(input_dir, corpus, models):
 
                 scores.update(read_json(score_file))
                 
-                scores["comet"] *= 100
-                scores["cometkiwi"] *= 100
-                if "xcomet" in scores:
-                    scores["xcomet"] *= 100
+                for key in scores:
+                    if "comet" in key:
+                       scores[key] *= 100
 
                 count_file = score_file.replace(".scores.json", ".counts.json")                
                 if os.path.exists(count_file):

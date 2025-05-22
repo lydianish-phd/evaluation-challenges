@@ -39,13 +39,16 @@ def set_comet_scores_to_zero_for_empty(sys_data, comet_scores):
             comet_scores[i] = 0
     return comet_scores
 
-def compute_comet_scores(scores, sys_data, comet_model, comet_file):
+def compute_comet_scores(sys_data, comet_model):
     comet_output = comet_model.predict(data, batch_size=32, gpus=1)
     comet_scores = comet_output.scores
-    comet_scores = set_comet_scores_to_zero_for_empty(sys_data, comet_scores)       
-    write_json(comet_file, comet_scores)
-    scores = np.mean(comet_scores)     
-    return scores
+    comet_scores = set_comet_scores_to_zero_for_empty(sys_data, comet_scores)         
+    return comet_scores
+
+def load_comet_model(model_name="Unbabel/wmt22-comet-da"):
+    comet_model_path = download_model(model_name)
+    comet_model = load_from_checkpoint(comet_model_path)
+    return comet_model
 
 MINOR = "minor"
 MAJOR = "major"
@@ -103,14 +106,11 @@ if __name__ == "__main__":
     print("Loading metric models: BLEU, ChrF++, COMET")
     bleu_model = BLEU()
     chrf_model = CHRF(word_order=2) # chrf++
-    comet_model_path = download_model("Unbabel/wmt22-comet-da")
-    comet_model = load_from_checkpoint(comet_model_path)
-    cometkiwi_model_path = download_model("Unbabel/wmt22-cometkiwi-da")
-    cometkiwi_model = load_from_checkpoint(cometkiwi_model_path)
+    comet_model = load_comet_model("Unbabel/wmt22-comet-da")
+    cometkiwi_model = load_comet_model("Unbabel/wmt22-cometkiwi-da")
     if args.xcomet:
         print("Loading xCOMET-XL model")
-        xcomet_model_path = download_model("Unbabel/XCOMET-XL")
-        xcomet_model = load_from_checkpoint(xcomet_model_path)
+        xcomet_model = load_comet_model("Unbabel/XCOMET-XL")
     
     files = get_files(args.corpora, args.models, args.guidelines, args.output_dir, args.corpora_config)
     
@@ -122,9 +122,7 @@ if __name__ == "__main__":
         
         for sys_file in sys_files:
             scores_file = f"{sys_file}.scores.json"
-            kiwi_scores_file = f"{sys_file}.kiwiscores.json"
             comet_file = f"{sys_file}.comet.json"
-            cometkiwi_file = f"{sys_file}.cometkiwi.json"
 
             if (not args.overwrite and 
                 os.path.exists(scores_file) and 
@@ -143,8 +141,12 @@ if __name__ == "__main__":
             
             data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
             
-            scores["comet"] = compute_comet_scores(scores, sys_data, comet_model, comet_file)
-            scores["cometkiwi"] = compute_comet_scores(scores, sys_data, cometkiwi_model, cometkiwi_file)
+            comet_scores = {}
+            comet_scores["comet"] = compute_comet_scores(sys_data, comet_model)
+            comet_scores["cometkiwi"] = compute_comet_scores(sys_data, cometkiwi_model)
+            scores["comet"] = np.mean(comet_scores["comet"])
+            scores["cometkiwi"] = np.mean(comet_scores["cometkiwi"])
+            write_json(comet_file, comet_scores)
 
             if args.xcomet:
                 print(f" - Computing xCOMET scores for {sys_file}")
