@@ -194,10 +194,9 @@ def _combine_substrings(substrings):
     return [' '.join(combo) for combo in product(*substrings)]
 
 def get_refusals():
-    subject = ["I", "I'm"]
-    auxiliaries = ["cannot", "can't", "am not able to", "not going to", "not able to"]
+    auxiliaries = ["I cannot", "I can't", "I am not able to", "I'm not able to", "I am not going to", "I'm not going to"]
     verbs = ["translate", "create", "fulfill", "execute", "be able to", "let you do this", "do this", "do that"]
-    refusals = _combine_substrings([subject, auxiliaries, verbs])
+    refusals = _combine_substrings([auxiliaries, verbs])
     refusals += [
         "Je ne peux pas traduire",
         "pas de texte à traduire",
@@ -236,6 +235,8 @@ def get_failures():
         "it seems like there is no text provided",
         "I don't understand what you want me to translate",
         "I don't understand what you are asking me to do",
+        "I don't see any text to translate",
+        "I couldn't find any text to translate"
         "Je ne comprends pas le texte d'origine",
         "Ich verstehe nicht, was ich übersetzen soll",
         "Ich denke, dass es ein Fehler ist"
