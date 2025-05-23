@@ -2,9 +2,22 @@ import os, argparse, yaml
 from prompt_templates import (
     extract_translation
 )
-from utils import read_yaml
+from utils import read_yaml, write_json
+import re
 
 CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
+
+def find_usernames_hashtags_urls(text):
+    # Regular expression patterns
+    url_pattern = r'https?://[^\s]+'              # Matches URLs starting with http or https
+    username_pattern = r'@\w+'                    # Matches usernames starting with '@' and followed by word characters
+    hashtag_pattern = r'#\w+'                     # Matches hashtags starting with '#' and followed by word characters
+
+    return {
+        "urls": re.findall(url_pattern, text), 
+        "usernames": re.findall(username_pattern, text), 
+        "hashtags": re.findall(hashtag_pattern, text)
+    }
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -45,3 +58,25 @@ if __name__ == "__main__":
             # print whether the output is different from the original output
             if diff:
                 print(f"  - postprocessed {guidelines} file is different from the original output.")
+            
+            stats_file = f"{output_file}.stats.json"
+            stats = {
+                "lines": 0,
+                "urls": 0,
+                "usernames": 0,
+                "hashtags": 0
+            }
+            with open(output_file, "r") as f:
+                for line in f:
+                    stats["lines"] += 1
+                    found = find_usernames_hashtags_urls(line)
+                    stats["urls"] += len(found["urls"])
+                    stats["usernames"] += len(found["usernames"])
+                    stats["hashtags"] += len(found["hashtags"])
+            
+            stats["urls_per_line"] = stats["urls"] / stats["lines"]
+            stats["usernames_per_line"] = stats["usernames"] / stats["lines"]
+            stats["hashtags_per_line"] = stats["hashtags"] / stats["lines"]
+            
+            # write the stats to a json file
+            write_json(stats_file, stats)

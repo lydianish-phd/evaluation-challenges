@@ -29,6 +29,11 @@ def aggregate_scores(input_dir, corpus, models):
                     counts = {k: v for k, v in counts.items() if isinstance(v, int)}
                     scores.update(counts)
                 
+                stats_file = score_file.replace(".scores.json", ".stats.json")
+                if os.path.exists(stats_file):
+                    stats = read_json(stats_file)
+                    scores.update(stats)
+                
                 all_scores.append(scores)
     
     return all_scores
