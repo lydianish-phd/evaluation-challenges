@@ -197,10 +197,9 @@ def _combine_substrings(substrings):
 
 def get_refusals():
     auxiliaries = ["I cannot", "I can't", "I am not able to", "I'm not able to", "I am not going to", "I'm not going to"]
-    verbs = ["translate", "create", "fulfill", "execute", "let you do this", "do this", "do that"]
+    verbs = ["translate", "create", "fulfill", "execute"]
     refusals = _combine_substrings([auxiliaries, verbs])
     refusals += [
-        "I am not going to be able to do it",
         "Je ne peux pas traduire",
         "pas de texte à traduire",
         "pas trouvé de texte à traduire",
