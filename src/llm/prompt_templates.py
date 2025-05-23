@@ -256,10 +256,11 @@ def get_failures():
         ]
 
 def get_preambles(source_lang, target_lang):
-    verbs = ["I can provide a translation of", "I can translate"]
-    objects = ["the given text", "the available text", "what is available"]
+    auxiliaries = ["I can", "I'll"]
+    verbs = ["provide a translation of", "provide a translation for", "translate"]
+    objects = ["the given text", "the available text", "what is available", "what's available"]
     punctuation = [":", "."]
-    preambles = _combine_substrings([verbs, objects, punctuation])
+    preambles = _combine_substrings([auxiliaries, verbs, objects, punctuation])
     preambles += [
         "Here is the translation:", 
         "Here's the translation:", 
