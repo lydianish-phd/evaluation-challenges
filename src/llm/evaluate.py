@@ -1,7 +1,7 @@
 import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU, CHRF
 from comet import download_model, load_from_checkpoint
-from prompt_templates import GUIDELINES
+from prompt_templates import REFUSAL_TO_TRANSLATE
 from utils import read_file, read_yaml, write_json
 import numpy as np
 
@@ -35,7 +35,7 @@ def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CO
 
 def set_comet_scores_to_zero_for_empty(sys_data, comet_scores):
     for i, sys in enumerate(sys_data):
-        if not sys:
+        if not sys or sys == REFUSAL_TO_TRANSLATE:
             comet_scores[i] = 0
     return comet_scores
 

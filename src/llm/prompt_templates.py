@@ -6,6 +6,8 @@ GEMMA_MODEL_NAME = "gemma-2-9b-it"
 TOWER_MODEL_NAME = "TowerInstruct-7B-v0.2"
 GPT_MODEL_NAME = "gpt-4o-mini"
 
+REFUSAL_TO_TRANSLATE = "REFUSAL TO TRANSLATE"
+
 GENERAL_GUIDELINES_LIST = [
     "The text comes from user-generated content on social media.",
     "Preserve the meaning, style and sentiment of the original text."
@@ -195,9 +197,10 @@ def _combine_substrings(substrings):
 
 def get_refusals():
     auxiliaries = ["I cannot", "I can't", "I am not able to", "I'm not able to", "I am not going to", "I'm not going to"]
-    verbs = ["translate", "create", "fulfill", "execute", "be able to", "let you do this", "do this", "do that"]
+    verbs = ["translate", "create", "fulfill", "execute", "let you do this", "do this", "do that"]
     refusals = _combine_substrings([auxiliaries, verbs])
     refusals += [
+        "I am not going to be able to do it",
         "Je ne peux pas traduire",
         "pas de texte à traduire",
         "pas trouvé de texte à traduire",
@@ -301,7 +304,9 @@ def extract_translation(llm_output, source_lang, target_lang, guidelines):
             index = text.find(explanation)
             if index != -1:
                 return text[:index].strip()
-        if _contains_any_substring(text, get_refusals() + get_failures()):
+        if _contains_any_substring(text, get_refusals()):
+            return REFUSAL_TO_TRANSLATE
+        if _contains_any_substring(text, get_failures()):
             return ""
     return text
 
