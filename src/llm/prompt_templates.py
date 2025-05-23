@@ -255,7 +255,7 @@ def get_failures():
         "es kein Text gibt",
         ]
 
-def get_preambles(target_lang):
+def get_preambles(source_lang, target_lang):
     auxiliaries = ["I can", "I'll"]
     verbs = ["provide a translation of", "provide a translation for", "translate"]
     objects = ["the given text", "the available text", "what is available", "what's available"]
@@ -266,6 +266,7 @@ def get_preambles(target_lang):
         "Here's the translation:", 
         "Here's a translation of the text:", 
         f"Translation in {target_lang}:", 
+        f"Translation in {target_lang}: {source_lang}:", 
         "Translation provided:",
         "Translation:",
         f"{target_lang}:",
@@ -292,7 +293,8 @@ def get_explanations(guidelines):
         "Notez que",
         "Le guide de traduction devrait que",
         "1. Korrigieren Sie",
-        "English: The first step is to identify the problem."
+        "English: The first step is to identify the problem.",
+        "English: The following is a translation of the text:"
     ]
     guidelines_list = GUIDELINES_LISTS.get(guidelines, [])
     if guidelines_list:
@@ -310,8 +312,9 @@ def extract_translation(llm_output, source_lang, target_lang, guidelines):
             index = text.lower().find(preamble.lower())
             if index != -1:
                 return text[index + len(preamble):].strip()
-        if text.startswith(f"{source_lang}:"):
-            return text[len(source_lang):].strip()
+        wrong_prefix = f"{source_lang}:" # found in some Tower outputs
+        if text.lower().startswith(wrong_prefix.lower()):
+            return text[len(wrong_prefix):].strip()
         explanations = get_explanations(guidelines)
         for explanation in explanations:
             # case-sensitive search for the explanation
