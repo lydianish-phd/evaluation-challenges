@@ -291,7 +291,8 @@ def get_explanations(guidelines):
         "Note:",
         "Notez que",
         "Le guide de traduction devrait que",
-        "1. Korrigieren Sie"
+        "1. Korrigieren Sie",
+        "English: The first step is to identify the problem."
     ]
     guidelines_list = GUIDELINES_LISTS.get(guidelines, [])
     if guidelines_list:
