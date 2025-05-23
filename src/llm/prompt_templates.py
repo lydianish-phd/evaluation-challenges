@@ -266,7 +266,7 @@ def get_preambles(source_lang, target_lang):
         "Here's the translation:", 
         "Here's a translation of the text:", 
         f"Translation in {target_lang}:", 
-        f"Translation in {target_lang}: {source_lang}:", 
+        f"Translation in {target_lang}: {source_lang}:", # faulty behaviour found in some Tower outputs
         "Translation provided:",
         "Translation:",
         f"{target_lang}:",
@@ -306,7 +306,7 @@ def get_explanations(guidelines):
 def extract_translation(llm_output, source_lang, target_lang, guidelines):
     text = llm_output.strip()
     if text:
-        preambles = get_preambles(target_lang)
+        preambles = get_preambles(source_lang, target_lang)
         for preamble in preambles:
             # case-insensitive search for the preamble
             index = text.lower().find(preamble.lower())
