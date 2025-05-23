@@ -196,17 +196,21 @@ def _combine_substrings(substrings):
     return [' '.join(combo) for combo in product(*substrings)]
 
 def get_refusals():
-    auxiliaries = ["I cannot", "I can't", "I am not able to", "I'm not able to", "I am not going to", "I'm not going to"]
+    auxiliaries = [
+        "I cannot", 
+        "I can't", 
+        "I can’t", 
+        "I am not able to", 
+        "I'm not able to", 
+        "I’m not able to", 
+        "I am not going to", 
+        "I'm not going to", 
+        "I’m not going to"
+    ]
     verbs = ["translate", "create", "fulfill", "execute"]
     refusals = _combine_substrings([auxiliaries, verbs])
     refusals += [
         "Je ne peux pas traduire",
-        "pas de texte à traduire",
-        "pas trouvé de texte à traduire",
-        "Ich habe keine Übersetzung",
-        "Ich habe keine Informationen",
-        "Ich habe keine Texte",
-        "Ich habe kein Text",
         "Ich kann nicht übersetzen",
         "Ich kann diese Anfrage nicht",
         "Ich kann diese Anweisung nicht",
@@ -225,9 +229,6 @@ def get_refusals():
         "Ich habe keine Eingabe",
         "Ich kann nicht dabei helfen",
         "kann ich nicht dabei helfen",
-        "Text ist zu kurz",
-        "Kein Text ist vorhanden",
-        "es kein Text gibt"
     ]
     return refusals
 
@@ -238,10 +239,19 @@ def get_failures():
         "I don't understand what you want me to translate",
         "I don't understand what you are asking me to do",
         "I don't see any text to translate",
-        "I couldn't find any text to translate"
+        "I couldn't find any text to translate",
+        "pas de texte à traduire",
+        "pas trouvé de texte à traduire",
         "Je ne comprends pas le texte d'origine",
+        "Ich habe keine Übersetzung",
+        "Ich habe keine Informationen",
+        "Ich habe keine Texte",
+        "Ich habe kein Text",
         "Ich verstehe nicht, was ich übersetzen soll",
-        "Ich denke, dass es ein Fehler ist"
+        "Ich denke, dass es ein Fehler ist",
+        "Text ist zu kurz",
+        "Kein Text ist vorhanden",
+        "es kein Text gibt",
         ]
 
 def get_preambles(source_lang, target_lang):
