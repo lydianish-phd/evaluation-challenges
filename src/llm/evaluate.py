@@ -11,6 +11,7 @@ GEMMA = "google/gemma-2-9b-it"
 NLLB = "facebook/nllb-200-3.3B"
 
 CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
+CORPORA = ["rocsmt", "footweets", "mmtc", "pfsmb"]
 
 def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CONFIG):
     config = read_yaml(corpora_config)
@@ -94,7 +95,7 @@ def get_counts(errors):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--corpora", type=str, nargs="+", default=["rocsmt", "footweets", "mmtc", "pfsmb"])
+    parser.add_argument("--corpora", type=str, nargs="+", default=CORPORA)
     parser.add_argument("--models", type=str, nargs="+", default=[TOWER, LLAMA, GEMMA, NLLB])
     parser.add_argument("--guidelines", type=str, nargs="+", default=["default"])
     parser.add_argument("--output-dir", type=str)

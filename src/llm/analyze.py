@@ -6,6 +6,7 @@ from evaluate import (
     LLAMA,
     GEMMA,
     NLLB,
+    CORPORA,
     CORPORA_CONFIG,
     CRITICAL,
     get_sentences_with_errors,
@@ -47,7 +48,7 @@ def get_outputs(line_ids, src, ref, sys, errors, comet_scores):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
-    parser.add_argument("-c", "--corpora", type=str, nargs="+", default=["rocsmt", "footweets", "mmtc", "pfsmb"])
+    parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
     parser.add_argument("-m", "--models", type=str, nargs="+", default=[LLAMA, GEMMA, TOWER])
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     args = parser.parse_args()
