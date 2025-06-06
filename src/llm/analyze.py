@@ -1,6 +1,6 @@
 import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU
-from utils import (
+from .utils import (
     read_file, 
     read_yaml, 
     read_json,
@@ -11,7 +11,7 @@ from utils import (
     CORPORA_CONFIG,
     CORPORA
 )
-from evaluate import (
+from .evaluate import (
     CRITICAL,
     get_sentences_with_errors,
 )

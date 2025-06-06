@@ -1,7 +1,7 @@
 import os, argparse
 from sacrebleu.metrics import BLEU, CHRF
-from utils import read_file, write_json, read_yaml
-from evaluate import (
+from .utils import read_file, write_json, read_yaml
+from .evaluate import (
     TOWER,
     LLAMA,
     GEMMA,
@@ -53,10 +53,10 @@ if __name__ == "__main__":
     
 
             # Write scores to JSON files
-            output_dir = f"{args.input_dir}/outputs_comparisons/{model}/{corpus}"
+            output_dir = f"{args.input_dir}/output_comparisons/{model}/{corpus}"
             os.makedirs(output_dir, exist_ok=True)
             bleu_output_file = os.path.join(output_dir, "bleu_scores.json")
-            chrf_output_file = os.path.join(output_dir, "chrf_scores.json")
+            chrf_output_file = os.path.join(output_dir, "chrf2_scores.json")
             write_json(bleu_output_file, bleu_scores)
             write_json(chrf_output_file, chrf_scores)
 

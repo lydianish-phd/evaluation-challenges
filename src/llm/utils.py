@@ -1,3 +1,5 @@
+# Description: Contains main constants and utility functions.
+
 import json, yaml, os
 
 TOWER = "Unbabel/TowerInstruct-7B-v0.2"

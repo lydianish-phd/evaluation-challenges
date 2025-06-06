@@ -1,6 +1,6 @@
 import os, argparse, json
 import pandas as pd
-from utils import read_json
+from .utils import read_json
 
 def aggregate_scores(input_dir, corpus, models):
     all_scores = []

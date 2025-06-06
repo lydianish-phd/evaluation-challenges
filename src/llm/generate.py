@@ -1,10 +1,10 @@
 import os, argparse, yaml
 from vllm import LLM, SamplingParams
-from prompt_templates import (
+from .prompt_templates import (
     get_prompt,
     GUIDELINES
 )
-from utils import read_yaml, read_file
+from .utils import read_yaml, read_file
 import torch
 
 GREEDY_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/greedy.yaml")

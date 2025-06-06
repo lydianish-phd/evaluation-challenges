@@ -1,6 +1,6 @@
 # Description: Contains the prompt templates for the LLM evaluation challenges.
 
-from utils import (
+from .utils import (
     TOWER,
     LLAMA,
     GEMMA,

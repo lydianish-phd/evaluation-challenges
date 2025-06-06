@@ -1,8 +1,8 @@
 import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU, CHRF
 from comet import download_model, load_from_checkpoint
-from prompt_templates import REFUSAL_TO_TRANSLATE
-from utils import (
+from .prompt_templates import REFUSAL_TO_TRANSLATE
+from .utils import (
     read_file, 
     read_yaml, 
     write_json,

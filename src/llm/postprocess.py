@@ -2,7 +2,7 @@ import os, argparse, yaml
 from prompt_templates import (
     extract_translation
 )
-from utils import read_yaml, write_json
+from .utils import read_yaml, write_json
 import re
 
 CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
