@@ -1,10 +1,12 @@
 # Description: Contains the prompt templates for the LLM evaluation challenges.
 
-NLLB_MODEL_NAME = "nllb-200-3.3B"
-LLAMA_MODEL_NAME = "Llama-3.1-8B-Instruct"
-GEMMA_MODEL_NAME = "gemma-2-9b-it"
-TOWER_MODEL_NAME = "TowerInstruct-7B-v0.2"
-GPT_MODEL_NAME = "gpt-4o-mini"
+from utils import (
+    TOWER,
+    LLAMA,
+    GEMMA,
+    GPT,
+    get_model_name
+)
 
 REFUSAL_TO_TRANSLATE = "REFUSAL TO TRANSLATE"
 
@@ -157,7 +159,7 @@ def get_instruction(sentence, source_lang, target_lang, normalization=False, sta
         f"Translation in {target_lang}:\n"
     )
 
-def get_prompt(sentence, source_lang, target_lang, normalization=False, model_name=LLAMA_MODEL_NAME, guidelines="default"):
+def get_prompt(sentence, source_lang, target_lang, normalization=False, model_name=get_model_name(LLAMA), guidelines="default"):
     prompt = get_instruction(
         sentence, 
         source_lang,
@@ -166,13 +168,13 @@ def get_prompt(sentence, source_lang, target_lang, normalization=False, model_na
         standard=(guidelines == "standard"), 
         extra_guidelines=GUIDELINES[guidelines]
     )
-    if model_name == LLAMA_MODEL_NAME:
+    if model_name == get_model_name(LLAMA):
         return get_llama_template(prompt)
-    if model_name == GEMMA_MODEL_NAME:
+    if model_name == get_model_name(GEMMA):
         return get_gemma_template(prompt)
-    if model_name == GPT_MODEL_NAME:
+    if model_name == get_model_name(GPT):
         return get_gpt_template(prompt)
-    if model_name == TOWER_MODEL_NAME:
+    if model_name == get_model_name(TOWER):
         return get_tower_template(prompt)
     return prompt
 

@@ -1,4 +1,25 @@
-import json, yaml
+import json, yaml, os
+
+TOWER = "Unbabel/TowerInstruct-7B-v0.2"
+LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
+GEMMA = "google/gemma-2-9b-it"
+NLLB = "facebook/nllb-200-3.3B"
+GPT = "gpt-4o-mini"
+
+CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
+CORPORA = ["rocsmt", "footweets", "mmtc", "pfsmb"]
+
+def get_model_name(full_name):
+    """
+    Extracts the model name from the full model identifier.
+    
+    args:
+        full_name: str, full model identifier
+    returns:
+        str, model name
+    """
+    return full_name.split("/")[-1]
+
 
 def read_file(file):
     """

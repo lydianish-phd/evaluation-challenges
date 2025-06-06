@@ -2,16 +2,19 @@ import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU, CHRF
 from comet import download_model, load_from_checkpoint
 from prompt_templates import REFUSAL_TO_TRANSLATE
-from utils import read_file, read_yaml, write_json
+from utils import (
+    read_file, 
+    read_yaml, 
+    write_json,
+    TOWER,
+    LLAMA,
+    GEMMA,
+    NLLB,
+    CORPORA_CONFIG,
+    CORPORA
+)
 import numpy as np
 
-TOWER = "Unbabel/TowerInstruct-7B-v0.2"
-LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
-GEMMA = "google/gemma-2-9b-it"
-NLLB = "facebook/nllb-200-3.3B"
-
-CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
-CORPORA = ["rocsmt", "footweets", "mmtc", "pfsmb"]
 
 def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CONFIG):
     config = read_yaml(corpora_config)
