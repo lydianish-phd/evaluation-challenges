@@ -1,0 +1,5 @@
+model,file,urls_per_line,usernames_per_line,hashtags_per_line
+facebook/nllb-200-3.3B,test.fr-en.fr.out.postproc,0.001,0.9115,0.0185
+meta-llama/Llama-3.1-8B-Instruct,test.fr-en.fr.default.out.postproc,0.0005,0.2735,0.0165
+google/gemma-2-9b-it,test.fr-en.fr.default.out.postproc,0.0005,0.112,0.012
+Unbabel/TowerInstruct-7B-v0.2,test.fr-en.fr.default.out.postproc,0.001,0.876,0.02

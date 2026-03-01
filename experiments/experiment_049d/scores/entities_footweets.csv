@@ -1,0 +1,5 @@
+model,file,urls_per_line,usernames_per_line,hashtags_per_line
+facebook/nllb-200-3.3B,detok.twitter.sent.en.txt.out.postproc,0.22625,0.1395,1.70875
+meta-llama/Llama-3.1-8B-Instruct,detok.twitter.sent.en.txt.default.out.postproc,0.27475,0.13875,1.9095
+google/gemma-2-9b-it,detok.twitter.sent.en.txt.default.out.postproc,0.286,0.1235,1.782
+Unbabel/TowerInstruct-7B-v0.2,detok.twitter.sent.en.txt.default.out.postproc,0.31475,0.14925,1.99125

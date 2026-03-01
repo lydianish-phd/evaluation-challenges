@@ -1,0 +1,5 @@
+model,file,urls_per_line,usernames_per_line,hashtags_per_line
+facebook/nllb-200-3.3B,raw.en.test.out.postproc,0.0,0.0,0.0005202913631633715
+eta-llama/Llama-3.1-8B-Instruct,raw.en.test.default.out.postproc,0.0,0.0,0.0005202913631633715
+google/gemma-2-9b-it,raw.en.test.default.out.postproc,0.0,0.0,0.0005202913631633715
+Unbabel/TowerInstruct-7B-v0.2,raw.en.test.default.out.postproc,0.0,0.0005202913631633715,0.0005202913631633715

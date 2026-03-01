@@ -1,0 +1,1292 @@
+Line 1
+SRC: Toujours pas retrouver le titre du son que j'ai en tête
+REF: Still haven't found the title of the song that I have in my head
+------------------------------
+SYS (baseline): Still can't find the title of the song I have in mind
+BLEU (baseline): 36.964463979752836
+COMET (baseline): 88.35623860359192
+COMET-KIWI (baseline): 82.88135528564453
+------------------------------
+SYS (default): Still can't find the title of the song I have in my head
+BLEU (default): 54.844980922047604
+COMET (default): 92.84091591835022
+COMET-KIWI (default): 82.742840051651
+------------------------------
+SYS (rocsmt): Still can't find the title of the song I have in my head
+BLEU (rocsmt): 54.844980922047604
+COMET (rocsmt): 92.84091591835022
+COMET-KIWI (rocsmt): 82.742840051651
+------------------------------
+SYS (footweets): Still can't find the title of the song I have in my head
+BLEU (footweets): 54.844980922047604
+COMET (footweets): 92.84091591835022
+COMET-KIWI (footweets): 82.742840051651
+------------------------------
+SYS (mmtc): Still can't find the title of the song I have in my head
+BLEU (mmtc): 54.844980922047604
+COMET (mmtc): 92.84091591835022
+COMET-KIWI (mmtc): 82.742840051651
+------------------------------
+SYS (pfsmb): Still can't find the title of the song I have in my head
+BLEU (pfsmb): 54.844980922047604
+COMET (pfsmb): 92.84091591835022
+COMET-KIWI (pfsmb): 82.742840051651
+
+Line 6
+SRC: @AkimBelliche n'empêche qui l'aurait cru y'a 3 ans qu'il évolue autant et qu'il en soit à ce niveau là ? Mm moi j'y aurais pas pensé
+REF: @AkimBelliche nevertheless who would have believed 3 years ago that it would evolve so much and that it would be at this level ? Mm me I wouldn't have thought of it
+------------------------------
+SYS (baseline): @AkimBelliche still who would have believed 3 years ago that he is evolving so much and that he is at this level? Mm I would not have thought of it
+BLEU (baseline): 48.16928058657238
+COMET (baseline): 80.48886060714722
+COMET-KIWI (baseline): 83.29688310623169
+------------------------------
+SYS (default): @AkimBelliche nobody would have believed it 3 years ago that he would evolve so much and be at this level? Even I wouldn't have thought so
+BLEU (default): 40.47060069537581
+COMET (default): 79.76258397102356
+COMET-KIWI (default): 80.56206703186035
+------------------------------
+SYS (rocsmt): @AkimBelliche  you wouldn't have believed it three years ago that he would evolve so much and be at this level? Me neither, I wouldn't have thought so
+BLEU (rocsmt): 35.074533474043456
+COMET (rocsmt): 78.35224866867065
+COMET-KIWI (rocsmt): 76.21792554855347
+------------------------------
+SYS (footweets): @AkimBelliche  you wouldn't have believed it 3 years ago that he would evolve so much and be at this level? Me neither I wouldn't have thought so
+BLEU (footweets): 38.647712587646055
+COMET (footweets): 78.3717691898346
+COMET-KIWI (footweets): 75.28446912765503
+------------------------------
+SYS (mmtc): @AkimBelliche  you wouldn't have believed it 3 years ago that he would evolve so much and be at this level? Me neither, I wouldn't have thought so
+BLEU (mmtc): 38.731120111118244
+COMET (mmtc): 78.62518429756165
+COMET-KIWI (mmtc): 76.2725830078125
+------------------------------
+SYS (pfsmb): @AkimBelliche  you wouldn't have believed it 3 years ago that he'd evolve so much and be at this level? Me neither I wouldn't have thought so
+BLEU (pfsmb): 34.87548366957711
+COMET (pfsmb): 77.98121571540833
+COMET-KIWI (pfsmb): 75.15056133270264
+
+Line 8
+SRC: @JulieTom62 même pas besoins de regardé le match 😂
+REF: @JulieTom62 don't even need to watch the match 😂
+------------------------------
+SYS (baseline): @JulieTom62 not even need to watch the match 😂
+BLEU (baseline): 70.71067811865478
+COMET (baseline): 92.70489811897278
+COMET-KIWI (baseline): 80.70474863052368
+------------------------------
+SYS (default): No need to even watch the game 😂
+BLEU (default): 13.462380890160203
+COMET (default): 78.43859791755676
+COMET-KIWI (default): 76.81756019592285
+------------------------------
+SYS (rocsmt): @JulieTom62 not even need to watch the game 😂
+BLEU (rocsmt): 46.713797772819994
+COMET (rocsmt): 91.36959910392761
+COMET-KIWI (rocsmt): 80.8372437953949
+------------------------------
+SYS (footweets): @JulieTom62 not even need to watch the game 😂
+BLEU (footweets): 46.713797772819994
+COMET (footweets): 91.36959910392761
+COMET-KIWI (footweets): 80.8372437953949
+------------------------------
+SYS (mmtc): @JulieTom62 no even need to watch the game 😂
+BLEU (mmtc): 46.713797772819994
+COMET (mmtc): 91.64213538169861
+COMET-KIWI (mmtc): 82.20645189285278
+------------------------------
+SYS (pfsmb): @JulieTom62 don't even need to watch the game 😂
+BLEU (pfsmb): 78.25422900366438
+COMET (pfsmb): 94.3506121635437
+COMET-KIWI (pfsmb): 81.93625807762146
+
+Line 82
+SRC: Moi je pensais être naïve mais la mdr
+REF: Me I thought I was naive but this lol
+------------------------------
+SYS (baseline): I thought I was naive but the DR
+BLEU (baseline): 60.042877124855906
+COMET (baseline): 76.91382765769958
+COMET-KIWI (baseline): 60.275816917419434
+------------------------------
+SYS (default): I thought I was naive but lol
+BLEU (default): 63.191456189157286
+COMET (default): 94.49359774589539
+COMET-KIWI (default): 77.05972194671631
+------------------------------
+SYS (rocsmt): I thought I was naive but lol
+BLEU (rocsmt): 63.191456189157286
+COMET (rocsmt): 94.49359774589539
+COMET-KIWI (rocsmt): 77.05976366996765
+------------------------------
+SYS (footweets): I thought I was naive but lol
+BLEU (footweets): 63.191456189157286
+COMET (footweets): 94.49359774589539
+COMET-KIWI (footweets): 77.05976366996765
+------------------------------
+SYS (mmtc): I thought I was naive but lol
+BLEU (mmtc): 63.191456189157286
+COMET (mmtc): 94.49359774589539
+COMET-KIWI (mmtc): 77.05976366996765
+------------------------------
+SYS (pfsmb): I thought I was naive but lol
+BLEU (pfsmb): 63.191456189157286
+COMET (pfsmb): 94.49359774589539
+COMET-KIWI (pfsmb): 77.05976366996765
+
+Line 96
+SRC: Srx pourquoi je dors pas ?
+REF: Srsly why am I not sleeping ?
+------------------------------
+SYS (baseline): Why can 't I sleep?
+BLEU (baseline): 8.170609724417774
+COMET (baseline): 84.63465571403503
+COMET-KIWI (baseline): 82.11536407470703
+------------------------------
+SYS (default): Why can't I sleep?
+BLEU (default): 8.51528917838043
+COMET (default): 85.16589999198914
+COMET-KIWI (default): 81.99823498725891
+------------------------------
+SYS (rocsmt): Seriously why am I not sleeping?
+BLEU (rocsmt): 80.91067115702207
+COMET (rocsmt): 92.75627732276917
+COMET-KIWI (rocsmt): 81.7523717880249
+------------------------------
+SYS (footweets): Sorry why am I not sleeping?
+BLEU (footweets): 80.91067115702207
+COMET (footweets): 87.71229386329651
+COMET-KIWI (footweets): 78.17188501358032
+------------------------------
+SYS (mmtc): Sorry why am I not sleeping?
+BLEU (mmtc): 80.91067115702207
+COMET (mmtc): 87.71229386329651
+COMET-KIWI (mmtc): 78.17188501358032
+------------------------------
+SYS (pfsmb): Seriously why am I not sleeping?
+BLEU (pfsmb): 80.91067115702207
+COMET (pfsmb): 92.75627732276917
+COMET-KIWI (pfsmb): 81.7523717880249
+
+Line 131
+SRC: POURQUOI JE N'ETUDIE PAS ???
+REF: WHY AM I NOT STUDYING ???
+------------------------------
+SYS (baseline): Why don't I study?
+BLEU (baseline): 6.9717291216921975
+COMET (baseline): 69.44275498390198
+COMET-KIWI (baseline): 87.32402324676514
+------------------------------
+SYS (default): Why am I not studying???
+BLEU (default): 22.089591134157878
+COMET (default): 82.35775828361511
+COMET-KIWI (default): 86.95389032363892
+------------------------------
+SYS (rocsmt): WHY AM I NOT STUDYING???
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 97.401362657547
+COMET-KIWI (rocsmt): 86.3703966140747
+------------------------------
+SYS (footweets): WHY AM I NOT STUDYING ???
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 98.04282784461975
+COMET-KIWI (footweets): 86.17422580718994
+------------------------------
+SYS (mmtc): WHY AM I NOT STUDYING ???
+BLEU (mmtc): 100.00000000000004
+COMET (mmtc): 98.04282784461975
+COMET-KIWI (mmtc): 86.17422580718994
+------------------------------
+SYS (pfsmb): WHY AM I NOT STUDYING ???
+BLEU (pfsmb): 100.00000000000004
+COMET (pfsmb): 98.04282784461975
+COMET-KIWI (pfsmb): 86.17422580718994
+
+Line 188
+SRC: Pourquoi chu pas douée
+REF: Why am I not gifted
+------------------------------
+SYS (baseline): Why didn't you get it?
+BLEU (baseline): 8.116697886877475
+COMET (baseline): 53.03778052330017
+COMET-KIWI (baseline): 49.13199245929718
+------------------------------
+SYS (default): Why am I not good at it
+BLEU (default): 41.11336169005198
+COMET (default): 68.92054080963135
+COMET-KIWI (default): 81.0225248336792
+------------------------------
+SYS (rocsmt): Why am I not good
+BLEU (rocsmt): 66.87403049764218
+COMET (rocsmt): 70.27884125709534
+COMET-KIWI (rocsmt): 78.44878435134888
+------------------------------
+SYS (footweets): Why am I not good
+BLEU (footweets): 66.87403049764218
+COMET (footweets): 70.27884125709534
+COMET-KIWI (footweets): 78.44878435134888
+------------------------------
+SYS (mmtc): Why am I not good
+BLEU (mmtc): 66.87403049764218
+COMET (mmtc): 70.27884125709534
+COMET-KIWI (mmtc): 78.44878435134888
+------------------------------
+SYS (pfsmb): Why am I not good
+BLEU (pfsmb): 66.87403049764218
+COMET (pfsmb): 70.27884125709534
+COMET-KIWI (pfsmb): 78.44878435134888
+
+Line 289
+SRC: Séjour à Kyoto 🇯🇵⛩
+REF: Stay in Kyoto 🇯🇵⛩
+------------------------------
+SYS (baseline): Staying in Kyoto
+BLEU (baseline): 39.43223765116288
+COMET (baseline): 77.85469889640808
+COMET-KIWI (baseline): 79.35076951980591
+------------------------------
+SYS (default): Stay in Kyoto 🇯🇵⛩
+BLEU (default): 100.00000000000004
+COMET (default): 99.12166595458984
+COMET-KIWI (default): 81.44503831863403
+------------------------------
+SYS (rocsmt): Stay in Kyoto 🇯🇵⛩
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 99.12166595458984
+COMET-KIWI (rocsmt): 81.44503831863403
+------------------------------
+SYS (footweets): Stay in Kyoto 🇯🇵⛩
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 99.12166595458984
+COMET-KIWI (footweets): 81.44503831863403
+------------------------------
+SYS (mmtc): Stay in Kyoto 🇯🇵⛩
+BLEU (mmtc): 100.00000000000004
+COMET (mmtc): 99.12166595458984
+COMET-KIWI (mmtc): 81.44503831863403
+------------------------------
+SYS (pfsmb): Stay in Kyoto 🇯🇵⛩
+BLEU (pfsmb): 100.00000000000004
+COMET (pfsmb): 99.12166595458984
+COMET-KIWI (pfsmb): 81.44503831863403
+
+Line 301
+SRC: @ifeelsobrad je m'en rappelle celui d'histoire de l'année passée je croyais trop l'avoir réussis j'avais répondu à tout j'ai MM pas eu-
+REF: @ifeelsobrad I remember the one from from history last year I really believed that I passed it I answered everything I didn't EVEN have-
+------------------------------
+SYS (baseline): @ifeelsobrad I remember the one from last year's story I thought I had too much success I had answered everything I didn't have MM-
+BLEU (baseline): 35.320351051052896
+COMET (baseline): 69.91602778434753
+COMET-KIWI (baseline): 63.87256383895874
+------------------------------
+SYS (default): I feel so bad, I remember the history one from last year, I thought I had done really well, I had answered everything, I didn't get-
+BLEU (default): 9.24272533424404
+COMET (default): 71.45776152610779
+COMET-KIWI (default): 61.588919162750244
+------------------------------
+SYS (rocsmt): @ifeelsobrad I remember the history one from last year I thought I had totally aced it I answered everything I didn't get
+BLEU (rocsmt): 41.163637617755036
+COMET (rocsmt): 70.58163285255432
+COMET-KIWI (rocsmt): 56.382763385772705
+------------------------------
+SYS (footweets): @ifeelsobrad I remember the history one from last year I thought I had totally aced it I answered everything I didn't get-
+BLEU (footweets): 41.163637617755036
+COMET (footweets): 71.57289385795593
+COMET-KIWI (footweets): 60.41264533996582
+------------------------------
+SYS (mmtc): @ifeelsobrad I remember that history one from last year I thought I had totally aced it I answered everything I didn't MM get-
+BLEU (mmtc): 36.831121112767484
+COMET (mmtc): 68.87006163597107
+COMET-KIWI (mmtc): 57.078129053115845
+------------------------------
+SYS (pfsmb): @ifeelsobrad I remember that history one from last year I thought I totally aced it I answered everything I didn't MM get-
+BLEU (pfsmb): 36.841823364959964
+COMET (pfsmb): 68.77655386924744
+COMET-KIWI (pfsmb): 58.57197642326355
+
+Line 332
+SRC: Pq jsuis déjà réveillée ptn
+REF: Why am I already awake damn
+------------------------------
+SYS (baseline): I'm already awake.
+BLEU (baseline): 19.37692912686648
+COMET (baseline): 80.94366192817688
+COMET-KIWI (baseline): 79.73303198814392
+------------------------------
+SYS (default): Why am I already awake damn it
+BLEU (default): 80.91067115702207
+COMET (default): 94.27743554115295
+COMET-KIWI (default): 65.8078670501709
+------------------------------
+SYS (rocsmt): Why am I already awake damn it
+BLEU (rocsmt): 80.91067115702207
+COMET (rocsmt): 94.27741169929504
+COMET-KIWI (rocsmt): 65.80784320831299
+------------------------------
+SYS (footweets): Why am I already awake damn it
+BLEU (footweets): 80.91067115702207
+COMET (footweets): 94.27741169929504
+COMET-KIWI (footweets): 65.80784320831299
+------------------------------
+SYS (mmtc): Why am I already awake damn it
+BLEU (mmtc): 80.91067115702207
+COMET (mmtc): 94.27741169929504
+COMET-KIWI (mmtc): 65.80784320831299
+------------------------------
+SYS (pfsmb): Why am I already awake damn it
+BLEU (pfsmb): 80.91067115702207
+COMET (pfsmb): 94.27741169929504
+COMET-KIWI (pfsmb): 65.80784320831299
+
+Line 441
+SRC: RT @DesR_Priest: M'en veux pas d'te faire du mal, j'm'en fais déjà à moi-même J'ai pas la foi, et des fois, le démon gagne sur moi-même
+REF: T @DesR_Priest: Don't blame me for hurting you, I'm already doing it to myself I don't have faith, and sometimes, the demon persuades me
+------------------------------
+SYS (baseline): RT @DesR_Priest: I don't want to hurt you, I'm already hurting myself I don't have faith, and sometimes the devil wins over me
+BLEU (baseline): 43.080711940184564
+COMET (baseline): 82.81015753746033
+COMET-KIWI (baseline): 81.67778253555298
+------------------------------
+SYS (default): Don't blame me for hurting you, I'm already hard on myself. I don't have faith, and sometimes the demon wins over me.
+BLEU (default): 46.43488207940962
+COMET (default): 76.14396214485168
+COMET-KIWI (default): 77.7555763721466
+------------------------------
+SYS (rocsmt): Don't blame me for hurting you, I'm already hard on myself. I don't have faith, and sometimes, the demon wins over me.
+BLEU (rocsmt): 54.981133994987935
+COMET (rocsmt): 76.47342681884766
+COMET-KIWI (rocsmt): 77.60467529296875
+------------------------------
+SYS (footweets): RT @DesR_Priest: Don't blame me for hurting you, I'm already hard on myself. I don't have faith, and sometimes, the demon wins over me.
+BLEU (footweets): 67.66871285089037
+COMET (footweets): 82.05546736717224
+COMET-KIWI (footweets): 78.93095016479492
+------------------------------
+SYS (mmtc): RT @DesR_Priest: Don't blame me for hurting you, I'm already hard on myself. I don't have faith, and sometimes, the demon wins over me.
+BLEU (mmtc): 67.66871285089037
+COMET (mmtc): 82.05546736717224
+COMET-KIWI (mmtc): 78.93095016479492
+------------------------------
+SYS (pfsmb): RT @DesR_Priest: Don't blame me for hurting you, I'm already hard on myself. I don't have faith, and sometimes, the demon wins over me.
+BLEU (pfsmb): 67.66871285089037
+COMET (pfsmb): 82.05546736717224
+COMET-KIWI (pfsmb): 78.93095016479492
+
+Line 457
+SRC: Pourquoi j'ai ouvert ma g ?
+REF: Why did I open my mouth ?
+------------------------------
+SYS (baseline): Why did I open my g?
+BLEU (baseline): 64.34588841607616
+COMET (baseline): 70.37147283554077
+COMET-KIWI (baseline): 71.76768779754639
+------------------------------
+SYS (default): Why did I open my g?
+BLEU (default): 64.34588841607616
+COMET (default): 70.37147283554077
+COMET-KIWI (default): 71.76768779754639
+------------------------------
+SYS (rocsmt): Why did I open my g?
+BLEU (rocsmt): 64.34588841607616
+COMET (rocsmt): 70.37147879600525
+COMET-KIWI (rocsmt): 71.76768779754639
+------------------------------
+SYS (footweets): Why did I open my g?
+BLEU (footweets): 64.34588841607616
+COMET (footweets): 70.37147879600525
+COMET-KIWI (footweets): 71.76768779754639
+------------------------------
+SYS (mmtc): Why did I open my g?
+BLEU (mmtc): 64.34588841607616
+COMET (mmtc): 70.37147879600525
+COMET-KIWI (mmtc): 71.76768779754639
+------------------------------
+SYS (pfsmb): Why did I open my g?
+BLEU (pfsmb): 64.34588841607616
+COMET (pfsmb): 70.37147283554077
+COMET-KIWI (pfsmb): 71.76768779754639
+
+Line 610
+SRC: @Fakyrom aw, j'espère oui❤️
+REF: @Fakyrom aw, I hope yes❤️
+------------------------------
+SYS (baseline): @Fakyrom aw, I hope so❤️
+BLEU (baseline): 80.91067115702207
+COMET (baseline): 96.97369337081909
+COMET-KIWI (baseline): 86.75028085708618
+------------------------------
+SYS (default): Aw, I hope so ❤️
+BLEU (default): 25.57539057896621
+COMET (default): 88.60148191452026
+COMET-KIWI (default): 80.40542006492615
+------------------------------
+SYS (rocsmt): @Fakyrom aw, I hope so❤️
+BLEU (rocsmt): 80.91067115702207
+COMET (rocsmt): 96.97369337081909
+COMET-KIWI (rocsmt): 86.75028085708618
+------------------------------
+SYS (footweets): @Fakyrom aw, I hope so❤️
+BLEU (footweets): 80.91067115702207
+COMET (footweets): 96.97369337081909
+COMET-KIWI (footweets): 86.75028085708618
+------------------------------
+SYS (mmtc): @Fakyrom aw, I hope so❤️
+BLEU (mmtc): 80.91067115702207
+COMET (mmtc): 96.97369337081909
+COMET-KIWI (mmtc): 86.75028085708618
+------------------------------
+SYS (pfsmb): @Fakyrom aw, I hope so❤️
+BLEU (pfsmb): 80.91067115702207
+COMET (pfsmb): 96.97369337081909
+COMET-KIWI (pfsmb): 86.75028085708618
+
+Line 621
+SRC: @emericktroupe tu devrais être habituer
+REF: @emericktroupe you should be accustomed
+------------------------------
+SYS (baseline): @emericktroupe you should be used to it
+BLEU (baseline): 51.697315395717055
+COMET (baseline): 93.04314851760864
+COMET-KIWI (baseline): 83.79315137863159
+------------------------------
+SYS (default): You should be used to it.
+BLEU (default): 13.134549472120788
+COMET (default): 69.66250538825989
+COMET-KIWI (default): 75.37094354629517
+------------------------------
+SYS (rocsmt): You should be used to it.
+BLEU (rocsmt): 13.134549472120788
+COMET (rocsmt): 69.66250538825989
+COMET-KIWI (rocsmt): 75.37097930908203
+------------------------------
+SYS (footweets): You should be used to it
+BLEU (footweets): 16.233395773754953
+COMET (footweets): 70.43759822845459
+COMET-KIWI (footweets): 76.75679326057434
+------------------------------
+SYS (mmtc): You should be used to it
+BLEU (mmtc): 16.233395773754953
+COMET (mmtc): 70.43762803077698
+COMET-KIWI (mmtc): 76.75679326057434
+------------------------------
+SYS (pfsmb): You should be used to it
+BLEU (pfsmb): 16.233395773754953
+COMET (pfsmb): 70.43762803077698
+COMET-KIWI (pfsmb): 76.75679326057434
+
+Line 667
+SRC: @LaVieEnChauve @court_gette j'espère C une perruque
+REF: @LaVieEnChauve @court_gette I hope It's a wig
+------------------------------
+SYS (baseline): @LaVieEnChauve @court_gette I hope it is a wig
+BLEU (baseline): 67.0422683816333
+COMET (baseline): 90.04328846931458
+COMET-KIWI (baseline): 75.75334310531616
+------------------------------
+SYS (default): I hope it's a wig
+BLEU (default): 9.100207816977878
+COMET (default): 49.18820261955261
+COMET-KIWI (default): 57.00230598449707
+------------------------------
+SYS (rocsmt): @LaVieEnChauve @court_gette I hope it's a wig
+BLEU (rocsmt): 74.19446627365011
+COMET (rocsmt): 92.5484299659729
+COMET-KIWI (rocsmt): 75.48924684524536
+------------------------------
+SYS (footweets): @LaVieEnChauve @court_gette I hope C is a wig
+BLEU (footweets): 67.0422683816333
+COMET (footweets): 87.49716877937317
+COMET-KIWI (footweets): 69.62435245513916
+------------------------------
+SYS (mmtc): @LaVieEnChauve @court_gette I hope it's a wig
+BLEU (mmtc): 74.19446627365011
+COMET (mmtc): 92.5484299659729
+COMET-KIWI (mmtc): 75.48924684524536
+------------------------------
+SYS (pfsmb): @LaVieEnChauve @court_gette I hope C is a wig
+BLEU (pfsmb): 67.0422683816333
+COMET (pfsmb): 87.49716877937317
+COMET-KIWI (pfsmb): 69.62435245513916
+
+Line 792
+SRC: Drake ma brisé le cœur brisé
+REF: Drake broke my heart broke
+------------------------------
+SYS (baseline): Drake broke my heart broke my heart
+BLEU (baseline): 61.47881529512643
+COMET (baseline): 81.84429407119751
+COMET-KIWI (baseline): 57.21193552017212
+------------------------------
+SYS (default): Drake broke my broken heart
+BLEU (default): 42.72870063962342
+COMET (default): 83.30597281455994
+COMET-KIWI (default): 78.82580161094666
+------------------------------
+SYS (rocsmt): Drake broke my broken heart
+BLEU (rocsmt): 42.72870063962342
+COMET (rocsmt): 83.30596089363098
+COMET-KIWI (rocsmt): 78.82580161094666
+------------------------------
+SYS (footweets): Drake broke my broken heart
+BLEU (footweets): 42.72870063962342
+COMET (footweets): 83.30596089363098
+COMET-KIWI (footweets): 78.82580161094666
+------------------------------
+SYS (mmtc): Drake broke my broken heart
+BLEU (mmtc): 42.72870063962342
+COMET (mmtc): 83.30596089363098
+COMET-KIWI (mmtc): 78.82580161094666
+------------------------------
+SYS (pfsmb): Drake broke my broken heart
+BLEU (pfsmb): 42.72870063962342
+COMET (pfsmb): 83.30596089363098
+COMET-KIWI (pfsmb): 78.82580161094666
+
+Line 801
+SRC: RT @baaar___: Léa jsais même pas où elle est
+REF: RT @baaar___: Léa I don't even know where she is
+------------------------------
+SYS (baseline): RT @baaar___: Lea doesn't even know where she is
+BLEU (baseline): 65.15132562023375
+COMET (baseline): 90.3705894947052
+COMET-KIWI (baseline): 85.24047136306763
+------------------------------
+SYS (default): RT @baaar___: Lea I don't even know where she is
+BLEU (default): 80.03203203845001
+COMET (default): 94.35479044914246
+COMET-KIWI (default): 85.49370765686035
+------------------------------
+SYS (rocsmt): RT @baaar___: Lea I don't even know where she is
+BLEU (rocsmt): 80.03203203845001
+COMET (rocsmt): 94.35479044914246
+COMET-KIWI (rocsmt): 85.49368977546692
+------------------------------
+SYS (footweets): RT @baaar___: Lea I don't even know where she is
+BLEU (footweets): 80.03203203845001
+COMET (footweets): 94.35479044914246
+COMET-KIWI (footweets): 85.49368977546692
+------------------------------
+SYS (mmtc): RT @baaar___: Lea I don't even know where she is
+BLEU (mmtc): 80.03203203845001
+COMET (mmtc): 94.35479044914246
+COMET-KIWI (mmtc): 85.49368977546692
+------------------------------
+SYS (pfsmb): RT @baaar___: Lea I don't even know where she is
+BLEU (pfsmb): 80.03203203845001
+COMET (pfsmb): 94.35479044914246
+COMET-KIWI (pfsmb): 85.49368977546692
+
+Line 891
+SRC: @petitsoleildu50 Yes si j'en trouve quelques autres :p
+REF: @petitsoleildu50 Yes if I find some others :p
+------------------------------
+SYS (baseline): @petitsoleildu50 Yes if I can find some more:p
+BLEU (baseline): 44.97332084013507
+COMET (baseline): 92.71427392959595
+COMET-KIWI (baseline): 84.57803130149841
+------------------------------
+SYS (default): Yes if I find a few more :p
+BLEU (default): 31.76215203205584
+COMET (default): 80.60415387153625
+COMET-KIWI (default): 80.15894889831543
+------------------------------
+SYS (rocsmt): @petitsoleildu50 Yes if I find a few more :p
+BLEU (rocsmt): 51.93071778680675
+COMET (rocsmt): 93.55434775352478
+COMET-KIWI (rocsmt): 84.64282751083374
+------------------------------
+SYS (footweets): @petitsoleildu50 Yes if I find a few more :p
+BLEU (footweets): 51.93071778680675
+COMET (footweets): 93.55434775352478
+COMET-KIWI (footweets): 84.64282751083374
+------------------------------
+SYS (mmtc): @petitsoleildu50 Yes if I find a few more :p
+BLEU (mmtc): 51.93071778680675
+COMET (mmtc): 93.55434775352478
+COMET-KIWI (mmtc): 84.64282751083374
+------------------------------
+SYS (pfsmb): @petitsoleildu50 Yes if I find a few more :p
+BLEU (pfsmb): 51.93071778680675
+COMET (pfsmb): 93.55434775352478
+COMET-KIWI (pfsmb): 84.64282751083374
+
+Line 976
+SRC: @african_gvrl viens bébé j'vais t'accueillir à bras ouvert
+REF: @african_gvrl come baby I will welcome you with open arms
+------------------------------
+SYS (baseline): @african_gvrl come baby I was going to welcome you with open arms
+BLEU (baseline): 64.75445426291287
+COMET (baseline): 93.54011416435242
+COMET-KIWI (baseline): 84.6998929977417
+------------------------------
+SYS (default): Come baby I'm going to welcome you with open arms
+BLEU (default): 30.457527453468213
+COMET (default): 79.64219450950623
+COMET-KIWI (default): 81.56044483184814
+------------------------------
+SYS (rocsmt): @african_gvrl come baby I'm going to welcome you with open arms
+BLEU (rocsmt): 61.62607099729587
+COMET (rocsmt): 94.61135268211365
+COMET-KIWI (rocsmt): 85.32832860946655
+------------------------------
+SYS (footweets): @african_gvrl come baby I'm going to welcome you with open arms
+BLEU (footweets): 61.62607099729587
+COMET (footweets): 94.61135268211365
+COMET-KIWI (footweets): 85.32832860946655
+------------------------------
+SYS (mmtc): @african_gvrl come baby I'm gonna welcome you with open arms
+BLEU (mmtc): 67.03420896351791
+COMET (mmtc): 95.08647918701172
+COMET-KIWI (mmtc): 85.95520257949829
+------------------------------
+SYS (pfsmb): @african_gvrl come baby I'm gonna welcome you with open arms
+BLEU (pfsmb): 67.03420896351791
+COMET (pfsmb): 95.08647918701172
+COMET-KIWI (pfsmb): 85.95520257949829
+
+Line 1008
+SRC: N'empêche la mère de yaniss c'est le 💯😂
+REF: Nevertheless yaniss's mother is the 💯😂
+------------------------------
+SYS (baseline): Still Yaniss's mother is the 😂
+BLEU (baseline): 30.213753973567677
+COMET (baseline): 75.67206621170044
+COMET-KIWI (baseline): 51.35820508003235
+------------------------------
+SYS (default): Anyway, Yaniss's mom is the 💯😂
+BLEU (default): 24.446151121745054
+COMET (default): 84.5099687576294
+COMET-KIWI (default): 66.40502214431763
+------------------------------
+SYS (rocsmt): Anyway, Yaniss's mom is the 💯😂
+BLEU (rocsmt): 24.446151121745054
+COMET (rocsmt): 84.5099687576294
+COMET-KIWI (rocsmt): 66.40504598617554
+------------------------------
+SYS (footweets): Even so, Yaniss's mom is the 💯😂
+BLEU (footweets): 20.556680845025987
+COMET (footweets): 84.17823910713196
+COMET-KIWI (footweets): 66.46710634231567
+------------------------------
+SYS (mmtc): Even so, Yaniss's mom is the 💯😂
+BLEU (mmtc): 20.556680845025987
+COMET (mmtc): 84.17823910713196
+COMET-KIWI (mmtc): 66.46710634231567
+------------------------------
+SYS (pfsmb): Even so, Yaniss's mom is the 💯😂
+BLEU (pfsmb): 20.556680845025987
+COMET (pfsmb): 84.17823910713196
+COMET-KIWI (pfsmb): 66.46710634231567
+
+Line 1035
+SRC: @xweirdygirl ouiiii je les aies vu en février et je les vois deux fois en août j'aime trop 😏
+REF: @xweirdygirl yessss I saw them in February and I see them two times in August I love them so much 😏
+------------------------------
+SYS (baseline): @xweirdygirl yesiii I saw them in February and I see them twice in August I love them too 😏
+BLEU (baseline): 56.502135357020975
+COMET (baseline): 89.64955806732178
+COMET-KIWI (baseline): 83.88940095901489
+------------------------------
+SYS (default): Yes I saw them in February and I'm seeing them twice in August I love it so much 😏
+BLEU (default): 38.69010882699973
+COMET (default): 81.94948434829712
+COMET-KIWI (default): 82.156240940094
+------------------------------
+SYS (rocsmt): @xweirdygirl yes I saw them in February and I see them twice in August I love them so much 😏
+BLEU (rocsmt): 70.72172847953277
+COMET (rocsmt): 91.94075465202332
+COMET-KIWI (rocsmt): 85.37095785140991
+------------------------------
+SYS (footweets): @xweirdygirl yessss I saw them in February and I see them twice in August I love them so much 😏
+BLEU (footweets): 82.5349877279405
+COMET (footweets): 93.20159554481506
+COMET-KIWI (footweets): 85.14959216117859
+------------------------------
+SYS (mmtc): @xweirdygirl yessss I saw them in February and I'm seeing them twice in August I love them so much 😏
+BLEU (mmtc): 68.65551222484392
+COMET (mmtc): 90.36789536476135
+COMET-KIWI (mmtc): 84.73296165466309
+------------------------------
+SYS (pfsmb): @xweirdygirl yessss I saw them in February and I'm seeing them twice in August I love them so much 😏
+BLEU (pfsmb): 68.65551222484392
+COMET (pfsmb): 90.36789536476135
+COMET-KIWI (pfsmb): 84.73296165466309
+
+Line 1179
+SRC: Mes yeux me brûlent fort fort
+REF: My eyes burn me hard hard
+------------------------------
+SYS (baseline): My eyes are burning so hot
+BLEU (baseline): 16.233395773754953
+COMET (baseline): 77.81943678855896
+COMET-KIWI (baseline): 81.74697756767273
+------------------------------
+SYS (default): My eyes burn very badly
+BLEU (default): 32.555630133216134
+COMET (default): 82.18472003936768
+COMET-KIWI (default): 86.40080690383911
+------------------------------
+SYS (rocsmt): My eyes burn really badly
+BLEU (rocsmt): 32.555630133216134
+COMET (rocsmt): 83.7697684764862
+COMET-KIWI (rocsmt): 86.33391261100769
+------------------------------
+SYS (footweets): My eyes burn really really hard
+BLEU (footweets): 32.46679154750991
+COMET (footweets): 90.43512344360352
+COMET-KIWI (footweets): 86.35921478271484
+------------------------------
+SYS (mmtc): My eyes burn really really hard
+BLEU (mmtc): 32.46679154750991
+COMET (mmtc): 90.43512344360352
+COMET-KIWI (mmtc): 86.35921478271484
+------------------------------
+SYS (pfsmb): My eyes are burning really really hard
+BLEU (pfsmb): 14.535768424205482
+COMET (pfsmb): 85.38987040519714
+COMET-KIWI (pfsmb): 85.36458611488342
+
+Line 1262
+SRC: Jusqu'à il a citer mon prénom
+REF: Until he mentioned my name
+------------------------------
+SYS (baseline): Until he said my name
+BLEU (baseline): 30.213753973567677
+COMET (baseline): 90.54839015007019
+COMET-KIWI (baseline): 75.42238235473633
+------------------------------
+SYS (default): Until he mentioned my first name
+BLEU (default): 53.7284965911771
+COMET (default): 94.02398467063904
+COMET-KIWI (default): 80.90678453445435
+------------------------------
+SYS (rocsmt): Until he said my name
+BLEU (rocsmt): 30.213753973567677
+COMET (rocsmt): 90.54843783378601
+COMET-KIWI (rocsmt): 75.42238235473633
+------------------------------
+SYS (footweets): Until he said my first name
+BLEU (footweets): 19.304869754804482
+COMET (footweets): 85.88086366653442
+COMET-KIWI (footweets): 78.15580368041992
+------------------------------
+SYS (mmtc): Until he mentioned my first name
+BLEU (mmtc): 53.7284965911771
+COMET (mmtc): 94.02398467063904
+COMET-KIWI (mmtc): 80.9069812297821
+------------------------------
+SYS (pfsmb): Until he said my name
+BLEU (pfsmb): 30.213753973567677
+COMET (pfsmb): 90.54843783378601
+COMET-KIWI (pfsmb): 75.42238235473633
+
+Line 1465
+SRC: @Lili_Drizzy j'avoue 😂😂 mais c'est drôle quand même ptdr😂
+REF: @Lili_Drizzy I admit 😂😂 but it's still funny lmao😂
+------------------------------
+SYS (baseline): @Lili_Drizzy I admit 😂😂 but it is still funny ptdr😂
+BLEU (baseline): 61.153805769010226
+COMET (baseline): 92.46196746826172
+COMET-KIWI (baseline): 82.13133215904236
+------------------------------
+SYS (default): I admit 😂😂 but it's still funny lol😂
+BLEU (default): 51.0029457493824
+COMET (default): 86.45151257514954
+COMET-KIWI (default): 81.55051469802856
+------------------------------
+SYS (rocsmt): @Lili_Drizzy I admit 😂😂 but it's still funny lmao😂
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 97.5587785243988
+COMET-KIWI (rocsmt): 83.72454047203064
+------------------------------
+SYS (footweets): @Lili_Drizzy I admit 😂😂 but it's still funny lmao😂
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 97.5587785243988
+COMET-KIWI (footweets): 83.72454047203064
+------------------------------
+SYS (mmtc): @Lili_Drizzy I admit 😂😂 but it's still funny lol😂
+BLEU (mmtc): 90.36020036098445
+COMET (mmtc): 95.57806253433228
+COMET-KIWI (mmtc): 85.60512065887451
+------------------------------
+SYS (pfsmb): @Lili_Drizzy I admit 😂😂 but it's still funny lol😂
+BLEU (pfsmb): 90.36020036098445
+COMET (pfsmb): 95.57806253433228
+COMET-KIWI (pfsmb): 85.60512065887451
+
+Line 1522
+SRC: J'ai mal au crâne j'ai eu un réveil casse couille
+REF: I have a headache, I had a pain in the ass of a wake-up
+------------------------------
+SYS (baseline): I got a headache. I had a wake-up call.
+BLEU (baseline): 14.253628894439755
+COMET (baseline): 71.69132828712463
+COMET-KIWI (baseline): 67.49875545501709
+------------------------------
+SYS (default): I have a headache, I had a rough awakening.
+BLEU (default): 47.17596134167723
+COMET (default): 72.70488739013672
+COMET-KIWI (default): 82.6154887676239
+------------------------------
+SYS (rocsmt): I have a headache I had a shitty wake-up
+BLEU (rocsmt): 22.915018394588095
+COMET (rocsmt): 73.01955819129944
+COMET-KIWI (rocsmt): 83.96692276000977
+------------------------------
+SYS (footweets): I have a headache I had a shitty wake-up
+BLEU (footweets): 22.915018394588095
+COMET (footweets): 73.01955819129944
+COMET-KIWI (footweets): 83.96692276000977
+------------------------------
+SYS (mmtc): I have a headache I had a shitty wake-up
+BLEU (mmtc): 22.915018394588095
+COMET (mmtc): 73.01955819129944
+COMET-KIWI (mmtc): 83.96692276000977
+------------------------------
+SYS (pfsmb): I have a headache I had a shitty wake-up
+BLEU (pfsmb): 22.915018394588095
+COMET (pfsmb): 73.01955819129944
+COMET-KIWI (pfsmb): 83.96692276000977
+
+Line 1627
+SRC: Le peno doit être retiré
+REF: The penalty should be removed
+------------------------------
+SYS (baseline): The pen must be withdrawn
+BLEU (baseline): 12.703318703865365
+COMET (baseline): 64.23404216766357
+COMET-KIWI (baseline): 53.97144556045532
+------------------------------
+SYS (default): The pen must be removed.
+BLEU (default): 17.965205598154213
+COMET (default): 71.69790863990784
+COMET-KIWI (default): 56.65879845619202
+------------------------------
+SYS (rocsmt): The penis must be removed
+BLEU (rocsmt): 23.643540225079384
+COMET (rocsmt): 61.91942095756531
+COMET-KIWI (rocsmt): 75.53660869598389
+------------------------------
+SYS (footweets): The penis must be removed
+BLEU (footweets): 23.643540225079384
+COMET (footweets): 61.91942095756531
+COMET-KIWI (footweets): 75.53660869598389
+------------------------------
+SYS (mmtc): The penis must be removed
+BLEU (mmtc): 23.643540225079384
+COMET (mmtc): 61.91942095756531
+COMET-KIWI (mmtc): 75.53660869598389
+------------------------------
+SYS (pfsmb): The penis must be removed
+BLEU (pfsmb): 23.643540225079384
+COMET (pfsmb): 61.91942095756531
+COMET-KIWI (pfsmb): 75.53660869598389
+
+Line 1643
+SRC: RT @CeliaCnv: même moi j'ai envie d'un mcdo
+REF: RT @CeliaCnv: even I want a McDonald's
+------------------------------
+SYS (baseline): RT @CeliaCnv: Even I want to have a mcdo
+BLEU (baseline): 28.997844147152072
+COMET (baseline): 82.97838568687439
+COMET-KIWI (baseline): 81.82733058929443
+------------------------------
+SYS (default): Even I am craving a McDonald's.
+BLEU (default): 10.923299908191149
+COMET (default): 67.12854504585266
+COMET-KIWI (default): 81.22395277023315
+------------------------------
+SYS (rocsmt): RT @CeliaCnv: even I want a McDonald's
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 97.2430408000946
+COMET-KIWI (rocsmt): 85.43676137924194
+------------------------------
+SYS (footweets): RT @CeliaCnv: even I want a McDonald's
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 97.2430408000946
+COMET-KIWI (footweets): 85.43676137924194
+------------------------------
+SYS (mmtc): RT @CeliaCnv: even I want a McDonald's
+BLEU (mmtc): 100.00000000000004
+COMET (mmtc): 97.2430408000946
+COMET-KIWI (mmtc): 85.43676137924194
+------------------------------
+SYS (pfsmb): RT @CeliaCnv: even I want a mcdonalds
+BLEU (pfsmb): 86.33400213704509
+COMET (pfsmb): 91.60135388374329
+COMET-KIWI (pfsmb): 83.4048330783844
+
+Line 1667
+SRC: RT @abracadaspliff: qui s'absente, ce fait oublier et aussitôt remplacé
+REF: RT @abracadaspliff: he who is away, is forgotten and immediately replaced
+------------------------------
+SYS (baseline): RT @abracadaspliff: who is absent, it makes you forget and immediately replaced
+BLEU (baseline): 27.22589423069701
+COMET (baseline): 79.54150438308716
+COMET-KIWI (baseline): 65.0769591331482
+------------------------------
+SYS (default): Absence makes the heart grow fonder.
+BLEU (default): 0.0
+COMET (default): 41.049131751060486
+COMET-KIWI (default): 29.903563857078552
+------------------------------
+SYS (rocsmt): RT @abracadaspliff: Absence makes the heart grow fonder and soon replaced
+BLEU (rocsmt): 19.81705142980857
+COMET (rocsmt): 63.81433606147766
+COMET-KIWI (rocsmt): 47.92887568473816
+------------------------------
+SYS (footweets): RT @abracadaspliff: Whoever is absent, is forgotten and immediately replaced
+BLEU (footweets): 54.844980922047604
+COMET (footweets): 91.96480512619019
+COMET-KIWI (footweets): 83.78440737724304
+------------------------------
+SYS (mmtc): RT @abracadaspliff: Out of sight, out of mind and soon replaced
+BLEU (mmtc): 20.448007360218387
+COMET (mmtc): 76.99823379516602
+COMET-KIWI (mmtc): 67.87207126617432
+------------------------------
+SYS (pfsmb): RT @abracadaspliff: Out of sight, out of mind and soon replaced
+BLEU (pfsmb): 20.448007360218387
+COMET (pfsmb): 76.99823379516602
+COMET-KIWI (pfsmb): 67.87207126617432
+
+Line 1712
+SRC: @claralh27 "sous c'est lumières"
+REF: @claralh27 "under its lights"
+------------------------------
+SYS (baseline): @claralh27 "under there are lights"
+BLEU (baseline): 41.11336169005198
+COMET (baseline): 88.24154734611511
+COMET-KIWI (baseline): 74.86640214920044
+------------------------------
+SYS (default): Under these lights
+BLEU (default): 7.253154775624655
+COMET (default): 60.27427315711975
+COMET-KIWI (default): 39.91338014602661
+------------------------------
+SYS (rocsmt): Under these lights
+BLEU (rocsmt): 7.253154775624655
+COMET (rocsmt): 60.274261236190796
+COMET-KIWI (rocsmt): 39.91338014602661
+------------------------------
+SYS (footweets): Under these lights
+BLEU (footweets): 7.253154775624655
+COMET (footweets): 60.274261236190796
+COMET-KIWI (footweets): 39.91338014602661
+------------------------------
+SYS (mmtc): Under these lights
+BLEU (mmtc): 7.253154775624655
+COMET (mmtc): 60.274261236190796
+COMET-KIWI (mmtc): 39.91338014602661
+------------------------------
+SYS (pfsmb): @claralh27 "under these lights"
+BLEU (pfsmb): 48.892302243490086
+COMET (pfsmb): 93.1136429309845
+COMET-KIWI (pfsmb): 58.64436626434326
+
+Line 1746
+SRC: @namelessis qu'elle chaîne????
+REF: @namelessis which channel????
+------------------------------
+SYS (baseline): @namelessis that she chains????
+BLEU (baseline): 35.49481056010054
+COMET (baseline): 57.66758322715759
+COMET-KIWI (baseline): 44.87541615962982
+------------------------------
+SYS (default): What channel is that?
+BLEU (default): 6.9717291216921975
+COMET (default): 74.73854422569275
+COMET-KIWI (default): 70.09657621383667
+------------------------------
+SYS (rocsmt): What channel????
+BLEU (rocsmt): 54.44460596606694
+COMET (rocsmt): 80.73376417160034
+COMET-KIWI (rocsmt): 73.81680011749268
+------------------------------
+SYS (footweets): @nameless what channel????
+BLEU (footweets): 54.10822690539397
+COMET (footweets): 95.4759955406189
+COMET-KIWI (footweets): 75.43994188308716
+------------------------------
+SYS (mmtc): What channel????
+BLEU (mmtc): 54.44460596606694
+COMET (mmtc): 80.73376417160034
+COMET-KIWI (mmtc): 73.81680011749268
+------------------------------
+SYS (pfsmb): What channel????
+BLEU (pfsmb): 54.44460596606694
+COMET (pfsmb): 80.73376417160034
+COMET-KIWI (pfsmb): 73.81680011749268
+
+Line 1763
+SRC: @CorentinThorel @BNucolas c'est quoi c'te bannière ?
+REF: @CorentinThorel @BNucolas what is this banner ?
+------------------------------
+SYS (baseline): @CorentinThorel @BNucolas what is this banner?
+BLEU (baseline): 100.00000000000004
+COMET (baseline): 96.54776453971863
+COMET-KIWI (baseline): 84.57522392272949
+------------------------------
+SYS (default): What is this banner?
+BLEU (default): 30.048438849849045
+COMET (default): 55.611974000930786
+COMET-KIWI (default): 76.43594741821289
+------------------------------
+SYS (rocsmt): What is this banner?
+BLEU (rocsmt): 30.048438849849045
+COMET (rocsmt): 55.61199188232422
+COMET-KIWI (rocsmt): 76.43598318099976
+------------------------------
+SYS (footweets): What is this banner?
+BLEU (footweets): 30.048438849849045
+COMET (footweets): 55.61199188232422
+COMET-KIWI (footweets): 76.43598318099976
+------------------------------
+SYS (mmtc): What is this banner?
+BLEU (mmtc): 30.048438849849045
+COMET (mmtc): 55.61199188232422
+COMET-KIWI (mmtc): 76.43598318099976
+------------------------------
+SYS (pfsmb): What's this banner?
+BLEU (pfsmb): 17.035677145427364
+COMET (pfsmb): 55.20825386047363
+COMET-KIWI (pfsmb): 74.89680647850037
+
+Line 1774
+SRC: @Amajuku putain j'avais pas pensé à saaa bien vue
+REF: @Amajuku Damn I had not thought of that, good eye
+------------------------------
+SYS (baseline): @Amajuku Fuck I didn't think of that good look
+BLEU (baseline): 10.753659580649467
+COMET (baseline): 70.89733481407166
+COMET-KIWI (baseline): 60.407066345214844
+------------------------------
+SYS (default): @Amajuku damn I hadn't thought of that well seen
+BLEU (default): 16.830386789031852
+COMET (default): 87.13627457618713
+COMET-KIWI (default): 62.94838786125183
+------------------------------
+SYS (rocsmt): @Amajuku damn I hadn't thought of that well seen
+BLEU (rocsmt): 16.830386789031852
+COMET (rocsmt): 87.13627457618713
+COMET-KIWI (rocsmt): 62.94838786125183
+------------------------------
+SYS (footweets): @Amajuku damn I hadn't thought of that well seen
+BLEU (footweets): 16.830386789031852
+COMET (footweets): 87.13627457618713
+COMET-KIWI (footweets): 62.94838786125183
+------------------------------
+SYS (mmtc): @Amajuku damn I hadn't thought of that well seen
+BLEU (mmtc): 16.830386789031852
+COMET (mmtc): 87.13627457618713
+COMET-KIWI (mmtc): 62.94838786125183
+------------------------------
+SYS (pfsmb): @Amajuku damn I hadn't thought of that well seen
+BLEU (pfsmb): 16.830386789031852
+COMET (pfsmb): 87.13627457618713
+COMET-KIWI (pfsmb): 62.94838786125183
+
+Line 1782
+SRC: Vous avez déjà dormi en cour
+REF: You already slept in class
+------------------------------
+SYS (baseline): You've slept in court before.
+BLEU (baseline): 16.233395773754953
+COMET (baseline): 68.65910291671753
+COMET-KIWI (baseline): 73.53264093399048
+------------------------------
+SYS (default): Have you ever slept in class?
+BLEU (default): 24.446151121745054
+COMET (default): 82.84007906913757
+COMET-KIWI (default): 84.29943323135376
+------------------------------
+SYS (rocsmt): Have you ever slept in class?
+BLEU (rocsmt): 24.446151121745054
+COMET (rocsmt): 82.84007906913757
+COMET-KIWI (rocsmt): 84.29943323135376
+------------------------------
+SYS (footweets): Have you ever slept in class
+BLEU (footweets): 30.213753973567677
+COMET (footweets): 84.8526656627655
+COMET-KIWI (footweets): 82.6388955116272
+------------------------------
+SYS (mmtc): Have you ever slept in class
+BLEU (mmtc): 30.213753973567677
+COMET (mmtc): 84.8526656627655
+COMET-KIWI (mmtc): 82.6388955116272
+------------------------------
+SYS (pfsmb): Have you ever slept in class
+BLEU (pfsmb): 30.213753973567677
+COMET (pfsmb): 84.8526656627655
+COMET-KIWI (pfsmb): 82.6388955116272
+
+Line 1862
+SRC: J'ai même pas eu de muguet ajd :(
+REF: I didn’t even have lily of the valleys today :(
+------------------------------
+SYS (baseline): I didn't even get a flower.
+BLEU (baseline): 4.410363736106611
+COMET (baseline): 59.562426805496216
+COMET-KIWI (baseline): 70.76689600944519
+------------------------------
+SYS (default): I didn't even have any lily of the valley today :(
+BLEU (default): 24.808415001701803
+COMET (default): 89.06753659248352
+COMET-KIWI (default): 55.086588859558105
+------------------------------
+SYS (rocsmt): I didn't even have any lily of the valley today :(
+BLEU (rocsmt): 24.808415001701803
+COMET (rocsmt): 89.06753659248352
+COMET-KIWI (rocsmt): 55.08660078048706
+------------------------------
+SYS (footweets): I didn't even have any lily of the valley today :(
+BLEU (footweets): 24.808415001701803
+COMET (footweets): 89.06753659248352
+COMET-KIWI (footweets): 55.08660078048706
+------------------------------
+SYS (mmtc): I didn't even have any lily of the valley today :(
+BLEU (mmtc): 24.808415001701803
+COMET (mmtc): 89.06753659248352
+COMET-KIWI (mmtc): 55.08660078048706
+------------------------------
+SYS (pfsmb): I didn't even have any lily of the valley today :(
+BLEU (pfsmb): 24.808415001701803
+COMET (pfsmb): 89.06753659248352
+COMET-KIWI (pfsmb): 55.08660078048706
+
+Line 1898
+SRC: Où est-ce que je pourrais acheter un hand spinner ?
+REF: Where could I buy a hand spinner ?
+------------------------------
+SYS (baseline): Where can I buy a hand spinner?
+BLEU (baseline): 70.71067811865478
+COMET (baseline): 96.03689312934875
+COMET-KIWI (baseline): 85.74299812316895
+------------------------------
+SYS (default): Where could I buy a hand spinner?
+BLEU (default): 100.00000000000004
+COMET (default): 97.01960682868958
+COMET-KIWI (default): 85.7136607170105
+------------------------------
+SYS (rocsmt): Where could I buy a hand spinner?
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 97.01960682868958
+COMET-KIWI (rocsmt): 85.7136607170105
+------------------------------
+SYS (footweets): Where could I buy a hand spinner?
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 97.01960682868958
+COMET-KIWI (footweets): 85.7136607170105
+------------------------------
+SYS (mmtc): Where could I buy a hand spinner?
+BLEU (mmtc): 100.00000000000004
+COMET (mmtc): 97.01960682868958
+COMET-KIWI (mmtc): 85.7136607170105
+------------------------------
+SYS (pfsmb): Where could I buy a hand spinner?
+BLEU (pfsmb): 100.00000000000004
+COMET (pfsmb): 97.01960682868958
+COMET-KIWI (pfsmb): 85.7136607170105
+
+Line 1935
+SRC: Parfois la question QU'EN PENSEZ VOUS ? devrait être QUAND PENSEZ VOUS ?
+REF: Sometimes the question WHAT DO YOU THINK ? should be WHEN DO YOU THINK ?
+------------------------------
+SYS (baseline): Sometimes the question should be WHEN do you think?
+BLEU (baseline): 16.55902007954154
+COMET (baseline): 63.76801133155823
+COMET-KIWI (baseline): 69.79268789291382
+------------------------------
+SYS (default): Sometimes the question "WHAT DO YOU THINK?" should be "WHEN DO YOU THINK?"
+BLEU (default): 47.20758038942709
+COMET (default): 88.53546977043152
+COMET-KIWI (default): 81.32275342941284
+------------------------------
+SYS (rocsmt): Sometimes the question QU'EN PENSEZ VOUS? should be WHEN DO YOU THINK?
+BLEU (rocsmt): 57.37774096497976
+COMET (rocsmt): 70.8578109741211
+COMET-KIWI (rocsmt): 79.89503145217896
+------------------------------
+SYS (footweets): Sometimes the question QU'EN PENSEZ VOUS? should be WHEN DO YOU THINK?
+BLEU (footweets): 57.37774096497976
+COMET (footweets): 70.8578109741211
+COMET-KIWI (footweets): 79.89503145217896
+------------------------------
+SYS (mmtc): Sometimes the question QU'EN PENSEZ VOUS? should be WHEN DO YOU THINK?
+BLEU (mmtc): 57.37774096497976
+COMET (mmtc): 70.8578109741211
+COMET-KIWI (mmtc): 79.89503145217896
+------------------------------
+SYS (pfsmb): Sometimes the question QU'EN PENSEZ VOUS ? should be QUAND PENSEZ VOUS ?
+BLEU (pfsmb): 17.23239541020183
+COMET (pfsmb): 53.70022654533386
+COMET-KIWI (pfsmb): 76.94403529167175
+
+Line 1963
+SRC: L'après-midi va être longue je pense ! #ARienFaire
+REF: The afternoon is going to be long I think ! #ARienFaire
+------------------------------
+SYS (baseline): The afternoon is going to be long I think! #ARienFaire
+BLEU (baseline): 100.00000000000004
+COMET (baseline): 95.08413672447205
+COMET-KIWI (baseline): 80.60407638549805
+------------------------------
+SYS (default): I think this afternoon is going to be long! #NothingToDo
+BLEU (default): 51.56626918239821
+COMET (default): 67.23374128341675
+COMET-KIWI (default): 80.32242059707642
+------------------------------
+SYS (rocsmt): I think this afternoon is going to be long! #ARienFaire
+BLEU (rocsmt): 57.73502691896257
+COMET (rocsmt): 92.2766387462616
+COMET-KIWI (rocsmt): 81.97576999664307
+------------------------------
+SYS (footweets): I think this afternoon is going to be long! #ARienFaire
+BLEU (footweets): 57.73502691896257
+COMET (footweets): 92.2766387462616
+COMET-KIWI (footweets): 81.97576999664307
+------------------------------
+SYS (mmtc): I think this afternoon is going to be long! #NothingToDo
+BLEU (mmtc): 51.56626918239821
+COMET (mmtc): 67.23374128341675
+COMET-KIWI (mmtc): 80.32242059707642
+------------------------------
+SYS (pfsmb): I think this afternoon is gonna be long! #ARienFaire
+BLEU (pfsmb): 21.080602422440936
+COMET (pfsmb): 90.4237687587738
+COMET-KIWI (pfsmb): 82.4392020702362
+
+Line 1999
+SRC: @bellastella007 @Lauuriie1996 @fidjislove Plus j'écoute cet album plus j'aime en live ça va être énorme ! #Selfocracy
+REF: @bellastella007 @Lauuriie1996 @fidjislove The more I listen to this album the more I like it live it's going to be huge ! #Selfocracy
+------------------------------
+SYS (baseline): @bellastella007 @Lauuriie1996 @fidjislove The more I listen to this album the more I like it live it's going to be huge! #Selfocracy
+BLEU (baseline): 100.00000000000004
+COMET (baseline): 92.96712279319763
+COMET-KIWI (baseline): 82.51143097877502
+------------------------------
+SYS (default): The more I listen to this album, the more I love it live, it's going to be huge!
+BLEU (default): 44.48582595542524
+COMET (default): 64.81134295463562
+COMET-KIWI (default): 74.52399730682373
+------------------------------
+SYS (rocsmt): The more I listen to this album, the more I love it live, it's going to be huge! #Selfocracy
+BLEU (rocsmt): 53.3659206999951
+COMET (rocsmt): 74.98360872268677
+COMET-KIWI (rocsmt): 79.12259101867676
+------------------------------
+SYS (footweets): The more I listen to this album, the more I love it live, it's going to be huge! #Selfocracy
+BLEU (footweets): 53.3659206999951
+COMET (footweets): 74.98360276222229
+COMET-KIWI (footweets): 79.12259101867676
+------------------------------
+SYS (mmtc): The more I listen to this album, the more I love it live, it's going to be huge! #Selfocracy
+BLEU (mmtc): 53.3659206999951
+COMET (mmtc): 74.98360276222229
+COMET-KIWI (mmtc): 79.12259101867676
+------------------------------
+SYS (pfsmb): The more I listen to this album the more I like it live it's gonna be huge! #Selfocracy
+BLEU (pfsmb): 60.45468449465888
+COMET (pfsmb): 75.25799870491028
+COMET-KIWI (pfsmb): 79.03057336807251
+
