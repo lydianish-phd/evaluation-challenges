@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import math
 import os
@@ -87,7 +88,6 @@ class MeanArrayMetric:
         return float(np.mean(self.system_scores[list(indices)]))
 
 
-
 def paired_ttest(x: np.ndarray, y: np.ndarray) -> Tuple[float, float]:
     if ttest_rel is not None:
         result = ttest_rel(x, y)
@@ -105,7 +105,6 @@ def paired_ttest(x: np.ndarray, y: np.ndarray) -> Tuple[float, float]:
     # Large-sample normal approximation as fallback.
     pvalue = math.erfc(abs(t_stat) / math.sqrt(2.0))
     return float(t_stat), float(pvalue)
-
 
 
 def bootstrap_compare(
@@ -157,19 +156,17 @@ def bootstrap_compare(
         "wins": int(np.sum(deltas > 0.0)),
         "losses": int(np.sum(deltas < 0.0)),
         "ties": int(np.sum(deltas == 0.0)),
-        "paired_ttest_statistic": float(t_stat),
-        "paired_ttest_pvalue": float(t_pvalue),
-        "bootstrap_pvalue_two_sided": float(two_sided_pvalue),
-        "bootstrap_prob_system_ge_baseline": float(p_ge_zero),
-        "bootstrap_prob_system_le_baseline": float(p_le_zero),
+        "paired_ttest": {
+            "statistic": float(t_stat),
+            "pvalue": float(t_pvalue),
+        },
+        "bootstrap": {
+            "pvalue_two_sided": float(two_sided_pvalue),
+            "prob_system_ge_baseline": float(p_ge_zero),
+            "prob_system_le_baseline": float(p_le_zero),
+        },
         "significant_95_ci": bool(ci_low > 0.0 or ci_high < 0.0),
     }
-
-
-
-def flatten_metric_results(metric_name: str, stats: Dict[str, float]) -> Dict[str, float]:
-    return {f"{metric_name}_{key}": value for key, value in stats.items()}
-
 
 
 def get_output_files(
@@ -211,7 +208,6 @@ def get_output_files(
     return items
 
 
-
 def build_metric(metric_name: str, ref_file: str, baseline_file: str, system_file: str):
     metric_name = metric_name.lower()
 
@@ -243,16 +239,14 @@ def build_metric(metric_name: str, ref_file: str, baseline_file: str, system_fil
     raise ValueError(f"Unsupported metric: {metric_name}")
 
 
-
-def update_stats_file(output_file: str, flat_results: Dict[str, float]) -> None:
-    stats_file = f"{output_file}.stats.json"
-    if os.path.exists(stats_file):
-        stats = read_json(stats_file)
+def update_scores_ci_file(output_file: str, metric_results: Dict[str, Dict]) -> None:
+    scores_ci_file = f"{output_file}.scores_ci.json"
+    if os.path.exists(scores_ci_file):
+        scores_ci = read_json(scores_ci_file)
     else:
-        stats = {}
-    stats.update(flat_results)
-    write_json(stats_file, stats)
-
+        scores_ci = {}
+    scores_ci.update(metric_results)
+    write_json(scores_ci_file, scores_ci)
 
 
 def main() -> None:
@@ -278,7 +272,7 @@ def main() -> None:
         "--overwrite",
         action="store_true",
         default=False,
-        help="Overwrite existing metric-specific entries in .stats.json",
+        help="Overwrite existing metric-specific entries in .scores_ci.json",
     )
     args = parser.parse_args()
 
@@ -303,13 +297,13 @@ def main() -> None:
             print(f"Skipping missing baseline output: {descriptor}")
             continue
 
-        stats_file = f"{system_file}.stats.json"
-        existing_stats = read_json(stats_file) if os.path.exists(stats_file) else {}
+        scores_ci_file = f"{system_file}.scores_ci.json"
+        existing_scores_ci = read_json(scores_ci_file) if os.path.exists(scores_ci_file) else {}
 
-        flat_results: Dict[str, float] = {}
+        metric_results: Dict[str, Dict] = {}
         for metric_name in args.metrics:
-            metric_prefix = f"{metric_name.lower()}_"
-            metric_already_present = any(k.startswith(metric_prefix) for k in existing_stats)
+            metric_key = metric_name.lower()
+            metric_already_present = metric_key in existing_scores_ci
             if metric_already_present and not args.overwrite:
                 print(f"Skipping existing {metric_name} stats for {descriptor}")
                 continue
@@ -324,20 +318,20 @@ def main() -> None:
                     sample_ratio=args.sample_ratio,
                     seed=args.seed,
                 )
-                flat_results.update(flatten_metric_results(metric_name.lower(), stats))
+                metric_results[metric_key] = stats
                 print(
                     f"Computed {metric_name} stats for {descriptor}: "
                     f"Δ={stats['delta_mean']:.4f}, "
-                    f"t-test p={stats['paired_ttest_pvalue']:.4g}, "
-                    f"bootstrap p={stats['bootstrap_pvalue_two_sided']:.4g}"
+                    f"t-test p={stats['paired_ttest']['pvalue']:.4g}, "
+                    f"bootstrap p={stats['bootstrap']['pvalue_two_sided']:.4g}"
                 )
             except FileNotFoundError as exc:
                 print(f"Skipping {metric_name} for {descriptor}: missing file ({exc})")
             except Exception as exc:
                 print(f"Failed on {metric_name} for {descriptor}: {exc}")
 
-        if flat_results:
-            update_stats_file(system_file, flat_results)
+        if metric_results:
+            update_scores_ci_file(system_file, metric_results)
 
 
 if __name__ == "__main__":
