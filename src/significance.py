@@ -24,7 +24,7 @@ from .utils import (
     read_file, 
     read_json, 
     write_json, 
-    read_yaml
+    read_config
 )
 
 GUIDELINES = ["default", "rocsmt", "footweets", "mmtc", "pfsmb"]
@@ -153,8 +153,9 @@ def get_output_files(
     guidelines: Iterable[str],
     input_dir: str,
     corpora_config: str,
+    data_dir: str,
 ) -> List[Dict[str, str]]:
-    config = read_yaml(corpora_config)
+    config = read_config(corpora_config, data_dir)
     items: List[Dict[str, str]] = []
 
     for corpus in corpora:
@@ -232,6 +233,7 @@ def main() -> None:
         description="Paired significance testing against the NLLB baseline using bootstrap resampling."
     )
     parser.add_argument("-i", "--input-dir", type=str, required=True, help="Path to experiment directory")
+    parser.add_argument("-d", "--data-dir", type=str, required=True, help="Parent directory containing all corpora files referenced in corpora.yaml")
     parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
     parser.add_argument("-m", "--models", type=str, nargs="+", default=[TOWER, LLAMA, GEMMA])
     parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=GUIDELINES)

@@ -1,47 +1,47 @@
 rocsmt:
-  src_file_path: data_extracted/rocsmt/test/raw.en.test
-  ref_file_path: data_extracted/rocsmt/test/ref.fr.test
+  src_file_path: rocsmt/test/raw.en.test
+  ref_file_path: rocsmt/test/ref.fr.test
   src_lang: English
   tgt_lang: French
 
 footweets:
-  src_file_path: data_extracted/footweets/detok.twitter.sent.en.txt
-  ref_file_path: data_extracted/footweets/detok.twitter.sent.de.txt
+  src_file_path: footweets/detok.twitter.sent.en.txt
+  ref_file_path: footweets/detok.twitter.sent.de.txt
   src_lang: English
   tgt_lang: German
 
 mmtc:
-  src_file_path: data_extracted/mmtc/test.fr-en.fr
-  ref_file_path: data_extracted/mmtc/test.fr-en.en
+  src_file_path: mmtc/test.fr-en.fr
+  ref_file_path: mmtc/test.fr-en.en
   src_lang: French
   tgt_lang: English
 
 pfsmb:
-  src_file_path: data_extracted/pfsmb/test.fr
-  ref_file_path: data_extracted/pfsmb/test.en
+  src_file_path: pfsmb/test.fr
+  ref_file_path: pfsmb/test.en
   src_lang: French
   tgt_lang: English
 
 rocsmt-gpt:
-  src_file_path: data_extracted/rocsmt/test/raw.en.test
-  ref_file_path: data_extracted/rocsmt/test/gpt.ref.fr.test
+  src_file_path: rocsmt/test/raw.en.test
+  ref_file_path: rocsmt/test/gpt.ref.fr.test
   src_lang: English
   tgt_lang: French
 
 footweets-gpt:
-  src_file_path: data_extracted/footweets/detok.twitter.sent.en.txt
-  ref_file_path: data_extracted/footweets/gpt.detok.twitter.sent.de.txt
+  src_file_path: footweets/detok.twitter.sent.en.txt
+  ref_file_path: footweets/gpt.detok.twitter.sent.de.txt
   src_lang: English
   tgt_lang: German
 
 mmtc-gpt:
-  src_file_path: data_extracted/mmtc/test.fr-en.fr
-  ref_file_path: data_extracted/mmtc/gpt.test.fr-en.en
+  src_file_path: mmtc/test.fr-en.fr
+  ref_file_path: mmtc/gpt.test.fr-en.en
   src_lang: French
   tgt_lang: English
 
 pfsmb-gpt:
-  src_file_path: data_extracted/pfsmb/test.fr
-  ref_file_path: data_extracted/pfsmb/gpt.test.en
+  src_file_path: pfsmb/test.fr
+  ref_file_path: pfsmb/gpt.test.en
   src_lang: French
   tgt_lang: English

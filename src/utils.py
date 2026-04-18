@@ -52,3 +52,26 @@ def write_json(file, data):
 def read_yaml(file):
     with open(file, "r") as f:
         return yaml.safe_load(f)
+
+def read_config(config_path: str, data_dir: str | None = None):
+    config = read_yaml(config_path)
+
+    if data_dir is None:
+        return config
+
+    data_dir = Path(data_dir)
+
+    resolved_config = {}
+    for corpus, corpus_cfg in config.items():
+        corpus_cfg = dict(corpus_cfg)
+
+        for key in ["src_file_path", "ref_file_path"]:
+            if key in corpus_cfg:
+                path = Path(corpus_cfg[key])
+                if not path.is_absolute():
+                    path = data_dir / path
+                corpus_cfg[key] = str(path)
+
+        resolved_config[corpus] = corpus_cfg
+
+    return resolved_config
