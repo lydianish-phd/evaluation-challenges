@@ -1,6 +1,7 @@
 # Description: Contains main constants and utility functions.
 
 import json, yaml, os
+from pathlib import Path
 
 TOWER = "Unbabel/TowerInstruct-7B-v0.2"
 LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
@@ -8,7 +9,14 @@ GEMMA = "google/gemma-2-9b-it"
 NLLB = "facebook/nllb-200-3.3B"
 GPT = "gpt-4o-mini"
 
-CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
+GREEDY_CONFIG = (
+    Path(__file__).resolve().parent / "config" / "greedy.yaml"
+)
+
+CORPORA_CONFIG = (
+    Path(__file__).resolve().parent / "config" / "corpora.yaml"
+)
+
 CORPORA = ["rocsmt", "footweets", "mmtc", "pfsmb"]
 
 def get_model_name(full_name):

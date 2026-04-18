@@ -4,6 +4,7 @@ import math
 import os
 from dataclasses import dataclass
 from typing import Callable, Dict, Iterable, List, Sequence, Tuple
+from pathlib import Path
 
 import numpy as np
 from sacrebleu.metrics import BLEU
@@ -13,43 +14,20 @@ try:
 except Exception:  # pragma: no cover
     ttest_rel = None
 
-
-TOWER = "Unbabel/TowerInstruct-7B-v0.2"
-LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
-GEMMA = "google/gemma-2-9b-it"
-NLLB = "facebook/nllb-200-3.3B"
-CORPORA = ["rocsmt", "footweets", "mmtc", "pfsmb"]
-DEFAULT_GUIDELINES = ["default", "rocsmt", "footweets", "mmtc", "pfsmb"]
-DEFAULT_CORPORA_CONFIG = os.path.join(
-    os.environ.get("HOME", ""), "evaluation-challenges/src/llm/config/corpora.yaml"
+from .utils import (
+    TOWER, 
+    LLAMA, 
+    GEMMA, 
+    NLLB, 
+    CORPORA_CONFIG, 
+    CORPORA, 
+    read_file, 
+    read_json, 
+    write_json, 
+    read_yaml
 )
 
-
-def read_file(path: str) -> List[str]:
-    with open(path, "r", encoding="utf-8") as handle:
-        return [line.strip() for line in handle]
-
-
-def read_json(path: str):
-    import json
-
-    with open(path, "r", encoding="utf-8") as handle:
-        return json.load(handle)
-
-
-def write_json(path: str, data) -> None:
-    import json
-
-    with open(path, "w", encoding="utf-8") as handle:
-        json.dump(data, handle, indent=4)
-
-
-def read_yaml(path: str):
-    import yaml
-
-    with open(path, "r", encoding="utf-8") as handle:
-        return yaml.safe_load(handle)
-
+GUIDELINES = ["default", "rocsmt", "footweets", "mmtc", "pfsmb"]
 
 @dataclass(frozen=True)
 class MetricSpec:
@@ -256,7 +234,7 @@ def main() -> None:
     parser.add_argument("-i", "--input-dir", type=str, required=True, help="Path to experiment directory")
     parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
     parser.add_argument("-m", "--models", type=str, nargs="+", default=[TOWER, LLAMA, GEMMA])
-    parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=DEFAULT_GUIDELINES)
+    parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=GUIDELINES)
     parser.add_argument(
         "--metrics",
         type=str,
@@ -267,7 +245,7 @@ def main() -> None:
     parser.add_argument("--n-splits", type=int, default=300)
     parser.add_argument("--sample-ratio", type=float, default=0.4)
     parser.add_argument("--seed", type=int, default=13)
-    parser.add_argument("--corpora-config", type=str, default=DEFAULT_CORPORA_CONFIG)
+    parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     parser.add_argument(
         "--overwrite",
         action="store_true",

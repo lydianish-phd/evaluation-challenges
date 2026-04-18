@@ -16,7 +16,7 @@ source activate sonar_env
 
 set -e
 
-# bash $HOME/evaluation-challenges/slurm/llm/normalize_src.sh $SLURM_ARRAY_TASK_ID
-bash $HOME/evaluation-challenges/slurm/llm/normalize_ref.sh $SLURM_ARRAY_TASK_ID
+# bash $HOME/evaluation-challenges/slurm/normalize_src.sh $SLURM_ARRAY_TASK_ID
+bash $HOME/evaluation-challenges/slurm/normalize_ref.sh $SLURM_ARRAY_TASK_ID
 
 echo "Done..."

@@ -45,7 +45,7 @@ SRC_LANG[7]=French
 
 
 echo "Normalizing ${CORPUS[$INDEX]}..."
-python $HOME/evaluation-challenges/src/llm/normalize-gpt.py \
+python $HOME/evaluation-challenges/src/normalize-gpt.py \
     --input-file ${REF_FILE[$INDEX]} \
     --target-lang ${SRC_LANG[$INDEX]} \
     --model-name $GPT 

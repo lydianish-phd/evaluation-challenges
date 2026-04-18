@@ -30,7 +30,7 @@ TGT_LANG[3]=English
 
 
 echo "Normalizing ${CORPUS[$INDEX]}..."
-python $HOME/evaluation-challenges/src/llm/normalize-gpt.py \
+python $HOME/evaluation-challenges/src/normalize-gpt.py \
     --input-file ${REF_FILE[$INDEX]} \
     --target-lang ${TGT_LANG[$INDEX]} \
     --model-name $GPT \

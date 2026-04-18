@@ -21,7 +21,7 @@ source $HOME/.bash_profile
 set -e
 
 EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049d
-CORPORA_CONFIG=$HOME/evaluation-challenges/src/llm/config/corpora.yaml
+CORPORA_CONFIG=$HOME/evaluation-challenges/src/config/corpora.yaml
 
 TOWER=Unbabel/TowerInstruct-7B-v0.2
 GEMMA=google/gemma-2-9b-it
@@ -38,19 +38,19 @@ echo "Models: ${ALL_MODELS[@]}"
 echo "Corpora: ${CORPORA[@]}"
 echo "Guidelines: ${GUIDELINES[@]}"
 
-python $HOME/evaluation-challenges/src/llm/evaluate.py \
+python $HOME/evaluation-challenges/src/evaluate.py \
     --output-dir $EXPERIMENT_DIR/outputs \
     --corpora-config $CORPORA_CONFIG \
     --models ${ALL_MODELS[@]} \
     --corpora ${CORPORA[@]} \
     --guidelines ${GUIDELINES[@]}
 
-python $HOME/evaluation-challenges/src/llm/aggregate.py \
+python $HOME/evaluation-challenges/src/aggregate.py \
     --input-dir $EXPERIMENT_DIR \
     --models ${ALL_MODELS[@]} \
     --corpora ${CORPORA[@]} 
 
-python $HOME/evaluation-challenges/src/llm/analyze.py \
+python $HOME/evaluation-challenges/src/analyze.py \
     --input-dir $EXPERIMENT_DIR 
 
 echo "Done..."

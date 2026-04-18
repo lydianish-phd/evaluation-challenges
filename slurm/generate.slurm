@@ -64,7 +64,7 @@ TGT_LANG[3]=English
 
 # GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
 GUIDELINES=(default rocsmt footweets mmtc pfsmb)
-CONFIG=$HOME/evaluation-challenges/src/llm/config/greedy.yaml
+CONFIG=$HOME/evaluation-challenges/src/config/greedy.yaml
 
 for i in {0..2}
 do
@@ -72,7 +72,7 @@ do
 
     OUTPUT_DIR=$EXPERIMENT_DIR/outputs/${MODEL_NAME[$i]}/${CORPUS[$SLURM_ARRAY_TASK_ID]}    
 
-    python $HOME/evaluation-challenges/src/llm/generate.py \
+    python $HOME/evaluation-challenges/src/generate.py \
         -i ${INPUT_FILE[$SLURM_ARRAY_TASK_ID]} \
         -o $OUTPUT_DIR \
         -m ${MODEL_DIR[$i]} \

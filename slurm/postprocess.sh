@@ -6,7 +6,7 @@ source $HOME/.bash_profile
 set -e
 
 EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049d
-CORPORA_CONFIG=$HOME/evaluation-challenges/src/llm/config/corpora.yaml
+CORPORA_CONFIG=$HOME/evaluation-challenges/src/config/corpora.yaml
 
 TOWER=Unbabel/TowerInstruct-7B-v0.2
 GEMMA=google/gemma-2-9b-it
@@ -22,7 +22,7 @@ for MODEL in ${ALL_MODELS[@]}; do
     OUTPUT_DIR=$EXPERIMENT_DIR/outputs/$MODEL
 
     # Postprocess the output
-    python3 $HOME/evaluation-challenges/src/llm/postprocess.py \
+    python3 $HOME/evaluation-challenges/src/postprocess.py \
         -o $OUTPUT_DIR \
         -c $CORPORA_CONFIG 
 

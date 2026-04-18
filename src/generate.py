@@ -4,10 +4,8 @@ from .prompt_templates import (
     get_prompt,
     GUIDELINES
 )
-from .utils import read_yaml, read_file
+from .utils import read_yaml, read_file, GREEDY_CONFIG
 import torch
-
-GREEDY_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/greedy.yaml")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

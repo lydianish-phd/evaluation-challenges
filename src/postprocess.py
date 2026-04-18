@@ -2,10 +2,9 @@ import os, argparse, yaml
 from prompt_templates import (
     extract_translation
 )
-from .utils import read_yaml, write_json
+from .utils import read_yaml, write_json, CORPORA_CONFIG
 import re
 
-CORPORA_CONFIG = os.path.join(os.environ["HOME"], "evaluation-challenges/src/llm/config/corpora.yaml")
 
 def find_usernames_hashtags_urls(text):
     # Regular expression patterns
