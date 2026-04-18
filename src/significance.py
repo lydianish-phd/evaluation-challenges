@@ -14,7 +14,7 @@ try:
 except Exception:  # pragma: no cover
     ttest_rel = None
 
-from .utils import (
+from utils import (
     TOWER, 
     LLAMA, 
     GEMMA, 
@@ -262,6 +262,7 @@ def main() -> None:
         guidelines=args.guidelines,
         input_dir=args.input_dir,
         corpora_config=args.corpora_config,
+        data_dir=args.data_dir,
     )
 
     for item in outputs:
