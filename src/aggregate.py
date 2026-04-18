@@ -6,7 +6,7 @@ from utils import (
     GEMMA,
     NLLB,
     TOWER,
-    CORPORA
+    CORPORA,
 )
 
 
@@ -77,7 +77,23 @@ def scale_comet_scores_ci(scores_ci: dict, scale: bool = True) -> dict:
     return scaled
 
 
-def aggregate_scores(input_dir, corpus, models, scale_comet=True):
+def get_scores_ci_path(score_file: str, comparison_mode: str) -> str:
+    if comparison_mode == "vs_nllb":
+        return score_file.replace(".scores.json", ".scores_ci.json")
+    if comparison_mode == "vs_default":
+        return score_file.replace(".scores.json", ".scores_ci_default.json")
+    raise ValueError(f"Unsupported comparison mode: {comparison_mode}")
+
+
+def get_output_csv_name(corpus: str, comparison_mode: str) -> str:
+    if comparison_mode == "vs_nllb":
+        return f"scores_ci_{corpus}.csv"
+    if comparison_mode == "vs_default":
+        return f"scores_ci_default_{corpus}.csv"
+    raise ValueError(f"Unsupported comparison mode: {comparison_mode}")
+
+
+def aggregate_scores(input_dir, corpus, models, scale_comet=True, comparison_mode="vs_nllb"):
     all_scores = []
 
     for model in models:
@@ -105,7 +121,7 @@ def aggregate_scores(input_dir, corpus, models, scale_comet=True):
                     counts = {k: v for k, v in counts.items() if isinstance(v, int)}
                     scores.update(counts)
 
-                scores_ci_file = score_file.replace(".scores.json", ".scores_ci.json")
+                scores_ci_file = get_scores_ci_path(score_file, comparison_mode)
                 if os.path.exists(scores_ci_file):
                     scores_ci = read_json(scores_ci_file)
                     scores_ci = scale_comet_scores_ci(scores_ci, scale=scale_comet)
@@ -122,6 +138,14 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
     parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
     parser.add_argument("-m", "--models", type=str, nargs="+", default=[NLLB, LLAMA, GEMMA, TOWER])
+
+    parser.add_argument(
+        "--comparison-mode",
+        type=str,
+        choices=["vs_nllb", "vs_default"],
+        default="vs_nllb",
+        help="Aggregate significance results either against NLLB or against each model's default configuration.",
+    )
 
     parser.add_argument(
         "--scale-comet",
@@ -142,7 +166,7 @@ if __name__ == "__main__":
     scores_dir = os.path.join(args.input_dir, "scores")
     os.makedirs(scores_dir, exist_ok=True)
 
-    print("Aggregating scores for:")
+    print(f"Aggregating scores for ({args.comparison_mode}):")
     for corpus in args.corpora:
         print(f" - {corpus}")
         scores = aggregate_scores(
@@ -150,7 +174,8 @@ if __name__ == "__main__":
             corpus,
             args.models,
             scale_comet=args.scale_comet,
+            comparison_mode=args.comparison_mode,
         )
-        scores_file = os.path.join(scores_dir, f"scores_ci_{corpus}.csv")
+        scores_file = os.path.join(scores_dir, get_output_csv_name(corpus, args.comparison_mode))
         scores_df = pd.DataFrame(scores)
         scores_df.to_csv(scores_file, index=False)

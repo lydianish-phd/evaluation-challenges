@@ -1,0 +1,22 @@
+\begin{tabular}{llcccc}
+\toprule
+Model & Guideline & RoCS-MT & FooTweets & MMTC & PFSMB \\
+\midrule
+NLLB-3B & — & 21.33 & 40.90 & 52.80 & 37.06 \\
+Llama-3.1-8B & None & 20.04\colorbox{myred}{$\downarrow$}* & 40.34\colorbox{myred}{$\downarrow$} & 38.64\colorbox{myred}{$\downarrow$}* & 39.17\colorbox{mygreen}{$\uparrow$} \\
+ & +RoCS-MT & 19.87\colorbox{myred}{$\downarrow$}* & 40.42\colorbox{myred}{$\downarrow$} & 46.15\colorbox{myred}{$\downarrow$}* & 40.58\colorbox{mygreen}{$\uparrow$}* \\
+ & +FooTweets & 19.35\colorbox{myred}{$\downarrow$}* & 41.16\colorbox{mygreen}{$\uparrow$} & 50.70\colorbox{myred}{$\downarrow$} & 41.85\colorbox{mygreen}{$\uparrow$} \\
+ & +MMTC & 19.14\colorbox{myred}{$\downarrow$}* & 40.24\colorbox{myred}{$\downarrow$} & 49.93\colorbox{myred}{$\downarrow$}* & 40.67\colorbox{mygreen}{$\uparrow$} \\
+ & +PFSMB & 19.40\colorbox{myred}{$\downarrow$}* & 41.65\colorbox{mygreen}{$\uparrow$} & 49.31\colorbox{myred}{$\downarrow$}* & 41.34\colorbox{mygreen}{$\uparrow$} \\
+Gemma-2-9B & None & 23.37\colorbox{mygreen}{$\uparrow$}* & 43.40\colorbox{mygreen}{$\uparrow$}* & 40.46\colorbox{myred}{$\downarrow$}* & 42.97\colorbox{mygreen}{$\uparrow$}* \\
+ & +RoCS-MT & 23.13\colorbox{mygreen}{$\uparrow$}* & 45.66\colorbox{mygreen}{$\uparrow$}* & 54.60\colorbox{mygreen}{$\uparrow$} & 43.87\colorbox{mygreen}{$\uparrow$}* \\
+ & +FooTweets & 22.09\colorbox{mygreen}{$\uparrow$} & 47.54\colorbox{mygreen}{$\uparrow$}* & 56.71\colorbox{mygreen}{$\uparrow$}* & 45.00\colorbox{mygreen}{$\uparrow$}* \\
+ & +MMTC & 22.30\colorbox{mygreen}{$\uparrow$} & 46.95\colorbox{mygreen}{$\uparrow$}* & 56.59\colorbox{mygreen}{$\uparrow$}* & 45.24\colorbox{mygreen}{$\uparrow$}* \\
+ & +PFSMB & 21.14\colorbox{myred}{$\downarrow$} & 49.29\colorbox{mygreen}{$\uparrow$}* & 54.48\colorbox{mygreen}{$\uparrow$} & 46.09\colorbox{mygreen}{$\uparrow$}* \\
+Tower-7B-v0.2 & None & 21.90\colorbox{mygreen}{$\uparrow$} & 46.07\colorbox{mygreen}{$\uparrow$}* & 59.78\colorbox{mygreen}{$\uparrow$}* & 45.59\colorbox{mygreen}{$\uparrow$}* \\
+ & +RoCS-MT & 21.69\colorbox{mygreen}{$\uparrow$} & 47.24\colorbox{mygreen}{$\uparrow$}* & 60.00\colorbox{mygreen}{$\uparrow$}* & 46.01\colorbox{mygreen}{$\uparrow$}* \\
+ & +FooTweets & 21.63\colorbox{mygreen}{$\uparrow$} & 47.45\colorbox{mygreen}{$\uparrow$}* & 60.08\colorbox{mygreen}{$\uparrow$}* & 46.09\colorbox{mygreen}{$\uparrow$}* \\
+ & +MMTC & 21.61\colorbox{mygreen}{$\uparrow$} & 47.43\colorbox{mygreen}{$\uparrow$}* & 60.18\colorbox{mygreen}{$\uparrow$}* & 45.69\colorbox{mygreen}{$\uparrow$}* \\
+ & +PFSMB & 21.62\colorbox{mygreen}{$\uparrow$} & 47.54\colorbox{mygreen}{$\uparrow$}* & 59.85\colorbox{mygreen}{$\uparrow$}* & 45.80\colorbox{mygreen}{$\uparrow$}* \\
+\bottomrule
+\end{tabular}

@@ -38,7 +38,7 @@ def read_file(file):
     returns:
         list of str, lines of file (stripped)
     """
-    with open(file, "r") as f:
+    with open(file, "r", encoding="utf-8") as f:
         return [line.strip() for line in f]
     
 def read_json(file):
@@ -46,11 +46,11 @@ def read_json(file):
         return json.load(f)
 
 def write_json(file, data):
-    with open(file, "w") as f:
+    with open(file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
 
 def read_yaml(file):
-    with open(file, "r") as f:
+    with open(file, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 def read_config(config_path: str, data_dir: str | None = None):

@@ -4,7 +4,6 @@ import math
 import os
 from dataclasses import dataclass
 from typing import Callable, Dict, Iterable, List, Sequence, Tuple
-from pathlib import Path
 
 import numpy as np
 from sacrebleu.metrics import BLEU
@@ -15,19 +14,20 @@ except Exception:  # pragma: no cover
     ttest_rel = None
 
 from utils import (
-    TOWER, 
-    LLAMA, 
-    GEMMA, 
-    NLLB, 
-    CORPORA_CONFIG, 
-    CORPORA, 
-    read_file, 
-    read_json, 
-    write_json, 
-    read_config
+    TOWER,
+    LLAMA,
+    GEMMA,
+    NLLB,
+    CORPORA_CONFIG,
+    CORPORA,
+    read_file,
+    read_json,
+    write_json,
+    read_config,
 )
 
 GUIDELINES = ["default", "rocsmt", "footweets", "mmtc", "pfsmb"]
+
 
 @dataclass(frozen=True)
 class MetricSpec:
@@ -80,7 +80,6 @@ def paired_ttest(x: np.ndarray, y: np.ndarray) -> Tuple[float, float]:
     if std == 0.0:
         return float("inf") if mean != 0 else 0.0, 0.0 if mean != 0 else 1.0
     t_stat = mean / (std / math.sqrt(n))
-    # Large-sample normal approximation as fallback.
     pvalue = math.erfc(abs(t_stat) / math.sqrt(2.0))
     return float(t_stat), float(pvalue)
 
@@ -153,7 +152,8 @@ def get_output_files(
     guidelines: Iterable[str],
     input_dir: str,
     corpora_config: str,
-    data_dir: str,
+    data_dir: str = None,
+    comparison_mode: str = "vs_nllb",
 ) -> List[Dict[str, str]]:
     config = read_config(corpora_config, data_dir)
     items: List[Dict[str, str]] = []
@@ -162,11 +162,17 @@ def get_output_files(
         src_file = config[corpus]["src_file_path"]
         ref_file = config[corpus]["ref_file_path"]
         src_file_name = os.path.basename(src_file)
-        baseline_file = os.path.join(
-            input_dir, "outputs", NLLB, corpus, f"{src_file_name}.out.postproc"
-        )
+
         for model in models:
+            # NLLB is the reference only; do not run within-model comparisons for it
+            if comparison_mode == "vs_default" and model == NLLB:
+                continue
+
             for guideline in guidelines:
+                # In within-model mode, default is the baseline and should not be compared to itself
+                if comparison_mode == "vs_default" and guideline == "default":
+                    continue
+
                 system_file = os.path.join(
                     input_dir,
                     "outputs",
@@ -174,6 +180,26 @@ def get_output_files(
                     corpus,
                     f"{src_file_name}.{guideline}.out.postproc",
                 )
+
+                if comparison_mode == "vs_nllb":
+                    baseline_file = os.path.join(
+                        input_dir,
+                        "outputs",
+                        NLLB,
+                        corpus,
+                        f"{src_file_name}.out.postproc",
+                    )
+                elif comparison_mode == "vs_default":
+                    baseline_file = os.path.join(
+                        input_dir,
+                        "outputs",
+                        model,
+                        corpus,
+                        f"{src_file_name}.default.out.postproc",
+                    )
+                else:
+                    raise ValueError(f"Unsupported comparison mode: {comparison_mode}")
+
                 items.append(
                     {
                         "corpus": corpus,
@@ -182,8 +208,10 @@ def get_output_files(
                         "ref_file": ref_file,
                         "baseline_file": baseline_file,
                         "system_file": system_file,
+                        "comparison_mode": comparison_mode,
                     }
                 )
+
     return items
 
 
@@ -218,8 +246,16 @@ def build_metric(metric_name: str, ref_file: str, baseline_file: str, system_fil
     raise ValueError(f"Unsupported metric: {metric_name}")
 
 
-def update_scores_ci_file(output_file: str, metric_results: Dict[str, Dict]) -> None:
-    scores_ci_file = f"{output_file}.scores_ci.json"
+def get_scores_ci_path(system_file: str, comparison_mode: str) -> str:
+    if comparison_mode == "vs_nllb":
+        return f"{system_file}.scores_ci.json"
+    if comparison_mode == "vs_default":
+        return f"{system_file}.scores_ci_default.json"
+    raise ValueError(f"Unsupported comparison mode: {comparison_mode}")
+
+
+def update_scores_ci_file(output_file: str, metric_results: Dict[str, Dict], comparison_mode: str) -> None:
+    scores_ci_file = get_scores_ci_path(output_file, comparison_mode)
     if os.path.exists(scores_ci_file):
         scores_ci = read_json(scores_ci_file)
     else:
@@ -230,7 +266,7 @@ def update_scores_ci_file(output_file: str, metric_results: Dict[str, Dict]) -> 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Paired significance testing against the NLLB baseline using bootstrap resampling."
+        description="Paired significance testing using bootstrap resampling."
     )
     parser.add_argument("-i", "--input-dir", type=str, required=True, help="Path to experiment directory")
     parser.add_argument("-d", "--data-dir", type=str, required=True, help="Parent directory containing all corpora files referenced in corpora.yaml")
@@ -249,10 +285,17 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=13)
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     parser.add_argument(
+        "--comparison-mode",
+        type=str,
+        choices=["vs_nllb", "vs_default"],
+        default="vs_nllb",
+        help="Compare each system either against NLLB or against the default configuration of the same model.",
+    )
+    parser.add_argument(
         "--overwrite",
         action="store_true",
         default=False,
-        help="Overwrite existing metric-specific entries in .scores_ci.json",
+        help="Overwrite existing metric-specific entries in the comparison-specific scores_ci file.",
     )
     args = parser.parse_args()
 
@@ -263,13 +306,16 @@ def main() -> None:
         input_dir=args.input_dir,
         corpora_config=args.corpora_config,
         data_dir=args.data_dir,
+        comparison_mode=args.comparison_mode,
     )
 
     for item in outputs:
         system_file = item["system_file"]
         baseline_file = item["baseline_file"]
         ref_file = item["ref_file"]
-        descriptor = f"{item['model']} | {item['corpus']} | {item['guideline']}"
+        descriptor = (
+            f"{item['model']} | {item['corpus']} | {item['guideline']} | {item['comparison_mode']}"
+        )
 
         if not os.path.exists(system_file):
             print(f"Skipping missing system output: {descriptor}")
@@ -278,7 +324,7 @@ def main() -> None:
             print(f"Skipping missing baseline output: {descriptor}")
             continue
 
-        scores_ci_file = f"{system_file}.scores_ci.json"
+        scores_ci_file = get_scores_ci_path(system_file, args.comparison_mode)
         existing_scores_ci = read_json(scores_ci_file) if os.path.exists(scores_ci_file) else {}
 
         metric_results: Dict[str, Dict] = {}
@@ -312,7 +358,7 @@ def main() -> None:
                 print(f"Failed on {metric_name} for {descriptor}: {exc}")
 
         if metric_results:
-            update_scores_ci_file(system_file, metric_results)
+            update_scores_ci_file(system_file, metric_results, args.comparison_mode)
 
 
 if __name__ == "__main__":
