@@ -23,10 +23,14 @@ def flatten_scores_ci(scores_ci, prefix=""):
 
     return flat
 
-def scale_comet_scores(scores: dict) -> dict:
+
+def scale_comet_scores(scores: dict, scale: bool = True) -> dict:
     """
     Scale top-level COMET / COMET-Kiwi scores by 100.
     """
+    if not scale:
+        return scores
+
     scaled = scores.copy()
 
     for key in ["comet", "cometkiwi"]:
@@ -35,11 +39,15 @@ def scale_comet_scores(scores: dict) -> dict:
 
     return scaled
 
-def scale_comet_scores_ci(scores_ci: dict) -> dict:
+
+def scale_comet_scores_ci(scores_ci: dict, scale: bool = True) -> dict:
     """
     Scale COMET / COMET-Kiwi score-like fields by 100
     before flattening.
     """
+    if not scale:
+        return scores_ci
+
     score_fields = {
         "baseline_mean",
         "system_mean",
@@ -69,7 +77,7 @@ def scale_comet_scores_ci(scores_ci: dict) -> dict:
     return scaled
 
 
-def aggregate_scores(input_dir, corpus, models):
+def aggregate_scores(input_dir, corpus, models, scale_comet=True):
     all_scores = []
 
     for model in models:
@@ -87,7 +95,7 @@ def aggregate_scores(input_dir, corpus, models):
                 }
 
                 scores.update(read_json(score_file))
-                scores = scale_comet_scores(scores)
+                scores = scale_comet_scores(scores, scale=scale_comet)
 
                 count_file = score_file.replace(".scores.json", ".counts.json")
                 if os.path.exists(count_file):
@@ -100,7 +108,7 @@ def aggregate_scores(input_dir, corpus, models):
                 scores_ci_file = score_file.replace(".scores.json", ".scores_ci.json")
                 if os.path.exists(scores_ci_file):
                     scores_ci = read_json(scores_ci_file)
-                    scores_ci = scale_comet_scores_ci(scores_ci)
+                    scores_ci = scale_comet_scores_ci(scores_ci, scale=scale_comet)
                     flat_scores_ci = flatten_scores_ci(scores_ci)
                     scores.update(flat_scores_ci)
 
@@ -114,6 +122,21 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
     parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
     parser.add_argument("-m", "--models", type=str, nargs="+", default=[NLLB, LLAMA, GEMMA, TOWER])
+
+    parser.add_argument(
+        "--scale-comet",
+        dest="scale_comet",
+        action="store_true",
+        default=True,
+        help="Scale COMET scores by 100 (default: True)",
+    )
+    parser.add_argument(
+        "--no-scale-comet",
+        dest="scale_comet",
+        action="store_false",
+        help="Disable scaling of COMET scores",
+    )
+
     args = parser.parse_args()
 
     scores_dir = os.path.join(args.input_dir, "scores")
@@ -122,7 +145,12 @@ if __name__ == "__main__":
     print("Aggregating scores for:")
     for corpus in args.corpora:
         print(f" - {corpus}")
-        scores = aggregate_scores(args.input_dir, corpus, args.models)
+        scores = aggregate_scores(
+            args.input_dir,
+            corpus,
+            args.models,
+            scale_comet=args.scale_comet,
+        )
         scores_file = os.path.join(scores_dir, f"scores_ci_{corpus}.csv")
         scores_df = pd.DataFrame(scores)
         scores_df.to_csv(scores_file, index=False)
