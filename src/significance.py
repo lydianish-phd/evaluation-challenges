@@ -159,8 +159,8 @@ def get_output_files(
     items: List[Dict[str, str]] = []
 
     for corpus in corpora:
-        src_file = os.path.expandvars(config[corpus]["src_file_path"])
-        ref_file = os.path.expandvars(config[corpus]["ref_file_path"])
+        src_file = config[corpus]["src_file_path"]
+        ref_file = config[corpus]["ref_file_path"]
         src_file_name = os.path.basename(src_file)
         baseline_file = os.path.join(
             input_dir, "outputs", NLLB, corpus, f"{src_file_name}.out.postproc"

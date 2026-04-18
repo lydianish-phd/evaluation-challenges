@@ -4,7 +4,7 @@ from .prompt_templates import (
     get_prompt,
     GUIDELINES
 )
-from .utils import read_yaml, read_file, GREEDY_CONFIG
+from .utils import read_config, read_file, GREEDY_CONFIG
 import torch
 
 if __name__ == "__main__":
@@ -13,6 +13,7 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output-dir", type=str, required=True, help="Path to the output directory.")
     parser.add_argument("-m", "--model-dir", type=str, required=True, help="Path to the model directory.")
     parser.add_argument("-c", "--config-file", type=str, default=GREEDY_CONFIG)
+    parser.add_argument("-d", "--data-dir", type=str, help="Path to the data directory.")
     parser.add_argument("--source-lang", type=str, default="English")
     parser.add_argument("--target-lang", type=str, default="French")
     parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=["default"])
@@ -23,7 +24,7 @@ if __name__ == "__main__":
     file_name = os.path.basename(args.input_file)
     model_name = os.path.basename(args.model_dir)
 
-    config = read_yaml(args.config_file)
+    config = read_config(args.config_file, args.data_dir)
 
     llm = LLM(
         model=args.model_dir, 

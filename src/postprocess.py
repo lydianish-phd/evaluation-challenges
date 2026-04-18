@@ -1,8 +1,8 @@
-import os, argparse, yaml
+import os, argparse
 from prompt_templates import (
     extract_translation
 )
-from .utils import read_yaml, write_json, CORPORA_CONFIG
+from .utils import read_config, write_json, CORPORA_CONFIG
 import re
 
 
@@ -21,10 +21,11 @@ def find_usernames_hashtags_urls(text):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-o", "--output-dir", type=str, required=True, help="Path to the output directory for a given model.")
+    parser.add_argument("-d", "--data-dir", type=str, help="Path to the data directory.")
     parser.add_argument("-c", "--config-file", type=str, default=CORPORA_CONFIG)
     args = parser.parse_args()
 
-    config = read_yaml(args.config_file)
+    config = read_config(args.config_file, args.data_dir)
 
     # loop through all  subdirectories in the output directory (corresponding to different corpora)
     for corpus in os.listdir(args.output_dir):

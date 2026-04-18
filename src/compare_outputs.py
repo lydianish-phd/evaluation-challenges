@@ -1,6 +1,6 @@
 import os, argparse
 from sacrebleu.metrics import BLEU, CHRF
-from .utils import read_file, write_json, read_yaml
+from .utils import read_file, write_json, read_config
 from .evaluate import (
     TOWER,
     LLAMA,
@@ -14,6 +14,7 @@ OUTPUT_SUFFIX = "out.postproc"
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
+    parser.add_argument("-d", "--data-dir", help="parent directory containing all corpora files referenced in corpora.yaml", type=str)
     parser.add_argument("--corpora", type=str, nargs="+", default=CORPORA)
     parser.add_argument("--models", type=str, nargs="+", default=[TOWER, LLAMA, GEMMA])
     parser.add_argument("--guidelines", type=str, nargs="+", default=["default"] + CORPORA)
@@ -24,10 +25,10 @@ if __name__ == "__main__":
     bleu_model = BLEU()
     chrf_model = CHRF(word_order=2) # chrf++
 
-    config = read_yaml(args.corpora_config)
-    
+    config = read_config(args.corpora_config, args.data_dir)
+
     for corpus in args.corpora:
-        src_file = os.path.expandvars(config[corpus]["src_file_path"])
+        src_file = config[corpus]["src_file_path"]
         src_file_name = os.path.basename(src_file)
 
         for model in args.models:

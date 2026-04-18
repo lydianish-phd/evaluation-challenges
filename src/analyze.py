@@ -2,7 +2,7 @@ import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU
 from .utils import (
     read_file, 
-    read_yaml, 
+    read_config, 
     read_json,
     TOWER,
     LLAMA,
@@ -51,18 +51,19 @@ def get_outputs(line_ids, src, ref, sys, errors, comet_scores):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
+    parser.add_argument("-d", "--data-dir", help="parent directory containing all corpora files referenced in corpora.yaml", type=str)
     parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
     parser.add_argument("-m", "--models", type=str, nargs="+", default=[LLAMA, GEMMA, TOWER])
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     args = parser.parse_args()
 
-    config = read_yaml(args.corpora_config)
+    config = read_config(args.corpora_config, args.data_dir)
 
     for model in args.models:
         for corpus in args.corpora:
             print(f"Analysis for {model} on {corpus}...")
-            src_file = os.path.expandvars(config[corpus]["src_file_path"])
-            ref_file = os.path.expandvars(config[corpus]["ref_file_path"])
+            src_file = config[corpus]["src_file_path"]
+            ref_file = config[corpus]["ref_file_path"]
             src_file_name = os.path.basename(src_file)
             
             src = read_file(src_file)

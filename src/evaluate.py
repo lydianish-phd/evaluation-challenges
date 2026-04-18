@@ -1,10 +1,10 @@
-import os, argparse, json, yaml
+import os, argparse
 from sacrebleu.metrics import BLEU, CHRF
 from comet import download_model, load_from_checkpoint
 from .prompt_templates import REFUSAL_TO_TRANSLATE
 from .utils import (
     read_file, 
-    read_yaml, 
+    read_config, 
     write_json,
     TOWER,
     LLAMA,
@@ -16,15 +16,22 @@ from .utils import (
 import numpy as np
 
 
-def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CONFIG):
-    config = read_yaml(corpora_config)
+def get_files(
+    corpora,
+    models,
+    guidelines,
+    output_dir,
+    data_dir=None,
+    corpora_config=CORPORA_CONFIG,
+):
+    config = read_config(corpora_config, data_dir)
     files = []
     for corpus in corpora:
-        src_file = os.path.expandvars(config[corpus]["src_file_path"])
-        ref_file = os.path.expandvars(config[corpus]["ref_file_path"])
+        src_file = config[corpus]["src_file_path"]
+        ref_file = config[corpus]["ref_file_path"]
         src_file_name = os.path.basename(src_file)
         sys_files = []
-        
+
         for model in models:
             src_file_prefix = os.path.join(output_dir, model, corpus)
             if model == NLLB:
@@ -32,9 +39,9 @@ def get_files(corpora, models, guidelines, output_dir, corpora_config=CORPORA_CO
             else:
                 for guideline in guidelines:
                     sys_files.append(os.path.join(src_file_prefix, f"{src_file_name}.{guideline}.out.postproc"))
-        
+
         files.append((src_file, ref_file, sys_files))
-    
+
     return files
 
 def set_comet_scores_to_zero_for_empty(sys_data, comet_scores):
@@ -102,6 +109,7 @@ if __name__ == "__main__":
     parser.add_argument("--models", type=str, nargs="+", default=[TOWER, LLAMA, GEMMA, NLLB])
     parser.add_argument("--guidelines", type=str, nargs="+", default=["default"])
     parser.add_argument("--output-dir", type=str)
+    parser.add_argument("--data-dir", type=str, help="Path to the data directory.")
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     parser.add_argument("--overwrite", help="whether to overwrite existing score files", default=False, action="store_true")
     parser.add_argument("--xcomet", help="whether to use xCOMET-XL", default=False, action="store_true")
@@ -116,8 +124,15 @@ if __name__ == "__main__":
         print("Loading xCOMET-XL model")
         xcomet_model = load_comet_model("Unbabel/XCOMET-XL")
     
-    files = get_files(args.corpora, args.models, args.guidelines, args.output_dir, args.corpora_config)
-    
+    files = get_files(
+        args.corpora,
+        args.models,
+        args.guidelines,
+        args.output_dir,
+        data_dir=args.data_dir,
+        corpora_config=args.corpora_config,
+    )
+        
     for (src_file, ref_file, sys_files) in files:
         print(f"Evaluating outputs for {src_file} and {ref_file}...")
         
