@@ -70,5 +70,5 @@ GUIDELINE_LABELS = {
 VS_NLLB = "vs_nllb"
 VS_DEFAULT = "vs_default"
 
-HIGHER_SCORE_MARKER = r"\higherscore"
-LOWER_SCORE_MARKER = r"\lowerscore"
+HIGHER_SCORE_MARKER = r"\higherscore" # r"\colorbox{mygreen}{$\uparrow$}"
+LOWER_SCORE_MARKER = r"\lowerscore" # r"\colorbox{myred}{$\downarrow$}"
