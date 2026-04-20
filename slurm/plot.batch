@@ -29,13 +29,20 @@ python $REPO_DIR/src/plot_delta.py \
     --score-dir $EXPERIMENT_DIR/scores \
     --output-dir $EXPERIMENT_DIR/plots \
     --metrics ${METRICS[@]} \
-    --comparison-mode vs_nllb
+    --models ${ALL_MODELS[@]} \
+    --comparison-mode vs_nllb 
 
 python $REPO_DIR/src/plot_delta.py \
     --score-dir $EXPERIMENT_DIR/scores \
     --output-dir $EXPERIMENT_DIR/plots \
     --metrics ${METRICS[@]} \
-    --comparison-mode vs_default \
+    --models ${ALL_MODELS[@]} \
+    --comparison-mode vs_default
+
+python $REPO_DIR/src/make_score_tables.py \
+    --score-dir $EXPERIMENT_DIR/scores \
+    --output-dir $EXPERIMENT_DIR/tables \
+    --metrics ${METRICS[@]} \
     --models ${ALL_MODELS[@]}
 
 echo "Done..."

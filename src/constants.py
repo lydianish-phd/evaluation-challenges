@@ -70,3 +70,5 @@ GUIDELINE_LABELS = {
 VS_NLLB = "vs_nllb"
 VS_DEFAULT = "vs_default"
 
+HIGHER_SCORE_MARKER = r"\higherscore"
+LOWER_SCORE_MARKER = r"\lowerscore"
