@@ -17,12 +17,12 @@ from .utils import (
     MMTC,
     PFSMB,
     CORPUS_LABELS,
+    DEFAULT,
     GUIDELINE_LABELS,
     BLEU,
     COMET,
     COMETKIWI,
     METRIC_LABELS
-
 )
 
 # Camera-ready matplotlib defaults
@@ -38,7 +38,7 @@ plt.rcParams.update({
     "ps.fonttype": 42,
 })
 
-GUIDELINE_ORDER_ALL = ["default", ROCSMT, FOOTWEETS, MMTC, PFSMB]
+GUIDELINE_ORDER_ALL = [DEFAULT, ROCSMT, FOOTWEETS, MMTC, PFSMB]
 GUIDELINE_ORDER_NO_DEFAULT = GUIDELINE_ORDER_ALL[1:]
 
 CORPUS_ORDER = [ROCSMT, FOOTWEETS, MMTC, PFSMB]
@@ -46,7 +46,7 @@ MODEL_ORDER = [NLLB, LLAMA, GEMMA, TOWER]
 
 
 def extract_guideline(file_name: str) -> str:
-    match = re.search(r"\.(default|footweets|mmtc|pfsmb|rocsmt)\.out\.postproc$", file_name)
+    match = re.search(r"\.('default'|footweets|mmtc|pfsmb|rocsmt)\.out\.postproc$", file_name)
     if match:
         return match.group(1)
     return "baseline"
