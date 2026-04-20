@@ -1,7 +1,9 @@
 # Description: Contains main constants and utility functions.
 
-import json, yaml
+import json, yaml, os
 from pathlib import Path
+from typing import Sequence
+from .constants import MODEL_LABELS
 
 def get_model_name(full_name):
     """
@@ -24,14 +26,21 @@ def read_file(file):
     """
     with open(file, "r", encoding="utf-8") as f:
         return [line.strip() for line in f]
-    
+
+def write_lines(path: str, lines: Sequence[str]) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        for line in lines:
+            f.write(f"{line}\n")
+
 def read_json(file):
     with open(file, "r") as f:
         return json.load(f)
 
-def write_json(file, data):
-    with open(file, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4)
+def write_json(path: str, data) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 def read_yaml(file):
     with open(file, "r", encoding="utf-8") as f:
@@ -59,3 +68,12 @@ def read_config(config_path: str, data_dir: str | None = None):
         resolved_config[corpus] = corpus_cfg
 
     return resolved_config
+
+def extract_guideline(file_name: str) -> str:
+    match = re.search(r"\.(default|footweets|mmtc|pfsmb|rocsmt)\.out\.postproc$", file_name)
+    if match:
+        return match.group(1)
+    return "baseline"
+
+def sanitize_model_name(model: str) -> str:
+    return MODEL_LABELS.get(model, model).replace(" ", "_").replace("/", "_")

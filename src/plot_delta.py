@@ -27,6 +27,11 @@ from .constants import (
     VS_DEFAULT,
 )
 
+from .utils import (
+    extract_guideline,
+    sanitize_model_name,
+)
+
 # Camera-ready matplotlib defaults
 plt.rcParams.update({
     "font.family": "serif",
@@ -46,13 +51,6 @@ GUIDELINE_ORDER_NO_DEFAULT = GUIDELINE_ORDER_ALL[1:]
 CORPUS_ORDER = [ROCSMT, FOOTWEETS, MMTC, PFSMB]
 MODEL_ORDER = [NLLB, LLAMA, GEMMA, TOWER]
 METRICS = [BLEU, COMET, COMETKIWI]
-
-
-def extract_guideline(file_name: str) -> str:
-    match = re.search(r"\.(default|footweets|mmtc|pfsmb|rocsmt)\.out\.postproc$", file_name)
-    if match:
-        return match.group(1)
-    return "baseline"
 
 
 def get_csv_path(score_dir: str, corpus: str, comparison_mode: str) -> str:
@@ -104,10 +102,6 @@ def get_offsets(n_models: int):
     if n_models == 4:
         return [-0.27, -0.09, 0.09, 0.27]
     raise ValueError(f"Unsupported number of models for plotting: {n_models}")
-
-
-def sanitize_model_name(model: str) -> str:
-    return MODEL_LABELS.get(model, model).replace(" ", "_").replace("/", "_")
 
 
 def default_output_filename(metric: str, comparison_mode: str, models: list[str]) -> str:

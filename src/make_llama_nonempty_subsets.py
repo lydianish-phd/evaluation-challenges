@@ -2,7 +2,6 @@
 import argparse
 import json
 import os
-from pathlib import Path
 from typing import Dict, List, Sequence
 
 from .constants import (
@@ -21,23 +20,12 @@ from .constants import (
 from .utils import (
     read_file,
     read_config,
+    write_lines,
+    read_json,
 )
 
 GUIDELINES = [DEFAULT, ROCSMT, FOOTWEETS, MMTC, PFSMB]
 ALL_MODELS = [NLLB, LLAMA, GEMMA, TOWER]
-
-
-def write_lines(path: str, lines: Sequence[str]) -> None:
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        for line in lines:
-            f.write(f"{line}\n")
-
-
-def write_json(path: str, data) -> None:
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
 
 
 def keep_indices_from_llama_outputs(

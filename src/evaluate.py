@@ -1,4 +1,5 @@
 import os, argparse
+from pathlib import Path
 from sacrebleu.metrics import BLEU as bleu, CHRF as chrf
 from comet import download_model, load_from_checkpoint
 from .prompt_templates import REFUSAL_TO_TRANSLATE
@@ -11,6 +12,7 @@ from .constants import (
     CORPORA,
     BLEU,
     CHRF,
+    COMET_MODELS,
     COMET,
     COMETKIWI,
     XCOMET,
@@ -61,12 +63,12 @@ def set_comet_scores_to_zero_for_empty(sys_data, comet_scores):
     return comet_scores
 
 def compute_comet_scores(sys_data, comet_model):
-    comet_output = comet_model.predict(data, batch_size=32, gpus=1)
+    comet_output = comet_model.predict(data, batch_size=32, gpus=1, verbose=False)
     comet_scores = comet_output.scores
     comet_scores = set_comet_scores_to_zero_for_empty(sys_data, comet_scores)         
     return comet_scores
 
-def load_comet_model(model_name="Unbabel/wmt22-comet-da"):
+def load_comet_model(model_name=COMET_MODELS[COMET]):
     comet_model_path = download_model(model_name)
     comet_model = load_from_checkpoint(comet_model_path)
     return comet_model
@@ -125,11 +127,11 @@ if __name__ == "__main__":
     print("Loading metric models: BLEU, ChrF++, COMET")
     bleu_model = bleu()
     chrf_model = chrf(word_order=2) # chrf++
-    comet_model = load_comet_model("Unbabel/wmt22-comet-da")
-    cometkiwi_model = load_comet_model("Unbabel/wmt22-cometkiwi-da")
+    comet_model = load_comet_model(COMET_MODELS[COMET])
+    cometkiwi_model = load_comet_model(COMET_MODELS[COMETKIWI])
     if args.xcomet:
         print("Loading xCOMET-XL model")
-        xcomet_model = load_comet_model("Unbabel/XCOMET-XL")
+        xcomet_model = load_comet_model(COMET_MODELS[XCOMET])
     
     files = get_files(
         args.corpora,
@@ -141,7 +143,7 @@ if __name__ == "__main__":
     )
         
     for (src_file, ref_file, sys_files) in files:
-        print(f"Evaluating outputs for {src_file} and {ref_file}...")
+        print(f"Evaluating outputs for {src_file.relative_to(args.data_dir)} and {ref_file.relative_to(args.data_dir)}...")
         
         src_data = read_file(src_file)
         ref_data = read_file(ref_file)
@@ -154,10 +156,10 @@ if __name__ == "__main__":
                 os.path.exists(scores_file) and 
                 os.path.exists(comet_file)
             ):
-                print(f" - Skipping {sys_file}")
+                print(f" - Skipping {sys_file.relative_to(args.output_dir)} as score and comet files already exist")
                 continue
 
-            print(f" - Computing scores for {sys_file}")
+            print(f" - Computing scores for {sys_file.relative_to(args.output_dir)}...")
             
             sys_data = read_file(sys_file)
             scores = {
@@ -175,7 +177,7 @@ if __name__ == "__main__":
             write_json(comet_file, comet_scores)
 
             if args.xcomet:
-                print(f" - Computing xCOMET scores for {sys_file}")
+                print(f" - Computing xCOMET scores for {sys_file.relative_to(args.output_dir)}...")
                 errors_file = f"{sys_file}.errors.json"
                 counts_file = f"{sys_file}.counts.json"
                 
@@ -183,7 +185,7 @@ if __name__ == "__main__":
                     os.path.exists(errors_file) and 
                     os.path.exists(counts_file)
                 ):
-                    print(f" - Skipping {sys_file}")
+                    print(f" - Skipping {sys_file.relative_to(args.output_dir)} for xCOMET as error and count files already exist")
                     continue
                 
 

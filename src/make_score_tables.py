@@ -28,18 +28,15 @@ from .constants import (
     LOWER_SCORE_MARKER,
 )
 
+from .utils import (
+    extract_guideline,
+)
+
 GUIDELINE_ORDER = [DEFAULT, ROCSMT, FOOTWEETS, MMTC, PFSMB]
 CORPUS_ORDER = [ROCSMT, FOOTWEETS, MMTC, PFSMB]
 MODEL_ORDER_ALL = [NLLB, LLAMA, GEMMA, TOWER]
 MODEL_ORDER_NO_NLLB = [LLAMA, GEMMA, TOWER]
 METRICS = [BLEU, COMET, COMETKIWI]
-
-
-def extract_guideline(file_name: str) -> str:
-    match = re.search(r"\.(default|footweets|mmtc|pfsmb|rocsmt)\.out\.postproc$", file_name)
-    if match:
-        return match.group(1)
-    return "baseline"
 
 
 def significance_marker(is_sig) -> str:

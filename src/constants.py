@@ -49,6 +49,12 @@ METRIC_LABELS = {
     XCOMET: "xCOMET-XL",
 }
 
+COMET_MODELS = {
+    COMET: "Unbabel/wmt22-comet-da",
+    COMETKIWI: "Unbabel/wmt22-cometkiwi-da",
+    XCOMET: "Unbabel/XCOMET-XL",
+}
+
 MINOR = "minor"
 MAJOR = "major"
 CRITICAL = "critical"
