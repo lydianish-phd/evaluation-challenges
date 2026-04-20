@@ -46,7 +46,7 @@ MODEL_ORDER = [NLLB, LLAMA, GEMMA, TOWER]
 
 
 def extract_guideline(file_name: str) -> str:
-    match = re.search(r"\.('default'|footweets|mmtc|pfsmb|rocsmt)\.out\.postproc$", file_name)
+    match = re.search(r"\.(default|footweets|mmtc|pfsmb|rocsmt)\.out\.postproc$", file_name)
     if match:
         return match.group(1)
     return "baseline"
