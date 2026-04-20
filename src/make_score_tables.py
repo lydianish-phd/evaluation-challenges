@@ -85,8 +85,8 @@ def load_all_metric_rows(score_dir: str, comparison_mode: str) -> pd.DataFrame:
 
 def _find_best_values(df: pd.DataFrame, metric: str, comparison_mode: str) -> dict:
     """
-    Return best raw score per corpus column, based on the rows that will appear in the table.
-    Used to bold the best scores.
+    Best raw score per corpus column over all rows that appear in the table.
+    Used to bold the best scores overall.
     """
     best_values = {}
 
@@ -112,17 +112,56 @@ def _find_best_values(df: pd.DataFrame, metric: str, comparison_mode: str) -> di
     return best_values
 
 
+def _find_family_best_values(df: pd.DataFrame, metric: str, comparison_mode: str) -> dict:
+    """
+    Best raw score per (model family, corpus) among guideline rows.
+    Used to underline the best guideline within each model family.
+    For VS_DEFAULT, this includes DEFAULT so that 'None' can be underlined if it is best.
+    For VS_NLLB, this excludes the NLLB baseline row and considers guideline rows only.
+    """
+    family_best = {}
+
+    if comparison_mode == VS_NLLB:
+        candidate_models = MODEL_ORDER_NO_NLLB
+        candidate_guidelines = GUIDELINE_ORDER
+    elif comparison_mode == VS_DEFAULT:
+        candidate_models = MODEL_ORDER_NO_NLLB
+        candidate_guidelines = GUIDELINE_ORDER
+    else:
+        raise ValueError(f"Unsupported comparison mode: {comparison_mode}")
+
+    filtered = df[
+        df["model"].isin(candidate_models) &
+        df["guideline"].isin(candidate_guidelines)
+    ].copy()
+
+    for model in candidate_models:
+        family_best[model] = {}
+        model_df = filtered[filtered["model"] == model]
+        for corpus in CORPUS_ORDER:
+            corpus_df = model_df[model_df["corpus"] == corpus]
+            values = corpus_df[metric].dropna()
+            family_best[model][corpus] = values.max() if not values.empty else np.nan
+
+    return family_best
+
+
 def _format_score_cell(
     score,
     delta,
     is_sig,
     best_value,
+    family_best_value=None,
     show_markers: bool = True,
 ) -> str:
     if pd.isna(score):
         return ""
 
     score_str = f"{score:.2f}"
+
+    if pd.notna(family_best_value) and np.isclose(score, family_best_value):
+        score_str = rf"\underline{{{score_str}}}"
+
     if pd.notna(best_value) and np.isclose(score, best_value):
         score_str = rf"\textbf{{{score_str}}}"
 
@@ -143,6 +182,7 @@ def build_metric_table_compact(score_dir: str, metric: str, comparison_mode: str
 
     rows = []
     best_values = _find_best_values(df, metric, comparison_mode)
+    family_best_values = _find_family_best_values(df, metric, comparison_mode)
 
     if comparison_mode == VS_NLLB:
         model_order = MODEL_ORDER_ALL
@@ -169,6 +209,7 @@ def build_metric_table_compact(score_dir: str, metric: str, comparison_mode: str
                 delta=np.nan,
                 is_sig=False,
                 best_value=best_values[corpus],
+                family_best_value=None,
                 show_markers=False,
             )
 
@@ -191,6 +232,7 @@ def build_metric_table_compact(score_dir: str, metric: str, comparison_mode: str
                     delta=np.nan,
                     is_sig=False,
                     best_value=best_values[corpus],
+                    family_best_value=None,
                     show_markers=False,
                 )
 
@@ -213,14 +255,15 @@ def build_metric_table_compact(score_dir: str, metric: str, comparison_mode: str
                     continue
 
                 r = sub.iloc[0]
+                family_best = family_best_values.get(model, {}).get(corpus, np.nan)
 
                 if comparison_mode == VS_DEFAULT and guideline == DEFAULT:
-                    # Default is the within-model reference: show score only, no marker.
                     row[CORPUS_LABELS.get(corpus, corpus)] = _format_score_cell(
                         score=r[score_col],
                         delta=np.nan,
                         is_sig=False,
                         best_value=best_values[corpus],
+                        family_best_value=family_best,
                         show_markers=False,
                     )
                 else:
@@ -229,6 +272,7 @@ def build_metric_table_compact(score_dir: str, metric: str, comparison_mode: str
                         delta=r.get(delta_col, np.nan),
                         is_sig=r.get(sig_col, False),
                         best_value=best_values[corpus],
+                        family_best_value=family_best,
                         show_markers=True,
                     )
 
