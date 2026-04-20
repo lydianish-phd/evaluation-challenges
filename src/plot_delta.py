@@ -110,10 +110,11 @@ def sanitize_model_name(model: str) -> str:
     return MODEL_LABELS.get(model, model).replace(" ", "_").replace("/", "_")
 
 
-def default_output_filename(metric: str, comparison_mode: str, model: str = None) -> str:
+def default_output_filename(metric: str, comparison_mode: str, models: list[str]) -> str:
     if comparison_mode == VS_NLLB:
-        return f"delta_1x4_{metric}_vs_nllb.pdf"
-    return f"delta_1x4_{metric}_vs_default_{sanitize_model_name(model)}.pdf"
+        model_part = "_".join(sanitize_model_name(m) for m in models)
+        return f"delta_1x4_{metric}_vs_nllb_{model_part}.pdf"
+    return f"delta_1x4_{metric}_vs_default_{sanitize_model_name(models[0])}.pdf"
 
 
 def plot_delta_1x4(
@@ -121,12 +122,13 @@ def plot_delta_1x4(
     metric: str,
     comparison_mode: str,
     output_path: str,
-    model: str = None,
+    models: list[str],
+    title: str | None = None,
 ):
     guideline_order = get_guideline_order(comparison_mode)
 
-    if comparison_mode == VS_DEFAULT and model is None:
-        raise ValueError("--model is required when comparison_mode is 'vs_default'.")
+    if comparison_mode == VS_DEFAULT and len(models) != 1:
+        raise ValueError("vs_default expects exactly one model per figure.")
 
     fig, axes = plt.subplots(1, 4, figsize=(11.5, 4.2), sharey=True)
     axes = axes.flatten()
@@ -138,13 +140,18 @@ def plot_delta_1x4(
         csv_path = get_csv_path(score_dir, corpus, comparison_mode)
         df = prepare_delta_df(csv_path, metric, comparison_mode)
 
-        if comparison_mode == VS_NLLB:
-            models = [m for m in MODEL_ORDER if m != NLLB and m in set(df["model"])]
-        else:
-            df = df[df["model"] == model].copy()
-            models = [model] if not df.empty else []
+        requested_models = [m for m in models if m in set(df["model"])]
 
-        if not models:
+        if comparison_mode == VS_NLLB:
+            requested_models = [m for m in requested_models if m != NLLB]
+            models_to_plot = requested_models
+        else:
+            requested_models = [m for m in requested_models if m != NLLB]
+            models_to_plot = requested_models
+            if models_to_plot:
+                df = df[df["model"] == models_to_plot[0]].copy()
+
+        if not models_to_plot:
             ax.set_title(CORPUS_LABELS.get(corpus, corpus), fontsize=12, pad=6)
             ax.axhline(0, linestyle="--", linewidth=1)
             ax.set_xticks(range(len(guideline_order)))
@@ -152,10 +159,10 @@ def plot_delta_1x4(
             ax.set_xlabel("Guideline", fontsize=11)
             continue
 
-        offsets = get_offsets(len(models))
+        offsets = get_offsets(len(models_to_plot))
         x_base = list(range(len(guideline_order)))
 
-        for offset, current_model in zip(offsets, models):
+        for offset, current_model in zip(offsets, models_to_plot):
             sub = df[df["model"] == current_model].copy()
             sub = sub.set_index("guideline").reindex(guideline_order).reset_index()
 
@@ -201,10 +208,13 @@ def plot_delta_1x4(
                 frameon=False,
                 bbox_to_anchor=(0.5, 0.99),
             )
+        if title:
+            fig.suptitle(title, fontsize=13, y=0.98)
         tight_rect = [0.04, 0.04, 1.0, 0.90]
     else:
         ylabel = f"Δ {METRIC_LABELS.get(metric, metric)} vs No-Guideline"
-        fig.suptitle(MODEL_LABELS.get(model, model), fontsize=13, y=0.98)
+        if title:
+            fig.suptitle(title, fontsize=13, y=0.98)
         tight_rect = [0.04, 0.04, 1.0, 0.92]
 
     fig.supylabel(ylabel, fontsize=12, x=0.04)
@@ -248,7 +258,11 @@ def main():
         type=str,
         nargs="+",
         default=[LLAMA, GEMMA, TOWER],
-        help="Models to plot in vs_default mode. Ignored in vs_nllb mode.",
+        help=(
+            "Models to plot. "
+            "In vs_default mode: one figure per model. "
+            "In vs_nllb mode: one combined figure containing exactly these models."
+        ),
     )
     parser.add_argument(
         "--output-name",
@@ -262,17 +276,22 @@ def main():
     )
     args = parser.parse_args()
 
+    if not args.models:
+        args.models = [LLAMA, GEMMA, TOWER]
+
     if args.output_name is not None and len(args.metrics) > 1:
         raise ValueError("--output-name can only be used with a single metric.")
 
     os.makedirs(args.output_dir, exist_ok=True)
 
     if args.comparison_mode == VS_NLLB:
+        models_to_plot = [m for m in args.models if m != NLLB]
+
         for metric in args.metrics:
             output_name = args.output_name or default_output_filename(
                 metric=metric,
                 comparison_mode=args.comparison_mode,
-                model=None,
+                models=models_to_plot,
             )
             output_path = os.path.join(args.output_dir, output_name)
 
@@ -281,7 +300,8 @@ def main():
                 metric=metric,
                 comparison_mode=args.comparison_mode,
                 output_path=output_path,
-                model=None,
+                models=models_to_plot,
+                title=None,
             )
             print(f"Saved plot to: {output_path}")
 
@@ -301,7 +321,7 @@ def main():
                     else default_output_filename(
                         metric=metric,
                         comparison_mode=args.comparison_mode,
-                        model=model,
+                        models=[model],
                     )
                 )
                 output_path = os.path.join(args.output_dir, output_name)
@@ -311,7 +331,8 @@ def main():
                     metric=metric,
                     comparison_mode=args.comparison_mode,
                     output_path=output_path,
-                    model=model,
+                    models=[model],
+                    title=MODEL_LABELS.get(model, model),
                 )
                 print(f"Saved plot to: {output_path}")
 
