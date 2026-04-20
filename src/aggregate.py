@@ -1,6 +1,6 @@
 import os, argparse
 import pandas as pd
-from utils import (
+from .utils import (
     read_json,
     LLAMA,
     GEMMA,

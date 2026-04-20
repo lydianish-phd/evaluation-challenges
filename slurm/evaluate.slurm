@@ -20,8 +20,10 @@ source $HOME/.bash_profile
 
 set -e
 
-EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049d
-CORPORA_CONFIG=$HOME/evaluation-challenges/src/config/corpora.yaml
+REPO_DIR=$HOME/evaluation-challenges
+EXPERIMENT_DIR=$REPO_DIR/experiment_049d
+DATA_DIR=$REPO_DIR/data_extracted
+CORPORA_CONFIG=$REPO_DIR/src/config/corpora.yaml
 
 TOWER=Unbabel/TowerInstruct-7B-v0.2
 GEMMA=google/gemma-2-9b-it
@@ -40,6 +42,7 @@ echo "Guidelines: ${GUIDELINES[@]}"
 
 python $HOME/evaluation-challenges/src/evaluate.py \
     --output-dir $EXPERIMENT_DIR/outputs \
+    --data-dir $DATA_DIR \
     --corpora-config $CORPORA_CONFIG \
     --models ${ALL_MODELS[@]} \
     --corpora ${CORPORA[@]} \

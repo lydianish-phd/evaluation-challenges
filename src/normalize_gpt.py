@@ -1,10 +1,10 @@
 import os, argparse, yaml, time
 from openai import OpenAI
-from prompt_templates import (
+from .prompt_templates import (
     GPT_MODEL_NAME,
     get_prompt
 )
-from utils import read_file
+from .utils import read_file
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()

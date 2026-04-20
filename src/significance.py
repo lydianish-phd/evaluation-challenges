@@ -13,7 +13,7 @@ try:
 except Exception:  # pragma: no cover
     ttest_rel = None
 
-from utils import (
+from .utils import (
     TOWER,
     LLAMA,
     GEMMA,

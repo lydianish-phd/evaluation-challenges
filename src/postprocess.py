@@ -1,5 +1,5 @@
 import os, argparse
-from prompt_templates import (
+from .prompt_templates import (
     extract_translation
 )
 from .utils import read_config, write_json, CORPORA_CONFIG

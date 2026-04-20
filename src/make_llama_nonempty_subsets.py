@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 from typing import Dict, List, Sequence
 
-from utils import (
+from .utils import (
     read_file,
     read_config,
     LLAMA,
