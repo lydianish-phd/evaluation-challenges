@@ -6,7 +6,7 @@ import re
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from .utils import (
+from .constants import (
     NLLB,
     LLAMA,
     GEMMA,
@@ -22,7 +22,9 @@ from .utils import (
     BLEU,
     COMET,
     COMETKIWI,
-    METRIC_LABELS
+    METRIC_LABELS,
+    VS_NLLB,
+    VS_DEFAULT,
 )
 
 # Camera-ready matplotlib defaults
@@ -43,6 +45,7 @@ GUIDELINE_ORDER_NO_DEFAULT = GUIDELINE_ORDER_ALL[1:]
 
 CORPUS_ORDER = [ROCSMT, FOOTWEETS, MMTC, PFSMB]
 MODEL_ORDER = [NLLB, LLAMA, GEMMA, TOWER]
+METRICS = [BLEU, COMET, COMETKIWI]
 
 
 def extract_guideline(file_name: str) -> str:
@@ -53,17 +56,17 @@ def extract_guideline(file_name: str) -> str:
 
 
 def get_csv_path(score_dir: str, corpus: str, comparison_mode: str) -> str:
-    if comparison_mode == "vs_nllb":
+    if comparison_mode == VS_NLLB:
         return os.path.join(score_dir, f"scores_ci_{corpus}.csv")
-    if comparison_mode == "vs_default":
+    if comparison_mode == VS_DEFAULT:
         return os.path.join(score_dir, f"scores_ci_default_{corpus}.csv")
     raise ValueError(f"Unsupported comparison_mode: {comparison_mode}")
 
 
 def get_guideline_order(comparison_mode: str):
-    if comparison_mode == "vs_nllb":
+    if comparison_mode == VS_NLLB:
         return GUIDELINE_ORDER_ALL
-    if comparison_mode == "vs_default":
+    if comparison_mode == VS_DEFAULT:
         return GUIDELINE_ORDER_NO_DEFAULT
     raise ValueError(f"Unsupported comparison_mode: {comparison_mode}")
 
@@ -108,11 +111,8 @@ def sanitize_model_name(model: str) -> str:
 
 
 def default_output_filename(metric: str, comparison_mode: str, model: str = None) -> str:
-    if comparison_mode == "vs_nllb":
-        if model is None:
-            return f"delta_1x4_{metric}_vs_nllb.pdf"
-        return f"delta_1x4_{metric}_vs_nllb_{sanitize_model_name(model)}.pdf"
-
+    if comparison_mode == VS_NLLB:
+        return f"delta_1x4_{metric}_vs_nllb.pdf"
     return f"delta_1x4_{metric}_vs_default_{sanitize_model_name(model)}.pdf"
 
 
@@ -125,7 +125,7 @@ def plot_delta_1x4(
 ):
     guideline_order = get_guideline_order(comparison_mode)
 
-    if comparison_mode == "vs_default" and model is None:
+    if comparison_mode == VS_DEFAULT and model is None:
         raise ValueError("--model is required when comparison_mode is 'vs_default'.")
 
     fig, axes = plt.subplots(1, 4, figsize=(11.5, 4.2), sharey=True)
@@ -138,12 +138,8 @@ def plot_delta_1x4(
         csv_path = get_csv_path(score_dir, corpus, comparison_mode)
         df = prepare_delta_df(csv_path, metric, comparison_mode)
 
-        if comparison_mode == "vs_nllb":
-            if model is not None:
-                df = df[df["model"] == model].copy()
-                models = [model] if not df.empty else []
-            else:
-                models = [m for m in MODEL_ORDER if m != NLLB and m in set(df["model"])]
+        if comparison_mode == VS_NLLB:
+            models = [m for m in MODEL_ORDER if m != NLLB and m in set(df["model"])]
         else:
             df = df[df["model"] == model].copy()
             models = [model] if not df.empty else []
@@ -193,9 +189,9 @@ def plot_delta_1x4(
         if legend_handles is None:
             legend_handles, legend_labels = ax.get_legend_handles_labels()
 
-    if comparison_mode == "vs_nllb":
-        ylabel = f"Δ {METRIC_LABELS.get(metric, metric)} vs {METRIC_LABELS.get(NLLB, NLLB)}"
-        if model is None and legend_handles:
+    if comparison_mode == VS_NLLB:
+        ylabel = f"Δ {METRIC_LABELS.get(metric, metric)} vs {MODEL_LABELS.get(NLLB, NLLB)}"
+        if legend_handles:
             fig.legend(
                 legend_handles,
                 legend_labels,
@@ -205,14 +201,9 @@ def plot_delta_1x4(
                 frameon=False,
                 bbox_to_anchor=(0.5, 0.99),
             )
-            tight_rect = [0.04, 0.04, 1.0, 0.90]
-        else:
-            title = MODEL_LABELS.get(model, model) if model else None
-            if title:
-                fig.suptitle(title, fontsize=13, y=0.98)
-            tight_rect = [0.04, 0.04, 1.0, 0.92]
+        tight_rect = [0.04, 0.04, 1.0, 0.90]
     else:
-        ylabel = f"Δ {METRIC_LABELS.get(metric, metric)} vs default"
+        ylabel = f"Δ {METRIC_LABELS.get(metric, metric)} vs No-Guideline"
         fig.suptitle(MODEL_LABELS.get(model, model), fontsize=13, y=0.98)
         tight_rect = [0.04, 0.04, 1.0, 0.92]
 
@@ -242,26 +233,22 @@ def main():
         "--metrics",
         type=str,
         nargs="+",
-        choices=[BLEU, COMET, COMETKIWI],
-        default=[COMET, COMETKIWI],
+        choices=METRICS,
+        default=METRICS,
         help="One or more metrics to plot.",
     )
     parser.add_argument(
         "--comparison-mode",
         type=str,
-        choices=["vs_nllb", "vs_default"],
-        default="vs_nllb",
+        choices=[VS_NLLB, VS_DEFAULT],
+        default=VS_NLLB,
     )
     parser.add_argument(
         "--models",
         type=str,
         nargs="+",
         default=[LLAMA, GEMMA, TOWER],
-        help=(
-            "One or more models to plot. "
-            "Required for vs_default. Optional for vs_nllb. "
-            "If omitted in vs_nllb mode, all non-NLLB models are shown together."
-        ),
+        help="Models to plot in vs_default mode. Ignored in vs_nllb mode.",
     )
     parser.add_argument(
         "--output-name",
@@ -269,28 +256,18 @@ def main():
         default=None,
         help=(
             "Optional explicit output PDF filename. "
-            "Only valid when plotting a single metric and a single model "
-            "(or no model in vs_nllb mode)."
+            "Only valid with a single metric. "
+            "In vs_default mode, it is also only valid with a single model."
         ),
     )
     args = parser.parse_args()
 
-    if args.comparison_mode == "vs_default" and not args.models:
-        raise ValueError("--models is required when --comparison-mode vs_default is used.")
-
-    if args.output_name is not None:
-        single_metric = len(args.metrics) == 1
-        single_model_or_combined = (args.models is None) or (len(args.models) == 1)
-        if not (single_metric and single_model_or_combined):
-            raise ValueError(
-                "--output-name can only be used with a single metric and a single model "
-                "(or no model in vs_nllb mode)."
-            )
+    if args.output_name is not None and len(args.metrics) > 1:
+        raise ValueError("--output-name can only be used with a single metric.")
 
     os.makedirs(args.output_dir, exist_ok=True)
 
-    if args.comparison_mode == "vs_nllb" and not args.models:
-        # Combined plot with all non-NLLB models, one output per metric
+    if args.comparison_mode == VS_NLLB:
         for metric in args.metrics:
             output_name = args.output_name or default_output_filename(
                 metric=metric,
@@ -307,12 +284,13 @@ def main():
                 model=None,
             )
             print(f"Saved plot to: {output_path}")
-    else:
-        # One output per (metric, model)
-        models_to_plot = args.models if args.models else [m for m in MODEL_ORDER if m != NLLB]
 
-        for model in models_to_plot:
-            if args.comparison_mode == "vs_default" and model == NLLB:
+    else:
+        if args.output_name is not None and len(args.models) > 1:
+            raise ValueError("--output-name can only be used with a single model in vs_default mode.")
+
+        for model in args.models:
+            if model == NLLB:
                 print(f"Skipping {model}: NLLB is not valid for vs_default.")
                 continue
 

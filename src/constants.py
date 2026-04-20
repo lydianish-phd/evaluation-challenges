@@ -49,6 +49,10 @@ METRIC_LABELS = {
     XCOMET: "xCOMET-XL",
 }
 
+MINOR = "minor"
+MAJOR = "major"
+CRITICAL = "critical"
+
 DEFAULT = "default"
 STANDARD = "standard"
 GENERAL = "general"
@@ -63,6 +67,6 @@ GUIDELINE_LABELS = {
     PFSMB: "+PFSMB",
 }
 
-MINOR = "minor"
-MAJOR = "major"
-CRITICAL = "critical"
+VS_NLLB = "vs_nllb"
+VS_DEFAULT = "vs_default"
+
