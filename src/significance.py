@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from typing import Callable, Dict, Iterable, List, Sequence, Tuple
 
 import numpy as np
-from sacrebleu.metrics import BLEU
+from sacrebleu.metrics import BLEU as bleu, CHRF as chrf
 
 try:
     from scipy.stats import ttest_rel
@@ -19,14 +19,21 @@ from .utils import (
     GEMMA,
     NLLB,
     CORPORA_CONFIG,
-    CORPORA,
+    ROCSMT,
+    FOOTWEETS,
+    MMTC,
+    PFSMB,
+    BLEU,
+    CHRF,
+    COMET,
+    COMETKIWI,
     read_file,
     read_json,
     write_json,
     read_config,
 )
 
-GUIDELINES = ["default", "rocsmt", "footweets", "mmtc", "pfsmb"]
+GUIDELINES = ["default", ROCSMT, FOOTWEETS, MMTC, PFSMB]
 
 
 @dataclass(frozen=True)
@@ -40,7 +47,7 @@ class BleuMetric:
         self.ref_lines = ref_lines
         self.baseline_lines = baseline_lines
         self.system_lines = system_lines
-        self.metric = BLEU(effective_order=True)
+        self.metric = bleu(effective_order=True)
 
     def corpus_score(self, system_lines: Sequence[str], indices: Sequence[int]) -> float:
         sampled_sys = [system_lines[i] for i in indices]
@@ -218,7 +225,7 @@ def get_output_files(
 def build_metric(metric_name: str, ref_file: str, baseline_file: str, system_file: str):
     metric_name = metric_name.lower()
 
-    if metric_name == "bleu":
+    if metric_name == BLEU:
         ref_lines = read_file(ref_file)
         baseline_lines = read_file(baseline_file)
         system_lines = read_file(system_file)
@@ -230,7 +237,7 @@ def build_metric(metric_name: str, ref_file: str, baseline_file: str, system_fil
         metric = BleuMetric(ref_lines, baseline_lines, system_lines)
         return metric, len(ref_lines)
 
-    if metric_name in {"comet", "cometkiwi"}:
+    if metric_name in {COMET, COMETKIWI}:
         baseline_comet_file = f"{baseline_file}.comet.json"
         system_comet_file = f"{system_file}.comet.json"
         baseline_scores = read_json(baseline_comet_file)[metric_name]
@@ -270,15 +277,16 @@ def main() -> None:
     )
     parser.add_argument("-i", "--input-dir", type=str, required=True, help="Path to experiment directory")
     parser.add_argument("-d", "--data-dir", type=str, required=True, help="Parent directory containing all corpora files referenced in corpora.yaml")
-    parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
-    parser.add_argument("-m", "--models", type=str, nargs="+", default=[TOWER, LLAMA, GEMMA])
+    parser.add_argument("-c", "--corpora", type=str, nargs="+", default=GUIDELINES[1:], help="One or more corpora to compare.")
+    parser.add_argument("-m", "--models", type=str, nargs="+", default=[LLAMA, GEMMA, TOWER])
     parser.add_argument("-g", "--guidelines", type=str, nargs="+", default=GUIDELINES)
     parser.add_argument(
         "--metrics",
         type=str,
         nargs="+",
-        default=["bleu"],
-        help="Metrics to test. Supported: bleu, comet, cometkiwi",
+        default=[COMET, COMETKIWI],
+        choices=[BLEU, COMET, COMETKIWI],
+        help="Metrics to test.",
     )
     parser.add_argument("--n-splits", type=int, default=300)
     parser.add_argument("--sample-ratio", type=float, default=0.4)

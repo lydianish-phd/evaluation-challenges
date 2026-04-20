@@ -1,5 +1,5 @@
 import os, argparse, json, yaml
-from sacrebleu.metrics import BLEU
+from sacrebleu.metrics import BLEU as bleu
 from .utils import (
     read_file, 
     read_config, 
@@ -30,7 +30,7 @@ SELECTED_EXAMPLES = {
     "pfsmb": [k - 1 for k in PFSMB_LINE_NUMBERS],
 }
 
-bleu_metric = BLEU(effective_order=True)
+bleu_metric = bleu(effective_order=True)
 
 def get_outputs(line_ids, src, ref, sys, errors, comet_scores):
     output = ""

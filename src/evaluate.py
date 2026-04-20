@@ -1,5 +1,5 @@
 import os, argparse
-from sacrebleu.metrics import BLEU, CHRF
+from sacrebleu.metrics import BLEU as bleu, CHRF as chrf
 from comet import download_model, load_from_checkpoint
 from .prompt_templates import REFUSAL_TO_TRANSLATE
 from .utils import (
@@ -11,7 +11,12 @@ from .utils import (
     GEMMA,
     NLLB,
     CORPORA_CONFIG,
-    CORPORA
+    CORPORA,
+    BLEU,
+    CHRF,
+    COMET,
+    COMETKIWI,
+    XCOMET
 )
 import numpy as np
 
@@ -116,8 +121,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     print("Loading metric models: BLEU, ChrF++, COMET")
-    bleu_model = BLEU()
-    chrf_model = CHRF(word_order=2) # chrf++
+    bleu_model = bleu()
+    chrf_model = chrf(word_order=2) # chrf++
     comet_model = load_comet_model("Unbabel/wmt22-comet-da")
     cometkiwi_model = load_comet_model("Unbabel/wmt22-cometkiwi-da")
     if args.xcomet:
@@ -154,17 +159,17 @@ if __name__ == "__main__":
             
             sys_data = read_file(sys_file)
             scores = {
-                "bleu": bleu_model.corpus_score(sys_data, [ref_data]).score,
-                "chrf2": chrf_model.corpus_score(sys_data, [ref_data]).score,
+                BLEU: bleu_model.corpus_score(sys_data, [ref_data]).score,
+                CHRF: chrf_model.corpus_score(sys_data, [ref_data]).score,
             }
             
             data = [{"src": src, "mt": mt, "ref": ref} for src, mt, ref in zip(src_data, sys_data, ref_data)]
             
             comet_scores = {}
-            comet_scores["comet"] = compute_comet_scores(sys_data, comet_model)
-            comet_scores["cometkiwi"] = compute_comet_scores(sys_data, cometkiwi_model)
-            scores["comet"] = np.mean(comet_scores["comet"])
-            scores["cometkiwi"] = np.mean(comet_scores["cometkiwi"])
+            comet_scores[COMET] = compute_comet_scores(sys_data, comet_model)
+            comet_scores[COMETKIWI] = compute_comet_scores(sys_data, cometkiwi_model)
+            scores[COMET] = np.mean(comet_scores[COMET])
+            scores[COMETKIWI] = np.mean(comet_scores[COMETKIWI])
             write_json(comet_file, comet_scores)
 
             if args.xcomet:
@@ -181,7 +186,7 @@ if __name__ == "__main__":
                 
 
                 xcomet_output = xcomet_model.predict(data, batch_size=32, gpus=1)
-                scores["xcomet"] = xcomet_output.system_score
+                scores[XCOMET] = xcomet_output.system_score
                 
                 errors = []
                 for score, spans in zip(xcomet_output.scores, xcomet_output.metadata.error_spans):

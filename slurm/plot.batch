@@ -15,10 +15,27 @@ source activate llmeval_env
 
 set -e
 
-EXPERIMENT_DIR=$HOME/evaluation-challenges/experiment_049d
+REPO_DIR=$HOME/evaluation-challenges
+EXPERIMENT_DIR=$REPO_DIR/experiment_049d
 
-python $HOME/evaluation-challenges/src/plot_delta.py \
-    --input-dir $EXPERIMENT_DIR \
-    --output-dir $EXPERIMENT_DIR/plots
+TOWER=Unbabel/TowerInstruct-7B-v0.2
+GEMMA=google/gemma-2-9b-it
+LLAMA=meta-llama/Llama-3.1-8B-Instruct
+
+ALL_MODELS=($LLAMA $GEMMA $TOWER)
+METRICS=(bleu comet cometkiwi)
+
+python $REPO_DIR/src/plot_delta.py \
+    --score-dir $EXPERIMENT_DIR/scores \
+    --output-dir $EXPERIMENT_DIR/plots \
+    --metrics ${METRICS[@]} \
+    --comparison-mode vs_nllb
+
+python $REPO_DIR/src/plot_delta.py \
+    --score-dir $EXPERIMENT_DIR/scores \
+    --output-dir $EXPERIMENT_DIR/plots \
+    --metrics ${METRICS[@]} \
+    --comparison-mode vs_default \
+    --models ${ALL_MODELS[@]}
 
 echo "Done..."

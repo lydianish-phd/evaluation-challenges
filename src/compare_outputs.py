@@ -1,5 +1,5 @@
 import os, argparse
-from sacrebleu.metrics import BLEU, CHRF
+from sacrebleu.metrics import BLEU as bleu, CHRF as chrf
 from .utils import read_file, write_json, read_config
 from .evaluate import (
     TOWER,
@@ -22,8 +22,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     print("Loading metric models: BLEU, ChrF++")
-    bleu_model = BLEU()
-    chrf_model = CHRF(word_order=2) # chrf++
+    bleu_model = bleu()
+    chrf_model = chrf(word_order=2) # chrf++
 
     config = read_config(args.corpora_config, args.data_dir)
 
