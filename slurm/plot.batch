@@ -1,11 +1,10 @@
 #!/bin/bash
 
-#SBATCH --job-name=gpt      # Job name
+#SBATCH --job-name=plot      # Job name
 #SBATCH --ntasks=1                    # A single task (process)
 #SBATCH --cpus-per-task=16              # Using 32 CPUS
-#SBATCH --time=4:00:00               # Time limit hrs:min:sec
+#SBATCH --time=00:30:00               # Time limit hrs:min:sec
 #SBATCH --output=/scratch/lnishimw/logs/evaluation-challenges/%x/%x_%j.log # Standard output and error log
-#SBATCH --array=0,2,3
 
 echo "### Running $SLURM_JOB_NAME ###"
 
@@ -16,7 +15,10 @@ source activate llmeval_env
 
 set -e
 
-# bash $HOME/evaluation-challenges/slurm/normalize_src.sh $SLURM_ARRAY_TASK_ID
-bash $HOME/evaluation-challenges/slurm/normalize_ref.sh $SLURM_ARRAY_TASK_ID
+EXPERIMENT_DIR=$HOME/evaluation-challenges/experiment_049d
+
+python $HOME/evaluation-challenges/src/plot_delta.py \
+    --input-dir $EXPERIMENT_DIR \
+    --output-dir $EXPERIMENT_DIR/plots
 
 echo "Done..."

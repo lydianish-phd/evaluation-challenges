@@ -5,7 +5,7 @@ source $HOME/.bash_profile
 
 set -e
 
-EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049b
+EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/experiment_049b
 
 # Models
 

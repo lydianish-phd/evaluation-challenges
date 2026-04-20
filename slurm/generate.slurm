@@ -10,7 +10,7 @@
 #SBATCH --cpus-per-task=96	# number of cores per task (8x8 = 64 cores, or all the cores)
 #SBATCH --hint=multithread       # we get physical cores not logical
 #SBATCH --time=0:20:00                # Time limit hrs:min:sec
-#SBATCH --output=/lustre/fsn1/projects/rech/rnh/udc54vm/logs/evaluation-challenges/llm/%x/%x_%j.log # Standard output and error log
+#SBATCH --output=/lustre/fsn1/projects/rech/rnh/udc54vm/logs/evaluation-challenges/%x/%x_%j.log # Standard output and error log
 #SBATCH --array=0-3
 
 echo "### Running $SLURM_JOB_NAME $SLURM_ARRAY_TASK_ID ###"
@@ -23,7 +23,7 @@ source $HOME/.bash_profile
 
 set -e
 
-EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049e
+EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/experiment_049e
 
 MODEL_NAME[0]=meta-llama/Llama-3.1-8B-Instruct
 MODEL_DIR[0]=$MODELS/${MODEL_NAME[0]}

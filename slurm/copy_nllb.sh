@@ -5,8 +5,8 @@ source $HOME/.bash_profile
 
 set -e
 
-SRC_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049c
-TGT_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049d
+SRC_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/experiment_049c
+TGT_EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/experiment_049d
 
 CORPUS[0]=rocsmt
 LANG_PAIR[0]=eng_Latn-fra_Latn

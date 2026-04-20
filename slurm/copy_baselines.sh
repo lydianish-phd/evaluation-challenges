@@ -5,8 +5,8 @@ source $HOME/.bash_profile
 
 set -e
 
-INPUT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049
-OUTPUT_DIR=$EXPERIMENTS/evaluation-challenges/llm/experiment_049b
+INPUT_DIR=$EXPERIMENTS/evaluation-challenges/experiment_049
+OUTPUT_DIR=$EXPERIMENTS/evaluation-challenges/experiment_049b
 
 # Models
 
