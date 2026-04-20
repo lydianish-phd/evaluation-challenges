@@ -1,7 +1,7 @@
 import os, argparse
 from sacrebleu.metrics import BLEU as bleu, CHRF as chrf
 from .utils import read_file, write_json, read_config
-from .evaluate import (
+from .constants import (
     TOWER,
     LLAMA,
     GEMMA,

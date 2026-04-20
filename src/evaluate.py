@@ -2,10 +2,7 @@ import os, argparse
 from sacrebleu.metrics import BLEU as bleu, CHRF as chrf
 from comet import download_model, load_from_checkpoint
 from .prompt_templates import REFUSAL_TO_TRANSLATE
-from .utils import (
-    read_file, 
-    read_config, 
-    write_json,
+from .constants import (
     TOWER,
     LLAMA,
     GEMMA,
@@ -16,7 +13,15 @@ from .utils import (
     CHRF,
     COMET,
     COMETKIWI,
-    XCOMET
+    XCOMET,
+    MINOR,
+    MAJOR,
+    CRITICAL
+)
+from .utils import (
+    read_file, 
+    read_config, 
+    write_json,
 )
 import numpy as np
 
@@ -66,9 +71,6 @@ def load_comet_model(model_name="Unbabel/wmt22-comet-da"):
     comet_model = load_from_checkpoint(comet_model_path)
     return comet_model
 
-MINOR = "minor"
-MAJOR = "major"
-CRITICAL = "critical"
 
 def count_error_types(errors):
     counts = {

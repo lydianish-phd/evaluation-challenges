@@ -1,18 +1,22 @@
 import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU as bleu
-from .utils import (
-    read_file, 
-    read_config, 
-    read_json,
+
+from .constants import (
     TOWER,
     LLAMA,
     GEMMA,
     NLLB,
     CORPORA_CONFIG,
-    CORPORA
+    CORPORA,
+    CRITICAL
+)
+from .utils import (
+    read_file, 
+    read_config, 
+    read_json,
+
 )
 from .evaluate import (
-    CRITICAL,
     get_sentences_with_errors,
 )
 

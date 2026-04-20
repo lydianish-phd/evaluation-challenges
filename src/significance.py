@@ -13,12 +13,13 @@ try:
 except Exception:  # pragma: no cover
     ttest_rel = None
 
-from .utils import (
+from .constants import (
     TOWER,
     LLAMA,
     GEMMA,
     NLLB,
     CORPORA_CONFIG,
+    DEFAULT,
     ROCSMT,
     FOOTWEETS,
     MMTC,
@@ -27,13 +28,16 @@ from .utils import (
     CHRF,
     COMET,
     COMETKIWI,
+)
+
+from .utils import (
     read_file,
     read_json,
     write_json,
     read_config,
 )
 
-GUIDELINES = ["default", ROCSMT, FOOTWEETS, MMTC, PFSMB]
+GUIDELINES = [DEFAULT, ROCSMT, FOOTWEETS, MMTC, PFSMB]
 
 
 @dataclass(frozen=True)
@@ -177,7 +181,7 @@ def get_output_files(
 
             for guideline in guidelines:
                 # In within-model mode, default is the baseline and should not be compared to itself
-                if comparison_mode == "vs_default" and guideline == "default":
+                if comparison_mode == "vs_default" and guideline == DEFAULT:
                     continue
 
                 system_file = os.path.join(

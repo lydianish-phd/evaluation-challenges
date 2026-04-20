@@ -1,17 +1,16 @@
 import os, argparse, yaml, time
 from openai import OpenAI
-from .prompt_templates import (
-    GPT_MODEL_NAME,
-    get_prompt
-)
+from .constants import GPT, DEFAULT
+from .prompt_templates import get_prompt
+
 from .utils import read_file
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument("-i", "--input-file", type=str)
 	parser.add_argument("-l", "--target-lang", type=str)
-	parser.add_argument("-m", "--model-name", type=str, default=GPT_MODEL_NAME)
-	parser.add_argument("-g", "--guidelines", type=str, default="default")
+	parser.add_argument("-m", "--model-name", type=str, default=GPT)
+	parser.add_argument("-g", "--guidelines", type=str, default=DEFAULT)
 	args = parser.parse_args()
 
 	client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
@@ -27,7 +26,7 @@ if __name__ == "__main__":
 	with open(output_file, "w") as f:
 		for sentence in sentences:
 			completion = client.chat.completions.create(
-				model=GPT_MODEL_NAME,
+				model=GPT,
 				messages=get_prompt(sentence, args.target_lang, args.target_lang, normalization=True, model_name=args.model_name, guidelines=args.guidelines),
 				temperature=0, 
 				top_p=1,

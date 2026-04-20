@@ -5,18 +5,25 @@ import os
 from pathlib import Path
 from typing import Dict, List, Sequence
 
-from .utils import (
-    read_file,
-    read_config,
+from .constants import (
     LLAMA,
     NLLB,
     TOWER,
     GEMMA,
     CORPORA,
     CORPORA_CONFIG,
+    DEFAULT,
+    ROCSMT,
+    FOOTWEETS,
+    MMTC,
+    PFSMB,
+)
+from .utils import (
+    read_file,
+    read_config,
 )
 
-GUIDELINES = ["default", "rocsmt", "footweets", "mmtc", "pfsmb"]
+GUIDELINES = [DEFAULT, ROCSMT, FOOTWEETS, MMTC, PFSMB]
 ALL_MODELS = [NLLB, LLAMA, GEMMA, TOWER]
 
 
