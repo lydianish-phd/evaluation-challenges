@@ -1,0 +1,22 @@
+\begin{tabular}{llcccc}
+\toprule
+Model & Guideline & RoCS-MT & FooTweets & MMTC & PFSMB \\
+\midrule
+NLLB-3B & — & 73.31 & 80.15 & 86.54 & 73.18 \\
+Llama-3.1-8B & None & \underline{73.60} & \underline{81.48} & 77.08 & 73.83 \\
+ & +RoCS-MT & 72.25\lowerscore* & 76.87\lowerscore* & 81.33\higherscore* & 74.28\higherscore \\
+ & +FooTweets & 71.61\lowerscore* & 78.02\lowerscore* & \underline{84.11}\higherscore* & \underline{74.48}\higherscore \\
+ & +MMTC & 71.27\lowerscore* & 76.65\lowerscore* & 82.80\higherscore* & 72.16\lowerscore \\
+ & +PFSMB & 71.35\lowerscore* & 79.08\lowerscore* & 83.46\higherscore* & 73.44\lowerscore \\
+Gemma-2-9B & None & 76.43 & 83.03 & 77.79 & 78.93 \\
+ & +RoCS-MT & \textbf{\underline{76.64}}\higherscore & 84.76\higherscore* & 85.46\higherscore* & 80.32\higherscore* \\
+ & +FooTweets & 75.57\lowerscore* & 85.44\higherscore* & 86.42\higherscore* & 80.53\higherscore* \\
+ & +MMTC & 75.74\lowerscore* & 85.09\higherscore* & \underline{86.58}\higherscore* & \textbf{\underline{80.67}}\higherscore* \\
+ & +PFSMB & 74.59\lowerscore* & \textbf{\underline{86.00}}\higherscore* & 86.22\higherscore* & 80.54\higherscore* \\
+Tower-7B-v0.2 & None & 75.39 & 85.07 & \textbf{\underline{88.93}} & 79.08 \\
+ & +RoCS-MT & \underline{75.48}\higherscore & \underline{85.70}\higherscore* & 88.86\lowerscore & 79.22\higherscore \\
+ & +FooTweets & 75.41\higherscore & 85.69\higherscore* & 88.91\lowerscore & \underline{79.36}\higherscore \\
+ & +MMTC & 75.38\lowerscore & 85.65\higherscore* & 88.93\lowerscore & 79.06\higherscore \\
+ & +PFSMB & 75.32\lowerscore & 85.67\higherscore* & 88.85\lowerscore & 79.08\higherscore \\
+\bottomrule
+\end{tabular}
