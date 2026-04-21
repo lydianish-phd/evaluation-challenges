@@ -30,7 +30,7 @@ GPT = "gpt-4o-mini"
 
 MODEL_LABELS = {
     NLLB: "NLLB-3B",
-    LLAMA: "Llama-3.1-8B",
+    LLAMA: "LLaMA-3.1-8B",
     GEMMA: "Gemma-2-9B",
     TOWER: "Tower-7B-v0.2",
 }
