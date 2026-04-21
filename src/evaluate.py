@@ -65,7 +65,7 @@ def set_comet_scores_to_zero_for_empty(sys_data, comet_scores):
 
 
 def compute_comet_scores(sys_data, comet_model, data, batch_size=32, gpus=1):
-    comet_output = comet_model.predict(data, batch_size=batch_size, gpus=gpus, verbose=False)
+    comet_output = comet_model.predict(data, batch_size=batch_size, gpus=gpus)
     comet_scores = comet_output.scores
     comet_scores = set_comet_scores_to_zero_for_empty(sys_data, comet_scores)
     return comet_scores
@@ -227,7 +227,6 @@ if __name__ == "__main__":
                     data,
                     batch_size=args.comet_batch_size,
                     gpus=args.comet_gpus,
-                    verbose=False,
                 )
                 scores[XCOMET] = xcomet_output.system_score
 
