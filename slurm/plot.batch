@@ -25,24 +25,20 @@ LLAMA=meta-llama/Llama-3.1-8B-Instruct
 ALL_MODELS=($LLAMA $GEMMA $TOWER)
 METRICS=(bleu comet cometkiwi)
 
-python $REPO_DIR/src/plot_delta.py \
-    --score-dir $EXPERIMENT_DIR/scores \
-    --output-dir $EXPERIMENT_DIR/plots \
-    --metrics ${METRICS[@]} \
-    --models ${ALL_MODELS[@]} \
-    --comparison-mode vs_nllb 
+for MODE in "vs_nllb" "vs_default"; do
+    python $REPO_DIR/src/plot_delta.py \
+        --score-dir $EXPERIMENT_DIR/scores \
+        --output-dir $EXPERIMENT_DIR/plots \
+        --metrics ${METRICS[@]} \
+        --models ${ALL_MODELS[@]} \
+        --comparison-mode $MODE 
 
-python $REPO_DIR/src/plot_delta.py \
-    --score-dir $EXPERIMENT_DIR/scores \
-    --output-dir $EXPERIMENT_DIR/plots \
-    --metrics ${METRICS[@]} \
-    --models ${ALL_MODELS[@]} \
-    --comparison-mode vs_default
-
-python $REPO_DIR/src/make_score_tables.py \
-    --score-dir $EXPERIMENT_DIR/scores \
-    --output-dir $EXPERIMENT_DIR/tables \
-    --metrics ${METRICS[@]} \
-    --models ${ALL_MODELS[@]}
+    python $REPO_DIR/src/make_score_tables.py \
+        --score-dir $EXPERIMENT_DIR/scores \
+        --output-dir $EXPERIMENT_DIR/tables \
+        --metrics ${METRICS[@]} \
+        --models ${ALL_MODELS[@]} \
+        --comparison-mode $MODE
+done
 
 echo "Done..."
