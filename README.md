@@ -124,31 +124,57 @@ git checkout -b add-mistral-qwen
 
 ---
 
-### 8. Update SLURM log paths
+### 8. Update the SLURM log path and account
 
-Edit:
+Edit the SLURM script:
 
-```
+```bash
 slurm/generate.slurm
 ```
 
-Replace:
+You need to update **both the log path and the account name**, as they are currently hard-coded for a specific user/project.
+
+#### 8.1 Update the log path
+
+Replace the existing line:
 
 ```bash
 #SBATCH --output=/lustre/fsn1/projects/rech/ncm/udc54vm/evaluation-challenges/logs/%x/%x_%j.log
 ```
 
-with your own path:
+with your own project and user path, for example:
 
 ```bash
 #SBATCH --output=/lustre/fsn1/projects/rech/<project>/<user>/evaluation-challenges/logs/%x/%x_%j.log
 ```
 
-Create the directory:
+Make sure the directory exists:
 
 ```bash
 mkdir -p /lustre/fsn1/projects/rech/<project>/<user>/evaluation-challenges/logs/generate
 ```
+
+#### 8.2 Update the account
+
+The script currently uses an account like:
+
+```bash
+#SBATCH --account=ncm@h100
+```
+
+Here:
+
+* `ncm` is the project/account name
+* `@h100` specifies the GPU partition
+
+You must replace `ncm` with your own project/account if different. 
+
+Make sure the account matches both:
+
+* your allocation on Jean Zay
+* the GPU partition you are using
+
+⚠️ If you do not update these correctly, the job may fail to submit or logs may not be written.
 
 ---
 
@@ -297,31 +323,57 @@ If needed, pull the latest changes on that branch before running evaluation.
 
 ---
 
-### 5. Update the SLURM log path
+### 5. Update the SLURM log path and account
 
-Edit:
+Edit the SLURM script:
 
 ```bash
 slurm/evaluate.slurm
 ```
 
-Replace the hard-coded log path:
+You need to update **both the log path and the account name**, as they are currently hard-coded for a specific user/project.
+
+#### 5.1 Update the log path
+
+Replace the existing line:
 
 ```bash
 #SBATCH --output=/lustre/fsn1/projects/rech/ncm/udc54vm/evaluation-challenges/logs/%x/%x_%j.log
 ```
 
-with your own Jean Zay path, for example:
+with your own project and user path, for example:
 
 ```bash
 #SBATCH --output=/lustre/fsn1/projects/rech/<project>/<user>/evaluation-challenges/logs/%x/%x_%j.log
 ```
 
-Create the corresponding directory if needed:
+Make sure the directory exists:
 
 ```bash
 mkdir -p /lustre/fsn1/projects/rech/<project>/<user>/evaluation-challenges/logs/evaluate
 ```
+
+#### 5.2 Update the account
+
+The script currently uses an account like:
+
+```bash
+#SBATCH --account=ncm@v100
+```
+
+Here:
+
+* `ncm` is the project/account name
+* `@v100` specifies the GPU partition
+
+You must replace `ncm` with your own project/account if different. 
+
+Make sure the account matches both:
+
+* your allocation on Jean Zay
+* the GPU partition you are using
+
+⚠️ If you do not update these correctly, the job may fail to submit or logs may not be written.
 
 ---
 
