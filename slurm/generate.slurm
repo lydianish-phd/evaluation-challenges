@@ -34,6 +34,10 @@ MODEL_DIR[1]=$MODELS/${MODEL_NAME[1]}
 MODEL_NAME[2]=Unbabel/TowerInstruct-7B-v0.2
 MODEL_DIR[2]=$MODELS/${MODEL_NAME[2]}
 
+MODEL_NAME[3]=Qwen/Qwen2.5-7B-Instruct
+MODEL_DIR[3]=$MODELS/${MODEL_NAME[3]}
+
+
 # Non-standard English
 
 CORPUS[0]=rocsmt
@@ -66,7 +70,7 @@ TGT_LANG[3]=English
 GUIDELINES=(default rocsmt footweets mmtc pfsmb)
 CONFIG=$HOME/evaluation-challenges/src/config/greedy.yaml
 
-for i in {0..2}
+for i in {0..3}
 do
     echo "Model: ${MODEL_NAME[$i]}"
 

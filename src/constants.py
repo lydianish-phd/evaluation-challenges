@@ -22,10 +22,11 @@ CORPUS_LABELS = {
     PFSMB: "PFSMB",
 }
 
-TOWER = "Unbabel/TowerInstruct-7B-v0.2"
+NLLB = "facebook/nllb-200-3.3B"
 LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
 GEMMA = "google/gemma-2-9b-it"
-NLLB = "facebook/nllb-200-3.3B"
+TOWER = "Unbabel/TowerInstruct-7B-v0.2"
+QWEN = "Qwen/Qwen2.5-7B-Instruct"
 GPT = "gpt-4o-mini"
 
 MODEL_LABELS = {
@@ -33,6 +34,7 @@ MODEL_LABELS = {
     LLAMA: "LLaMA-3.1-8B",
     GEMMA: "Gemma-2-9B",
     TOWER: "Tower-7B-v0.2",
+    QWEN: "Qwen-2.5-7B",
 }
 
 BLEU = "bleu"

@@ -1,5 +1,6 @@
 # Description: Contains the prompt templates for the LLM evaluation challenges.
 from .constants import (
+    QWEN,
     TOWER,
     LLAMA,
     GEMMA,
@@ -147,12 +148,33 @@ def get_gemma_template(user_message, system_message=TRANSLATION_SYSTEM_MESSAGE):
         f"<start_of_turn>model\n"
     )
 
-def get_tower_template(user_message):
+def get_chatml_template(user_message, system_message):
+    system_part = (
+        f"<|im_start|>system\n{system_message}<|im_end|>\n"
+        if system_message else ""
+    )
     return (
+        f"{system_part}"
         f"<|im_start|>user\n"
         f"{user_message}<|im_end|>\n"
         f"<|im_start|>assistant\n"
     )
+
+def get_tower_template(user_message):
+    return get_chatml_template(user_message, "")
+
+def get_qwen_template(user_message, system_message=TRANSLATION_SYSTEM_MESSAGE):
+    return get_chatml_template(user_message, system_message=system_message)
+
+def get_chat_template(model_name):
+    template_map = {
+        get_model_name(GPT): get_gpt_template,
+        get_model_name(LLAMA): get_llama_template,
+        get_model_name(GEMMA): get_gemma_template,
+        get_model_name(TOWER): get_tower_template,
+        get_model_name(QWEN): get_qwen_template,
+    }
+    return template_map.get(model_name, get_gpt_template)
 
 def get_instruction(sentence, source_lang, target_lang, normalization=False, standard=False, extra_guidelines=""):
     if normalization:
@@ -178,31 +200,21 @@ def get_prompt(sentence, source_lang, target_lang, normalization=False, model_na
         standard=(guidelines == STANDARD), 
         extra_guidelines=GUIDELINES[guidelines]
     )
-    if model_name == get_model_name(LLAMA):
-        return get_llama_template(prompt)
-    if model_name == get_model_name(GEMMA):
-        return get_gemma_template(prompt)
-    if model_name == get_model_name(GPT):
-        return get_gpt_template(prompt)
+    system_message = NORMALIZATION_SYSTEM_MESSAGE if normalization else TRANSLATION_SYSTEM_MESSAGE
+    template_func = get_chat_template(model_name)
     if model_name == get_model_name(TOWER):
-        return get_tower_template(prompt)
-    return prompt
+        return template_func(prompt)
+    else:
+        return template_func(prompt, system_message)
 
 
 # Post-processing functions
 
-import re
 from itertools import product
 
 def _contains_any_substring(text, substrings):
     text = text.lower()
     return any(substring.lower() in text for substring in substrings)
-
-def _remove_substrings(text, substrings):
-    for substring in substrings:
-        pattern = re.compile(re.escape(substring), re.IGNORECASE)
-        text = pattern.sub('', text)
-    return text
 
 def _combine_substrings(substrings):
     return [' '.join(combo) for combo in product(*substrings)]
@@ -338,8 +350,3 @@ def extract_translation(llm_output, source_lang, target_lang, guidelines):
         if _contains_any_substring(text, get_failures()):
             return ""
     return text
-
-
-    
-
-      
