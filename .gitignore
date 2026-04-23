@@ -1,3 +1,4 @@
 __pycache__/
 core-*
 data_extracted
+state.db
