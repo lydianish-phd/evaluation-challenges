@@ -1,5 +1,6 @@
-# Description: Contains the prompt templates for the LLM evaluation challenges.
+# Description: Contains the LLM prompt templates for the UGC translation evaluation challenges.
 from .constants import (
+    MISTRAL,
     QWEN,
     TOWER,
     LLAMA,
@@ -148,6 +149,12 @@ def get_gemma_template(user_message, system_message=TRANSLATION_SYSTEM_MESSAGE):
         f"<start_of_turn>model\n"
     )
 
+def get_mistral_template(user_message, system_message=TRANSLATION_SYSTEM_MESSAGE):
+    return (
+        f"<s>[INST]{system_message}\n\n"
+        f"{user_message}[/INST]"
+    )
+
 def get_chatml_template(user_message, system_message):
     system_part = (
         f"<|im_start|>system\n{system_message}<|im_end|>\n"
@@ -173,6 +180,7 @@ def get_chat_template(model_name):
         get_model_name(GEMMA): get_gemma_template,
         get_model_name(TOWER): get_tower_template,
         get_model_name(QWEN): get_qwen_template,
+        get_model_name(MISTRAL): get_mistral_template,
     }
     return template_map.get(model_name, get_gpt_template)
 

@@ -1,4 +1,6 @@
 __pycache__/
 core-*
 data_extracted
+models
+logs
 state.db

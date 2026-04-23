@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=generate      # Job name
-#SBATCH --account=rnh@h100
+#SBATCH --account=ncm@h100
 #SBATCH --partition=gpu_p6
 #SBATCH -C h100
 #SBATCH --nodes=1		# node count
@@ -10,7 +10,7 @@
 #SBATCH --cpus-per-task=96	# number of cores per task (8x8 = 64 cores, or all the cores)
 #SBATCH --hint=multithread       # we get physical cores not logical
 #SBATCH --time=0:20:00                # Time limit hrs:min:sec
-#SBATCH --output=/lustre/fsn1/projects/rech/rnh/udc54vm/logs/evaluation-challenges/%x/%x_%j.log # Standard output and error log
+#SBATCH --output=/lustre/fsn1/projects/rech/ncm/udc54vm/evaluation-challenges/logs/%x/%x_%j.log # Standard output and error log
 #SBATCH --array=0-3
 
 echo "### Running $SLURM_JOB_NAME $SLURM_ARRAY_TASK_ID ###"
@@ -19,11 +19,16 @@ module purge
 # Using pytorch-gpu/py3/2.5.0 which has pytorch 2.4.0 and vllm 0.6.1
 module load arch/h100 pytorch-gpu/py3/2.5.0 # works with arch/a100 as well
 source $HOME/.bashrc 
-source $HOME/.bash_profile
+# source $HOME/.bash_profile
 
 set -e
 
-EXPERIMENT_DIR=$EXPERIMENTS/evaluation-challenges/experiment_049e
+# Get repo root (parent of slurm/)
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+EXPERIMENT_DIR=$REPO_DIR/experiments/experiment_049d
+DATASETS=$REPO_DIR/data_extracted
+MODELS=$REPO_DIR/models
 
 MODEL_NAME[0]=meta-llama/Llama-3.1-8B-Instruct
 MODEL_DIR[0]=$MODELS/${MODEL_NAME[0]}
@@ -36,6 +41,9 @@ MODEL_DIR[2]=$MODELS/${MODEL_NAME[2]}
 
 MODEL_NAME[3]=Qwen/Qwen2.5-7B-Instruct
 MODEL_DIR[3]=$MODELS/${MODEL_NAME[3]}
+
+MODEL_NAME[4]=mistralai/Mistral-7B-Instruct-v0.3
+MODEL_DIR[4]=$MODELS/${MODEL_NAME[4]}
 
 
 # Non-standard English
@@ -68,9 +76,8 @@ TGT_LANG[3]=English
 
 # GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
 GUIDELINES=(default rocsmt footweets mmtc pfsmb)
-CONFIG=$HOME/evaluation-challenges/src/config/greedy.yaml
 
-for i in {0..3}
+for i in {3..4}
 do
     echo "Model: ${MODEL_NAME[$i]}"
 
@@ -80,7 +87,6 @@ do
         -i ${INPUT_FILE[$SLURM_ARRAY_TASK_ID]} \
         -o $OUTPUT_DIR \
         -m ${MODEL_DIR[$i]} \
-        -c $CONFIG \
         --source-lang ${SRC_LANG[$SLURM_ARRAY_TASK_ID]} \
         --target-lang ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
         -g ${GUIDELINES[@]} 

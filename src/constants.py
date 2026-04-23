@@ -27,14 +27,16 @@ LLAMA = "meta-llama/Llama-3.1-8B-Instruct"
 GEMMA = "google/gemma-2-9b-it"
 TOWER = "Unbabel/TowerInstruct-7B-v0.2"
 QWEN = "Qwen/Qwen2.5-7B-Instruct"
+MISTRAL = "mistralai/Mistral-7B-Instruct-v0.3"
 GPT = "gpt-4o-mini"
-
+    
 MODEL_LABELS = {
     NLLB: "NLLB-3B",
     LLAMA: "LLaMA-3.1-8B",
     GEMMA: "Gemma-2-9B",
-    TOWER: "Tower-7B-v0.2",
+    TOWER: "Tower-0.2-7B",
     QWEN: "Qwen-2.5-7B",
+    MISTRAL: "Mistral-0.3-7B",
 }
 
 BLEU = "bleu"

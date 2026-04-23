@@ -2,6 +2,8 @@ import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU as bleu
 
 from .constants import (
+    MISTRAL,
+    QWEN,
     TOWER,
     LLAMA,
     GEMMA,
@@ -57,7 +59,7 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
     parser.add_argument("-d", "--data-dir", help="parent directory containing all corpora files referenced in corpora.yaml", type=str)
     parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
-    parser.add_argument("-m", "--models", type=str, nargs="+", default=[LLAMA, GEMMA, TOWER])
+    parser.add_argument("-m", "--models", type=str, nargs="+", default=[LLAMA, GEMMA, TOWER, QWEN, MISTRAL])
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     args = parser.parse_args()
 

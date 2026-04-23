@@ -7,6 +7,8 @@ from .constants import (
     GEMMA,
     NLLB,
     TOWER,
+    QWEN,
+    MISTRAL,
     CORPORA,
 )
 
@@ -138,8 +140,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
     parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
-    parser.add_argument("-m", "--models", type=str, nargs="+", default=[NLLB, LLAMA, GEMMA, TOWER])
-
+    parser.add_argument("-m", "--models", type=str, nargs="+", default=[NLLB, LLAMA, GEMMA, TOWER, QWEN, MISTRAL])
     parser.add_argument(
         "--comparison-mode",
         type=str,
@@ -147,7 +148,6 @@ if __name__ == "__main__":
         default="vs_nllb",
         help="Aggregate significance results either against NLLB or against each model's default configuration.",
     )
-
     parser.add_argument(
         "--scale-comet",
         dest="scale_comet",

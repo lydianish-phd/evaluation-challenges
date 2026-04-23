@@ -133,7 +133,7 @@ if __name__ == "__main__":
     parser.add_argument("--comet-gpus", type=int, default=1, help="Number of GPUs to use for COMET prediction.")
     args = parser.parse_args()
 
-    print("Loading metric models: BLEU, ChrF++, COMET")
+    print("Loading metric models: BLEU, ChrF++, COMET, COMET-Kiwi...")
     bleu_model = bleu()
     chrf_model = chrf(word_order=2)  # chrf++
     comet_model = load_comet_model(COMET_MODELS[COMET])
