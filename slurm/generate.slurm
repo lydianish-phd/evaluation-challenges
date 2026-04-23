@@ -86,7 +86,7 @@ do
     python $HOME/evaluation-challenges/src/generate.py \
         -i ${INPUT_FILE[$SLURM_ARRAY_TASK_ID]} \
         -o $OUTPUT_DIR \
-        -m ${MODEL_DIR[$i]} \
+        -m ${MODEL_NAME[$i]} \
         --source-lang ${SRC_LANG[$SLURM_ARRAY_TASK_ID]} \
         --target-lang ${TGT_LANG[$SLURM_ARRAY_TASK_ID]} \
         -g ${GUIDELINES[@]} 

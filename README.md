@@ -1,93 +1,406 @@
 # Evaluation Challenges
 
+## Part I: Inference on Jean Zay (H100 / gpu_p6)
 
+This repository contains the code and data for the evaluation challenge experiments. The immediate goal is to run **inference** for the two newly added models:
 
-## Getting started
+- `Qwen/Qwen2.5-7B-Instruct`
+- `mistralai/Mistral-7B-Instruct-v0.3`
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+These model IDs are defined in `src/constants.py`.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+---
 
-## Add your files
+### 1. Load the Jean Zay environment
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+On Jean Zay (H100 / gpu_p6), load the required modules:
+
+```bash
+module purge
+module load arch/h100
+module load pytorch-gpu/py3/2.5.0
+source ~/.bashrc
+````
+
+---
+
+### 2. Check whether `vllm` is already available
+
+```bash
+python -c "import vllm; print(vllm.__version__)"
+```
+
+If this fails, install `vllm`.
+
+---
+
+### 3. Install `vllm` (if needed)
+
+Derive the CUDA tag from the current PyTorch environment:
+
+```bash
+TORCH_VERSION=$(python -c "import torch; print(torch.__version__)")
+CUDA_TAG=$(python -c "import torch; print('cu' + torch.version.cuda.replace('.', ''))")
+
+echo "Torch version: $TORCH_VERSION"
+echo "CUDA tag: $CUDA_TAG"
+```
+
+Install:
+
+```bash
+pip install --user --no-cache-dir vllm --extra-index-url https://download.pytorch.org/whl/${CUDA_TAG}
+```
+
+Verify:
+
+```bash
+python -c "import vllm; print(vllm.__version__)"
+```
+
+---
+
+### 4. Download Hugging Face models (on login node only)
+
+Compute nodes do **not** have internet access. You must pre-download models.
+
+```bash
+huggingface-cli login
+```
+
+Then:
+
+```bash
+python - <<'PY'
+from huggingface_hub import snapshot_download
+
+snapshot_download("Qwen/Qwen2.5-7B-Instruct")
+snapshot_download("mistralai/Mistral-7B-Instruct-v0.3")
+PY
+```
+
+Optional check:
+
+```bash
+python - <<'PY'
+from transformers import AutoTokenizer
+
+AutoTokenizer.from_pretrained("Qwen/Qwen2.5-7B-Instruct")
+AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.3")
+print("Models available in cache.")
+PY
+```
+
+---
+
+### 5. Clone the repository
+
+```bash
+git clone https://github.com/lydianish-phd/evaluation-challenges.git
+cd evaluation-challenges
+```
+
+---
+
+### 6. Extract the datasets
+
+```bash
+bash slurm/extract_data.sh
+```
+
+This creates:
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.inria.fr/lnishimw/evaluation-challenges.git
-git branch -M main
-git push -uf origin main
+data_extracted/
 ```
 
-## Integrate with your tools
+---
 
-- [ ] [Set up project integrations](https://gitlab.inria.fr/lnishimw/evaluation-challenges/-/settings/integrations)
+### 7. Create a working branch
 
-## Collaborate with your team
+```bash
+git checkout -b add-mistral-qwen
+```
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+---
 
-## Test and Deploy
+### 8. Update SLURM log paths
 
-Use the built-in continuous integration in GitLab.
+Edit:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+```
+slurm/generate.slurm
+```
 
-***
+Replace:
 
-# Editing this README
+```bash
+#SBATCH --output=/lustre/fsn1/projects/rech/ncm/udc54vm/evaluation-challenges/logs/%x/%x_%j.log
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+with your own path:
 
-## Suggestions for a good README
+```bash
+#SBATCH --output=/lustre/fsn1/projects/rech/<project>/<user>/evaluation-challenges/logs/%x/%x_%j.log
+```
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+Create the directory:
 
-## Name
-Choose a self-explaining name for your project.
+```bash
+mkdir -p /lustre/fsn1/projects/rech/<project>/<user>/evaluation-challenges/logs/generate
+```
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+---
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### 9. Verify model selection in SLURM script
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+`slurm/generate.slurm` already targets the correct models:
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+```bash
+for i in {3..4}
+do
+    ...
+done
+```
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+These correspond to:
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+* `Qwen/Qwen2.5-7B-Instruct`
+* `mistralai/Mistral-7B-Instruct-v0.3`
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+---
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### 10. Launch inference
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+```bash
+sbatch slurm/generate.slurm
+```
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Outputs will be written to:
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+```
+experiments/experiment_049d/outputs/<model_name>/<corpus>/
+```
 
-## License
-For open source projects, say how it is licensed.
+---
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### Notes
+
+* The script is configured for **gpu_p6 (H100)**. Do not change partition or architecture.
+* Ensure Hugging Face cache is visible from compute nodes.
+* Do not run on `main`; use your branch.
+* Commit any fixes (paths, environment tweaks) before launching large jobs.
+
+
+## Part II: Evaluation on Jean Zay
+
+After inference has completed, switch to the **evaluation** environment and run the metric computation and aggregation pipeline for the two newly added models:
+
+- `Qwen/Qwen2.5-7B-Instruct`
+- `mistralai/Mistral-7B-Instruct-v0.3`
+
+The current evaluation script is:
+
+```bash
+slurm/evaluate.slurm
+```
+
+The metric models used by `src/evaluate.py` are:
+
+* `Unbabel/wmt22-comet-da`
+* `Unbabel/wmt22-cometkiwi-da`
+
+Do **not** download or use `Unbabel/XCOMET-XL` for now.
+
+---
+
+### 1. Load the evaluation environment
+
+Use the Jean Zay PyTorch 2.3.0 module for evaluation:
+
+```bash
+module purge
+module load pytorch-gpu/py3/2.3.0
+source ~/.bashrc
+```
+
+---
+
+### 2. Check whether the required packages are available
+
+First check whether `unbabel-comet` and `sacrebleu` are already installed:
+
+```bash
+python -c "import comet; print('comet ok')"
+python -c "import sacrebleu; print('sacrebleu ok')"
+```
+
+If one of these fails, install both locally:
+
+```bash
+pip install --user --no-cache-dir unbabel-comet sacrebleu
+```
+
+Optional verification:
+
+```bash
+python -c "import comet, sacrebleu; print('Packages available.')"
+```
+
+---
+
+### 3. Download the COMET models on the login node
+
+As with inference, compute nodes do **not** have internet access, so download the evaluation models on the login/home node first.
+
+The models to cache are:
+
+* `Unbabel/wmt22-comet-da`
+* `Unbabel/wmt22-cometkiwi-da`
+
+If needed:
+
+```bash
+huggingface-cli login
+```
+
+Then download them:
+
+```bash
+python - <<'PY'
+from comet import download_model
+
+download_model("Unbabel/wmt22-comet-da")
+download_model("Unbabel/wmt22-cometkiwi-da")
+print("COMET models downloaded.")
+PY
+```
+
+Do **not** download:
+
+```text
+Unbabel/XCOMET-XL
+```
+
+---
+
+### 4. Make sure the repository branch is up to date
+
+If you are continuing from the inference step:
+
+```bash
+cd evaluation-challenges
+git checkout add-mistral-qwen
+```
+
+If needed, pull the latest changes on that branch before running evaluation.
+
+---
+
+### 5. Update the SLURM log path
+
+Edit:
+
+```bash
+slurm/evaluate.slurm
+```
+
+Replace the hard-coded log path:
+
+```bash
+#SBATCH --output=/lustre/fsn1/projects/rech/ncm/udc54vm/evaluation-challenges/logs/%x/%x_%j.log
+```
+
+with your own Jean Zay path, for example:
+
+```bash
+#SBATCH --output=/lustre/fsn1/projects/rech/<project>/<user>/evaluation-challenges/logs/%x/%x_%j.log
+```
+
+Create the corresponding directory if needed:
+
+```bash
+mkdir -p /lustre/fsn1/projects/rech/<project>/<user>/evaluation-challenges/logs/evaluate
+```
+
+---
+
+### 6. Check the environment and paths in `slurm/evaluate.slurm`
+
+The current script already uses:
+
+* module: `pytorch-gpu/py3/2.3.0`
+* models: `Qwen/Qwen2.5-7B-Instruct` and `mistralai/Mistral-7B-Instruct-v0.3`
+* corpora: `rocsmt footweets mmtc pfsmb`
+* metrics: `bleu comet cometkiwi`
+
+It expects:
+
+* generated outputs in:
+
+```bash
+experiments/experiment_049d/outputs
+```
+
+* extracted data in:
+
+```bash
+data_extracted
+```
+
+So before running evaluation, make sure inference has finished and the generated outputs are present under:
+
+```bash
+experiments/experiment_049d/outputs/<model>/<corpus>/
+```
+
+---
+
+### 7. Launch evaluation
+
+Submit the evaluation job:
+
+```bash
+sbatch slurm/evaluate.slurm
+```
+
+This runs:
+
+* `src/evaluate.py`
+* `src/significance.py`
+* `src/aggregate.py`
+* `src/analyze.py`
+* `src/plot_delta.py`
+* `src/make_score_tables.py`
+
+The outputs are written under:
+
+```bash
+experiments/experiment_049d/
+```
+
+including score files, plots, and tables.
+
+---
+
+### 8. Finalise the branch
+
+Once both inference and evaluation have completed successfully and all expected outputs have been written to `experiments/experiment_049d/`, commit and push the branch:
+
+```bash
+git status
+git add .
+git commit -m "Add Qwen and Mistral inference and evaluation outputs"
+git push origin add-mistral-qwen
+```
+
+Then open a merge request for review.
+
+---
+
+### Notes
+
+* Keep this step in the **PyTorch 2.3.0** environment; do not reuse the inference environment.
+* Do not enable xCOMET for now.
+* If the COMET cache is not visible from compute nodes, you may need to redirect/cache models in a shared location before launching the job.
+* The branch to use for all changes is `add-mistral-qwen`.
