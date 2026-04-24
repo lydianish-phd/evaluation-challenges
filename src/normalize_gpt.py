@@ -44,4 +44,7 @@ if __name__ == "__main__":
 				print(f" - {n} done...")
 
 	print(f" - Normalized sentences saved to {output_file}")
-	print(f" - Normalization took {time.time() - start_time:.2f} seconds")
+	elapsed = time.time() - start_time
+	hours, remainder = divmod(int(elapsed), 3600)
+	minutes, seconds = divmod(remainder, 60)
+	print(f" - Normalization took {hours}h {minutes}m {seconds}s")
