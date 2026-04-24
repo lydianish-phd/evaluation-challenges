@@ -27,6 +27,10 @@ def read_file(file):
     with open(file, "r", encoding="utf-8") as f:
         return [line.strip() for line in f]
 
+def read_lines(path):
+    with open(path, "r", encoding="utf-8") as f:
+        return [line.rstrip("\n") for line in f]
+
 def write_lines(path: str, lines: Sequence[str]) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:

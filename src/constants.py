@@ -13,13 +13,15 @@ ROCSMT = "rocsmt"
 FOOTWEETS = "footweets"
 MMTC = "mmtc"
 PFSMB = "pfsmb"
+PMUMT = "pmumt"
 
-CORPORA = [ROCSMT, FOOTWEETS, MMTC, PFSMB]
+CORPORA = [ROCSMT, FOOTWEETS, MMTC, PFSMB, PMUMT]
 CORPUS_LABELS = {
     ROCSMT: "RoCS-MT",
     FOOTWEETS: "FooTweets",
     MMTC: "MMTC",
     PFSMB: "PFSMB",
+    PMUMT: "PMUMT",
 }
 
 NLLB = "facebook/nllb-200-3.3B"

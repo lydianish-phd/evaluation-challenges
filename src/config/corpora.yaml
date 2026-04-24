@@ -28,6 +28,18 @@ pfsmb-dev:
   src_lang: French
   tgt_lang: English
 
+pmumt:
+  src_file_path: pfsmb/pmumt/crapbank_annotated.fr
+  ref_file_path: pfsmb/pmumt/crapbank_annotated.en
+  src_lang: French
+  tgt_lang: English
+
+pmumt-annotations:
+  src_file_path: pfsmb/pmumt/annotations.fr
+  ref_file_path: pfsmb/pmumt/annotations.en
+  src_lang: French
+  tgt_lang: English
+
 rocsmt-gpt:
   src_file_path: rocsmt/test/raw.en.test
   ref_file_path: rocsmt/test/gpt.ref.fr.test
