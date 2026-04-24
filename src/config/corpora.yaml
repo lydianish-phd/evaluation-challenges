@@ -22,6 +22,12 @@ pfsmb:
   src_lang: French
   tgt_lang: English
 
+pfsmb-dev:
+  src_file_path: pfsmb/dev.fr
+  ref_file_path: pfsmb/dev.en
+  src_lang: French
+  tgt_lang: English
+
 rocsmt-gpt:
   src_file_path: rocsmt/test/raw.en.test
   ref_file_path: rocsmt/test/gpt.ref.fr.test

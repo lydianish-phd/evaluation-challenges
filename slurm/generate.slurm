@@ -9,9 +9,9 @@
 #SBATCH --gres=gpu:1        # numper of GPUs per node
 #SBATCH --cpus-per-task=96	# number of cores per task (8x8 = 64 cores, or all the cores)
 #SBATCH --hint=multithread       # we get physical cores not logical
-#SBATCH --time=0:20:00                # Time limit hrs:min:sec
+#SBATCH --time=0:30:00                # Time limit hrs:min:sec
 #SBATCH --output=/lustre/fsn1/projects/rech/ncm/udc54vm/evaluation-challenges/logs/%x/%x_%j.log # Standard output and error log
-#SBATCH --array=0-3
+#SBATCH --array=0-4
 
 echo "### Running $SLURM_JOB_NAME $SLURM_ARRAY_TASK_ID ###"
 
@@ -74,7 +74,12 @@ INPUT_FILE[3]=${DATA_DIR[3]}/test.fr
 SRC_LANG[3]=French
 TGT_LANG[3]=English
 
-# GUIDELINES=(default standard general rocsmt footweets mmtc pfsmb)
+CORPUS[4]=pfsmb-dev
+DATA_DIR[4]=$DATASETS/pfsmb
+INPUT_FILE[4]=${DATA_DIR[4]}/dev.fr
+SRC_LANG[4]=French
+TGT_LANG[4]=English
+
 GUIDELINES=(default rocsmt footweets mmtc pfsmb)
 
 for i in {3..4}
