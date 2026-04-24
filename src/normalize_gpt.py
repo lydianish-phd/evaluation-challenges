@@ -11,9 +11,14 @@ if __name__ == "__main__":
 	parser.add_argument("-l", "--target-lang", type=str)
 	parser.add_argument("-m", "--model-name", type=str, default=GPT)
 	parser.add_argument("-g", "--guidelines", type=str, default=DEFAULT)
+	parser.add_argument("-k", "--api-key", type=str, default=None)
 	args = parser.parse_args()
-
-	client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+	
+	api_key = args.api_key or os.environ.get("OPENAI_API_KEY")
+	if not api_key:
+		raise ValueError("API key must be provided via --api-key argument or OPENAI_API_KEY environment variable")
+	
+	client = OpenAI(api_key=api_key)
 
 	sentences = read_file(args.input_file)
 	

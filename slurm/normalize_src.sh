@@ -43,6 +43,10 @@ CORPUS[7]=pfsmb
 REF_FILE[7]=$DATASETS/pfsmb/test.fr
 SRC_LANG[7]=French
 
+CORPUS[8]=pfsmb-dev
+REF_FILE[8]=$DATASETS/pfsmb/dev.fr
+SRC_LANG[8]=French
+
 
 echo "Normalizing ${CORPUS[$INDEX]}..."
 python $HOME/evaluation-challenges/src/normalize-gpt.py \

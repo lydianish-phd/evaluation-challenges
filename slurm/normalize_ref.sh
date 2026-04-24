@@ -28,6 +28,10 @@ CORPUS[3]=pfsmb
 REF_FILE[3]=$DATASETS/pfsmb/test.en
 TGT_LANG[3]=English
 
+CORPUS[4]=pfsmb-dev
+REF_FILE[4]=$DATASETS/pfsmb/dev.en
+TGT_LANG[4]=English
+
 
 echo "Normalizing ${CORPUS[$INDEX]}..."
 python $HOME/evaluation-challenges/src/normalize-gpt.py \
