@@ -52,5 +52,4 @@ echo "Normalizing ${CORPUS[$INDEX]}..."
 python $HOME/evaluation-challenges/src/normalize_gpt.py \
     --input-file ${SRC_FILE[$INDEX]} \
     --target-lang ${SRC_LANG[$INDEX]} \
-    --model-name $GPT \
-    --guidelines standard
+    --model-name $GPT 
