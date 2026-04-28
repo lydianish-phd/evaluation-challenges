@@ -99,12 +99,12 @@ def build_pfsmb_ugc_annotations(
 
         add_codes(
             target=dev_annotations,
-            indices_1based=row.get("dev_line_ids_1based", ""),
+            indices_1based=row.get("pfsmb_dev_line_ids_1based", ""),
             ugc_codes=ugc_codes,
         )
         add_codes(
             target=test_annotations,
-            indices_1based=row.get("test_line_ids_1based", ""),
+            indices_1based=row.get("pfsmb_test_line_ids_1based", ""),
             ugc_codes=ugc_codes,
         )
 
