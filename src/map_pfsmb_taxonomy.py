@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import argparse
 import csv
+from collections import Counter
 from pathlib import Path
 
 from .constants import CORPORA_CONFIG
 from .taxonomies import PMUMT_TO_UGC_TAXONOMY
-from .utils import read_config, read_file
+from .utils import read_config, read_file, write_json
 
 
 def read_csv_rows(path: str | Path) -> list[dict]:
@@ -14,12 +15,6 @@ def read_csv_rows(path: str | Path) -> list[dict]:
 
 
 def parse_code_line(line: str) -> set[str]:
-    """
-    Parse one line from annotations_codes.fr / annotations_codes.en.
-    Expected format: space-separated PMUMT codes, e.g.:
-      1 4 10
-    Empty line means no code.
-    """
     line = line.strip()
     if not line:
         return set()
@@ -43,10 +38,6 @@ def initialise_empty_annotations(n_lines: int) -> list[set[str]]:
 
 
 def add_codes(target: list[set[str]], indices_1based: str, ugc_codes: set[str]) -> None:
-    """
-    Add UGC codes to one or more 1-based line IDs.
-    indices_1based can be empty or semicolon-separated, e.g. "4;12".
-    """
     if not indices_1based:
         return
 
@@ -66,6 +57,25 @@ def write_annotation_file(path: str | Path, annotations: list[set[str]]) -> None
             f.write(",".join(sorted(codes)) + "\n")
 
 
+def build_summary(annotations: list[set[str]]) -> dict:
+    label_counts = Counter()
+    for codes in annotations:
+        for code in codes:
+            label_counts[code] += 1
+
+    total = len(annotations)
+    annotated = sum(1 for codes in annotations if codes)
+
+    return {
+        "total_sentences": total,
+        "annotated_sentences": annotated,
+        "unannotated_sentences": total - annotated,
+        "annotation_ratio": annotated / total if total else 0.0,
+        "labels": sorted(label_counts.keys()),
+        "label_counts": dict(sorted(label_counts.items())),
+    }
+
+
 def build_pfsmb_ugc_annotations(
     mapping_csv: str | Path,
     pmumt_code_file: str | Path,
@@ -73,7 +83,7 @@ def build_pfsmb_ugc_annotations(
     pfsmb_test_file: str | Path,
     output_dir: str | Path,
     output_prefix: str = "ugc_annotations",
-) -> tuple[Path, Path]:
+) -> tuple[Path, Path, Path, Path]:
     mapping_rows = read_csv_rows(mapping_csv)
     pmumt_code_lines = load_pmumt_code_lines(pmumt_code_file)
 
@@ -109,13 +119,18 @@ def build_pfsmb_ugc_annotations(
         )
 
     output_dir = Path(output_dir)
-    dev_output = output_dir / f"{output_prefix}.dev"
-    test_output = output_dir / f"{output_prefix}.test"
+    dev_output = output_dir / f"pfsmb_{output_prefix}.dev.txt"
+    test_output = output_dir / f"pfsmb_{output_prefix}.test.txt"
+    dev_summary_output = output_dir / f"pfsmb_{output_prefix}.dev.summary.json"
+    test_summary_output = output_dir / f"pfsmb_{output_prefix}.test.summary.json"
 
     write_annotation_file(dev_output, dev_annotations)
     write_annotation_file(test_output, test_annotations)
 
-    return dev_output, test_output
+    write_json(dev_summary_output, build_summary(dev_annotations))
+    write_json(test_summary_output, build_summary(test_annotations))
+
+    return dev_output, test_output, dev_summary_output, test_summary_output
 
 
 def main():
@@ -198,7 +213,7 @@ def main():
     print(f"PFSMB test file: {pfsmb_test_file}")
     print(f"Output dir: {output_dir}")
 
-    dev_output, test_output = build_pfsmb_ugc_annotations(
+    dev_output, test_output, dev_summary, test_summary = build_pfsmb_ugc_annotations(
         mapping_csv=mapping_csv,
         pmumt_code_file=pmumt_code_file,
         pfsmb_dev_file=pfsmb_dev_file,
@@ -209,6 +224,8 @@ def main():
 
     print(f"Saved dev annotations to: {dev_output}")
     print(f"Saved test annotations to: {test_output}")
+    print(f"Saved dev summary to: {dev_summary}")
+    print(f"Saved test summary to: {test_summary}")
 
 
 if __name__ == "__main__":
