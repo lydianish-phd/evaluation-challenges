@@ -62,7 +62,7 @@ def read_config(config_path: str, data_dir: str | None = None):
     for corpus, corpus_cfg in config.items():
         corpus_cfg = dict(corpus_cfg)
 
-        for key in ["src_file_path", "ref_file_path"]:
+        for key in ["src_file_path", "ref_file_path", "ugc_annotations_file_path", "norm_file_path"]:
             if key in corpus_cfg:
                 path = Path(corpus_cfg[key])
                 if not path.is_absolute():

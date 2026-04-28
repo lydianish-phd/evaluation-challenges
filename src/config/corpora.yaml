@@ -3,7 +3,8 @@ rocsmt:
   ref_file_path: rocsmt/test/ref.fr.test
   src_lang: English
   tgt_lang: French
-  ugc_annotations_file_path: rocsmt/rocsmt_ugc_annotations.txt
+  ugc_annotations_file_path: rocsmt/test/rocsmt_ugc_annotations.txt
+  norm_file_path: rocsmt/test/norm.en.test
 
 footweets:
   src_file_path: footweets/detok.twitter.sent.en.txt
@@ -23,6 +24,7 @@ pfsmb:
   src_lang: French
   tgt_lang: English
   ugc_annotations_file_path: pfsmb/pfsmb_ugc_annotations.test.txt
+  norm_file_path: pfsmb/gpt.test.fr
 
 pfsmb-dev:
   src_file_path: pfsmb/dev.fr
@@ -30,6 +32,7 @@ pfsmb-dev:
   src_lang: French
   tgt_lang: English
   ugc_annotations_file_path: pfsmb/pfsmb_ugc_annotations.dev.txt
+  norm_file_path: pfsmb/gpt.dev.fr
 
 pmumt:
   src_file_path: pfsmb/pmumt/crapbank_annotated.fr
