@@ -58,7 +58,6 @@ for MODEL in ${MODELS[@]}; do
 
 done
 
-
 echo "------------------------------------------------------------"
 echo "Evaluating translations with multiple metrics..."
 echo "------------------------------------------------------------"
