@@ -42,7 +42,6 @@ if __name__ == "__main__":
     )
     sampling_params = SamplingParams(
         n=config["n"],
-        best_of=config["best_of"],
         temperature=config["temperature"], 
         top_p=config["top_p"],
         max_tokens=config["max_tokens"],
