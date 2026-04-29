@@ -81,3 +81,6 @@ def extract_guideline(file_name: str) -> str:
 
 def sanitize_model_name(model: str) -> str:
     return MODEL_LABELS.get(model, model).replace(" ", "_").replace("/", "_")
+
+def get_guideline_from_corpus(corpus: str) -> str:
+    return corpus.split("-")[0]

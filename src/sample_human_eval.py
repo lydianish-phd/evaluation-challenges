@@ -19,9 +19,29 @@ def parse_labels(line: str) -> set[str]:
         return set()
     return {x.strip() for x in line.split(",") if x.strip()}
 
+def load_skipped_indices_from_entry(entry: dict) -> set[int]:
+    src_path = Path(entry["src_file_path"])
+    skipped_file = src_path.with_suffix(src_path.suffix + ".skipped_indices.json")
 
-def load_corpus(config: dict, corpus: str) -> list[dict]:
+    if not skipped_file.exists():
+        print(f"[WARN] Skipped indices file not found: {skipped_file}")
+        return set()
+
+    with open(skipped_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    return set(data.get("skipped_indices", []))
+
+def load_corpus(config: dict, corpus: str, subset_config: dict | None = None) -> list[dict]:
     entry = config[corpus]
+
+    subset_entry = subset_config[corpus] if subset_config else None
+
+    skipped_indices = (
+        load_skipped_indices_from_entry(subset_entry)
+        if subset_entry is not None
+        else set()
+    )
 
     src_file = Path(entry["src_file_path"])
     ref_file = Path(entry["ref_file_path"])
@@ -39,11 +59,14 @@ def load_corpus(config: dict, corpus: str) -> list[dict]:
             f"src={len(src_lines)}, ref={len(ref_lines)}, "
             f"ann={len(ann_lines)}, norm={len(norm_lines)}"
         )
-
+    
     rows = []
     for i, (src, ref, ann, norm) in enumerate(
         zip(src_lines, ref_lines, ann_lines, norm_lines)
     ):
+        if i in skipped_indices:
+            continue
+
         labels = parse_labels(ann)
         if not labels:
             continue
@@ -56,6 +79,8 @@ def load_corpus(config: dict, corpus: str) -> list[dict]:
             "reference": ref,
             "labels": labels,
         })
+    
+    print(f"{corpus}: filtered {len(skipped_indices)} skipped indices")
 
     return rows
 
@@ -218,7 +243,7 @@ def main():
         help="Corpus entries to sample from.",
     )
     parser.add_argument(
-        "--n-samples",
+        "-n", "--n-samples",
         type=int,
         default=100,
         help="Total number of samples to draw.",
@@ -236,15 +261,30 @@ def main():
         type=str,
         default=None,
         help="Output directory for sampled data. Defaults to <data-dir>/human_eval.",
+    )
+    parser.add_argument(
+        "--subset-data-dir",
+        type=str,
+        default=None,
+        help=(
+            "Optional directory containing *.skipped_indices.json files "
+            "to exclude LLaMA refusals."
+            "If provided, paths from config will be mirrored under this directory."
+        ),
     )    
     args = parser.parse_args()
 
     config = read_config(args.corpora_config, args.data_dir)
+    subset_config = (
+        read_config(args.corpora_config, args.subset_data_dir)
+        if args.subset_data_dir is not None
+        else None
+    )
 
     all_rows = []
     for corpus in args.corpora:
-        rows = load_corpus(config, corpus)
-        print(f"{corpus}: {len(rows)} annotated sentences")
+        rows = load_corpus(config, corpus, subset_config=subset_config)
+        print(f"{corpus}: {len(rows)} annotated sentences (after filtering)")
         all_rows.extend(rows)
 
     sampled_rows = stratified_sample(
@@ -261,7 +301,7 @@ def main():
             raise ValueError(
                 "--data-dir must be provided when --output-dir is not specified."
             )
-        output_dir = Path(args.data_dir) / "human_eval" / f"sample_{args.n_samples}_seed{args.seed}"
+        output_dir = Path(args.data_dir) / "human_eval" / f"sample_{args.n_samples}_seed{args.seed}_{'_'.join(args.corpora)}"
 
     output_dir.mkdir(parents=True, exist_ok=True)
 

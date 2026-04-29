@@ -9,7 +9,6 @@ from .constants import (
     NLLB,
     TOWER,
     GEMMA,
-    CORPORA,
     CORPORA_CONFIG,
     DEFAULT,
     ROCSMT,
@@ -21,19 +20,27 @@ from .utils import (
     read_file,
     read_config,
     write_lines,
-    read_json,
+    write_json,
 )
+from .prompt_templates import REFUSAL_TO_TRANSLATE
 
 GUIDELINES = [DEFAULT, ROCSMT, FOOTWEETS, MMTC, PFSMB]
 ALL_MODELS = [NLLB, LLAMA, GEMMA, TOWER]
+ALL_CORPORA = GUIDELINES[1:]  # All except DEFAULT, which is not a corpus   
 
+def is_empty_or_refusal(output: str) -> bool:
+    normalised_output = output.strip()
+    return (
+        normalised_output == ""
+        or normalised_output == REFUSAL_TO_TRANSLATE
+    )
 
 def keep_indices_from_llama_outputs(
     llama_files: List[str],
 ) -> Dict[str, List[int]]:
     """
     Return indices to keep / skip.
-    A line is skipped if ANY LLaMA output file has an empty line at that index.
+    A line is skipped if ANY LLaMA output file has an empty line or a refusal marker at that index.
     """
     if not llama_files:
         raise ValueError("No LLaMA files were provided.")
@@ -52,8 +59,12 @@ def keep_indices_from_llama_outputs(
     skipped_indices = []
 
     for i in range(n_lines):
-        has_empty = any(lines[i].strip() == "" for lines in llama_outputs)
-        if has_empty:
+        has_invalid_output = any(
+            is_empty_or_refusal(lines[i])
+            for lines in llama_outputs
+        )
+
+        if has_invalid_output:
             skipped_indices.append(i)
         else:
             keep_indices.append(i)
@@ -168,7 +179,7 @@ def main() -> None:
         "--corpora",
         type=str,
         nargs="+",
-        default=CORPORA,
+        default=ALL_CORPORA,
         help="Corpora to process.",
     )
     parser.add_argument(
@@ -278,7 +289,10 @@ def main() -> None:
             "keep_indices": keep_indices,
             "skipped_indices": skipped_indices,
             "llama_files_checked": llama_files,
-            "criterion": "skip line if any LLaMA configuration has an empty output after stripping whitespace",
+            "criterion": (
+                "skip line if any LLaMA configuration has an empty output after stripping "
+                f"whitespace or equals {REFUSAL_TO_TRANSLATE!r}"
+            ),
         }
 
         skipped_info_path = os.path.join(
