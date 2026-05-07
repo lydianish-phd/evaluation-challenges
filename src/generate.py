@@ -37,7 +37,8 @@ if __name__ == "__main__":
         model=args.model_dir, 
         max_model_len=config["max_model_len"],
         dtype=dtype,
-        tensor_parallel_size=torch.cuda.device_count()
+        tensor_parallel_size=torch.cuda.device_count(),
+        trust_remote_code=True,
     )
     sampling_params = SamplingParams(
         n=config["n"],
