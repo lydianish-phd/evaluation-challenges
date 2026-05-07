@@ -69,7 +69,7 @@ if __name__ == "__main__":
         with open(output_file, "w") as f:
             for output in outputs:
                 if model_name in MISTRAL:
-                    generated_text = output.outputs[0].text.split('\n')[0].strip()
+                    generated_text = output.outputs[0].text.strip().split('\n')[0].strip()
                 else:
                     generated_text = output.outputs[0].text.strip().replace("\n", " ")
                 f.write(f"{generated_text}\n")
