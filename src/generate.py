@@ -1,7 +1,7 @@
 import os, argparse, yaml
 from vllm import LLM, SamplingParams
 
-from .constants import GREEDY_CONFIG
+from .constants import GREEDY_CONFIG, MISTRAL
 from .utils import read_file, read_yaml
 from .prompt_templates import (
     get_prompt,
@@ -68,8 +68,10 @@ if __name__ == "__main__":
 
         with open(output_file, "w") as f:
             for output in outputs:
-                # generated_text = output.outputs[0].text.split('\n')[0].strip()
-                generated_text = output.outputs[0].text.strip().replace("\n", " ")
+                if model_name in MISTRAL:
+                    generated_text = output.outputs[0].text.split('\n')[0].strip()
+                else:
+                    generated_text = output.outputs[0].text.strip().replace("\n", " ")
                 f.write(f"{generated_text}\n")
 
         print(f" - Output translations saved to {output_file}")
