@@ -1,32 +1,11 @@
 #!/usr/bin/env python3
 import argparse
-import csv
-import json
 from pathlib import Path
-from collections import defaultdict
-
+from .utils import read_csv, write_csv, read_json
 from sklearn.metrics import cohen_kappa_score
 
 
 VALID_LABELS = {"default", "guided", "tie"}
-
-
-def read_csv(path: Path) -> list[dict]:
-    with open(path, "r", encoding="utf-8", newline="") as f:
-        return list(csv.DictReader(f))
-
-
-def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-
-
-def read_json(path: Path):
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
 
 
 def metric_preference(default_score: float, guided_score: float, eps: float = 1e-12) -> str:

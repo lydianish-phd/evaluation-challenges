@@ -1,27 +1,15 @@
 #!/usr/bin/env python3
 import argparse
-import csv
 import itertools
 from collections import Counter, defaultdict
 from pathlib import Path
+from .utils import read_csv, write_csv
 
+import numpy as np
 from sklearn.metrics import cohen_kappa_score
-
+import krippendorff
 
 VALID_LABELS = {"default", "guided", "tie"}
-
-
-def read_csv(path: Path) -> list[dict]:
-    with open(path, "r", encoding="utf-8", newline="") as f:
-        return list(csv.DictReader(f))
-
-
-def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
 
 
 def average_pairwise_percent_agreement(item_to_labels: dict[int, dict[str, str]]) -> float:
@@ -116,6 +104,56 @@ def compute_majority_rows(rows: list[dict]) -> list[dict]:
 
     return majority_rows
 
+def compute_krippendorff_alpha(rows: list[dict], pref_col: str) -> dict:
+    annotators = sorted({r["annotator"] for r in rows})
+    item_ids = sorted({int(r["item_id"]) for r in rows})
+
+    label_to_int = {
+        "default": 0,
+        "guided": 1,
+        "tie": 2,
+    }
+
+    by_ann_item = defaultdict(dict)
+    for r in rows:
+        label = r[pref_col]
+        if label not in VALID_LABELS:
+            continue
+        by_ann_item[r["annotator"]][int(r["item_id"])] = label_to_int[label]
+
+    reliability_data = []
+    kept_items = []
+
+    for item_id in item_ids:
+        item_values = [
+            by_ann_item[ann].get(item_id)
+            for ann in annotators
+        ]
+
+        if sum(v is not None for v in item_values) >= 2:
+            kept_items.append(item_id)
+
+    for ann in annotators:
+        reliability_data.append([
+            by_ann_item[ann].get(item_id)
+            for item_id in kept_items
+        ])
+
+    reliability_data = np.asarray(reliability_data, dtype=float)
+
+    alpha = krippendorff.alpha(
+        reliability_data=reliability_data,
+        value_domain=[0, 1, 2],
+        level_of_measurement="nominal",
+    )
+
+    return {
+        "question": pref_col,
+        "n_items": len(kept_items),
+        "n_annotators": len(annotators),
+        "krippendorff_alpha": alpha
+    }
+
 
 def compute_agreement(input_csv: Path, output_dir: Path) -> None:
     rows = read_csv(input_csv)
@@ -157,8 +195,26 @@ def compute_agreement(input_csv: Path, output_dir: Path) -> None:
         ],
     )
 
+    alpha_rows = [
+        compute_krippendorff_alpha(rows, "overall_pref"),
+        compute_krippendorff_alpha(rows, "guideline_pref"),
+    ]
+
+    write_csv(
+        output_dir / "human_krippendorff_alpha.csv",
+        alpha_rows,
+        [
+            "question",
+            "n_items",
+            "n_annotators",
+            "krippendorff_alpha",
+            "note",
+        ],
+    )
+
     print(f"Saved pairwise agreement to: {output_dir / 'human_pairwise_agreement.csv'}")
     print(f"Saved majority votes to: {output_dir / 'human_majority_votes.csv'}")
+    print(f"Saved Krippendorff alpha to: {output_dir / 'human_krippendorff_alpha.csv'}")
 
 
 def main():

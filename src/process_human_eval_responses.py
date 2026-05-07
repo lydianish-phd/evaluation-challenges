@@ -2,24 +2,11 @@
 import argparse
 import csv
 from pathlib import Path
-
+from .utils import read_csv, write_csv
 
 OVERALL_QUESTION = "Which translation is better overall?"
 GUIDELINE_QUESTION = "Which output better follows the UGC guidelines?"
 COMMENT_QUESTION = "Optional comment"
-
-
-def read_csv(path: Path, delimiter=",") -> list[dict]:
-    with open(path, "r", encoding="utf-8", newline="") as f:
-        return list(csv.DictReader(f, delimiter=delimiter))
-
-
-def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
 
 
 def decode_preference(answer: str, a_condition: str, b_condition: str) -> str:
@@ -36,19 +23,6 @@ def decode_preference(answer: str, a_condition: str, b_condition: str) -> str:
     return ""
 
 
-def get_question_columns(headers: list[str], question: str) -> list[str]:
-    """
-    Pandas/Google export may rename duplicates as:
-    Question
-    Question.1
-    Question.2
-    """
-    return [
-        h for h in headers
-        if h == question or h.startswith(question + ".")
-    ]
-
-
 def process_responses(
     responses_tsv: Path,
     annotation_key_csv: Path,
@@ -59,20 +33,19 @@ def process_responses(
     key_by_item = {int(row["item_id"]): row for row in key_rows}
 
     with open(responses_tsv, "r", encoding="utf-8", newline="") as f:
-        reader = csv.DictReader(f, delimiter="\t")
-        response_rows = list(reader)
-        headers = reader.fieldnames or []
+        reader = csv.reader(f, delimiter="\t")
+        rows_raw = list(reader)
 
-    overall_cols = get_question_columns(headers, OVERALL_QUESTION)
-    guideline_cols = get_question_columns(headers, GUIDELINE_QUESTION)
-    comment_cols = get_question_columns(headers, COMMENT_QUESTION)
+    headers = rows_raw[0]
+    response_rows = rows_raw[1:]
 
     n_items = len(key_rows)
 
-    if len(overall_cols) != n_items or len(guideline_cols) != n_items:
+    expected_cols = 1 + (n_items * 3)  # Timestamp + 3 questions per item
+    if len(headers) != expected_cols:
         raise ValueError(
-            f"Expected {n_items} overall/guideline columns, got "
-            f"{len(overall_cols)} overall and {len(guideline_cols)} guideline."
+            f"Expected {expected_cols} columns: 1 timestamp + {n_items}*3 item columns, "
+            f"but found {len(headers)} columns."
         )
 
     rows = []
@@ -83,13 +56,11 @@ def process_responses(
         for item_id in range(n_items):
             key = key_by_item[item_id]
 
-            overall_raw = response.get(overall_cols[item_id], "")
-            guideline_raw = response.get(guideline_cols[item_id], "")
-            comment = (
-                response.get(comment_cols[item_id], "")
-                if item_id < len(comment_cols)
-                else ""
-            )
+            base_col = 1 + item_id * 3
+
+            overall_raw = response[base_col]
+            guideline_raw = response[base_col + 1]
+            comment = response[base_col + 2]
 
             overall_pref = decode_preference(
                 overall_raw,

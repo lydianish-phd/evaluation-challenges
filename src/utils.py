@@ -1,5 +1,6 @@
 # Description: Contains main constants and utility functions.
 
+import csv
 import json, yaml, os, re
 from pathlib import Path
 from typing import Sequence
@@ -84,3 +85,15 @@ def sanitize_model_name(model: str) -> str:
 
 def get_guideline_from_corpus(corpus: str) -> str:
     return corpus.split("-")[0]
+
+def read_csv(path: Path, delimiter=",") -> list[dict]:
+    with open(path, "r", encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f, delimiter=delimiter))
+
+
+def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
