@@ -326,6 +326,7 @@ def get_preambles(source_lang, target_lang):
         "Übersetzung des Textes:",
         "Übersetzung des vorherigen Textes:",
     ]
+    preambles += [TRANSLATION_SYSTEM_MESSAGE] + OUTPUT_SAFEGUARDS.split('.') + [TRANSLATION_OUTPUT_SAFEGUARDS]
     return preambles
 
 def get_explanations(source_lang, target_lang, guidelines):
@@ -418,13 +419,13 @@ def ignore_at_end(text, explanations):
 def extract_translation(llm_output, source_lang, target_lang, guidelines):
     text = llm_output.strip()
     if text:
-        text = ignore_at_end(text, get_start_special_tokens())
+        text = ignore_at_beginning(text, get_start_special_tokens())
         explanations = get_explanations(source_lang, target_lang, guidelines)
         text = ignore_at_end(text, explanations)
 
-        text = ignore_at_beginning(text, get_end_special_tokens())
         preambles = get_preambles(source_lang, target_lang)
         text = ignore_at_beginning(text, preambles)
+        text = ignore_at_end(text, get_end_special_tokens())
 
         wrong_prefix = f"{source_lang}:" # found in some Tower outputs
         if text.lower().startswith(wrong_prefix.lower()):
