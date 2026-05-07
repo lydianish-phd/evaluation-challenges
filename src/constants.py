@@ -30,6 +30,7 @@ GEMMA = "google/gemma-2-9b-it"
 TOWER = "Unbabel/TowerInstruct-7B-v0.2"
 QWEN = "Qwen/Qwen2.5-7B-Instruct"
 MISTRAL = "mistralai/Mistral-7B-Instruct-v0.3"
+PHI = "microsoft/Phi-3-small-128k-instruct"
 GPT = "gpt-4o-mini"
     
 MODEL_LABELS = {
@@ -39,6 +40,7 @@ MODEL_LABELS = {
     TOWER: "Tower-0.2-7B",
     QWEN: "Qwen-2.5-7B",
     MISTRAL: "Mistral-0.3-7B",
+    PHI: "Phi-3-7B",
 }
 
 BLEU = "bleu"
