@@ -8,7 +8,7 @@ from .constants import CORPORA_CONFIG
 VALID_LABELS = {"default", "guided", "tie"}
 
 
-def metric_preference(default_score: float, guided_score: float, eps: float = 1e-12) -> str:
+def metric_preference(default_score: float, guided_score: float, eps: float = 1e-2) -> str:
     delta = guided_score - default_score
 
     if delta > eps:
