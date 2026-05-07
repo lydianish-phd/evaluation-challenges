@@ -66,8 +66,8 @@ if __name__ == "__main__":
 
         with open(output_file, "w") as f:
             for output in outputs:
-                generated_text = output.outputs[0].text.split('\n')[0].strip()
-                # generated_text = output.outputs[0].text.strip().replace("\n", " ")
+                # generated_text = output.outputs[0].text.split('\n')[0].strip()
+                generated_text = output.outputs[0].text.strip().replace("\n", " ")
                 f.write(f"{generated_text}\n")
 
         print(f" - Output translations saved to {output_file}")
