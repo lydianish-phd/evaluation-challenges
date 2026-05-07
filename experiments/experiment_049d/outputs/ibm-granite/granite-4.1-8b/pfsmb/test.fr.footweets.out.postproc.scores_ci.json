@@ -1,0 +1,77 @@
+{
+    "bleu": {
+        "n_splits": 300,
+        "sample_ratio": 0.4,
+        "sample_size": 311,
+        "baseline_mean": 36.547118151617035,
+        "system_mean": 40.467053728810704,
+        "delta_mean": 3.919935577193666,
+        "delta_std": 1.825148882455084,
+        "delta_ci_low": 0.2657687902029798,
+        "delta_ci_high": 7.478926838704077,
+        "delta_median": 4.002907106097744,
+        "wins": 296,
+        "losses": 4,
+        "ties": 0,
+        "paired_ttest": {
+            "statistic": 37.199856117838365,
+            "pvalue": 3.355537109997532e-114
+        },
+        "bootstrap": {
+            "pvalue_two_sided": 0.02666666666666667,
+            "prob_system_ge_baseline": 0.9866666666666667,
+            "prob_system_le_baseline": 0.013333333333333334
+        },
+        "significant_95_ci": true
+    },
+    "comet": {
+        "n_splits": 300,
+        "sample_ratio": 0.4,
+        "sample_size": 311,
+        "baseline_mean": 0.7317119744402483,
+        "system_mean": 0.7834883910855168,
+        "delta_mean": 0.05177641664526854,
+        "delta_std": 0.007547658054583587,
+        "delta_ci_low": 0.03746154097259234,
+        "delta_ci_high": 0.06597384889026162,
+        "delta_median": 0.05153167477757986,
+        "wins": 300,
+        "losses": 0,
+        "ties": 0,
+        "paired_ttest": {
+            "statistic": 118.8174975799268,
+            "pvalue": 1.0742831441621936e-253
+        },
+        "bootstrap": {
+            "pvalue_two_sided": 0.0,
+            "prob_system_ge_baseline": 1.0,
+            "prob_system_le_baseline": 0.0
+        },
+        "significant_95_ci": true
+    },
+    "cometkiwi": {
+        "n_splits": 300,
+        "sample_ratio": 0.4,
+        "sample_size": 311,
+        "baseline_mean": 0.6982543651841078,
+        "system_mean": 0.7430201134845885,
+        "delta_mean": 0.044765748300480815,
+        "delta_std": 0.006823952561898995,
+        "delta_ci_low": 0.031431589220497755,
+        "delta_ci_high": 0.05761851709803196,
+        "delta_median": 0.04482255583790723,
+        "wins": 300,
+        "losses": 0,
+        "ties": 0,
+        "paired_ttest": {
+            "statistic": 113.62410537287752,
+            "pvalue": 5.1205505397187975e-248
+        },
+        "bootstrap": {
+            "pvalue_two_sided": 0.0,
+            "prob_system_ge_baseline": 1.0,
+            "prob_system_le_baseline": 0.0
+        },
+        "significant_95_ci": true
+    }
+}
