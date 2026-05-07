@@ -272,9 +272,6 @@ def main():
     )
     args = parser.parse_args()
 
-    if not args.models:
-        args.models = [LLAMA, GEMMA, TOWER, QWEN, MISTRAL]
-
     if args.output_name is not None and len(args.metrics) > 1:
         raise ValueError("--output-name can only be used with a single metric.")
 
