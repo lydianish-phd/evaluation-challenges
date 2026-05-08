@@ -11,6 +11,32 @@ import krippendorff
 
 VALID_LABELS = {"default", "guided", "tie"}
 
+def normalize_pref_label(label: str) -> str:
+    """
+    Collapse corpus-specific guided guideline labels to 'guided'.
+
+    Expected raw labels:
+      - default
+      - tie
+      - cannot_judge
+      - rocsmt / pfsmb / pfsmb-dev / etc.  -> guided
+    """
+    label = (label or "").strip().lower()
+
+    if label == "default":
+        return "default"
+
+    if label == "tie":
+        return "tie"
+
+    if label == "cannot_judge":
+        return "cannot_judge"
+
+    if label == "":
+        return ""
+
+    # Anything else is a guided condition, e.g. rocsmt, pfsmb, mmtc, footweets.
+    return "guided"
 
 def average_pairwise_percent_agreement(item_to_labels: dict[int, dict[str, str]]) -> float:
     scores = []
@@ -24,6 +50,7 @@ def average_pairwise_percent_agreement(item_to_labels: dict[int, dict[str, str]]
 
 
 def majority_vote(labels: list[str]) -> str:
+    labels = [normalize_pref_label(x) for x in labels]
     labels = [x for x in labels if x in VALID_LABELS]
     if not labels:
         return ""
@@ -41,7 +68,7 @@ def compute_pairwise_kappas(rows: list[dict], pref_col: str) -> list[dict]:
 
     by_item_ann = defaultdict(dict)
     for r in rows:
-        label = r[pref_col]
+        label = normalize_pref_label(r[pref_col])
         if label not in VALID_LABELS:
             continue
         by_item_ann[int(r["item_id"])][r["annotator"]] = label
@@ -85,8 +112,8 @@ def compute_majority_rows(rows: list[dict]) -> list[dict]:
     for item_id, item_rows in sorted(grouped.items()):
         meta = meta_by_item[item_id]
 
-        overall_labels = [r["overall_pref"] for r in item_rows]
-        guideline_labels = [r["guideline_pref"] for r in item_rows]
+        overall_labels = [normalize_pref_label(r["overall_pref"]) for r in item_rows]
+        guideline_labels = [normalize_pref_label(r["guideline_pref"]) for r in item_rows]
 
         majority_rows.append({
             "item_id": item_id,
@@ -116,7 +143,7 @@ def compute_krippendorff_alpha(rows: list[dict], pref_col: str) -> dict:
 
     by_ann_item = defaultdict(dict)
     for r in rows:
-        label = r[pref_col]
+        label = normalize_pref_label(r[pref_col])
         if label not in VALID_LABELS:
             continue
         by_ann_item[r["annotator"]][int(r["item_id"])] = label_to_int[label]
@@ -126,21 +153,20 @@ def compute_krippendorff_alpha(rows: list[dict], pref_col: str) -> dict:
 
     for item_id in item_ids:
         item_values = [
-            by_ann_item[ann].get(item_id)
+            by_ann_item[ann].get(item_id, np.nan)
             for ann in annotators
         ]
 
-        if sum(v is not None for v in item_values) >= 2:
+        if sum(not np.isnan(v) for v in item_values) >= 2:
             kept_items.append(item_id)
 
     for ann in annotators:
         reliability_data.append([
-            by_ann_item[ann].get(item_id)
+            by_ann_item[ann].get(item_id, np.nan)
             for item_id in kept_items
         ])
 
     reliability_data = np.asarray(reliability_data, dtype=float)
-
     alpha = krippendorff.alpha(
         reliability_data=reliability_data,
         value_domain=[0, 1, 2],
@@ -151,7 +177,7 @@ def compute_krippendorff_alpha(rows: list[dict], pref_col: str) -> dict:
         "question": pref_col,
         "n_items": len(kept_items),
         "n_annotators": len(annotators),
-        "krippendorff_alpha": alpha
+        "krippendorff_alpha": float(alpha)
     }
 
 
@@ -208,7 +234,6 @@ def compute_agreement(input_csv: Path, output_dir: Path) -> None:
             "n_items",
             "n_annotators",
             "krippendorff_alpha",
-            "note",
         ],
     )
 
