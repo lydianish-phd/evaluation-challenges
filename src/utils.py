@@ -39,7 +39,7 @@ def write_lines(path: str, lines: Sequence[str]) -> None:
             f.write(f"{line}\n")
 
 def read_json(file):
-    with open(file, "r") as f:
+    with open(file, "r", encoding="utf-8") as f:
         return json.load(f)
 
 def write_json(path: str, data) -> None:

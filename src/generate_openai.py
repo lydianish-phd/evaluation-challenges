@@ -29,7 +29,7 @@ if __name__ == "__main__":
 	print(f" - Loaded {len(sentences)} sentences...")
 	start_time = time.time()
 	n = 0
-	with open(output_file, "w") as f:
+	with open(output_file, "w", encoding="utf-8") as f:
 		for sentence in sentences:
 			completion = client.chat.completions.create(
 				model=GPT,

@@ -93,7 +93,8 @@ echo "Performing qualitative analysis and generating plots..."
 echo "------------------------------------------------------------"
 
 python $HOME/evaluation-challenges/src/analyze.py \
-    --input-dir $EXPERIMENT_DIR 
+    --input-dir $EXPERIMENT_DIR \
+    --data-dir $DATA_DIR
 
 for MODE in "vs_nllb" "vs_default"; do
     python $REPO_DIR/src/plot_delta.py \

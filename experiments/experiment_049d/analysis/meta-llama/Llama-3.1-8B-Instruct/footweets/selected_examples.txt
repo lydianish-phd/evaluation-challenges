@@ -1441,22 +1441,22 @@ COMET (default): 89.15022611618042
 COMET-KIWI (default): 85.24293303489685
 ------------------------------
 SYS (rocsmt): Wir gehen #CostaRica #WorldCup2014 #WorldCup #PuraVida https://t.co/0KMJlGh3Vz
-BLEU (rocsmt): 46.550237907489084
+BLEU (rocsmt): 46.55023790748909
 COMET (rocsmt): 87.59182095527649
 COMET-KIWI (rocsmt): 72.42538928985596
 ------------------------------
 SYS (footweets): Wir gehen #CostaRica #WorldCup2014 #WorldCup #PuraVida https://t.co/0KMJlGh3Vz
-BLEU (footweets): 46.550237907489084
+BLEU (footweets): 46.55023790748909
 COMET (footweets): 87.59180903434753
 COMET-KIWI (footweets): 72.425377368927
 ------------------------------
 SYS (mmtc): Wir gehen #CostaRica #WorldCup2014 #WorldCup #PuraVida https://t.co/0KMJlGh3Vz
-BLEU (mmtc): 46.550237907489084
+BLEU (mmtc): 46.55023790748909
 COMET (mmtc): 87.59180903434753
 COMET-KIWI (mmtc): 72.42538332939148
 ------------------------------
 SYS (pfsmb): Wir gehen #CostaRica #WorldCup2014 #WorldCup #PuraVida https://t.co/0KMJlGh3Vz
-BLEU (pfsmb): 46.550237907489084
+BLEU (pfsmb): 46.55023790748909
 COMET (pfsmb): 87.59180903434753
 COMET-KIWI (pfsmb): 72.42538332939148
 

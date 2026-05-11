@@ -2,14 +2,18 @@ import os, argparse, json, yaml
 from sacrebleu.metrics import BLEU as bleu
 
 from .constants import (
+    FOOTWEETS,
+    GRANITE,
     MISTRAL,
+    MMTC,
+    PFSMB,
     QWEN,
+    ROCSMT,
     TOWER,
     LLAMA,
     GEMMA,
     NLLB,
     CORPORA_CONFIG,
-    CORPORA,
     CRITICAL
 )
 from .utils import (
@@ -58,8 +62,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input-dir", help="path to experiment directory", type=str)
     parser.add_argument("-d", "--data-dir", help="parent directory containing all corpora files referenced in corpora.yaml", type=str)
-    parser.add_argument("-c", "--corpora", type=str, nargs="+", default=CORPORA)
-    parser.add_argument("-m", "--models", type=str, nargs="+", default=[LLAMA, GEMMA, TOWER, QWEN, MISTRAL])
+    parser.add_argument("-c", "--corpora", type=str, nargs="+", default=[ROCSMT, FOOTWEETS, MMTC, PFSMB ])
+    parser.add_argument("-m", "--models", type=str, nargs="+", default=[GEMMA, GRANITE, LLAMA, MISTRAL, QWEN, TOWER])
     parser.add_argument("--corpora-config", type=str, default=CORPORA_CONFIG)
     args = parser.parse_args()
 
@@ -92,7 +96,7 @@ if __name__ == "__main__":
             os.makedirs(output_dir, exist_ok=True)
 
             print(f" - Collecting selected examples")
-            with open(f"{output_dir}/selected_examples.txt", "w") as f:
+            with open(f"{output_dir}/selected_examples.txt", "w", encoding="utf-8") as f:
                 f.write(get_outputs(SELECTED_EXAMPLES[corpus], src, ref, sys, errors, comet_scores))
             
             
@@ -103,7 +107,7 @@ if __name__ == "__main__":
 
             if len(critical_errors) > 0:   
                 print(f" - Collecting critical errors")
-                with open(f"{output_dir}/critical_errors.txt", "w") as f:
+                with open(f"{output_dir}/critical_errors.txt", "w", encoding="utf-8") as f:
                     f.write(get_outputs(critical_errors, src, ref, sys, errors, comet_scores))
                     
 

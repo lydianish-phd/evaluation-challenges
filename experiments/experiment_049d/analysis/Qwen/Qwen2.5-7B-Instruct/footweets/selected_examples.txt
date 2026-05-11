@@ -1,0 +1,2006 @@
+Line 2
+SRC: @OfficialPSL can u pls get dat object used to draw line on free kicks & ball placed in right spot, we are titred of Shabba cheats #WorldCup
+REF: @OfficialPSL Kannst du bitte das Ding das bei Freistößen zum Linienziehen benutzt besorgen & der Ball liegt an der richtigen Stelle, wir haben die shabba schummler satt #Worldcup
+------------------------------
+SYS (baseline): @OfficialPSL kann u pls das Objekt bekommen, das benutzt wird, um die Linie bei Freistoßen zu ziehen und den Ball an die richtige Stelle zu bringen, wir sind Shabba-Betrüger #WorldCup
+BLEU (baseline): 4.010219277455057
+COMET (baseline): 63.154709339141846
+COMET-KIWI (baseline): 63.6702299118042
+------------------------------
+SYS (default): @OfficialPSL können Sie bitte das Objekt für die Zeichnung der Linie bei Würfen von Freiwürfen und den Ball in die richtige Position stellen? Wir sind leidend unter Shabba-Abwertungen #Weltmeisterschaft
+BLEU (default): 4.018258743085361
+COMET (default): 58.55193734169006
+COMET-KIWI (default): 57.65228271484375
+------------------------------
+SYS (rocsmt): @OfficialPSL kannst du pls das Objekt holen, das für die Zeichnung der Linie bei Würfen von Freiwürfen verwendet wird, und den Ball in die richtige Position stellen? Wir sind leid von Shabba-Trapfen #WorldCup
+BLEU (rocsmt): 2.968155899432701
+COMET (rocsmt): 66.9436514377594
+COMET-KIWI (rocsmt): 62.3025119304657
+------------------------------
+SYS (footweets): @OfficialPSL kannst du pls das Objekt holen, das für die Zeichnung der Linie bei Würfen von Freiwürfen verwendet wird, und den Ball in die richtige Position stellen? Wir sind leid von Shabba-Trapfen #WorldCup
+BLEU (footweets): 2.968155899432701
+COMET (footweets): 66.9436514377594
+COMET-KIWI (footweets): 62.3025119304657
+------------------------------
+SYS (mmtc): @OfficialPSL kannst du pls das Objekt holen, das für die Zeichnung der Linie bei Freikicks verwendet wird, und den Ball in die richtige Position stellen? Wir sind leid von Shabba-Trap-Fairen #Weltmeisterschaft
+BLEU (mmtc): 3.140398953991723
+COMET (mmtc): 70.18155455589294
+COMET-KIWI (mmtc): 63.794636726379395
+------------------------------
+SYS (pfsmb): @OfficialPSL kannst du pls das Objekt holen, das für die Zeichnung der Linie bei Freikicks verwendet wird, und den Ball in die richtige Position stellen? Wir sind leid von Shabba-Trap-Fairen #WorldCup
+BLEU (pfsmb): 3.140398953991723
+COMET (pfsmb): 69.94431614875793
+COMET-KIWI (pfsmb): 64.25662040710449
+
+Line 3
+SRC: Brazils World Cup dream shattered by Germany: - Hattiesburg American http://t.co/blOHq2ygEW #Brazil2014 #WorldCup
+REF: Brasiliens Weltmeisterschaftstraum von Deutschland zerschmettert: - Hattiesburg American http://t.co/blOHq2ygEW #Brazil2014 #Worldcup
+------------------------------
+SYS (baseline): Der Traum von Brasilien um die Weltmeisterschaft wurde von Deutschland zerschlagen: - Hattiesburg American http://t.co/blOHq2ygEW #Brazil2014 #WorldCup
+BLEU (baseline): 57.148808593976
+COMET (baseline): 89.90928530693054
+COMET-KIWI (baseline): 86.06501817703247
+------------------------------
+SYS (default): Brasils Weltmeisterschaftstraum durch Deutschland zerstört: - Hattiesburg American http://t.co/blOHq2ygEW #Brazil2014 #Weltmeisterschaft
+BLEU (default): 72.73649925334071
+COMET (default): 90.14219045639038
+COMET-KIWI (default): 85.74969172477722
+------------------------------
+SYS (rocsmt): Brasils Weltmeisterschaftstraum durch Deutschland zerstört: - Hattiesburg American http://t.co/blOHq2ygEW #Brazil2014 #WorldCup
+BLEU (rocsmt): 72.73649925334071
+COMET (rocsmt): 89.76656794548035
+COMET-KIWI (rocsmt): 85.50090193748474
+------------------------------
+SYS (footweets): Brasils Weltmeisterschaftstraum durch Deutschland zerschlagen: - Hattiesburg American http://t.co/blOHq2ygEW #Brazil2014 #WorldCup
+BLEU (footweets): 72.73649925334071
+COMET (footweets): 90.3309166431427
+COMET-KIWI (footweets): 85.25549173355103
+------------------------------
+SYS (mmtc): Brasils Weltmeisterschaftstraum durch Deutschland zerstört: - Hattiesburg American http://t.co/blOHq2ygEW #Brazil2014 #Weltmeisterschaft
+BLEU (mmtc): 72.73649925334071
+COMET (mmtc): 90.14217257499695
+COMET-KIWI (mmtc): 85.74969172477722
+------------------------------
+SYS (pfsmb): Brasils Weltmeisterschaftstraum durch Deutschland zerschlagen: - Hattiesburg American http://t.co/blOHq2ygEW #Brazil2014 #WorldCup
+BLEU (pfsmb): 72.73649925334071
+COMET (pfsmb): 90.33090472221375
+COMET-KIWI (pfsmb): 85.25549173355103
+
+Line 7
+SRC: Brazil is going to riot tonight. #WorldCup
+REF: Brasilien wird heute Abend randalieren. #Worldcup
+------------------------------
+SYS (baseline): Brasilien wird heute Abend auf der Hut sein. #WorldCup
+BLEU (baseline): 27.901593935858266
+COMET (baseline): 71.0904061794281
+COMET-KIWI (baseline): 70.88657021522522
+------------------------------
+SYS (default): Brasilien wird heute Nacht in Aufstand kommen. #Weltmeisterschaft
+BLEU (default): 19.64073254502565
+COMET (default): 83.07002186775208
+COMET-KIWI (default): 81.81416988372803
+------------------------------
+SYS (rocsmt): Brasilien wird heute Abend in Aufstand kommen. #WorldCup
+BLEU (rocsmt): 31.239399369202552
+COMET (rocsmt): 83.08177590370178
+COMET-KIWI (rocsmt): 83.24974775314331
+------------------------------
+SYS (footweets): Brasilien wird heute Abend in Aufstand kommen. #WorldCup
+BLEU (footweets): 31.239399369202552
+COMET (footweets): 83.08177590370178
+COMET-KIWI (footweets): 83.24974775314331
+------------------------------
+SYS (mmtc): Brasilien wird heute Abend in Aufstand kommen. #Weltmeisterschaft
+BLEU (mmtc): 31.239399369202552
+COMET (mmtc): 83.79245400428772
+COMET-KIWI (mmtc): 81.31922483444214
+------------------------------
+SYS (pfsmb): Brasilien wird heute Abend in Aufstand kommen. #Weltmeisterschaft
+BLEU (pfsmb): 31.239399369202552
+COMET (pfsmb): 83.79246592521667
+COMET-KIWI (pfsmb): 81.31922483444214
+
+Line 18
+SRC: its all over but the crying, of which there will be a lot of. #BrazilvsGermany #WorldCup #slaughter
+REF: es ist alles vorbei, nur das Weinen nicht, davon wird es eine Menge geben. #BrazilvsGermany #Worldcup #slaughter
+------------------------------
+SYS (baseline): Es ist alles vorbei, nur das Weinen, von dem es noch viel geben wird. #BrazilvsDeutschland #Weltmeisterschaft #Schlachtung
+BLEU (baseline): 31.528613442545005
+COMET (baseline): 67.30250716209412
+COMET-KIWI (baseline): 78.28999757766724
+------------------------------
+SYS (default): Es ist alles vorbei, außer das Weinen, von dem wird viel sein. #BrasiliengegenDeutschland #Weltmeisterschaft #Slaughter
+BLEU (default): 15.456639689014388
+COMET (default): 73.81266951560974
+COMET-KIWI (default): 81.80891275405884
+------------------------------
+SYS (rocsmt): Es ist alles vorbei, außer das Weinen, von dem wird viel sein. #BrasiliengegenDeutschland #Weltmeisterschaft #Slaughter
+BLEU (rocsmt): 15.456639689014388
+COMET (rocsmt): 73.81274104118347
+COMET-KIWI (rocsmt): 81.80890679359436
+------------------------------
+SYS (footweets): Es ist alles vorbei, außer das Weinen, von dem wird viel sein. #BrasiliengegenDeutschland #Weltmeisterschaft #Slaughter
+BLEU (footweets): 15.456639689014388
+COMET (footweets): 73.81274104118347
+COMET-KIWI (footweets): 81.80890679359436
+------------------------------
+SYS (mmtc): Es ist alles vorbei, außer das Weinen, von dem wird viel sein. #BrasiliengegenDeutschland #Weltmeisterschaft #Slaughter
+BLEU (mmtc): 15.456639689014388
+COMET (mmtc): 73.81274104118347
+COMET-KIWI (mmtc): 81.80890679359436
+------------------------------
+SYS (pfsmb): Es ist alles vorbei, außer das Weinen, von dem wird viel sein. #BrasiliengegenDeutschland #Weltmeisterschaft #Massaker
+BLEU (pfsmb): 15.456639689014388
+COMET (pfsmb): 71.26386761665344
+COMET-KIWI (pfsmb): 83.1912100315094
+
+Line 21
+SRC: embarrassing? investigation? he bit him and faked an injury, nothing new in the #worldcup
+REF: peinlich? Untersuchung? er hat ihn gebissen und eine Verletzung vorgetäuscht, nichts Neues beim #Worldcup
+------------------------------
+SYS (baseline): Er hat ihn gebissen und eine Verletzung vorgetäuscht, nichts Neues im #worldcup
+BLEU (baseline): 52.08472049383919
+COMET (baseline): 84.2000663280487
+COMET-KIWI (baseline): 62.60737180709839
+------------------------------
+SYS (default): peinlich? Untersuchung? Er biß ihn und tat einen Verletzungsschmerz auf, nichts Neues in der #Weltcup.
+BLEU (default): 18.951629567590736
+COMET (default): 58.710938692092896
+COMET-KIWI (default): 73.04903268814087
+------------------------------
+SYS (rocsmt): peinlich? Untersuchung? Er biss ihn und spielte eine Verletzung auf, nichts Neues in der #Weltcup
+BLEU (rocsmt): 21.951524426618455
+COMET (rocsmt): 70.3367829322815
+COMET-KIWI (rocsmt): 76.9961416721344
+------------------------------
+SYS (footweets): peinlich? Untersuchung? Er biss ihn und spielte eine Verletzung auf, nichts Neues in der #Weltcup
+BLEU (footweets): 21.951524426618455
+COMET (footweets): 70.3367829322815
+COMET-KIWI (footweets): 76.9961416721344
+------------------------------
+SYS (mmtc): peinlich? Untersuchung? Er biss ihn und spielte eine Verletzung auf, nichts Neues in der #Weltcup
+BLEU (mmtc): 21.951524426618455
+COMET (mmtc): 70.3367829322815
+COMET-KIWI (mmtc): 76.9961416721344
+------------------------------
+SYS (pfsmb): peinlich? Untersuchung? Er biss ihn und spielte eine Verletzung auf, nichts Neues in der #Weltmeisterschaft
+BLEU (pfsmb): 21.951524426618455
+COMET (pfsmb): 78.41209769248962
+COMET-KIWI (pfsmb): 80.66893815994263
+
+Line 22
+SRC: complete depression to see $my #Mexico leave the #WorldCup, but no one can deny they fought like lions!!!!!! #VamosMexico
+REF: es ist total deprimierend, zu sehen, dass $mein #Mexico den #Worldcup verlassen hat, aber niemand kann leugnen, sie haben gekämpft wie die Löwen!!!!!! #VamosMexico
+------------------------------
+SYS (baseline): Ich bin total deprimiert, dass mein #Mexiko die #Weltmeisterschaft verlässt, aber niemand kann leugnen, dass sie wie Löwen gekämpft haben!!!!!! #VamosMexico
+BLEU (baseline): 35.66226573051174
+COMET (baseline): 87.72538304328918
+COMET-KIWI (baseline): 83.91396403312683
+------------------------------
+SYS (default): vollständige Depression, $my #Mexico aus dem #WorldCup zu sehen, aber niemand kann leugnen, dass sie wie Löwen gekämpft haben!!!!!! #VamosMexico
+BLEU (default): 38.11998260829299
+COMET (default): 67.33284592628479
+COMET-KIWI (default): 73.5797107219696
+------------------------------
+SYS (rocsmt): Vollständige Depression, $my #Mexico den #WorldCup verlassen zu sehen, aber niemand kann leugnen, dass sie wie Löwen gekämpft haben!!!!!! #VamosMexico
+BLEU (rocsmt): 42.91658734231678
+COMET (rocsmt): 76.90423130989075
+COMET-KIWI (rocsmt): 78.88551950454712
+------------------------------
+SYS (footweets): Vollständige Depression, $my #Mexico den #WorldCup verlassen zu sehen, aber niemand kann leugnen, dass sie wie Löwen gekämpft haben!!!!!! #VamosMexico
+BLEU (footweets): 42.91658734231678
+COMET (footweets): 76.90419554710388
+COMET-KIWI (footweets): 78.88555526733398
+------------------------------
+SYS (mmtc): völlige Depression, $my #Mexiko die #Weltmeisterschaft verlassen zu sehen, aber niemand kann leugnen, dass sie wie Löwen gekämpft haben!!!!!! #VamosMexico
+BLEU (mmtc): 37.85245743140819
+COMET (mmtc): 77.55915522575378
+COMET-KIWI (mmtc): 74.9231219291687
+------------------------------
+SYS (pfsmb): völlige Depression, $my #Mexico verlassen die #WorldCup, aber niemand kann leugnen, dass sie wie Löwen gekämpft haben!!!!!! #VamosMexico
+BLEU (pfsmb): 35.69186209827831
+COMET (pfsmb): 66.45837426185608
+COMET-KIWI (pfsmb): 67.09694862365723
+
+Line 24
+SRC: @themoonexpress Im going to take a stab in the dark and say...youre not a fan of the South American dance? #sarcasm #WorldCup
+REF: @themoonexpress Lass mich raten...du bist kein Fan des südamerikanischen Tanzes? #sarcasm #Worldcup
+------------------------------
+SYS (baseline): @themoonexpress Ich werde einen Versuch im Dunkeln wagen und sagen...Sie sind kein Fan des südamerikanischen Tanzes? #sarkasmus #WorldCup
+BLEU (baseline): 29.74309561779646
+COMET (baseline): 78.30219268798828
+COMET-KIWI (baseline): 84.21680927276611
+------------------------------
+SYS (default): @themoonexpress Ich werde einen blinden Versuch machen und sagen... du bist kein Fan der südamerikanischen Tanzkultur? #Sarkasmus #Weltmeisterschaft
+BLEU (default): 28.77003511301735
+COMET (default): 76.02260112762451
+COMET-KIWI (default): 81.32802248001099
+------------------------------
+SYS (rocsmt): @themoonexpress Ich werde einen blinden Versuch machen und sagen...du bist kein Fan der südamerikanischen Tanzkultur? #Sarkasmus #Weltmeisterschaft
+BLEU (rocsmt): 28.77003511301735
+COMET (rocsmt): 75.91949105262756
+COMET-KIWI (rocsmt): 81.2616765499115
+------------------------------
+SYS (footweets): @themoonexpress Ich werde einen blinden Versuch machen und sagen...du bist kein Fan der südamerikanischen Tanzkultur? #Sarkasmus #Weltmeisterschaft
+BLEU (footweets): 28.77003511301735
+COMET (footweets): 75.91953873634338
+COMET-KIWI (footweets): 81.2616765499115
+------------------------------
+SYS (mmtc): @themoonexpress Ich werde einen Versuch auf riskante Weise machen und sagen...du bist nicht ein Fan der südamerikanischen Tanzkultur? #Sarkasmus #Weltmeisterschaft
+BLEU (mmtc): 17.21916742076807
+COMET (mmtc): 72.77437448501587
+COMET-KIWI (mmtc): 75.83106756210327
+------------------------------
+SYS (pfsmb): @themoonexpress Ich werde einen Versuch auf riskante Weise machen und sagen...du bist nicht ein Fan der südamerikanischen Tanzkultur? #Sarkasmus #Weltmeisterschaft
+BLEU (pfsmb): 17.21916742076807
+COMET (pfsmb): 72.77437448501587
+COMET-KIWI (pfsmb): 75.83106756210327
+
+Line 26
+SRC: not an offside for Higuain! 😳 damn referee spoilt it! #worldcup #ARG
+REF: kein Abseits von Higuain! 😳 der verdammte Schiedsrichter hat es verdorben! #Worldcup #ARG
+------------------------------
+SYS (baseline): Nicht ein Offside für Higuain! 😳 Der verdammte Schiedsrichter hat es versaut! #Weltmeisterschaft #ARG
+BLEU (baseline): 23.682079130839753
+COMET (baseline): 80.79075813293457
+COMET-KIWI (baseline): 84.46900844573975
+------------------------------
+SYS (default): kein Ausfall für Higuain! 😳 der Schiedsrichter hat es vermasselt! #Weltmeisterschaft #ARG
+BLEU (default): 25.89023978128851
+COMET (default): 75.90426802635193
+COMET-KIWI (default): 83.4198534488678
+------------------------------
+SYS (rocsmt): kein Ausfall für Higuain! 😳 verdammt, der Schiedsrichter hat es vermasselt! #worldcup #ARG
+BLEU (rocsmt): 17.694975149532556
+COMET (rocsmt): 79.42799925804138
+COMET-KIWI (rocsmt): 83.34356546401978
+------------------------------
+SYS (footweets): kein Ausfall für Higuain! 😳 verdammter Schiedsrichter hat es ruiniert! #Weltcup #ARG
+BLEU (footweets): 18.521319405721304
+COMET (footweets): 80.89205622673035
+COMET-KIWI (footweets): 83.83139371871948
+------------------------------
+SYS (mmtc): kein Ausfall für Higuain! 😳 verdammt, der Schiedsrichter hat es vermasselt! #Weltmeisterschaft #ARG
+BLEU (mmtc): 17.694975149532556
+COMET (mmtc): 77.14817523956299
+COMET-KIWI (mmtc): 83.58138799667358
+------------------------------
+SYS (pfsmb): kein Ausfall für Higuain! 😳 verdammt, der Schiedsrichter hat es vermasselt! #Weltmeisterschaft #ARG
+BLEU (pfsmb): 17.694975149532556
+COMET (pfsmb): 77.14817523956299
+COMET-KIWI (pfsmb): 83.58138799667358
+
+Line 30
+SRC: after a 5-1 loss to the Dutch, this must be how Spain feels http://t.co/urc1aV7uJ9 #worldcup
+REF: nach einer 5-1 Niederlage gegen die Holländer, muss sich Spanien so fühlen http://t.co/urc1aV7uJ9 #Worldcup
+------------------------------
+SYS (baseline): Nach einer 5:1-Niederlage gegen die Niederländer muss sich Spanien so fühlen http://t.co/urc1aV7uJ9 #worldcup
+BLEU (baseline): 64.68924946094378
+COMET (baseline): 90.3753936290741
+COMET-KIWI (baseline): 84.37092304229736
+------------------------------
+SYS (default): Nach einem 5:1-Niederlagen gegen die Niederlande muss Spanien sich so fühlen http://t.co/urc1aV7uJ9 #Weltmeisterschaft
+BLEU (default): 49.53364977799023
+COMET (default): 85.4629397392273
+COMET-KIWI (default): 82.04763531684875
+------------------------------
+SYS (rocsmt): Nach einem 5:1-Niederlagen gegen die Niederlande muss Spanien sich so fühlen http://t.co/urc1aV7uJ9 #worldcup
+BLEU (rocsmt): 49.53364977799023
+COMET (rocsmt): 87.16095089912415
+COMET-KIWI (rocsmt): 81.58330917358398
+------------------------------
+SYS (footweets): Nach einem 5:1-Niederlagen gegen die Niederlande muss Spanien sich so fühlen http://t.co/urc1aV7uJ9 #worldcup
+BLEU (footweets): 49.53364977799023
+COMET (footweets): 87.16095089912415
+COMET-KIWI (footweets): 81.58330917358398
+------------------------------
+SYS (mmtc): nach einem 5:1-Niederlagen gegen die Niederlande muss Spanien so fühlen http://t.co/urc1aV7uJ9 #Weltmeisterschaft
+BLEU (mmtc): 53.228507285626534
+COMET (mmtc): 83.21622610092163
+COMET-KIWI (mmtc): 76.75992250442505
+------------------------------
+SYS (pfsmb): nach einem 5:1-Niederlage gegen die Niederlande muss Spanien sich so fühlen http://t.co/urc1aV7uJ9 #worldcup
+BLEU (pfsmb): 53.00138254332498
+COMET (pfsmb): 89.63499665260315
+COMET-KIWI (pfsmb): 83.8336706161499
+
+Line 35
+SRC: #Siri has some sass. 😳. #pummeled #brazil #germany #worldcup http://t.co/EGjMM6fF9u
+REF: #Siri besitzt einige Frechheit. 😳. #pummeled #brazil #germany #Worldcup http://t.co/EGjMM6fF9u
+------------------------------
+SYS (baseline): #Siri hat etwas Frechheit. 😳. #geprügelt #Brasilien #Deutschland #Weltmeisterschaft http://t.co/EGjMM6fF9u
+BLEU (baseline): 50.50929343104256
+COMET (baseline): 80.12444972991943
+COMET-KIWI (baseline): 78.17432880401611
+------------------------------
+SYS (default): #Siri hat einen Spottton. 😳. #pummeled #brazil #germany #worldcup http://t.co/EGjMM6fF9u
+BLEU (default): 70.19499719108448
+COMET (default): 86.39689683914185
+COMET-KIWI (default): 61.595702171325684
+------------------------------
+SYS (rocsmt): #Siri hat einen Spottblick. 😳. #pummeled #brazil #germany #worldcup http://t.co/EGjMM6fF9u
+BLEU (rocsmt): 70.19499719108448
+COMET (rocsmt): 89.1708254814148
+COMET-KIWI (rocsmt): 71.92545533180237
+------------------------------
+SYS (footweets): #Siri hat einen Spottblick. 😳. #pummeled #brazil #germany #worldcup http://t.co/EGjMM6fF9u
+BLEU (footweets): 70.19499719108448
+COMET (footweets): 89.1708254814148
+COMET-KIWI (footweets): 71.92550897598267
+------------------------------
+SYS (mmtc): #Siri hat einen Spottblick. 😳. #pummeled #brazil #germany #worldcup http://t.co/EGjMM6fF9u
+BLEU (mmtc): 70.19499719108448
+COMET (mmtc): 89.17081952095032
+COMET-KIWI (mmtc): 71.92545533180237
+------------------------------
+SYS (pfsmb): #Siri hat einen Spottblick. 😳. #pummeled #brazil #germany #worldcup http://t.co/EGjMM6fF9u
+BLEU (pfsmb): 70.19499719108448
+COMET (pfsmb): 89.17081952095032
+COMET-KIWI (pfsmb): 71.92545533180237
+
+Line 177
+SRC: 😂 😭 😂 😂 😂 this cracked me up lol #WorldCup #2014 http://t.co/afjwEZaxQT
+REF: 😂 😭 😂 😂 😂 ich sterbe vor lachen #Worldcup #2014 http://t.co/afjwEZaxQT
+------------------------------
+SYS (baseline): Das hat mich total aufgeregt.
+BLEU (baseline): 0.5639761817130674
+COMET (baseline): 39.33916985988617
+COMET-KIWI (baseline): 70.89287042617798
+------------------------------
+SYS (default): 😂 😭 😂 😂 😂 das hat mich total am Lachen gemacht lol #Weltmeisterschaft #2014 http://t.co/afjwEZaxQT
+BLEU (default): 53.11613208274919
+COMET (default): 89.25196528434753
+COMET-KIWI (default): 82.75521397590637
+------------------------------
+SYS (rocsmt): 😂 😭 😂 😂 😂 das hat mich total am Amüsierten gerissen lol #WorldCup #2014 http://t.co/afjwEZaxQT
+BLEU (rocsmt): 53.11613208274919
+COMET (rocsmt): 79.57450151443481
+COMET-KIWI (rocsmt): 56.784141063690186
+------------------------------
+SYS (footweets): 😂 😭 😂 😂 😂 das hat mich total am Amüsierten gerissen lol #WorldCup #2014 http://t.co/afjwEZaxQT
+BLEU (footweets): 53.11613208274919
+COMET (footweets): 79.57450151443481
+COMET-KIWI (footweets): 56.784141063690186
+------------------------------
+SYS (mmtc): 😂 😭 😂 😂 😂 das hat mich total am Amüsierten aufgehalten lol #Weltmeisterschaft #2014 http://t.co/afjwEZaxQT
+BLEU (mmtc): 53.11613208274919
+COMET (mmtc): 81.61585927009583
+COMET-KIWI (mmtc): 59.20717716217041
+------------------------------
+SYS (pfsmb): 😂 😭 😂 😂 😂 das hat mich total am Amüsierten aufgehalten lol #Weltmeisterschaft #2014 http://t.co/afjwEZaxQT
+BLEU (pfsmb): 53.11613208274919
+COMET (pfsmb): 81.6158652305603
+COMET-KIWI (pfsmb): 59.20717716217041
+
+Line 195
+SRC: no way!!!!!! #WorldCup
+REF: auf keinen Fall!!!!!! #Worldcup
+------------------------------
+SYS (baseline): Auf keinen Fall!!!!!! #Weltcup
+BLEU (baseline): 78.60753021519781
+COMET (baseline): 96.71882390975952
+COMET-KIWI (baseline): 87.01149225234985
+------------------------------
+SYS (default): kein Weg!!!!!! #Weltmeisterschaft
+BLEU (default): 57.813962871807846
+COMET (default): 80.98267912864685
+COMET-KIWI (default): 86.68587803840637
+------------------------------
+SYS (rocsmt): kein Weg!!!!!! #WorldCup
+BLEU (rocsmt): 57.813962871807846
+COMET (rocsmt): 84.48060154914856
+COMET-KIWI (rocsmt): 84.14498567581177
+------------------------------
+SYS (footweets): kein Weg!!!!!! #WorldCup
+BLEU (footweets): 57.813962871807846
+COMET (footweets): 84.48060154914856
+COMET-KIWI (footweets): 84.14498567581177
+------------------------------
+SYS (mmtc): kein Weg!!!!!! #Weltmeisterschaft
+BLEU (mmtc): 57.813962871807846
+COMET (mmtc): 80.98267912864685
+COMET-KIWI (mmtc): 86.68587803840637
+------------------------------
+SYS (pfsmb): kein Weg!!!!!! #Weltmeisterschaft
+BLEU (pfsmb): 57.813962871807846
+COMET (pfsmb): 80.98267912864685
+COMET-KIWI (pfsmb): 86.68587803840637
+
+Line 337
+SRC: Dayyyym Germany. getting me all interested in football and shit. #WorldCup
+REF: verdammt Deutschland. werde voll interessiert an Fußball und der ganzen Scheiße. #Worldcup
+------------------------------
+SYS (baseline): Ich bin in Deutschland. Ich interessiere mich für Fußball und so. #WorldCup
+BLEU (baseline): 9.103526405546068
+COMET (baseline): 53.49401831626892
+COMET-KIWI (baseline): 62.090569734573364
+------------------------------
+SYS (default): Taggggymm Deutschland. Bringt mich total auf Football und so interessant. #Weltmeisterschaft
+BLEU (default): 7.907608126112009
+COMET (default): 50.23664832115173
+COMET-KIWI (default): 61.07857823371887
+------------------------------
+SYS (rocsmt): Taggggym Deutschland. Bringt mich total auf Football und Scheiße interessant. #WorldCup
+BLEU (rocsmt): 8.276380533331384
+COMET (rocsmt): 48.96560311317444
+COMET-KIWI (rocsmt): 53.350234031677246
+------------------------------
+SYS (footweets): Tagggg Germany. macht mich total interessant für Fußball und so. #Weltmeisterschaft
+BLEU (footweets): 7.907608126112009
+COMET (footweets): 54.61026430130005
+COMET-KIWI (footweets): 64.84638452529907
+------------------------------
+SYS (mmtc): Taggggym Deutschland. macht mich total interessiert für Fußball und Scheiße. #Weltmeisterschaft
+BLEU (mmtc): 14.957108065111516
+COMET (mmtc): 57.769256830215454
+COMET-KIWI (mmtc): 70.33787369728088
+------------------------------
+SYS (pfsmb): Tagggg Germany. macht mich total interessant für Fußball und Scheiße. #Weltmeisterschaft
+BLEU (pfsmb): 12.953235551535677
+COMET (pfsmb): 59.18188691139221
+COMET-KIWI (pfsmb): 62.85165548324585
+
+Line 374
+SRC: WTF..... its 5th goal from Germany...... cant believe. #worldcup
+REF: was zur Hölle..... fünftes Tor von Deutschland...... kann es nicht glauben. #Worldcup
+------------------------------
+SYS (baseline): WTF..... sein fünftes Tor von Deutschland...... kann nicht glauben. #worldcup
+BLEU (baseline): 64.58552885189877
+COMET (baseline): 86.25097870826721
+COMET-KIWI (baseline): 81.91395998001099
+------------------------------
+SYS (default): WTF..... das ist der 5. Tore von Deutschland...... kann es nicht glauben. #Weltmeisterschaft
+BLEU (default): 62.18522253057098
+COMET (default): 83.27837586402893
+COMET-KIWI (default): 77.72086262702942
+------------------------------
+SYS (rocsmt): WTF..... es ist der 5. Torschlag von Deutschland...... kann es nicht glauben. #worldcup
+BLEU (rocsmt): 62.18522253057098
+COMET (rocsmt): 87.12436556816101
+COMET-KIWI (rocsmt): 85.52502393722534
+------------------------------
+SYS (footweets): WTF..... es ist der 5. Torschlag von Deutschland...... kann es nicht glauben. #worldcup
+BLEU (footweets): 62.18522253057098
+COMET (footweets): 87.12436556816101
+COMET-KIWI (footweets): 85.52502393722534
+------------------------------
+SYS (mmtc): WTF..... es ist der 5. Tore von Deutschland...... kann es nicht glauben. #Weltmeisterschaft
+BLEU (mmtc): 62.18522253057098
+COMET (mmtc): 83.185476064682
+COMET-KIWI (mmtc): 76.94798707962036
+------------------------------
+SYS (pfsmb): WTF..... es ist der 5. Tore von Deutschland...... kann es nicht glauben. #worldcup
+BLEU (pfsmb): 62.18522253057098
+COMET (pfsmb): 82.3527991771698
+COMET-KIWI (pfsmb): 76.66261792182922
+
+Line 414
+SRC: Chelsea manager Jose Mourinho believes England’s elimination from the 2014 #WorldCup was down to bad luck more than anything else. #CFC
+REF: Chelsea Manager Jose Mourinho glaubt Englands Ausscheiden aus dem #Worldcup 2014 war viel mehr als alles andere Pech. #CFC
+------------------------------
+SYS (baseline): Chelsea-Manager Jose Mourinho glaubt, dass Englands Ausscheiden aus der Weltmeisterschaft 2014 mehr als alles andere auf Pech zurückzuführen war.
+BLEU (baseline): 21.793248853900373
+COMET (baseline): 86.86853051185608
+COMET-KIWI (baseline): 84.5873475074768
+------------------------------
+SYS (default): Chelsea-Trainer Jose Mourinho glaubt, dass Englands Ausschluss aus dem 2014igen #WorldCup hauptsächlich an schlechtem Glück lag. #CFC
+BLEU (default): 13.023957260262854
+COMET (default): 84.95379090309143
+COMET-KIWI (default): 84.98884439468384
+------------------------------
+SYS (rocsmt): Chelsea-Trainer Jose Mourinho glaubt, Englands Ausschluss aus dem 2014er #WorldCup beruhte mehr auf schlechter Glück als auf etwas anderem. #CFC
+BLEU (rocsmt): 12.384901282810546
+COMET (rocsmt): 85.28395891189575
+COMET-KIWI (rocsmt): 83.54857563972473
+------------------------------
+SYS (footweets): Chelsea-Trainer Jose Mourinho glaubt, Englands Ausschluss aus dem 2014 #WorldCup beruhte hauptsächlich auf schlechter Glücksmasse. #CFC
+BLEU (footweets): 13.343967280707105
+COMET (footweets): 71.93852663040161
+COMET-KIWI (footweets): 69.63222622871399
+------------------------------
+SYS (mmtc): Chelsea-Trainer Jose Mourinho glaubt, Englands Ausschluss aus dem 2014 #WorldCup beruhte mehr auf schlechter Glück als auf etwas anderem. #CFC
+BLEU (mmtc): 12.635227789398094
+COMET (mmtc): 84.39713716506958
+COMET-KIWI (mmtc): 82.47549533843994
+------------------------------
+SYS (pfsmb): Chelsea-Trainer Jose Mourinho glaubt, dass Englands Ausschluss aus dem 2014 #WorldCup hauptsächlich an schlechtem Glück lag. #CFC
+BLEU (pfsmb): 13.33801291628593
+COMET (pfsmb): 85.14439463615417
+COMET-KIWI (pfsmb): 85.1444959640503
+
+Line 422
+SRC: @Marina _ Sirtis [ Video ] Anti- #WorldCup protester pepper-sprayed at point blank range http://t.co/DJowWq7p3D … #Brazil
+REF: @Marina _ Sirtis [ Video ] Anti- #Worldcup Demonstrant wurde aus kürzester Entfernung mit Pfefferspray besprüht http://t.co/DJowWq7p3D... #Brazil
+------------------------------
+SYS (baseline): @Marina _ Sirtis [ Video ] Anti- #WorldCup-Demonstrant mit Pfefferspray aus nächster Nähe besprüht http://t.co/DJowWq7p3D... #Brazil
+BLEU (baseline): 71.43076441533611
+COMET (baseline): 83.20518136024475
+COMET-KIWI (baseline): 83.33066701889038
+------------------------------
+SYS (default): @Marina _ Sirtis [ Video ] Anti- #Weltmeisterschaft-Protestierer mit Pfefferspray bei nahezu零距离翻译： user @Marina _ Sirtis [ Video ] Anti- #Weltmeisterschaft protester pfefferspray直接翻译： user @Marina _ Sirtis [ Video ] Anti- #Weltmeisterschaft protester pfefferspray bei Nahrange
+BLEU (default): 20.271170435109212
+COMET (default): 42.96317398548126
+COMET-KIWI (default): 35.29732525348663
+------------------------------
+SYS (rocsmt): @Marina _ Sirtis [ Video ] Anti- #WorldCup Protestierender mit Pfefferspray bei naheem Anschlag bewaffnet angreifen http://t.co/DJowWq7p3D … #Brazil
+BLEU (rocsmt): 52.75794726333525
+COMET (rocsmt): 68.03488731384277
+COMET-KIWI (rocsmt): 53.46606969833374
+------------------------------
+SYS (footweets): @Marina _ Sirtis [ Video ] Anti- #WorldCup Protestierter mit Pfefferspray bei naheem Anschlag betroffen http://t.co/DJowWq7p3D … #Brazil
+BLEU (footweets): 52.70487846433031
+COMET (footweets): 74.56862926483154
+COMET-KIWI (footweets): 60.1889967918396
+------------------------------
+SYS (mmtc): @Marina _ Sirtis [ Video ] Anti- #WorldCup Protestierter mit Pfefferspray bei naheem Anschlag betroffen http://t.co/DJowWq7p3D … #Brasilien
+BLEU (mmtc): 51.35634098679393
+COMET (mmtc): 73.41387867927551
+COMET-KIWI (mmtc): 60.165125131607056
+------------------------------
+SYS (pfsmb): @Marina _ Sirtis [ Video ] Anti- #WorldCup Protestierter mit Pfefferspray bei naheem Anschlag bewaffnet angreifend http://t.co/DJowWq7p3D … #Brazil
+BLEU (pfsmb): 52.75794726333525
+COMET (pfsmb): 67.7559494972229
+COMET-KIWI (pfsmb): 51.09643340110779
+
+Line 525
+SRC: fuck yes!!!!!!!!!!!!!!!!!!! #WorldCup #CRCvsGRE
+REF: verdammt ja Man! #Worldcup #CRCvsGRE
+------------------------------
+SYS (baseline): Scheiße ja!!!!!!!!!!!!!!!!!!! #WorldCup #CRCvsGRE
+BLEU (baseline): 4.504556737153659
+COMET (baseline): 89.05605673789978
+COMET-KIWI (baseline): 83.02549719810486
+------------------------------
+SYS (default): fuck yes!!!!!!!!!!!!!!!!!!! #Weltmeisterschaft #CRCgegenGRE
+BLEU (default): 3.333744983027298
+COMET (default): 83.33362936973572
+COMET-KIWI (default): 80.71819543838501
+------------------------------
+SYS (rocsmt): fuck yes!!!!!!!!!!!!!!!!!!! #WorldCup #CRCvsGRE
+BLEU (rocsmt): 4.260146736441797
+COMET (rocsmt): 88.50176930427551
+COMET-KIWI (rocsmt): 70.08076906204224
+------------------------------
+SYS (footweets): fuck yes!!!!!!!!!!!!!!!!!!! #WorldCup #CRCvsGRE
+BLEU (footweets): 4.260146736441797
+COMET (footweets): 88.50176930427551
+COMET-KIWI (footweets): 70.08076906204224
+------------------------------
+SYS (mmtc): fick ja!!!!!!!!!!!!!!!!!!! #Weltmeisterschaft #CRCgegenGRE
+BLEU (mmtc): 3.5823421191287177
+COMET (mmtc): 73.51305484771729
+COMET-KIWI (mmtc): 69.37661170959473
+------------------------------
+SYS (pfsmb): fuck yes!!!!!!!!!!!!!!!!!!! #Weltmeisterschaft #CRCgegenGRE
+BLEU (pfsmb): 3.333744983027298
+COMET (pfsmb): 83.33362936973572
+COMET-KIWI (pfsmb): 80.71819543838501
+
+Line 536
+SRC: never saved a pen! ✋ 🍊 ✈ ️ come on the argies #WorldCup
+REF: hat noch nie einen Elfmeter gehalten! ✋ 🍊 ✈ ️ kommt schon Argies #Worldcup
+------------------------------
+SYS (baseline): Ich habe nie einen Stift gerettet!   ️ Komm schon, die Argies #WorldCup
+BLEU (baseline): 7.997800623453542
+COMET (baseline): 47.657135128974915
+COMET-KIWI (baseline): 63.41804265975952
+------------------------------
+SYS (default): nie gespart ein Stift! ✋ 🍊 ✈ ️ komm auf die argies #Weltmeisterschaft
+BLEU (default): 25.034468860535334
+COMET (default): 54.230087995529175
+COMET-KIWI (default): 58.61061215400696
+------------------------------
+SYS (rocsmt): nie gespart ein Stift! ✋ 🍊 ✈ ️ komm zu den argies #WorldCup
+BLEU (rocsmt): 25.034468860535334
+COMET (rocsmt): 55.32013177871704
+COMET-KIWI (rocsmt): 57.23578333854675
+------------------------------
+SYS (footweets): nie gespart ein Stift! ✋ 🍊 ✈ ️ komm zu den argies #WorldCup
+BLEU (footweets): 25.034468860535334
+COMET (footweets): 55.32013177871704
+COMET-KIWI (footweets): 57.23578333854675
+------------------------------
+SYS (mmtc): nie gespart ein Stift! ✋ 🍊 ✈ ️ komm zu den argies #Weltmeisterschaft
+BLEU (mmtc): 25.034468860535334
+COMET (mmtc): 55.38793206214905
+COMET-KIWI (mmtc): 56.1109185218811
+------------------------------
+SYS (pfsmb): nie gespart ein Stift! ✋ 🍊 ✈ ️ komm zu den argies #Weltmeisterschaft
+BLEU (pfsmb): 25.034468860535334
+COMET (pfsmb): 55.38793206214905
+COMET-KIWI (pfsmb): 56.1109185218811
+
+Line 573
+SRC: Dzeko smiling after the loss, niceeee #WorldCup
+REF: Dzeko lächelnd nach der Niederlage, schööön #Worldcup
+------------------------------
+SYS (baseline): Dzeko lächelt nach dem Sieg, niceeee #WorldCup
+BLEU (baseline): 6.742555929751843
+COMET (baseline): 67.39980578422546
+COMET-KIWI (baseline): 79.16436791419983
+------------------------------
+SYS (default): Dzeko lächelt nach dem Verlust, niceeee #Weltmeisterschaft
+BLEU (default): 6.742555929751843
+COMET (default): 71.45866751670837
+COMET-KIWI (default): 81.13188743591309
+------------------------------
+SYS (rocsmt): Dzeko lächelt nach dem Verlust, niceeee #WorldCup
+BLEU (rocsmt): 6.742555929751843
+COMET (rocsmt): 68.49253177642822
+COMET-KIWI (rocsmt): 80.77377080917358
+------------------------------
+SYS (footweets): Dzeko lächelt nach dem Verlust, niceeee #WorldCup
+BLEU (footweets): 6.742555929751843
+COMET (footweets): 68.49253177642822
+COMET-KIWI (footweets): 80.77377080917358
+------------------------------
+SYS (mmtc): Dzeko lächelt nach dem Verlust, niceeee #Weltmeisterschaft
+BLEU (mmtc): 6.742555929751843
+COMET (mmtc): 71.45866751670837
+COMET-KIWI (mmtc): 81.13188743591309
+------------------------------
+SYS (pfsmb): Dzeko lächelt nach dem Verlust, niceeee #Weltmeisterschaft
+BLEU (pfsmb): 6.742555929751843
+COMET (pfsmb): 71.45866751670837
+COMET-KIWI (pfsmb): 81.13188743591309
+
+Line 610
+SRC: Algeria & Nigeria only 2 African sides left #WorldCup
+REF: Algerien & Nigeria nur zwei afrikanische Mannschaften im #Worldcup
+------------------------------
+SYS (baseline): Algerien und Nigeria sind nur noch zwei afrikanische Teams #WorldCup
+BLEU (baseline): 9.864703138979419
+COMET (baseline): 89.83845114707947
+COMET-KIWI (baseline): 83.69073271751404
+------------------------------
+SYS (default): Algerien & Nigeria nur 2 afrikanische Teams übrig #Weltmeisterschaft
+BLEU (default): 29.071536848410968
+COMET (default): 87.90813088417053
+COMET-KIWI (default): 76.14587545394897
+------------------------------
+SYS (rocsmt): Algerien & Nigeria nur 2 afrikanische Teams übrig #WorldCup
+BLEU (rocsmt): 29.071536848410968
+COMET (rocsmt): 87.78144717216492
+COMET-KIWI (rocsmt): 75.01957416534424
+------------------------------
+SYS (footweets): Algerien & Nigeria nur 2 afrikanische Teams übrig #WorldCup
+BLEU (footweets): 29.071536848410968
+COMET (footweets): 87.7814531326294
+COMET-KIWI (footweets): 75.01954436302185
+------------------------------
+SYS (mmtc): Algerien & Nigeria nur 2 afrikanische Teams übrig #Weltmeisterschaft
+BLEU (mmtc): 29.071536848410968
+COMET (mmtc): 87.90812492370605
+COMET-KIWI (mmtc): 76.14587545394897
+------------------------------
+SYS (pfsmb): Algerien & Nigeria nur 2 afrikanische Teams übrig #WorldCup
+BLEU (pfsmb): 29.071536848410968
+COMET (pfsmb): 87.78144717216492
+COMET-KIWI (pfsmb): 75.01957416534424
+
+Line 637
+SRC: Papa e hijo. vamos Chile mierdaaaa! #chile #worldcup #spain #fuckuhaters #laroja http://t.co/nrGbwCudTf
+REF: Papa e hijo. vamos Chile mierdaaaa! #chile #Worldcup #spain #fuckuhaters #laroja http://t.co/nrGbwCudTf
+------------------------------
+SYS (baseline): Papa e hijo. Vamos Chile mierdaaaa! #chile #worldcup #spain #fuckuhaters #laroja http://t.co/nrGbwCudTf
+BLEU (baseline): 79.37559205024688
+COMET (baseline): 92.9353654384613
+COMET-KIWI (baseline): 79.80086207389832
+------------------------------
+SYS (default): Vater und Sohn. los Chile Scheißeaaa! #Chile #Weltmeisterschaft #Spanien #fuckuhaters #laroja http://t.co/nrGbwCudTf
+BLEU (default): 50.39649337594491
+COMET (default): 84.78706479072571
+COMET-KIWI (default): 62.00503706932068
+------------------------------
+SYS (rocsmt): Vater und Sohn. los Chile Scheißeaaa! #Chile #Weltmeisterschaft #Spanien #fuckuhaters #laroja http://t.co/nrGbwCudTf
+BLEU (rocsmt): 50.39649337594491
+COMET (rocsmt): 84.78706479072571
+COMET-KIWI (rocsmt): 62.00503706932068
+------------------------------
+SYS (footweets): Vater und Sohn. los Chile Mierdaaaa! #Chile #Weltmeisterschaft #Spanien #fuckuhaters #laroja http://t.co/nrGbwCudTf
+BLEU (footweets): 50.39649337594491
+COMET (footweets): 81.21151328086853
+COMET-KIWI (footweets): 67.19128489494324
+------------------------------
+SYS (mmtc): Vater und Sohn. los Chile Scheißeaaa! #Chile #Weltmeisterschaft #Spanien #fickdichhasen #laroja http://t.co/nrGbwCudTf
+BLEU (mmtc): 42.89210209369088
+COMET (mmtc): 78.25489640235901
+COMET-KIWI (mmtc): 62.93984651565552
+------------------------------
+SYS (pfsmb): Vater und Sohn. lass uns Chile Scheißeaaa! #Chile #Weltmeisterschaft #Spanien #fickdichhasen #laroja http://t.co/nrGbwCudTf
+BLEU (pfsmb): 41.27058582701825
+COMET (pfsmb): 71.8171238899231
+COMET-KIWI (pfsmb): 55.3219735622406
+
+Line 707
+SRC: let’s take a moment to remember PSG paid 50 million for David Luiz, a defender who, err, can’t defend … #worldcup
+REF: lasst uns einen Moment Zeit nehmen, um uns daran zu erinnern, dass PSG 50 Millionen für David Luiz bezahlt, einen Verteidiger, der, äh, nicht verteidigen kann... #Worldcup
+------------------------------
+SYS (baseline): Lassen Sie uns einen Moment Zeit nehmen, um uns daran zu erinnern, dass PSG 50 Millionen für David Luiz bezahlt hat, einen Verteidiger, der, äh, nicht verteidigen kann... #worldcup
+BLEU (baseline): 85.16228624291207
+COMET (baseline): 90.49941301345825
+COMET-KIWI (baseline): 85.17152667045593
+------------------------------
+SYS (default): Lassen wir einen Moment haben, um zu erinnern, dass PSG 50 Millionen für David Luiz, einen Defensivspieler, der, na ja, nicht defensiv spielen kann … #Weltmeisterschaft
+BLEU (default): 34.1673612177565
+COMET (default): 63.16431164741516
+COMET-KIWI (default): 69.21854615211487
+------------------------------
+SYS (rocsmt): Lassen wir einen Moment haben, um zu erinnern, dass PSG 50 Millionen für David Luiz bezahlt hat, einen Defensivspieler, der – na ja – nicht defensiv spielen kann … #Weltmeisterschaft
+BLEU (rocsmt): 34.42320124211715
+COMET (rocsmt): 79.3264627456665
+COMET-KIWI (rocsmt): 83.19681286811829
+------------------------------
+SYS (footweets): Lassen wir einen Moment haben, um zu erinnern, dass PSG 50 Millionen für David Luiz bezahlt hat, einen Defensivspieler, der – na ja – nicht defensiv spielen kann … #Weltmeisterschaft
+BLEU (footweets): 34.42320124211715
+COMET (footweets): 79.3264627456665
+COMET-KIWI (footweets): 83.19681286811829
+------------------------------
+SYS (mmtc): Lassen wir einen Moment haben, um zu erinnern, dass PSG 50 Millionen für David Luiz bezahlt hat, einen Defensivspieler, der – na ja – nicht defensiv spielen kann … #Weltmeisterschaft
+BLEU (mmtc): 34.42320124211715
+COMET (mmtc): 79.32645082473755
+COMET-KIWI (mmtc): 83.19681286811829
+------------------------------
+SYS (pfsmb): Lassen wir einen Moment haben, um zu erinnern, dass PSG 50 Millionen für David Luiz bezahlt hat, einen Defensivspieler, der – na ja – nicht defensiv spielen kann … #Weltmeisterschaft
+BLEU (pfsmb): 34.42320124211715
+COMET (pfsmb): 79.32645082473755
+COMET-KIWI (pfsmb): 83.19681286811829
+
+Line 718
+SRC: seriously considering calling in sick to work #worldcup
+REF: erwäge ernsthaft mich bei der Arbeit krank zu melden #Worldcup
+------------------------------
+SYS (baseline): ernsthaft in Betracht zieht, sich krank zur Arbeit zu melden #worldcup
+BLEU (baseline): 13.674406678232565
+COMET (baseline): 73.46042394638062
+COMET-KIWI (baseline): 70.77680826187134
+------------------------------
+SYS (default): ernsthaft in Betracht ziehen, krank zu spielen #worldcup
+BLEU (default): 9.030367376343264
+COMET (default): 50.71485638618469
+COMET-KIWI (default): 53.48864793777466
+------------------------------
+SYS (rocsmt): ehrlich betrachte ich es, krank zu melden #worldcup
+BLEU (rocsmt): 23.769263662838707
+COMET (rocsmt): 52.97693610191345
+COMET-KIWI (rocsmt): 56.015563011169434
+------------------------------
+SYS (footweets): ehrlich betrachte ich es, krank zu melden #worldcup
+BLEU (footweets): 23.769263662838707
+COMET (footweets): 52.97693610191345
+COMET-KIWI (footweets): 56.015563011169434
+------------------------------
+SYS (mmtc): ehrlich betrachte ich es, krank zu melden #worldcup
+BLEU (mmtc): 23.769263662838707
+COMET (mmtc): 52.97693610191345
+COMET-KIWI (mmtc): 56.015563011169434
+------------------------------
+SYS (pfsmb): ehrlich betrachte ich es, krank zu melden #worldcup
+BLEU (pfsmb): 23.769263662838707
+COMET (pfsmb): 52.97693610191345
+COMET-KIWI (pfsmb): 56.015563011169434
+
+Line 914
+SRC: whoa! isnt tackling from behind is counted as foul. genuine penalty no given. #worldcup #badreferingcontinues #gobrazil
+REF: boa! wird das von hinten reingehen nicht als Foul gewertet. obwohl es richitg gewesen wäre, wurde kein Starftstoß gegeben. #Worldcup #badreferingcontinues #gobrazil
+------------------------------
+SYS (baseline): Whoa! Wenn man nicht von hinten tackelt, wird das als Foul gezählt. Echte Strafe ist nicht gegeben. #worldcup #badreferingcontinues #gobrazil
+BLEU (baseline): 16.382228851768474
+COMET (baseline): 72.81271815299988
+COMET-KIWI (baseline): 69.66912746429443
+------------------------------
+SYS (default): whoa! ist Angriff von hinten ein Foul. echte Penaltie wurde nicht gegeben. #Weltmeisterschaft #schlechtesSchiedsrichternetzFortsetzt #gib_Brasilien
+BLEU (default): 7.390502390335897
+COMET (default): 55.33313751220703
+COMET-KIWI (default): 46.66144549846649
+------------------------------
+SYS (rocsmt): Aua! Ist Rückstoßtackle als Foul gezählt. Echte Penaltie wurde nicht gewährt. #Worldcup #badreferingcontinues #gobrazil
+BLEU (rocsmt): 22.55324690130289
+COMET (rocsmt): 67.49234795570374
+COMET-KIWI (rocsmt): 62.01907396316528
+------------------------------
+SYS (footweets): whoa! ist Angriff von hinten als Foul gezählt. echte Penaltie wurde nicht vergeben. #worldcup #badreferingcontinues #gobrazil
+BLEU (footweets): 12.794883017062661
+COMET (footweets): 71.77744507789612
+COMET-KIWI (footweets): 59.3428373336792
+------------------------------
+SYS (mmtc): whoa! wird von hinten abgestoßen gezählt als Foul. echte Strafe wurde nicht vergeben. #Weltmeisterschaft #schlechtesSchiedsrichternfortsetzt #fürBrasilien
+BLEU (mmtc): 5.674627236893066
+COMET (mmtc): 57.808274030685425
+COMET-KIWI (mmtc): 45.98702788352966
+------------------------------
+SYS (pfsmb): whoa! wird von hinten abgestoßen gezählt als Foul. echte Strafe nicht vergeben. #worldcup #badreferingcontinues #gobrazil
+BLEU (pfsmb): 13.131055949753744
+COMET (pfsmb): 65.64650535583496
+COMET-KIWI (pfsmb): 54.005980491638184
+
+Line 923
+SRC: dont fuck with Merica, even in sports we dont care about #USA #WorldCup
+REF: leg dich nicht mit Merica an, sogar im Sport, sind uns die #USA egal #Worldcup
+------------------------------
+SYS (baseline): Scheiß nicht auf Merica, auch im Sport interessiert uns #USA #WorldCup nicht.
+BLEU (baseline): 7.023357200693732
+COMET (baseline): 74.77631568908691
+COMET-KIWI (baseline): 82.9056978225708
+------------------------------
+SYS (default): mach dich nicht mit Merica aus, auch im Sport kümmern wir uns nicht um #USA #Weltmeisterschaft
+BLEU (default): 18.543829210530703
+COMET (default): 66.62320494651794
+COMET-KIWI (default): 78.64556312561035
+------------------------------
+SYS (rocsmt): mach dich nicht mit Merica aus, auch im Sport kümmern wir uns nicht drum #USA #WorldCup
+BLEU (rocsmt): 18.543829210530703
+COMET (rocsmt): 74.37460422515869
+COMET-KIWI (rocsmt): 77.02391743659973
+------------------------------
+SYS (footweets): mach dich nicht mit Merica aus, auch im Sport kümmern wir uns nicht drum #USA #WorldCup
+BLEU (footweets): 18.543829210530703
+COMET (footweets): 74.37460422515869
+COMET-KIWI (footweets): 77.02391743659973
+------------------------------
+SYS (mmtc): mach dich nicht mit Merica aus, auch im Sport kümmern wir uns nicht um #USA #Weltmeisterschaft
+BLEU (mmtc): 18.543829210530703
+COMET (mmtc): 66.62318110466003
+COMET-KIWI (mmtc): 78.6456048488617
+------------------------------
+SYS (pfsmb): mach dich nicht mit Merica aus, auch im Sport kümmern wir uns nicht um #USA #Weltmeisterschaft
+BLEU (pfsmb): 18.543829210530703
+COMET (pfsmb): 66.62322878837585
+COMET-KIWI (pfsmb): 78.6456048488617
+
+Line 1011
+SRC: Uruguay ne England ka Simon go back kar diya.
+REF: Uruguay ne England ka Simon geh zurück kar diya.
+------------------------------
+SYS (baseline): Uruguay und England sind wieder da.
+BLEU (baseline): 5.630400552901077
+COMET (baseline): 58.28744173049927
+COMET-KIWI (baseline): 45.46748995780945
+------------------------------
+SYS (default): Uruguay hat Simon zu England zurückgeschickt.
+BLEU (default): 6.050259138270144
+COMET (default): 71.6481864452362
+COMET-KIWI (default): 77.25001573562622
+------------------------------
+SYS (rocsmt): Uruguay hat England zurückgewiesen.
+BLEU (rocsmt): 5.171845311465849
+COMET (rocsmt): 64.41624760627747
+COMET-KIWI (rocsmt): 58.76713991165161
+------------------------------
+SYS (footweets): Uruguay hat England ka Simon zurück gehen lassen.
+BLEU (footweets): 18.88588859215946
+COMET (footweets): 68.22717785835266
+COMET-KIWI (footweets): 79.83477711677551
+------------------------------
+SYS (mmtc): Uruguay hat Englands Simon zurück gebracht.
+BLEU (mmtc): 6.050259138270144
+COMET (mmtc): 76.60931944847107
+COMET-KIWI (mmtc): 78.01890969276428
+------------------------------
+SYS (pfsmb): Uruguay hat England ka Simon zurück gebracht.
+BLEU (pfsmb): 19.03868163669696
+COMET (pfsmb): 73.61368536949158
+COMET-KIWI (pfsmb): 79.28748726844788
+
+Line 1093
+SRC: #DeutschlandUberAlles
+REF: #DeutschlandUberAlles
+------------------------------
+SYS (baseline): #DeutschlandUberAlles
+BLEU (baseline): 100.00000000000004
+COMET (baseline): 99.03969764709473
+COMET-KIWI (baseline): 82.12435841560364
+------------------------------
+SYS (default): #DeutschlandUberAlles
+BLEU (default): 100.00000000000004
+COMET (default): 99.0397036075592
+COMET-KIWI (default): 82.1243166923523
+------------------------------
+SYS (rocsmt): #DeutschlandUberAlles
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 99.0397036075592
+COMET-KIWI (rocsmt): 82.1243166923523
+------------------------------
+SYS (footweets): #DeutschlandUberAlles
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 99.0397036075592
+COMET-KIWI (footweets): 82.1243166923523
+------------------------------
+SYS (mmtc): #DeutschlandUberAlles
+BLEU (mmtc): 100.00000000000004
+COMET (mmtc): 99.0397036075592
+COMET-KIWI (mmtc): 82.1243166923523
+------------------------------
+SYS (pfsmb): #DeutschlandUberAlles
+BLEU (pfsmb): 100.00000000000004
+COMET (pfsmb): 99.0397036075592
+COMET-KIWI (pfsmb): 82.1243166923523
+
+Line 1097
+SRC: #AllezLesBleus
+REF: #AllezLesBleus
+------------------------------
+SYS (baseline): #AllezLesBleus (Alles für den Blues)
+BLEU (baseline): 11.044795567078939
+COMET (baseline): 69.94923949241638
+COMET-KIWI (baseline): 75.58717727661133
+------------------------------
+SYS (default): #AllezLesBleus
+BLEU (default): 100.00000000000004
+COMET (default): 98.59731793403625
+COMET-KIWI (default): 75.28411746025085
+------------------------------
+SYS (rocsmt): #AllezLesBleus
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 98.59731197357178
+COMET-KIWI (rocsmt): 75.28411746025085
+------------------------------
+SYS (footweets): #AllezLesBleus
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 98.59731197357178
+COMET-KIWI (footweets): 75.28411746025085
+------------------------------
+SYS (mmtc): #AllezDieBlauen
+BLEU (mmtc): 49.99999999999999
+COMET (mmtc): 77.7470588684082
+COMET-KIWI (mmtc): 80.36667704582214
+------------------------------
+SYS (pfsmb): #AllezDieBlauen
+BLEU (pfsmb): 49.99999999999999
+COMET (pfsmb): 77.7470588684082
+COMET-KIWI (pfsmb): 80.36667704582214
+
+Line 1350
+SRC: #Fifa #WorldCup World Cup todays lineup! #fifa #fifaworldcup #fifaworldcup2014 #worldcup #worldcup2014 #futbol #... http://t.co/5ecgQVjA6s
+REF: #Fifa #Worldcup Weltmeisterschaft heutige Aufstellung! #fifa #fifaworldcup #fifaworldcup2014 #Worldcup #worldcup2014 #futbol #... http://t.co/5ecgQVjA6s
+------------------------------
+SYS (baseline): #Fifa #Weltcup Weltmeisterschaft heute Aufstellung! #fifa #fifaworldcup #fifaworldcup2014 #worldcup #worldcup2014 #futbol #... http://t.co/5ecgQVjA6s
+BLEU (baseline): 77.74570245775203
+COMET (baseline): 92.98506379127502
+COMET-KIWI (baseline): 70.87190747261047
+------------------------------
+SYS (default): #Fifa #Weltmeisterschaft Heute die Lineup! #fifa #fifaweltmeisterschaft #fifaweltmeisterschaft2014 #weltmeisterschaft #weltmeisterschaft2014 #futbol #... http://t.co/5ecgQVjA6s
+BLEU (default): 56.873617689028215
+COMET (default): 86.59725189208984
+COMET-KIWI (default): 80.59027194976807
+------------------------------
+SYS (rocsmt): #Fifa #Weltmeisterschaft Heute die Lineup! #fifa #fifaweltmeisterschaft #fifaweltmeisterschaft2014 #weltmeisterschaft #weltmeisterschaft2014 #futbol #... http://t.co/5ecgQVjA6s
+BLEU (rocsmt): 56.873617689028215
+COMET (rocsmt): 86.59725189208984
+COMET-KIWI (rocsmt): 80.59026002883911
+------------------------------
+SYS (footweets): #Fifa #Weltmeisterschaft Heute die Lineup! #fifa #fifaweltmeisterschaft #fifaweltmeisterschaft2014 #weltmeisterschaft #weltmeisterschaft2014 #futbol #... http://t.co/5ecgQVjA6s
+BLEU (footweets): 56.873617689028215
+COMET (footweets): 86.59725189208984
+COMET-KIWI (footweets): 80.59026002883911
+------------------------------
+SYS (mmtc): #Fifa #Weltmeisterschaft Heute die Lineup! #fifa #fifaweltmeisterschaft #fifaweltmeisterschaft2014 #weltmeisterschaft #weltmeisterschaft2014 #futbol #... http://t.co/5ecgQVjA6s
+BLEU (mmtc): 56.873617689028215
+COMET (mmtc): 86.59725189208984
+COMET-KIWI (mmtc): 80.59026002883911
+------------------------------
+SYS (pfsmb): #Fifa #Weltmeisterschaft Heute die Lineup! #fifa #fifaweltmeisterschaft #fifaweltmeisterschaft2014 #weltmeisterschaft #weltmeisterschaft2014 #futbol #... http://t.co/5ecgQVjA6s
+BLEU (pfsmb): 56.873617689028215
+COMET (pfsmb): 86.59725189208984
+COMET-KIWI (pfsmb): 80.59026002883911
+
+Line 1566
+SRC: #worldcup line technology #Hawkeye Gooooaaaal Kariiiiiiiimmmmm #Fra #FravsHon
+REF: #Worldcup Torlinientechnik #Hawkeye Toooooooooor Kariiiiiiiimmmmm #Fra #FravsHon
+------------------------------
+SYS (baseline): #Weltmeisterschaft-Technologie #Hawkeye Gooooaaaal Kariiiiiiiiimmmmm #Fra #FravsHon
+BLEU (baseline): 29.377167835760567
+COMET (baseline): 80.35627603530884
+COMET-KIWI (baseline): 62.14648485183716
+------------------------------
+SYS (default): #Weltcup-LinienTechnologie #Hawkeye_Gooooaaaal_Kariiiiiiiimmmmm #Fra #FravsHon
+BLEU (default): 37.70063804549471
+COMET (default): 80.9742271900177
+COMET-KIWI (default): 74.24622774124146
+------------------------------
+SYS (rocsmt): #Weltmeisterschaft Linien Technologie #Hawkeye Gooooaaaal Kariiiiiiiimmmmm #Fra #FravsHon
+BLEU (rocsmt): 37.70063804549471
+COMET (rocsmt): 77.60730981826782
+COMET-KIWI (rocsmt): 54.54345941543579
+------------------------------
+SYS (footweets): #Weltmeisterschaft Linien Technologie #Hawkeye Gooooaaaal Kariiiiiiiimmmmm #Fra #FravsHon
+BLEU (footweets): 37.70063804549471
+COMET (footweets): 77.60730981826782
+COMET-KIWI (footweets): 54.54345941543579
+------------------------------
+SYS (mmtc): #Weltmeisterschaft Linien Technologie #Hawkeye Gooooaaaal Kariiiiiiiimmmmm #Fra #FravsHon
+BLEU (mmtc): 37.70063804549471
+COMET (mmtc): 77.60741114616394
+COMET-KIWI (mmtc): 54.543423652648926
+------------------------------
+SYS (pfsmb): #Weltmeisterschaft Linien Technologie #Hawkeye Gooooaaaal Kariiiiiiiimmmmm #Fra #FraVsHon
+BLEU (pfsmb): 26.20251007173262
+COMET (pfsmb): 75.74370503425598
+COMET-KIWI (pfsmb): 57.68001079559326
+
+Line 1567
+SRC: Cristiano
+REF: Cristiano
+------------------------------
+SYS (baseline): Cristiano, das ist...
+BLEU (baseline): 6.567274736060395
+COMET (baseline): 68.79207491874695
+COMET-KIWI (baseline): 60.41140556335449
+------------------------------
+SYS (default): Cristiano
+BLEU (default): 100.00000000000004
+COMET (default): 98.93553853034973
+COMET-KIWI (default): 84.5497727394104
+------------------------------
+SYS (rocsmt): Cristiano
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 98.93553853034973
+COMET-KIWI (rocsmt): 84.5497727394104
+------------------------------
+SYS (footweets): Cristiano
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 98.93553853034973
+COMET-KIWI (footweets): 84.5497727394104
+------------------------------
+SYS (mmtc): Cristiano
+BLEU (mmtc): 100.00000000000004
+COMET (mmtc): 98.93553853034973
+COMET-KIWI (mmtc): 84.5497727394104
+------------------------------
+SYS (pfsmb): Cristiano
+BLEU (pfsmb): 100.00000000000004
+COMET (pfsmb): 98.93553853034973
+COMET-KIWI (pfsmb): 84.5497727394104
+
+Line 1568
+SRC: Yaaaaaaaaaaa goooooooooooolaazzzzzoooooooooo #USA #WorldCup
+REF: Yaaaaaaaaaaa goooooooooooolaazzzzzoooooooooo #USA #Worldcup
+------------------------------
+SYS (baseline): Ich habe mich gefragt, ob ich das tun kann.
+BLEU (baseline): 0.0
+COMET (baseline): 29.426857829093933
+COMET-KIWI (baseline): 33.51832926273346
+------------------------------
+SYS (default): Yaaaaaaaaaaa goooooooooooolaazzzzzoooooooooo #USA #Weltmeisterschaft
+BLEU (default): 75.98356856515926
+COMET (default): 98.3141839504242
+COMET-KIWI (default): 82.90289640426636
+------------------------------
+SYS (rocsmt): Yaaaaaaaaaaa goooooooooooolaazzzzzoooooooooo #USA #Weltmeisterschaft
+BLEU (rocsmt): 75.98356856515926
+COMET (rocsmt): 98.3141839504242
+COMET-KIWI (rocsmt): 82.90289640426636
+------------------------------
+SYS (footweets): Yaaaaaaaaaaa goooooooooooolaazzzzzoooooooooo #USA #Weltmeisterschaft
+BLEU (footweets): 75.98356856515926
+COMET (footweets): 98.3141839504242
+COMET-KIWI (footweets): 82.90289640426636
+------------------------------
+SYS (mmtc): Yaaaaaaaaaaa goooooooooooolaazzzzzoooooooooo #USA #Weltmeisterschaft
+BLEU (mmtc): 75.98356856515926
+COMET (mmtc): 98.3141839504242
+COMET-KIWI (mmtc): 82.90289640426636
+------------------------------
+SYS (pfsmb): Yaaaaaaaaaaa goooooooooooolaazzzzzoooooooooo #USA #Weltmeisterschaft
+BLEU (pfsmb): 75.98356856515926
+COMET (pfsmb): 98.3141839504242
+COMET-KIWI (pfsmb): 82.90289640426636
+
+Line 1569
+SRC: #indianfootball
+REF: #indianfootball
+------------------------------
+SYS (baseline): #IndianFußball
+BLEU (baseline): 49.99999999999999
+COMET (baseline): 92.94305443763733
+COMET-KIWI (baseline): 77.41286158561707
+------------------------------
+SYS (default): #indianfootball
+BLEU (default): 100.00000000000004
+COMET (default): 99.19665455818176
+COMET-KIWI (default): 56.19409680366516
+------------------------------
+SYS (rocsmt): #indianfootball
+BLEU (rocsmt): 100.00000000000004
+COMET (rocsmt): 99.19664263725281
+COMET-KIWI (rocsmt): 56.19409680366516
+------------------------------
+SYS (footweets): #indianfootball
+BLEU (footweets): 100.00000000000004
+COMET (footweets): 99.19664263725281
+COMET-KIWI (footweets): 56.19426369667053
+------------------------------
+SYS (mmtc): #indianfootball
+BLEU (mmtc): 100.00000000000004
+COMET (mmtc): 99.19664263725281
+COMET-KIWI (mmtc): 56.19426369667053
+------------------------------
+SYS (pfsmb): #indianfootball
+BLEU (pfsmb): 100.00000000000004
+COMET (pfsmb): 99.19665455818176
+COMET-KIWI (pfsmb): 56.19409680366516
+
+Line 1571
+SRC: Spain v Netherlands http://t.co/I2S3nYaJkw
+REF: Spanien gegen Niederlande http://t.co/I2S3nYaJkw
+------------------------------
+SYS (baseline): Spanien/Niederlande http://t.co/I2S3nYaJkw
+BLEU (baseline): 82.651681837938
+COMET (baseline): 95.31189203262329
+COMET-KIWI (baseline): 86.06584072113037
+------------------------------
+SYS (default): Spanien gegen Niederlande http://t.co/I2S3nYaJkw
+BLEU (default): 100.00000000000004
+COMET (default): 98.0919361114502
+COMET-KIWI (default): 86.85632944107056
+------------------------------
+SYS (rocsmt): Spanien vs. Niederlande http://t.co/I2S3nYaJkw
+BLEU (rocsmt): 75.39221180326287
+COMET (rocsmt): 97.02301621437073
+COMET-KIWI (rocsmt): 87.18594312667847
+------------------------------
+SYS (footweets): Spanien vs. Niederlande http://t.co/I2S3nYaJkw
+BLEU (footweets): 75.39221180326287
+COMET (footweets): 97.02301621437073
+COMET-KIWI (footweets): 87.18594312667847
+------------------------------
+SYS (mmtc): Spanien vs. Niederlande http://t.co/I2S3nYaJkw
+BLEU (mmtc): 75.39221180326287
+COMET (mmtc): 97.02301621437073
+COMET-KIWI (mmtc): 87.18594312667847
+------------------------------
+SYS (pfsmb): Spanien vs. Niederlande http://t.co/I2S3nYaJkw
+BLEU (pfsmb): 75.39221180326287
+COMET (pfsmb): 97.02301621437073
+COMET-KIWI (pfsmb): 87.18594312667847
+
+Line 1612
+SRC: vamos Ecuador!!! #worldcup
+REF: vamos Ecuador!!! #Worldcup
+------------------------------
+SYS (baseline): Los geht's Ecuador!!! #Weltmeisterschaft
+BLEU (baseline): 51.697315395717055
+COMET (baseline): 85.72967648506165
+COMET-KIWI (baseline): 87.50274181365967
+------------------------------
+SYS (default): vamos Ecuador!!! #Weltmeisterschaft
+BLEU (default): 80.91067115702207
+COMET (default): 94.45239901542664
+COMET-KIWI (default): 87.28028535842896
+------------------------------
+SYS (rocsmt): vamos Ecuador!!! #worldcup
+BLEU (rocsmt): 80.91067115702207
+COMET (rocsmt): 98.33341836929321
+COMET-KIWI (rocsmt): 86.30847930908203
+------------------------------
+SYS (footweets): vamos Ecuador!!! #worldcup
+BLEU (footweets): 80.91067115702207
+COMET (footweets): 98.33341836929321
+COMET-KIWI (footweets): 86.30849123001099
+------------------------------
+SYS (mmtc): vamos Ecuador!!! #Weltmeisterschaft
+BLEU (mmtc): 80.91067115702207
+COMET (mmtc): 94.45241093635559
+COMET-KIWI (mmtc): 87.28029727935791
+------------------------------
+SYS (pfsmb): vamos Ecuador!!! #Weltmeisterschaft
+BLEU (pfsmb): 80.91067115702207
+COMET (pfsmb): 94.45241093635559
+COMET-KIWI (pfsmb): 87.28029727935791
+
+Line 1817
+SRC: more tipshttp://www.worldcup-bet.eu/index.php/bet-tips/85-mundial-bet-tips
+REF: mehr tipshttp://www.worldcup-bet.eu/index.php/bet-tips/85-mundial-bet-tips
+------------------------------
+SYS (baseline): Die Kommission hat die Kommission ersucht, die in Artikel 1 Absatz 2 genannten Maßnahmen zu beschließen.
+BLEU (baseline): 1.9218385341145365
+COMET (baseline): 25.174683332443237
+COMET-KIWI (baseline): 26.203319430351257
+------------------------------
+SYS (default): mehr Tippshttp://www.worldcup-bet.eu/index.php/bet-tips/85-mundial-bet-tips
+BLEU (default): 90.36020036098445
+COMET (default): 95.74906826019287
+COMET-KIWI (default): 77.07281112670898
+------------------------------
+SYS (rocsmt): Mehr Tippshttp://www.worldcup-bet.eu/index.php/bet-tips/85-mundial-bet-tips
+BLEU (rocsmt): 89.14703664390797
+COMET (rocsmt): 95.63343524932861
+COMET-KIWI (rocsmt): 77.78857946395874
+------------------------------
+SYS (footweets): Mehr Tippshttp://www.worldcup-bet.eu/index.php/bet-tips/85-mundial-bet-tips
+BLEU (footweets): 89.14703664390797
+COMET (footweets): 95.63344120979309
+COMET-KIWI (footweets): 77.7885377407074
+------------------------------
+SYS (mmtc): mehr Tipphttp://www.worldcup-bet.eu/index.php/bet-tips/85-mundial-bet-tips
+BLEU (mmtc): 90.36020036098445
+COMET (mmtc): 95.23891806602478
+COMET-KIWI (mmtc): 74.24650192260742
+------------------------------
+SYS (pfsmb): mehr Tipphttp://www.worldcup-bet.eu/index.php/bet-tips/85-mundial-bet-tips
+BLEU (pfsmb): 90.36020036098445
+COMET (pfsmb): 95.23891806602478
+COMET-KIWI (pfsmb): 74.24650192260742
+
+Line 1992
+SRC: que jogo delicioso! #WorldCup2014 #WorldCup #ausned
+REF: que jogo delicioso! #WorldCup2014 #Worldcup #ausned
+------------------------------
+SYS (baseline): Das Spiel ist köstlich! #WorldCup2014 #WorldCup #ausned
+BLEU (baseline): 27.901593935858266
+COMET (baseline): 81.89865946769714
+COMET-KIWI (baseline): 79.97432351112366
+------------------------------
+SYS (default): que delizioses Spiel! #Weltmeisterschaft2014 #Weltmeisterschaft #ausned
+BLEU (default): 13.134549472120794
+COMET (default): 71.78738117218018
+COMET-KIWI (default): 79.78154420852661
+------------------------------
+SYS (rocsmt): que leckerer Spiel! #WorldCup2014 #WorldCup #ausned
+BLEU (rocsmt): 32.46679154750989
+COMET (rocsmt): 85.83441376686096
+COMET-KIWI (rocsmt): 77.96666026115417
+------------------------------
+SYS (footweets): que leckerer Spiel! #WorldCup2014 #WorldCup #ausned
+BLEU (footweets): 32.46679154750989
+COMET (footweets): 85.83441376686096
+COMET-KIWI (footweets): 77.96666026115417
+------------------------------
+SYS (mmtc): que leckerer Spiel! #Weltmeisterschaft2014 #Weltmeisterschaft #ausned
+BLEU (mmtc): 13.134549472120794
+COMET (mmtc): 72.27925658226013
+COMET-KIWI (mmtc): 79.21800017356873
+------------------------------
+SYS (pfsmb): que leckerer Spiel! #Weltmeisterschaft2014 #Weltmeisterschaft #ausned
+BLEU (pfsmb): 13.134549472120794
+COMET (pfsmb): 72.27925658226013
+COMET-KIWI (pfsmb): 79.21800017356873
+
+Line 2148
+SRC: Golazo Messi! #Dios #Messi #worldcup #Fifa #God #becausefutbol
+REF: golazo Messi! #Dios #Messi #Worldcup #Fifa #God #becausefutbol
+------------------------------
+SYS (baseline): Golazo Messi! #Dios #Messi #Weltmeisterschaft #Fifa #Gott #weil es Fußball ist
+BLEU (baseline): 41.180376356915765
+COMET (baseline): 83.92624258995056
+COMET-KIWI (baseline): 85.99531650543213
+------------------------------
+SYS (default): Golazo Messi! #Gott #Messi #Weltmeisterschaft #FIFA #Gott #wegenfußball
+BLEU (default): 18.207052811092137
+COMET (default): 76.57898664474487
+COMET-KIWI (default): 71.64596319198608
+------------------------------
+SYS (rocsmt): Golazo Messi! #Dios #Messi #Weltmeisterschaft #FIFA #Gott #weil_futbol
+BLEU (rocsmt): 38.07134866446316
+COMET (rocsmt): 85.66877245903015
+COMET-KIWI (rocsmt): 81.95557594299316
+------------------------------
+SYS (footweets): Golazo Messi! #Dios #Messi #Weltmeisterschaft #FIFA #Gott #weil_futbol
+BLEU (footweets): 38.07134866446316
+COMET (footweets): 85.66877245903015
+COMET-KIWI (footweets): 81.95557594299316
+------------------------------
+SYS (mmtc): Golazo Messi! #Gott #Messi #Weltmeisterschaft #FIFA #Gott #weil_futbol
+BLEU (mmtc): 15.844501337268932
+COMET (mmtc): 82.68975615501404
+COMET-KIWI (mmtc): 69.8312759399414
+------------------------------
+SYS (pfsmb): Golazo Messi! #Dios #Messi #Weltmeisterschaft #FIFA #Gott #weil_futbol
+BLEU (pfsmb): 38.07134866446316
+COMET (pfsmb): 85.66877245903015
+COMET-KIWI (pfsmb): 81.95557594299316
+
+Line 2420
+SRC: lying on the couch watching #WC2014 allllll day. bliss
+REF: auf der Couch liegen und den gaaaaanzen Tag #WC2014 gucken. Glück
+------------------------------
+SYS (baseline): Liegen auf der Couch und #WC2014 den ganzen Tag ansehen. Glückseligkeit
+BLEU (baseline): 16.74765944848823
+COMET (baseline): 81.73230290412903
+COMET-KIWI (baseline): 83.53586196899414
+------------------------------
+SYS (default): liegend auf dem Sofa den ganzen Tag #WC2014 gucken. Seligkeit
+BLEU (default): 31.727218786905187
+COMET (default): 82.72717595100403
+COMET-KIWI (default): 82.20673203468323
+------------------------------
+SYS (rocsmt): liegend auf dem Sofa #WC2014 den ganzen Tag geschaut. himmelcischt
+BLEU (rocsmt): 8.201060181277787
+COMET (rocsmt): 69.15257573127747
+COMET-KIWI (rocsmt): 74.4642972946167
+------------------------------
+SYS (footweets): liegend auf dem Sofa #WC2014 allllll tag lang. himmelische Ruhe
+BLEU (footweets): 7.410494411527525
+COMET (footweets): 61.91267371177673
+COMET-KIWI (footweets): 67.61570572853088
+------------------------------
+SYS (mmtc): liegend auf dem Sofa #WC2014 allllll tag lang gucken. himmelcischt
+BLEU (mmtc): 9.31820340353328
+COMET (mmtc): 72.76600003242493
+COMET-KIWI (mmtc): 73.24993014335632
+------------------------------
+SYS (pfsmb): liegend auf dem Sofa #WC2014 allllll tag lang gucken. himmelcischt
+BLEU (pfsmb): 9.31820340353328
+COMET (pfsmb): 72.76600003242493
+COMET-KIWI (pfsmb): 73.24993014335632
+
+Line 2444
+SRC: yo James the player of the tournament so far. yall sleeping on this nigga men. been known him since the U 20 worldcup men
+REF: yo James, der Spieler dieses Turniers bis jetzt. los wach auf, nigga Kenne ihn seit der U20 Weltmeisterschaft man
+------------------------------
+SYS (baseline): James, der Spieler des Turniers, der sich auf den Nigger einlässt, der ihn seit der U20-Weltmeisterschaft kennt.
+BLEU (baseline): 23.278028502053264
+COMET (baseline): 55.820995569229126
+COMET-KIWI (baseline): 49.448421597480774
+------------------------------
+SYS (default): Yo James der Spieler des Turniers so far. Yall schlafend auf diesem nigga Männer. Knew ihn seit dem U 20 Weltcup Männer.
+BLEU (default): 5.217592866832707
+COMET (default): 58.043938875198364
+COMET-KIWI (default): 47.24567532539368
+------------------------------
+SYS (rocsmt): Yo James der Spieler des Turniers bis jetzt. Yall schlafen über diesem Nigga drauf Männer. Kennen wir uns seit dem U 20 Weltcup Männer.
+BLEU (rocsmt): 11.10255422289273
+COMET (rocsmt): 61.26139760017395
+COMET-KIWI (rocsmt): 43.66883337497711
+------------------------------
+SYS (footweets): Yo James der Spieler des Turniers bis jetzt. Yall schlafen über diesem Nigga drauf Männer. Kennen wir uns seit dem U 20 Weltcup Männer.
+BLEU (footweets): 11.10255422289273
+COMET (footweets): 61.261385679244995
+COMET-KIWI (footweets): 43.66883635520935
+------------------------------
+SYS (mmtc): Yo James der Spieler des Turniers bis jetzt. Yall schlafen über diesem Nigga drauf Männer. Kennen wir uns seit dem U 20 Weltcup Männer
+BLEU (mmtc): 11.556647985416689
+COMET (mmtc): 61.85573935508728
+COMET-KIWI (mmtc): 43.66369545459747
+------------------------------
+SYS (pfsmb): Yo James der Spieler des Turniers bis jetzt. Yall schlafen über diesem Nigga drauf Männer. Kennen wir uns seit dem U 20 Weltcup Männer.
+BLEU (pfsmb): 11.10255422289273
+COMET (pfsmb): 61.261337995529175
+COMET-KIWI (pfsmb): 43.668851256370544
+
+Line 2525
+SRC: Braaaaziiiiiiiiillll!!!!! ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥
+REF: Braaaasiiiiiiiiiiilien!!!!! ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥
+------------------------------
+SYS (baseline): Ich habe mich gefreut, dass ich das nicht geschafft habe.
+BLEU (baseline): 0.0
+COMET (baseline): 33.18628668785095
+COMET-KIWI (baseline): 39.523810148239136
+------------------------------
+SYS (default): Braaaaziiiiiiiiillll!!!!! ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥
+BLEU (default): 91.93227152249175
+COMET (default): 99.18148517608643
+COMET-KIWI (default): 79.76139783859253
+------------------------------
+SYS (rocsmt): Brasilien!!!!! ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥
+BLEU (rocsmt): 91.93227152249175
+COMET (rocsmt): 94.6042001247406
+COMET-KIWI (rocsmt): 81.67238235473633
+------------------------------
+SYS (footweets): Brääzziiiiiiiiillll!!!!! ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥
+BLEU (footweets): 91.93227152249175
+COMET (footweets): 98.56746196746826
+COMET-KIWI (footweets): 80.62180280685425
+------------------------------
+SYS (mmtc): Brääzziiiiiiiillll!!!!! ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥
+BLEU (mmtc): 91.93227152249175
+COMET (mmtc): 98.48943948745728
+COMET-KIWI (mmtc): 78.67813110351562
+------------------------------
+SYS (pfsmb): Brääzziiiiiiiiillll!!!!! ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥
+BLEU (pfsmb): 91.93227152249175
+COMET (pfsmb): 98.56746196746826
+COMET-KIWI (pfsmb): 80.62180280685425
+
+Line 2526
+SRC: Neymar like a boss! ⚽ ️ 😎 #brazil #worldcup #penalty #goal #igers #igdaily #soccer #fifa # #http://t.co/kQ40G867Uv
+REF: Neymar wie ein Chef! ⚽ ️ 😎 #brazil #Worldcup #penalty #goal #igers #igdaily #soccer #fifa # #http://t.co/kQ40G867Uv
+------------------------------
+SYS (baseline): Neymar ist ein Boss!  ️ 😎 #brazil #worldcup #Strafmacher #Gol #igers #igdaily #soccer #fifa # #http://t.co/kQ40G867Uv
+BLEU (baseline): 65.44572686208234
+COMET (baseline): 91.64749383926392
+COMET-KIWI (baseline): 73.2245922088623
+------------------------------
+SYS (default): Neymar wie ein Boss! ⚽️ 😎 #Brasilien #Weltmeisterschaft #Penalty #Torschütze #igers #igdaily #Fußball #FIFA #http://t.co/kQ40G867Uv
+BLEU (default): 43.10358000135779
+COMET (default): 90.32371640205383
+COMET-KIWI (default): 82.62406587600708
+------------------------------
+SYS (rocsmt): Neymar wie ein Boss! ⚽️ 😎 #Brasilien #Weltmeisterschaft #Penalty #Torschütze #igers #igdaily #Fußball #FIFA # http://t.co/kQ40G867Uv
+BLEU (rocsmt): 43.10358000135779
+COMET (rocsmt): 90.19895195960999
+COMET-KIWI (rocsmt): 82.78805017471313
+------------------------------
+SYS (footweets): Neymar wie ein Boss! ⚽️ 😎 #Brasilien #Weltmeisterschaft #Penalty #Torschütze #igers #igdaily #Fußball #FIFA # http://t.co/kQ40G867Uv
+BLEU (footweets): 43.10358000135779
+COMET (footweets): 90.19895195960999
+COMET-KIWI (footweets): 82.78805017471313
+------------------------------
+SYS (mmtc): Neymar wie ein Boss! ⚽️ 😎 #Brasilien #Weltmeisterschaft #Penalty #Torschütze #igers #igdaily #Fußball #FIFA # http://t.co/kQ40G867Uv
+BLEU (mmtc): 43.10358000135779
+COMET (mmtc): 90.19891619682312
+COMET-KIWI (mmtc): 82.78805017471313
+------------------------------
+SYS (pfsmb): Neymar wie ein Boss! ⚽️ 😎 #Brasilien #Weltmeisterschaft #Penalty #Torschütze #igers #igdaily #Fußball #FIFA # http://t.co/kQ40G867Uv
+BLEU (pfsmb): 43.10358000135779
+COMET (pfsmb): 90.19891619682312
+COMET-KIWI (pfsmb): 82.78805017471313
+
+Line 2544
+SRC: vamos #costarica #worldcup2014 #worldcup #puravida https://t.co/0KMJlGh3Vz
+REF: vamos #Costarica #worldcup2014 #Worldcup #puravida https://t.co/0KMJlGh3Vz
+------------------------------
+SYS (baseline): Ich bin ein sehr guter Spieler.
+BLEU (baseline): 1.3643394208905164
+COMET (baseline): 36.138662695884705
+COMET-KIWI (baseline): 41.713663935661316
+------------------------------
+SYS (default): vamos #costarica #weltmeisterschaft2014 #weltmeisterschaft #puravida https://t.co/0KMJlGh3Vz
+BLEU (default): 63.4192268377597
+COMET (default): 85.45136451721191
+COMET-KIWI (default): 82.12729096412659
+------------------------------
+SYS (rocsmt): vamos #costarica #weltmeisterschaft2014 #weltmeisterschaft #puravida https://t.co/0KMJlGh3Vz
+BLEU (rocsmt): 63.4192268377597
+COMET (rocsmt): 85.45136451721191
+COMET-KIWI (rocsmt): 82.12729096412659
+------------------------------
+SYS (footweets): vamos #costarica #weltmeisterschaft2014 #weltmeisterschaft #puravida https://t.co/0KMJlGh3Vz
+BLEU (footweets): 63.4192268377597
+COMET (footweets): 85.45133471488953
+COMET-KIWI (footweets): 82.1273148059845
+------------------------------
+SYS (mmtc): vamos #Costarica #Weltmeisterschaft2014 #Weltmeisterschaft #puravida https://t.co/0KMJlGh3Vz
+BLEU (mmtc): 72.76817202342096
+COMET (mmtc): 84.73982810974121
+COMET-KIWI (mmtc): 81.64399862289429
+------------------------------
+SYS (pfsmb): vamos #Costarica #Weltmeisterschaft2014 #Weltmeisterschaft #puravida https://t.co/0KMJlGh3Vz
+BLEU (pfsmb): 72.76817202342096
+COMET (pfsmb): 84.73982810974121
+COMET-KIWI (pfsmb): 81.64399862289429
+
+Line 2548
+SRC: ⓒ ☺ ️ ✨ Vamos Colombia #Colombia #colombiana #colombiano #worldcupgirls #worldcup #worldcup2014 #minions #despicableme http://t.co/3SlQENJfix
+REF: Ⓒ ☺ ️ ✨ Vamos Kolumbien #colombia #colombiana #colombiano #worldcupgirls #Worldcup #worldcup2014 #minions #despicableme http://t.co/3SlQENJfix
+------------------------------
+SYS (baseline): c ☺ ️ ✨ Vamos Colombia #Colombia #colombiana #colombiano #worldcupgirls #worldcup #worldcup2014 #minions #despicableme http://t.co/3SlQENJfix
+BLEU (baseline): 72.71648621286582
+COMET (baseline): 92.86400079727173
+COMET-KIWI (baseline): 82.19403028488159
+------------------------------
+SYS (default): © ☺ ️ ✨ Lass uns Kolumbien #Kolumbien #kolumbianisch #kolumbianisch #Weltmeisterschaftsgirls #Weltmeisterschaft #Weltmeisterschaft2014 #Minions #verachtbarerme http://t.co/3SlQENJfix
+BLEU (default): 33.66708947010076
+COMET (default): 66.96575284004211
+COMET-KIWI (default): 53.93384099006653
+------------------------------
+SYS (rocsmt): © ☺ ️ ✨ Lassen Sie uns Kolumbien #Kolumbien #kolumbianisch #kolumbianisch #Weltmeisterschaftsgirls #Weltmeisterschaft #Weltmeisterschaft2014 #Minions #verachtlich
+BLEU (rocsmt): 6.8470522038963555
+COMET (rocsmt): 55.75631260871887
+COMET-KIWI (rocsmt): 50.81382989883423
+------------------------------
+SYS (footweets): © ☺ ️ ✨ Lass uns Kolumbien #Kolumbien #kolumbianisch #kolumbianisch #Weltmeisterschaftsgirls #Weltmeisterschaft #Weltmeisterschaft2014 #Minions #verachtlich
+BLEU (footweets): 6.774998825205795
+COMET (footweets): 57.50495791435242
+COMET-KIWI (footweets): 51.33070349693298
+------------------------------
+SYS (mmtc): ⓒ ☺ ️ ✨ Lass uns Kolumbien #Kolumbien #kolumbianisch #kolumbianisch #Weltmeisterschaftsgirls #Weltmeisterschaft #Weltmeisterschaft2014 #Minions #verachtlich
+BLEU (mmtc): 6.774998825205795
+COMET (mmtc): 56.95464611053467
+COMET-KIWI (mmtc): 53.56345772743225
+------------------------------
+SYS (pfsmb): ⓒ ☺ ️ ✨ Lass uns Kolumbien #Kolumbien #kolumbianisch #kolumbianisch #Weltmeisterschaftsgirls #Weltmeisterschaft #Weltmeisterschaft2014 #Minions #verachtlich
+BLEU (pfsmb): 6.774998825205795
+COMET (pfsmb): 56.95464611053467
+COMET-KIWI (pfsmb): 53.563499450683594
+
+Line 2590
+SRC: come on mexico 🎉 🎉 #WorldCup
+REF: Komm schon Mexiko 🎉 🎉 #Worldcup
+------------------------------
+SYS (baseline): Komm schon, Mexiko   #Weltmeisterschaft
+BLEU (baseline): 16.341219448835542
+COMET (baseline): 84.97056365013123
+COMET-KIWI (baseline): 81.88509941101074
+------------------------------
+SYS (default): komm schon mexiko 🎉 🎉 #Weltmeisterschaft
+BLEU (default): 26.269098944241588
+COMET (default): 91.089928150177
+COMET-KIWI (default): 83.93659591674805
+------------------------------
+SYS (rocsmt): komm schon mexiko 🎉 🎉 #WorldCup
+BLEU (rocsmt): 26.269098944241588
+COMET (rocsmt): 92.92088150978088
+COMET-KIWI (rocsmt): 83.5151195526123
+------------------------------
+SYS (footweets): komm schon mexiko 🎉 🎉 #WorldCup
+BLEU (footweets): 26.269098944241588
+COMET (footweets): 92.92088150978088
+COMET-KIWI (footweets): 83.5151195526123
+------------------------------
+SYS (mmtc): komm schon mexiko 🎉 🎉 #Weltmeisterschaft
+BLEU (mmtc): 26.269098944241588
+COMET (mmtc): 91.08991026878357
+COMET-KIWI (mmtc): 83.93659591674805
+------------------------------
+SYS (pfsmb): komm schon mexiko 🎉 🎉 #Weltmeisterschaft
+BLEU (pfsmb): 26.269098944241588
+COMET (pfsmb): 91.08991026878357
+COMET-KIWI (pfsmb): 83.93659591674805
+
+Line 2669
+SRC: Goooooooooooooool!! #goal #gol #mexico #futbol #worldcup #soccer #becausefutbol http://t.co/GD1B4J1BBv
+REF: Tooooooooooooooor!! #goal #gol #mexico #futbol #Worldcup #soccer #becausefutbol http://t.co/GD1B4J1BBv
+------------------------------
+SYS (baseline): Ich habe mich gefragt, ob ich das tun kann.
+BLEU (baseline): 0.9584157964125064
+COMET (baseline): 29.124245047569275
+COMET-KIWI (baseline): 36.76024377346039
+------------------------------
+SYS (default): Goooooooooooooool!! #Treffer #Gol #Mexiko #Futbol #Weltmeisterschaft #Fußball #wegenFutbol http://t.co/GD1B4J1BBv
+BLEU (default): 39.392661757434155
+COMET (default): 84.197598695755
+COMET-KIWI (default): 81.06301426887512
+------------------------------
+SYS (rocsmt): Goooooooooooooal!! #goal #gol #mexiko #futbol #weltmeisterschaft #fußball http://t.co/GD1B4J1BBv
+BLEU (rocsmt): 58.47050738672459
+COMET (rocsmt): 89.81189131736755
+COMET-KIWI (rocsmt): 66.85500144958496
+------------------------------
+SYS (footweets): Goooooooooooooal!! #goal #gol #mexiko #futbol #weltmeisterschaft #fußball http://t.co/GD1B4J1BBv
+BLEU (footweets): 58.47050738672459
+COMET (footweets): 89.81189131736755
+COMET-KIWI (footweets): 66.85500144958496
+------------------------------
+SYS (mmtc): Goooooooooooooal!! #goal #gol #mexiko #futbol #weltmeisterschaft #fußball http://t.co/GD1B4J1BBv
+BLEU (mmtc): 58.47050738672459
+COMET (mmtc): 89.81189131736755
+COMET-KIWI (mmtc): 66.85494184494019
+------------------------------
+SYS (pfsmb): Goooooooooooooal!! #goal #gol #mexiko #futbol #weltmeisterschaft #fußball http://t.co/GD1B4J1BBv
+BLEU (pfsmb): 58.47050738672459
+COMET (pfsmb): 89.81189131736755
+COMET-KIWI (pfsmb): 66.85494184494019
+
+Line 2670
+SRC: Gooooooooooooooooooal! #usa #WorldCup
+REF: Toooooooooooooooooor! #usa #Worldcup
+------------------------------
+SYS (baseline): Ich habe mich gefreut, dass ich das geschafft habe.
+BLEU (baseline): 0.0
+COMET (baseline): 43.57621669769287
+COMET-KIWI (baseline): 47.079601883888245
+------------------------------
+SYS (default): Gooooooooooooooooooal! #usa #Weltmeisterschaft
+BLEU (default): 50.81327481546149
+COMET (default): 97.5230872631073
+COMET-KIWI (default): 81.32257461547852
+------------------------------
+SYS (rocsmt): Torschuss! #usa #Weltmeisterschaft
+BLEU (rocsmt): 50.81327481546149
+COMET (rocsmt): 64.68284726142883
+COMET-KIWI (rocsmt): 81.21097087860107
+------------------------------
+SYS (footweets): Gooooooooooooooooooal! #usa #Weltmeisterschaft
+BLEU (footweets): 50.81327481546149
+COMET (footweets): 97.5230872631073
+COMET-KIWI (footweets): 81.32257461547852
+------------------------------
+SYS (mmtc): Gooooooooooooooooooal! #usa #Weltmeisterschaft
+BLEU (mmtc): 50.81327481546149
+COMET (mmtc): 97.5230872631073
+COMET-KIWI (mmtc): 81.32257461547852
+------------------------------
+SYS (pfsmb): Gooooooooooooooooooal! #usa #Weltmeisterschaft
+BLEU (pfsmb): 50.81327481546149
+COMET (pfsmb): 97.5230872631073
+COMET-KIWI (pfsmb): 81.32257461547852
+
+Line 2692
+SRC: GOOOOOOAAAAALLLLL MEEEEEXXXXIIICCCOOOO!!! #worldcup
+REF: TOOOOOOOOOOOR MEEEEEXXXXIIIKKKOOOO!!! #Worldcup
+------------------------------
+SYS (baseline): Ich habe mich gefragt, ob ich die Weltmeisterschaft noch einmal besuchen kann.
+BLEU (baseline): 0.0
+COMET (baseline): 31.917962431907654
+COMET-KIWI (baseline): 53.1644344329834
+------------------------------
+SYS (default): GOOOOOOAAAAALLLLL MEEEEEXXXXIIICCCOOOO!!! #Weltmeisterschaft
+BLEU (default): 41.11336169005198
+COMET (default): 97.20679521560669
+COMET-KIWI (default): 76.7594575881958
+------------------------------
+SYS (rocsmt): GOOOOOOAAAAALLLLL MEEEEEXXXXIIICCCOOOO!!! #Weltmeisterschaft
+BLEU (rocsmt): 41.11336169005198
+COMET (rocsmt): 97.20679521560669
+COMET-KIWI (rocsmt): 76.7594575881958
+------------------------------
+SYS (footweets): GOOOOOOAAAAALLLLL MEEEEEXXXXIIICCCOOOO!!! #worldcup
+BLEU (footweets): 41.11336169005198
+COMET (footweets): 98.39274287223816
+COMET-KIWI (footweets): 66.93445444107056
+------------------------------
+SYS (mmtc): GOOOOOOAAAAALLLLL MEEEEEXXXXIIICCCOOOO!!! #Weltmeisterschaft
+BLEU (mmtc): 41.11336169005198
+COMET (mmtc): 97.20679521560669
+COMET-KIWI (mmtc): 76.7594575881958
+------------------------------
+SYS (pfsmb): GOOOOOOAAAAALLLLL MEEEEEXXXXIIICCCOOOO!!! #Weltmeisterschaft
+BLEU (pfsmb): 41.11336169005198
+COMET (pfsmb): 97.20679521560669
+COMET-KIWI (pfsmb): 76.7594575881958
+
+Line 2813
+SRC: Mexicooooooooooooooo!!!! Goooooooooooooooool!!!! yay!!!! 🙌 #WorldCup #MEXvsCMR
+REF: Mexicooooooooooooooo!!!! Toooooooooooooooooor!!!! juhuu! 🙌 #Worldcup #MEXvsCMR
+------------------------------
+SYS (baseline): Mexikooooooooooooo!!!! Gooooooooooooooool!!!! yay!!!!  #Weltmeisterschaft #MEX gegen CMR
+BLEU (baseline): 24.62292439135324
+COMET (baseline): 94.83964443206787
+COMET-KIWI (baseline): 70.08846998214722
+------------------------------
+SYS (default): Mexikoooooooooooooooo!!!! Goooooooooooooooal!!!! yay!!!! 🙌 #Weltmeisterschaft #MEXgegenCMR
+BLEU (default): 30.14335251508215
+COMET (default): 94.75184082984924
+COMET-KIWI (default): 65.89528918266296
+------------------------------
+SYS (rocsmt): Mexikoooooooooooooooo!!!! Goooooooooooooooal!!!! yay!!!! 🙌 #Weltmeisterschaft #MEXvsCMR
+BLEU (rocsmt): 31.67161501220396
+COMET (rocsmt): 95.80119252204895
+COMET-KIWI (rocsmt): 63.9129638671875
+------------------------------
+SYS (footweets): Mexicooooooooooooooo!!!! Goooooooooooooooal!!!! yay!!!! 🙌 #Weltmeisterschaft #MEXvsCMR
+BLEU (footweets): 38.36841681691308
+COMET (footweets): 95.66311240196228
+COMET-KIWI (footweets): 63.02312612533569
+------------------------------
+SYS (mmtc): Mexicooooooooooooooo!!!! Goooooooooooooooal!!!! yay!!!! 🙌 #Weltmeisterschaft #MEXvsCMR
+BLEU (mmtc): 38.36841681691308
+COMET (mmtc): 95.66311240196228
+COMET-KIWI (mmtc): 63.023197650909424
+------------------------------
+SYS (pfsmb): Mexicooooooooooooooo!!!! Goooooooooooooooal!!!! yay!!!! 🙌 #Weltmeisterschaft #MEXvsCMR
+BLEU (pfsmb): 38.36841681691308
+COMET (pfsmb): 95.66311240196228
+COMET-KIWI (pfsmb): 63.023197650909424
+
+Line 2853
+SRC: GOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAALLLLLL!!!! finally!!! wheres $my fish and chips??!?? #ENG #WorldCup
+REF: TOOOOOOOOOOOOOOOOOOOOOOOOOOOOR!!!! endlich! wo sind $meine Fish and Chips??!?? #ENG #Worldcup
+------------------------------
+SYS (baseline): GOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+BLEU (baseline): 0.13004991634333188
+COMET (baseline): 29.597830772399902
+COMET-KIWI (baseline): 37.77305781841278
+------------------------------
+SYS (default): GOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAALLLLLL!!!! endlich!!! wo ist meine Fisch und Chips??!?? #ENG #Weltmeisterschaft
+BLEU (default): 55.132511228599434
+COMET (default): 91.96797609329224
+COMET-KIWI (default): 71.24167084693909
+------------------------------
+SYS (rocsmt): GOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAALLLLLL!!!! Endlich!!! Wo ist mein Fisch und Chips??!?? #ENG #WorldCup
+BLEU (rocsmt): 44.164168100551116
+COMET (rocsmt): 93.15053820610046
+COMET-KIWI (rocsmt): 73.27995300292969
+------------------------------
+SYS (footweets): GOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAALLLLLL!!!! Endlich!!! Wo ist mein Fisch und Chips??!?? #ENG #WorldCup
+BLEU (footweets): 44.164168100551116
+COMET (footweets): 93.15053820610046
+COMET-KIWI (footweets): 73.27995300292969
+------------------------------
+SYS (mmtc): GOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAALLLLLL!!!! Endlich!!! Wo ist mein Fisch und Chips??!?? #ENG #Weltmeisterschaft
+BLEU (mmtc): 44.164168100551116
+COMET (mmtc): 92.41896867752075
+COMET-KIWI (mmtc): 73.70561361312866
+------------------------------
+SYS (pfsmb): GOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAALLLLLL!!!! Endlich!!! Wo ist mein Fisch und Chips??!?? #ENG #Weltmeisterschaft
+BLEU (pfsmb): 44.164168100551116
+COMET (pfsmb): 92.41896867752075
+COMET-KIWI (pfsmb): 73.70561361312866
+
+Line 2885
+SRC: from now on Im cheering for Belgium. I even Belgiumized $my name to Elodie Fontaine at http://t.co/igdOn6LYtS #WorldCup
+REF: von nun an bin ich für Belgien. ich habe sogar $meinen Namen, Elodie Fontaine, belgisiert http://t.co/igdOn6LYtS #Worldcup
+------------------------------
+SYS (baseline): Ich habe sogar meinen Namen auf Elodie Fontaine auf http://t.co/igdOn6LYtS #WorldCup belgisisiert.
+BLEU (baseline): 35.109358102577055
+COMET (baseline): 72.15599417686462
+COMET-KIWI (baseline): 51.0411262512207
+------------------------------
+SYS (default): Ab jetzt cheer ich für Belgien. Ich habe mich sogar Belgienisiert und ändere meinen Namen zu Elodie Fontaine auf http://t.co/igdOn6LYtS #Weltmeisterschaft
+BLEU (default): 41.500397847258526
+COMET (default): 83.68433713912964
+COMET-KIWI (default): 66.47247076034546
+------------------------------
+SYS (rocsmt): Ab jetzt cheer ich für Belgien. Ich habe mich sogar Belgienisiert und ändere meinen Namen zu Elodie Fontaine auf http://t.co/igdOn6LYtS #WorldCup
+BLEU (rocsmt): 41.500397847258526
+COMET (rocsmt): 84.03258919715881
+COMET-KIWI (rocsmt): 67.82164573669434
+------------------------------
+SYS (footweets): Ab jetzt cheer ich für Belgien. Ich habe mich sogar Belgienisiert und ändere meinen Namen zu Elodie Fontaine auf http://t.co/igdOn6LYtS #WorldCup
+BLEU (footweets): 41.500397847258526
+COMET (footweets): 84.03258919715881
+COMET-KIWI (footweets): 67.82164573669434
+------------------------------
+SYS (mmtc): Ab jetzt cheer ich für Belgien. Ich habe mich sogar Belgienisiert und ändere meinen Namen zu Elodie Fontaine auf http://t.co/igdOn6LYtS #Weltmeisterschaft
+BLEU (mmtc): 41.500397847258526
+COMET (mmtc): 83.68435502052307
+COMET-KIWI (mmtc): 66.4724588394165
+------------------------------
+SYS (pfsmb): Ab jetzt cheer ich für Belgien. Ich habe mich sogar Belgienisiert und ändere meinen Namen zu Elodie Fontaine auf http://t.co/igdOn6LYtS #WorldCup
+BLEU (pfsmb): 41.500397847258526
+COMET (pfsmb): 84.03258919715881
+COMET-KIWI (pfsmb): 67.82164573669434
+
+Line 2953
+SRC: Giovanni Dos Santos LOVES international football. que golaso!!! #WorldCup
+REF: Giovanni Dos Santos LIEBT internationalen Fußball. que Golaso ​ ​!!! #Worldcup
+------------------------------
+SYS (baseline): Giovanni Dos Santos liebt den internationalen Fußball. Das ist toll!!! #WorldCup
+BLEU (baseline): 28.295596283263514
+COMET (baseline): 83.94463658332825
+COMET-KIWI (baseline): 86.24880313873291
+------------------------------
+SYS (default): Giovanni Dos Santos liebt internationales Fußballspielen. que golaso!!! #Weltmeisterschaft
+BLEU (default): 24.84135921884226
+COMET (default): 82.97117948532104
+COMET-KIWI (default): 87.03179359436035
+------------------------------
+SYS (rocsmt): Giovanni Dos Santos liebt internationales Fußballspielen. que golaso!!! #WorldCup
+BLEU (rocsmt): 24.84135921884226
+COMET (rocsmt): 84.37957167625427
+COMET-KIWI (rocsmt): 86.35485172271729
+------------------------------
+SYS (footweets): Giovanni Dos Santos LIEBT internationales Fußballspielen. que golaso!!! #Weltmeisterschaft
+BLEU (footweets): 33.87221584170726
+COMET (footweets): 86.27126812934875
+COMET-KIWI (footweets): 86.44770979881287
+------------------------------
+SYS (mmtc): Giovanni Dos Santos LIEBT internationales Fußballspielen. que golaso!!! #Weltmeisterschaft
+BLEU (mmtc): 33.87221584170726
+COMET (mmtc): 86.27126812934875
+COMET-KIWI (mmtc): 86.44769787788391
+------------------------------
+SYS (pfsmb): Giovanni Dos Santos liebt internationales Fußball. que golaso!!! #Weltmeisterschaft
+BLEU (pfsmb): 28.483024877991717
+COMET (pfsmb): 85.02401113510132
+COMET-KIWI (pfsmb): 87.33888864517212
+
+Line 3354
+SRC: @premierleague @Arsenal hah, so now hes arsenals????? lol! go #arsenal #Eng #WorldCup
+REF: @Premierleague @Arsenal hah, also jetzt ist er Arsenaler????? lol! los #arsenal #Eng #Worldcup
+------------------------------
+SYS (baseline): @premierleague @Arsenal hah, also jetzt hat er Arsenal????? lol! geht #arsenal #Eng #WorldCup
+BLEU (baseline): 57.15586618084643
+COMET (baseline): 86.18630170822144
+COMET-KIWI (baseline): 69.95217800140381
+------------------------------
+SYS (default): @premierleague @Arsenal hah, jetzt ist erArsenals????? lol! go #arsenal #Eng #WorldCup
+BLEU (default): 49.87469235227204
+COMET (default): 89.1470730304718
+COMET-KIWI (default): 69.64292526245117
+------------------------------
+SYS (rocsmt): @premierleague @Arsenal hah, so jetzt ist er bei Arsenal????? lol! go #arsenal #Eng #WorldCup
+BLEU (rocsmt): 50.37208022655438
+COMET (rocsmt): 91.24262928962708
+COMET-KIWI (rocsmt): 78.8416862487793
+------------------------------
+SYS (footweets): @premierleague @Arsenal hah, so jetzt ist er bei Arsenal????? lol! go #arsenal #Eng #WorldCup
+BLEU (footweets): 50.37208022655438
+COMET (footweets): 91.24262928962708
+COMET-KIWI (footweets): 78.8416862487793
+------------------------------
+SYS (mmtc): @premierleague @Arsenal hah, so jetzt ist er bei Arsenal????? lol! go #Arsenal #Eng #Weltmeisterschaft
+BLEU (mmtc): 41.95311940818068
+COMET (mmtc): 91.27340912818909
+COMET-KIWI (mmtc): 80.20867109298706
+------------------------------
+SYS (pfsmb): @premierleague @Arsenal hah, so jetzt ist er bei Arsenal????? lol! go #arsenal #Eng #Weltmeisterschaft
+BLEU (pfsmb): 50.37208022655438
+COMET (pfsmb): 91.37860536575317
+COMET-KIWI (pfsmb): 79.86739873886108
+
+Line 3490
+SRC: what brilliant names in the Brazilian team:: ‘Fred’ and ‘Hulk’ 😃 #worldcup #FB
+REF: was für brillante Namen in der brasilianischen Mannschaft: Fred und Hulk 😃 #Worldcup #FB
+------------------------------
+SYS (baseline): Welch brillante Namen in der brasilianischen Mannschaft: Fred und Hulk 😃 #Weltmeisterschaft #FB
+BLEU (baseline): 72.05661978048434
+COMET (baseline): 94.17610764503479
+COMET-KIWI (baseline): 86.90476417541504
+------------------------------
+SYS (default): was für brillante Namen in der brasilianischen Nationalmannschaft:: 'Fred' und 'Hulk' 😃 #Weltmeisterschaft #FB
+BLEU (default): 41.0234958813199
+COMET (default): 88.38382363319397
+COMET-KIWI (default): 86.72996759414673
+------------------------------
+SYS (rocsmt): was brillantes Team in der brasilianischen Nationalmannschaft:: 'Fred' und 'Hulk' 😃 #Weltmeisterschaft #FB
+BLEU (rocsmt): 13.679192123121886
+COMET (rocsmt): 84.59384441375732
+COMET-KIWI (rocsmt): 74.04294610023499
+------------------------------
+SYS (footweets): was brillantes Team in der brasilianischen Nationalmannschaft:: 'Fred' und 'Hulk' 😃 #Weltmeisterschaft #FB
+BLEU (footweets): 13.679192123121886
+COMET (footweets): 84.59384441375732
+COMET-KIWI (footweets): 74.0428626537323
+------------------------------
+SYS (mmtc): was brillantes Name in der brasilianischen Mannschaft:: 'Fred' und 'Hulk' 😃 #Weltmeisterschaft #FB
+BLEU (mmtc): 28.85537660018372
+COMET (mmtc): 81.66356086730957
+COMET-KIWI (mmtc): 71.02384567260742
+------------------------------
+SYS (pfsmb): was brillantes Team in der brasilianischen Nationalmannschaft:: 'Fred' und 'Hulk' 😃 #Weltmeisterschaft #FB
+BLEU (pfsmb): 13.679192123121886
+COMET (pfsmb): 84.59384441375732
+COMET-KIWI (pfsmb): 74.04294610023499
+
+Line 3566
+SRC: Mexico vs Cameroon is gonna be a good game I feel 👏 #WorldCup
+REF: Mexiko vs Kamerun wird ein gutes Spiel, das kann ich fühlen #Worldcup 👏
+------------------------------
+SYS (baseline): Mexiko gegen Kamerun wird ein gutes Spiel, das fühle ich 👏 #WorldCup
+BLEU (baseline): 45.07763457323718
+COMET (baseline): 91.3480818271637
+COMET-KIWI (baseline): 86.98508143424988
+------------------------------
+SYS (default): Mexiko gegen Kamerun wird ein gutes Spiel werden, fühle ich 👏 #Weltmeisterschaft
+BLEU (default): 29.43543418414033
+COMET (default): 88.93261551856995
+COMET-KIWI (default): 87.13741898536682
+------------------------------
+SYS (rocsmt): Mexiko gegen Kamerun wird ein gutes Spiel werden, glaube ich 👏 #WorldCup
+BLEU (rocsmt): 29.43543418414033
+COMET (rocsmt): 89.75857496261597
+COMET-KIWI (rocsmt): 87.59051561355591
+------------------------------
+SYS (footweets): Mexiko gegen Kamerun wird ein gutes Spiel werden, fühle ich 👏 #WorldCup
+BLEU (footweets): 29.43543418414033
+COMET (footweets): 89.75145816802979
+COMET-KIWI (footweets): 87.03410625457764
+------------------------------
+SYS (mmtc): Mexiko vs Kamerun wird ein gutes Spiel werden, fühle ich 👏 #Weltmeisterschaft
+BLEU (mmtc): 45.07763457323718
+COMET (mmtc): 89.52534794807434
+COMET-KIWI (mmtc): 86.90437078475952
+------------------------------
+SYS (pfsmb): Mexiko gegen Kamerun wird ein gutes Spiel werden, glaube ich 👏 #Weltmeisterschaft
+BLEU (pfsmb): 29.43543418414033
+COMET (pfsmb): 88.68007063865662
+COMET-KIWI (pfsmb): 87.77793645858765
+
+Line 3799
+SRC: Oh, and thank you footy gods for answering $my previous tweet about not enough goal scoring today. Prishiate it. #WorldCup
+REF: Oh, und danke Fußi Götter, dass ihr auf meinen vorherigen Tweet, dass es nicht genug Tore gab, geantwortet $habt. ich weiß es zu schätzen. #Worldcup
+------------------------------
+SYS (baseline): Oh, und danke Fußballgötter für die Antwort auf meinen vorherigen Tweet, dass heute nicht genug Tore erzielt wurden.
+BLEU (baseline): 22.95273234095404
+COMET (baseline): 72.38191366195679
+COMET-KIWI (baseline): 67.81553030014038
+------------------------------
+SYS (default): Oh, und danke den Fußballsageten, dass ihr meine vorherige Twitter-Nachricht über nicht genügend Tore heute beantwortet habt. Prishiate es. #Weltmeisterschaft
+BLEU (default): 12.809646843265197
+COMET (default): 62.341493368148804
+COMET-KIWI (default): 73.31000566482544
+------------------------------
+SYS (rocsmt): Oh, und danke den Fußgott-Göttern für die Antwort auf mein vorheriges Tweet über nicht genügend Tore heute. Prishiate es. #WorldCup
+BLEU (rocsmt): 9.573309821288357
+COMET (rocsmt): 56.96807503700256
+COMET-KIWI (rocsmt): 64.33644890785217
+------------------------------
+SYS (footweets): Oh, und danke den Fußgott-Göttern für die Antwort auf mein vorheriges Tweet über nicht genügend Tore heute. Prishiate es. #WorldCup
+BLEU (footweets): 9.573309821288357
+COMET (footweets): 56.96803331375122
+COMET-KIWI (footweets): 64.33647274971008
+------------------------------
+SYS (mmtc): Oh, und danke den Fußgott-Göttern für die Antwort auf mein letztes Tweet über nicht genügend Tore heute. Prishiate es. #Weltmeisterschaft
+BLEU (mmtc): 9.573309821288357
+COMET (mmtc): 57.65206217765808
+COMET-KIWI (mmtc): 65.95714092254639
+------------------------------
+SYS (pfsmb): Oh, und danke den Fußgottern für die Antwort auf mein vorheriges Tweet über nicht genügend Tore heute. Prishiate es. #Weltmeisterschaft
+BLEU (pfsmb): 9.573309821288357
+COMET (pfsmb): 59.387534856796265
+COMET-KIWI (pfsmb): 66.19195938110352
+
+Line 3910
+SRC: salute to Mexico. Hurraayyy.. Nederland goes to next round!: d #WorldCup
+REF: Gruß an Mexiko. Hurraa...Niederlande kommt in nächste Runde!: d #Worldcup
+------------------------------
+SYS (baseline): Die Niederlande kommen in die nächste Runde!
+BLEU (baseline): 6.691863570734902
+COMET (baseline): 65.72757363319397
+COMET-KIWI (baseline): 44.216543436050415
+------------------------------
+SYS (default): Gratulation an Mexiko. Hurraayyy.. Nederland geht in den nächsten Rundenschluss!: d #Weltmeisterschaft
+BLEU (default): 22.250253290431033
+COMET (default): 79.1182279586792
+COMET-KIWI (default): 78.78676652908325
+------------------------------
+SYS (rocsmt): Grüße an Mexiko. Hurraayyy.. Nederland geht in den nächsten Rundenschluss!: d #WorldCup
+BLEU (rocsmt): 22.250253290431033
+COMET (rocsmt): 78.46511602401733
+COMET-KIWI (rocsmt): 77.40129232406616
+------------------------------
+SYS (footweets): Grüße an Mexiko. Hurraayyy.. Nederland geht in den nächsten Rundenschluss!: d #WorldCup
+BLEU (footweets): 22.250253290431033
+COMET (footweets): 78.46511602401733
+COMET-KIWI (footweets): 77.40128636360168
+------------------------------
+SYS (mmtc): Grüße an Mexiko. Hurraayyy.. Nederland geht in den nächsten Rundenschluss!: d #Weltmeisterschaft
+BLEU (mmtc): 22.250253290431033
+COMET (mmtc): 78.84472608566284
+COMET-KIWI (mmtc): 76.7041563987732
+------------------------------
+SYS (pfsmb): Grüße an Mexiko. Hurraayyy.. Nederland geht in den nächsten Rundenschluss!: d #Weltmeisterschaft
+BLEU (pfsmb): 22.250253290431033
+COMET (pfsmb): 78.84472608566284
+COMET-KIWI (pfsmb): 76.7041563987732
+
+Line 3933
+SRC: I think $its funny how people who know nothing about soccer get all into when they dont even like it #WorldCup #attention
+REF: ich finde es $lustig, wie Leute, die nichts über Fußball wissen und ihn nicht einmal mögen, voll dabei sind #Worldcup #attention
+------------------------------
+SYS (baseline): Ich finde es komisch, wie Leute, die nichts über Fußball wissen, sich ganz in ihn hineinziehen, obwohl sie ihn nicht einmal mögen. #WorldCup #Achtung
+BLEU (baseline): 36.638596646133266
+COMET (baseline): 81.71704411506653
+COMET-KIWI (baseline): 83.15484523773193
+------------------------------
+SYS (default): Ich denke, es ist lustig, wie Menschen, die gar nichts von Fußball wissen, sich so drüber aufregen, wenn sie es gar nicht mögen #Weltmeisterschaft #Aufmerksamkeit
+BLEU (default): 7.547129058545171
+COMET (default): 81.67307376861572
+COMET-KIWI (default): 84.57578420639038
+------------------------------
+SYS (rocsmt): Ich denke, es ist lustig, wie Leute, die gar nichts von Fußball wissen, sich so drüber freuen, wenn sie es gar nicht mögen #WorldCup #Aufmerksamkeit
+BLEU (rocsmt): 18.808242155433703
+COMET (rocsmt): 82.12059140205383
+COMET-KIWI (rocsmt): 82.08782076835632
+------------------------------
+SYS (footweets): Ich denke, es ist lustig, wie Leute, die gar nichts von Fußball wissen, sich so drüber freuen, wenn sie es gar nicht mögen #WorldCup #Aufmerksamkeit
+BLEU (footweets): 18.808242155433703
+COMET (footweets): 82.12059736251831
+COMET-KIWI (footweets): 82.08787441253662
+------------------------------
+SYS (mmtc): Ich denke, es ist lustig, wie Leute, die gar nichts von Fußball wissen, sich so drüber freuen, wenn sie es gar nicht mögen #Weltmeisterschaft #Aufmerksamkeit
+BLEU (mmtc): 18.808242155433703
+COMET (mmtc): 82.36530423164368
+COMET-KIWI (mmtc): 83.20431113243103
+------------------------------
+SYS (pfsmb): Ich denke, es ist lustig, wie Leute, die gar nichts von Fußball wissen, sich so drüber freuen, wenn sie es gar nicht mögen #WorldCup #Aufmerksamkeit
+BLEU (pfsmb): 18.808242155433703
+COMET (pfsmb): 82.12059140205383
+COMET-KIWI (pfsmb): 82.08783864974976
+
+Line 3986
+SRC: hopefuly this will not be a worldcup where #referees outperform the players on the field #ssdiski @robertmarawa
+REF: hoffentlich wird das keine Weltmeisterschaft, wo #Referees die Spieler auf dem Feld übertreffen #ssdiski @robertmarawa
+------------------------------
+SYS (baseline): Hoffentlich wird dies kein WM sein, bei dem die Schiedsrichter die Spieler auf dem Feld übertreffen.
+BLEU (baseline): 26.896741624879542
+COMET (baseline): 73.41448664665222
+COMET-KIWI (baseline): 82.30454921722412
+------------------------------
+SYS (default): hoffentlich wird dies kein Weltcup, bei dem #Schiedsrichter die Spieler auf dem Feld überbieten #ssdiski @robertmarawa
+BLEU (default): 34.03336518440548
+COMET (default): 87.02237010002136
+COMET-KIWI (default): 83.48480463027954
+------------------------------
+SYS (rocsmt): hoffentlich wird dies kein Weltcup sein, bei dem #Schiedsrichter die Spieler auf dem Feld übertreffen #ssdiski @robertmarawa
+BLEU (rocsmt): 48.33482678326474
+COMET (rocsmt): 87.15710043907166
+COMET-KIWI (rocsmt): 84.26718711853027
+------------------------------
+SYS (footweets): hoffentlich wird dies kein Weltcup sein, bei dem #Schiedsrichter die Spieler auf dem Feld übertreffen #ssdiski @robertmarawa
+BLEU (footweets): 48.33482678326474
+COMET (footweets): 87.15710043907166
+COMET-KIWI (footweets): 84.26718711853027
+------------------------------
+SYS (mmtc): höchstwahrscheinlich wird dies nicht ein Weltcup sein, bei dem #Schiedsrichter die Spieler auf dem Feld übertreffen #ssdiski @robertmarawa
+BLEU (mmtc): 43.95285386678049
+COMET (mmtc): 81.31821751594543
+COMET-KIWI (mmtc): 83.47799777984619
+------------------------------
+SYS (pfsmb): hoffentlich wird dies nicht ein Weltcup sein, bei dem #Schiedsrichter die Spieler auf dem Feld übertreffen #ssdiski @robertmarawa
+BLEU (pfsmb): 45.96980088392873
+COMET (pfsmb): 87.19560503959656
+COMET-KIWI (pfsmb): 84.49946641921997
+

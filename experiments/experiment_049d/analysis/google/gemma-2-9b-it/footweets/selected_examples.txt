@@ -1271,7 +1271,7 @@ COMET (default): 82.358717918396
 COMET-KIWI (default): 75.60557126998901
 ------------------------------
 SYS (rocsmt): Messi-Tor! #Dios #Messi #Weltmeisterschaft #FIFA #Gott #weilfussball
-BLEU (rocsmt): 36.05089705421052
+BLEU (rocsmt): 36.050897054210516
 COMET (rocsmt): 79.61946725845337
 COMET-KIWI (rocsmt): 75.04016160964966
 ------------------------------
@@ -1441,12 +1441,12 @@ COMET (default): 87.47157454490662
 COMET-KIWI (default): 84.42723751068115
 ------------------------------
 SYS (rocsmt): Los geht's #CostaRica #Weltmeisterschaft2014 #Weltmeisterschaft #PuraVida https://t.co/0KMJlGh3Vz
-BLEU (rocsmt): 46.550237907489084
+BLEU (rocsmt): 46.55023790748909
 COMET (rocsmt): 84.28914546966553
 COMET-KIWI (rocsmt): 84.25491452217102
 ------------------------------
 SYS (footweets): Los geht's #CostaRica #Weltmeisterschaft2014 #Weltmeisterschaft #PuraVida https://t.co/0KMJlGh3Vz
-BLEU (footweets): 46.550237907489084
+BLEU (footweets): 46.55023790748909
 COMET (footweets): 84.28914546966553
 COMET-KIWI (footweets): 84.25491452217102
 ------------------------------

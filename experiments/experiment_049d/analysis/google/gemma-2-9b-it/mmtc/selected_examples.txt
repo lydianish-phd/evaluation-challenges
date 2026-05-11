@@ -941,12 +941,12 @@ COMET (footweets): 91.96480512619019
 COMET-KIWI (footweets): 83.78440737724304
 ------------------------------
 SYS (mmtc): RT @abracadaspliff: Out of sight, out of mind and soon replaced
-BLEU (mmtc): 20.448007360218387
+BLEU (mmtc): 20.44800736021839
 COMET (mmtc): 76.99823379516602
 COMET-KIWI (mmtc): 67.87207126617432
 ------------------------------
 SYS (pfsmb): RT @abracadaspliff: Out of sight, out of mind and soon replaced
-BLEU (pfsmb): 20.448007360218387
+BLEU (pfsmb): 20.44800736021839
 COMET (pfsmb): 76.99823379516602
 COMET-KIWI (pfsmb): 67.87207126617432
 

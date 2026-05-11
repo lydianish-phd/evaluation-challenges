@@ -66,7 +66,7 @@ if __name__ == "__main__":
         prompts = [ get_prompt(sentence, args.source_lang, args.target_lang, model_name=model_name, guidelines=guideline) for sentence in sentences ]
         outputs = llm.generate(prompts, sampling_params)
 
-        with open(output_file, "w") as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             for output in outputs:
                 if model_name in MISTRAL:
                     generated_text = output.outputs[0].text.strip().split('\n')[0].strip()

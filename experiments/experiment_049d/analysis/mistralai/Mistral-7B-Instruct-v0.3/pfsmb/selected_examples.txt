@@ -1,0 +1,1870 @@
+Line 3
+SRC: Brrrrrrrrrrr il fait froid .....
+REF: Brrrrrrrrrrr it's cold .....
+------------------------------
+SYS (baseline): Brrrrrrrrr it is cold.....
+BLEU (baseline): 58.73949094699213
+COMET (baseline): 97.16860055923462
+COMET-KIWI (baseline): 85.32944917678833
+------------------------------
+SYS (default): It's cold ...
+BLEU (default): 36.70124608961282
+COMET (default): 76.14268064498901
+COMET-KIWI (default): 84.94939804077148
+------------------------------
+SYS (rocsmt): It's cold ...
+BLEU (rocsmt): 36.70124608961282
+COMET (rocsmt): 76.14265084266663
+COMET-KIWI (rocsmt): 84.94939804077148
+------------------------------
+SYS (footweets): It's cold ...
+BLEU (footweets): 36.70124608961282
+COMET (footweets): 76.14269852638245
+COMET-KIWI (footweets): 84.94940996170044
+------------------------------
+SYS (mmtc): It's cold ...
+BLEU (mmtc): 36.70124608961282
+COMET (mmtc): 76.14269852638245
+COMET-KIWI (mmtc): 84.94939804077148
+------------------------------
+SYS (pfsmb): It's cold ...
+BLEU (pfsmb): 36.70124608961282
+COMET (pfsmb): 76.14269852638245
+COMET-KIWI (pfsmb): 84.94939804077148
+
+Line 27
+SRC: Très intérressant .trēs beau .
+REF: Very interesting. Very beautiful .
+------------------------------
+SYS (baseline): Very interesting. Very beautiful.
+BLEU (baseline): 100.00000000000004
+COMET (baseline): 96.72922492027283
+COMET-KIWI (baseline): 86.56686544418335
+------------------------------
+SYS (default): Very interesting .very beautiful .
+BLEU (default): 37.99178428257963
+COMET (default): 95.27549147605896
+COMET-KIWI (default): 85.19359827041626
+------------------------------
+SYS (rocsmt): Very interesting .very beautiful .
+BLEU (rocsmt): 37.99178428257963
+COMET (rocsmt): 95.27549147605896
+COMET-KIWI (rocsmt): 85.19359827041626
+------------------------------
+SYS (footweets): Very interesting .very beautiful .
+BLEU (footweets): 37.99178428257963
+COMET (footweets): 95.27549147605896
+COMET-KIWI (footweets): 85.19359827041626
+------------------------------
+SYS (mmtc): Very interesting .very beautiful .
+BLEU (mmtc): 37.99178428257963
+COMET (mmtc): 95.27549147605896
+COMET-KIWI (mmtc): 85.19359827041626
+------------------------------
+SYS (pfsmb): Very interesting .very beautiful .
+BLEU (pfsmb): 37.99178428257963
+COMET (pfsmb): 95.27549147605896
+COMET-KIWI (pfsmb): 85.19359827041626
+
+Line 32
+SRC: Jy serai a Nice ♥♥♥♥
+REF: I'll be there in Nice ♥♥♥♥
+------------------------------
+SYS (baseline): You will be in Nice ♥♥♥♥
+BLEU (baseline): 32.46679154750991
+COMET (baseline): 84.95205640792847
+COMET-KIWI (baseline): 85.62884330749512
+------------------------------
+SYS (default): I will be in Nice ♥♥♥♥
+BLEU (default): 32.46679154750991
+COMET (default): 94.0731942653656
+COMET-KIWI (default): 86.57567501068115
+------------------------------
+SYS (rocsmt): I will be in Nice ♥♥♥♥
+BLEU (rocsmt): 32.46679154750991
+COMET (rocsmt): 94.0731942653656
+COMET-KIWI (rocsmt): 86.57567501068115
+------------------------------
+SYS (footweets): I will be in Nice ♥♥♥♥
+BLEU (footweets): 32.46679154750991
+COMET (footweets): 94.0731942653656
+COMET-KIWI (footweets): 86.57567501068115
+------------------------------
+SYS (mmtc): I will be in Nice ♥♥♥♥
+BLEU (mmtc): 32.46679154750991
+COMET (mmtc): 94.07318234443665
+COMET-KIWI (mmtc): 86.57567501068115
+------------------------------
+SYS (pfsmb): I will be in Nice ♥♥♥♥
+BLEU (pfsmb): 32.46679154750991
+COMET (pfsmb): 94.0731942653656
+COMET-KIWI (pfsmb): 86.57567501068115
+
+Line 34
+SRC: jarive -------------------> http://youtu.be/GiBfYb6y8cc
+REF: Im coming -------------------> http://youtu.be/GiBfYb6y8cc
+------------------------------
+SYS (baseline): The Commission has also adopted a proposal for a regulation on the European Union's role in the international fisheries sector.
+BLEU (baseline): 1.8160849415439309
+COMET (baseline): 27.724578976631165
+COMET-KIWI (baseline): 34.2153400182724
+------------------------------
+SYS (default): http://youtu.be/GiBfYb6y8cc
+BLEU (default): 64.11803884299549
+COMET (default): 91.08385443687439
+COMET-KIWI (default): 51.907700300216675
+------------------------------
+SYS (rocsmt): http://youtu.be/GiBfYb6y8cc
+BLEU (rocsmt): 64.11803884299549
+COMET (rocsmt): 91.0838782787323
+COMET-KIWI (rocsmt): 51.90775394439697
+------------------------------
+SYS (footweets): jarive -------------------> http://youtu.be/GiBfYb6y8cc
+BLEU (footweets): 83.1353976469103
+COMET (footweets): 92.89558529853821
+COMET-KIWI (footweets): 81.72504901885986
+------------------------------
+SYS (mmtc): http://youtu.be/GiBfYb6y8cc
+BLEU (mmtc): 64.11803884299549
+COMET (mmtc): 91.08385443687439
+COMET-KIWI (mmtc): 51.90775394439697
+------------------------------
+SYS (pfsmb): http://youtu.be/GiBfYb6y8cc
+BLEU (pfsmb): 64.11803884299549
+COMET (pfsmb): 91.08385443687439
+COMET-KIWI (pfsmb): 51.907700300216675
+
+Line 35
+SRC: jé loupé la 1er oups  sur tf1
+REF: I missed the 1st oops on tf1
+------------------------------
+SYS (baseline): I missed the first oops on tf1
+BLEU (baseline): 41.11336169005196
+COMET (baseline): 94.33867931365967
+COMET-KIWI (baseline): 68.88560056686401
+------------------------------
+SYS (default): I missed the first one on TF1
+BLEU (default): 26.269098944241588
+COMET (default): 82.68019556999207
+COMET-KIWI (default): 73.97671937942505
+------------------------------
+SYS (rocsmt): I missed the first one on TF1
+BLEU (rocsmt): 26.269098944241588
+COMET (rocsmt): 82.68019556999207
+COMET-KIWI (rocsmt): 73.97671937942505
+------------------------------
+SYS (footweets): I missed the first one on TF1
+BLEU (footweets): 26.269098944241588
+COMET (footweets): 82.68019556999207
+COMET-KIWI (footweets): 73.97671937942505
+------------------------------
+SYS (mmtc): I missed the first one on TF1
+BLEU (mmtc): 26.269098944241588
+COMET (mmtc): 82.68020153045654
+COMET-KIWI (mmtc): 73.97671937942505
+------------------------------
+SYS (pfsmb): I missed the first one on TF1
+BLEU (pfsmb): 26.269098944241588
+COMET (pfsmb): 82.68019556999207
+COMET-KIWI (pfsmb): 73.97671937942505
+
+Line 37
+SRC: nooon ma meilleure amiie est a nice jvaii lui envoyer un message pour lui dire ke vs etes laa pour kel aye vs voiir hihihihi bisou
+REF: nooo my best friend is in Nice Im gonna send her a message to tell her you re here so that she goes see you hihihi xoxo
+------------------------------
+SYS (baseline): Noon my best friend is a nice girl I came to send her a message to tell her ke vs etes laa for kel aye vs see hihihihi kissou
+BLEU (baseline): 28.53643158281306
+COMET (baseline): 49.84878599643707
+COMET-KIWI (baseline): 58.56583118438721
+------------------------------
+SYS (default): At noon, my best friend is in Nice. I will send her a message to tell her that you are there to see her. Hihihihi kiss.
+BLEU (default): 36.03321742911122
+COMET (default): 68.76547932624817
+COMET-KIWI (default): 77.16927528381348
+------------------------------
+SYS (rocsmt): At noon, my best friend is in Nice. I will send her a message to tell her that you are there to see her. Hihihihi kiss.
+BLEU (rocsmt): 36.03321742911122
+COMET (rocsmt): 68.76547336578369
+COMET-KIWI (rocsmt): 77.16927528381348
+------------------------------
+SYS (footweets): At noon, my best friend is in Nice. I'll send her a message to tell her that you are there to see her. Hihihihi kiss.
+BLEU (footweets): 37.345649677555535
+COMET (footweets): 67.77938604354858
+COMET-KIWI (footweets): 77.71034240722656
+------------------------------
+SYS (mmtc): At noon, my best friend is in Nice. I'll send her a message to tell her that you are there to see her. Hihihihi kiss.
+BLEU (mmtc): 37.345649677555535
+COMET (mmtc): 67.77938604354858
+COMET-KIWI (mmtc): 77.71034836769104
+------------------------------
+SYS (pfsmb): noon my best friend is in Nice, I'll send her a message to tell her that you are there for her, oh I hope she sees it, hihihihi kiss
+BLEU (pfsmb): 33.66708947010078
+COMET (pfsmb): 71.98642492294312
+COMET-KIWI (pfsmb): 69.98835802078247
+
+Line 38
+SRC: Alizée mon plus grand réves te rencontrer tu est charmante belle gentil marrante souriante ta une voix magnifique surtout quand tu chante avec tal tu est mon idole un exemple je t'aodre plus que tout t'est chanson son trop bien je suis trop contente que t'ai ganger a danse avec les stars ! j'espere que tu verra ce com j'aimerait etre comme toi plus tard avec ma page et mes potes mm si elle ne marche pas bien j'aimerait que tu y jette un coup d'oeil on va bientot commencer a poster des videos de nous en train de chanter dessus ! voilà
+REF: Alizée my biggest dream meeting you you're charming beautiful nice funny cheerful youve a wonderful voice in particular when you sing with tal you're my idol a model I love you more than anything your songs are so good I'm so happy that you won dance with the stars! I hope you see this com I wish I'd be like you in the future with my page and my buddies even though it doesn't work so good I'd like you to take a look we're starting posting videos with us singing in it! there now
+------------------------------
+SYS (baseline): Alizée my greatest dreams to meet you you are charming beautiful kind funny smiling your a beautiful voice especially when you sing with tal you are my idol an example I love you more than anything you are song sound too good I am so happy that you have gangster danced with the stars! I hope you see this com I would like to be like you later with my page and my friends mm if it does not work well I would like you to take a look at it we will soon start posting videos of us singing on it!
+BLEU (baseline): 32.124199945552874
+COMET (baseline): 71.43211960792542
+COMET-KIWI (baseline): 67.34623908996582
+------------------------------
+SYS (default): Alizée, my biggest dream is to meet you. You are charming, beautiful, kind, mischievous, and smiling. Your voice is magnificent, especially when you sing with Tal. You are my idol. An example, I adore you more than anything. Your song is too good. I am too happy that I got to dance with the stars with you! I hope you will see this comment. I would love to be like you later with my page and my friends. If it doesn't work well, I would love for you to take a look. We are about to start posting videos of us singing on it! Here it is.
+BLEU (default): 17.937368635186754
+COMET (default): 66.36626124382019
+COMET-KIWI (default): 74.70235228538513
+------------------------------
+SYS (rocsmt): Alizée, my biggest dream is to meet you. You are charming, beautiful, kind, funny, smiling, your voice is magnificent, especially when you sing with Them. You are my idol. An example, I adore you more than anything. Your song is too good. I am too happy that I got to dance with the stars with you! I hope you will see this comment. I would like to be like you later with my page and my friends. If it doesn't work well, I would like you to take a look. We are about to start posting videos of us singing on it! Here it is.
+BLEU (rocsmt): 19.35042630410266
+COMET (rocsmt): 67.32519865036011
+COMET-KIWI (rocsmt): 72.20126390457153
+------------------------------
+SYS (footweets): Alizée, my biggest dream is to meet you. You are charming, beautiful, kind, funny, smiling, your voice is magnificent, especially when you sing with Them. You are my idol. An example, I adore you more than anything. Your song is too good. I am too happy that I got to dance with the stars! I hope you will see this comment. I would like to be like you later with my page and my friends. If it doesn't work well, I would like you to take a look. We are about to start posting videos of us singing on it! Here it is.
+BLEU (footweets): 21.680917305874882
+COMET (footweets): 67.71714091300964
+COMET-KIWI (footweets): 73.38858246803284
+------------------------------
+SYS (mmtc): Alizée, my biggest dream is to meet you. You are charming, beautiful, kind, funny, smiling, your voice is magnificent, especially when you sing with Them. You are my idol. An example, I adore you more than anything. Your song is too good. I am too happy that I got to dance with the stars with you! I hope you will see this comment. I would like to be like you later with my page and my friends. If it doesn't work well, I would like you to take a look. We are about to start posting videos of us singing on it! Here it is.
+BLEU (mmtc): 19.35042630410266
+COMET (mmtc): 67.32519268989563
+COMET-KIWI (mmtc): 72.20126390457153
+------------------------------
+SYS (pfsmb): Alizée, my biggest dream is to meet you. You are charming, beautiful, kind, funny, smiling, your voice is magnificent, especially when you sing with Them. You are my idol. An example, I adore you more than anything. Your song is too good. I am too happy that I got to dance with the stars with you! I hope you will see this comment. I would like to be like you later with my page and my friends. If it doesn't work well, I would like you to take a look. We are about to start posting videos of us singing on it! Here it is.
+BLEU (pfsmb): 19.35042630410266
+COMET (pfsmb): 67.32519268989563
+COMET-KIWI (pfsmb): 72.20126390457153
+
+Line 45
+SRC: Stp Lili envoie moi 1 otograf pas message pour que je puce bien dormi. Je t'ador
+REF: Plz Lili send me an autograf by message so that I can sleep well. Love u
+------------------------------
+SYS (baseline): Please, Lili, send me an autograph, not a message, so I can sleep well.
+BLEU (baseline): 27.447938256311044
+COMET (baseline): 77.46972441673279
+COMET-KIWI (baseline): 77.53005027770996
+------------------------------
+SYS (default): Stop Lili sends me 1 photo not a message so that I can sleep well. I adore you.
+BLEU (default): 36.658827296012404
+COMET (default): 64.75282311439514
+COMET-KIWI (default): 62.20971345901489
+------------------------------
+SYS (rocsmt): Stop Lili sends me one photograph, not a message, so that I can sleep well. I adore you.
+BLEU (rocsmt): 28.75338096125627
+COMET (rocsmt): 62.520259618759155
+COMET-KIWI (rocsmt): 69.40991282463074
+------------------------------
+SYS (footweets): Stop Lili sends me one photograph, not a message, so that I can sleep well. I adore you.
+BLEU (footweets): 28.75338096125627
+COMET (footweets): 62.520259618759155
+COMET-KIWI (footweets): 69.40991282463074
+------------------------------
+SYS (mmtc): Stop Lili sends me one photo, not a message, so that I can sleep well. I adore you.
+BLEU (mmtc): 28.75338096125627
+COMET (mmtc): 62.92094588279724
+COMET-KIWI (mmtc): 66.86645746231079
+------------------------------
+SYS (pfsmb): Stop Lili sends me one photo, not a message, so that I can sleep well. I adore you.
+BLEU (pfsmb): 28.75338096125627
+COMET (pfsmb): 62.92094588279724
+COMET-KIWI (pfsmb): 66.86645746231079
+
+Line 46
+SRC: javé plu pansé a cette si belle alizée ;-/ ok ok ok ok ok
+REF: I hadn't thought anymore in beautiful alizée ;-/ ok ok ok ok ok
+------------------------------
+SYS (baseline): I'm not dressed like that.
+BLEU (baseline): 0.0
+COMET (baseline): 36.77091300487518
+COMET-KIWI (baseline): 15.749430656433105
+------------------------------
+SYS (default): the sky was patched with clouds this so beautiful breeze ;-/ ok ok ok ok ok
+BLEU (default): 40.052744847255724
+COMET (default): 50.79505443572998
+COMET-KIWI (default): 39.18050229549408
+------------------------------
+SYS (rocsmt): I've had a patched up umbrella in this such beautiful breeze ;-/ ok ok ok ok ok
+BLEU (rocsmt): 38.76199053423408
+COMET (rocsmt): 45.94404399394989
+COMET-KIWI (rocsmt): 37.94976472854614
+------------------------------
+SYS (footweets): I've had a patched up umbrella in this so beautiful breeze ;-/ ok ok ok ok ok
+BLEU (footweets): 38.76199053423408
+COMET (footweets): 46.31642401218414
+COMET-KIWI (footweets): 38.47162425518036
+------------------------------
+SYS (mmtc): "I've had a patched up cold to this so beautiful breeze ;-/ ok ok ok ok ok"
+BLEU (mmtc): 33.86854985606571
+COMET (mmtc): 49.224549531936646
+COMET-KIWI (mmtc): 37.13800609111786
+------------------------------
+SYS (pfsmb): I've had a patched up cold to this so beautiful breeze ;-/ ok ok ok ok ok
+BLEU (pfsmb): 37.75432399924586
+COMET (pfsmb): 48.615044355392456
+COMET-KIWI (pfsmb): 36.51987612247467
+
+Line 63
+SRC: Jspr qu il ne reçoit un message sur son tel quand quelqu un écrit un message fb ! Merde j en fait partie !
+REF: Hope he only gets a message on his phone when someone writes a fb message! Shit I m in it!
+------------------------------
+SYS (baseline): I know he doesn't get a message on his phone when someone writes a Facebook message!
+BLEU (baseline): 40.3578542151604
+COMET (baseline): 72.58155941963196
+COMET-KIWI (baseline): 67.98034906387329
+------------------------------
+SYS (default): He doesn't receive a message on his phone when someone writes a Facebook message! Damn, I'm part of it!
+BLEU (default): 41.99443742382725
+COMET (default): 75.39562582969666
+COMET-KIWI (default): 75.9156584739685
+------------------------------
+SYS (rocsmt): He's pissed off because he doesn't receive a message on his phone when someone writes a Facebook message! Damn, I'm part of it too!
+BLEU (rocsmt): 33.47980102443278
+COMET (rocsmt): 70.36531567573547
+COMET-KIWI (rocsmt): 73.36411476135254
+------------------------------
+SYS (footweets): He's pissed off because he doesn't receive a message on his phone when someone writes a Facebook message! Damn, I'm part of it too!
+BLEU (footweets): 33.47980102443278
+COMET (footweets): 70.36531567573547
+COMET-KIWI (footweets): 73.36411476135254
+------------------------------
+SYS (mmtc): He's pissed off because he doesn't receive a message on his phone when someone writes a Facebook message! Damn, I'm part of it too!
+BLEU (mmtc): 33.47980102443278
+COMET (mmtc): 70.36531567573547
+COMET-KIWI (mmtc): 73.36411476135254
+------------------------------
+SYS (pfsmb): He's pissed off because he doesn't receive a message on his phone when someone writes a Facebook message! Damn, I'm part of it too!
+BLEU (pfsmb): 33.47980102443278
+COMET (pfsmb): 70.36531567573547
+COMET-KIWI (pfsmb): 73.36411476135254
+
+Line 68
+SRC: Yeeesssss a toi vanes la victoire mm si je sais que quelque par tu ten fou mais moi jai hate que tu ais le.prix
+REF: Yeeesssss to you vanes victory even if I know that somehow you dont care but me I'm just eager that you get the price
+------------------------------
+SYS (baseline): Yeahesssss you have vanes victory mm if I know something by you ten crazy but I jai hate that you have the.price
+BLEU (baseline): 9.84934946888872
+COMET (baseline): 52.28077173233032
+COMET-KIWI (baseline): 42.281436920166016
+------------------------------
+SYS (default): Yes, to you Vanes the victory mm if I know that somehow through you they are crazy but I hate that you have the prize.
+BLEU (default): 18.25741858350554
+COMET (default): 56.17966055870056
+COMET-KIWI (default): 52.34922170639038
+------------------------------
+SYS (rocsmt): Yes, to you Vanes, the victory, mm, if I know that somehow through you, you're crazy, but I hate that you have it.
+BLEU (rocsmt): 16.332444882440946
+COMET (rocsmt): 52.25833058357239
+COMET-KIWI (rocsmt): 53.972625732421875
+------------------------------
+SYS (footweets): Yes, to you Vanes, the victory mm if I know that somehow through you they are crazy but I hate that you have the price.
+BLEU (footweets): 18.598826516078386
+COMET (footweets): 54.99945282936096
+COMET-KIWI (footweets): 48.27072620391846
+------------------------------
+SYS (mmtc): Yes, to you Vanes, the victory mm if I know that somehow through you they are crazy but I hate that you have the price.
+BLEU (mmtc): 18.598826516078386
+COMET (mmtc): 54.99945282936096
+COMET-KIWI (mmtc): 48.27072620391846
+------------------------------
+SYS (pfsmb): Yes, to you Vanes, the victory mm if I know that somehow through you they are crazy but I hate that you have the price.
+BLEU (pfsmb): 18.598826516078386
+COMET (pfsmb): 54.99945282936096
+COMET-KIWI (pfsmb): 48.27072620391846
+
+Line 78
+SRC: nous tres decu car concert a 19h45 elle a commencer a 21h et repartis 22h20 sans rien dire
+REF: as for us very disappointed bc concert at 19h45 she began at 21h and left 22h20 without a word
+------------------------------
+SYS (baseline): We were so worried because the concert was at 7:45 she started at 9:00 and left at 10:20 without saying anything
+BLEU (baseline): 3.796469564911484
+COMET (baseline): 75.16777515411377
+COMET-KIWI (baseline): 74.87211227416992
+------------------------------
+SYS (default): We were very disappointed because the concert started at 7:45pm, it started at 9pm and ended at 10:20pm without saying anything.
+BLEU (default): 3.796469564911484
+COMET (default): 73.28316569328308
+COMET-KIWI (default): 66.91293716430664
+------------------------------
+SYS (rocsmt): We were very disappointed because the concert started at 7:45pm, it started at 9pm and ended at 10:20pm without saying anything.
+BLEU (rocsmt): 3.796469564911484
+COMET (rocsmt): 73.28316569328308
+COMET-KIWI (rocsmt): 66.9129490852356
+------------------------------
+SYS (footweets): We were very disappointed because the concert started at 7:45 pm, it started at 9:00 pm and ended at 10:20 pm without saying anything.
+BLEU (footweets): 3.1731768853938878
+COMET (footweets): 73.71787428855896
+COMET-KIWI (footweets): 67.10665822029114
+------------------------------
+SYS (mmtc): We were very disappointed because the concert started at 7:45pm, it started at 9pm and ended at 10:20pm without saying anything.
+BLEU (mmtc): 3.796469564911484
+COMET (mmtc): 73.28316569328308
+COMET-KIWI (mmtc): 66.9129490852356
+------------------------------
+SYS (pfsmb): We were very disappointed because the concert started at 7:45pm, it started at 9pm and ended at 10:20pm without saying anything.
+BLEU (pfsmb): 3.796469564911484
+COMET (pfsmb): 73.28316569328308
+COMET-KIWI (pfsmb): 66.9129490852356
+
+Line 105
+SRC: Mdr  Oui jcrois qu'il est temps de dormir
+REF: Lol Yes I think it's time to sleep
+------------------------------
+SYS (baseline): Mr. Yes, I think it's time for bed
+BLEU (baseline): 27.77619034011791
+COMET (baseline): 74.26844239234924
+COMET-KIWI (baseline): 83.9082419872284
+------------------------------
+SYS (default): Yes, I think it's time to sleep.
+BLEU (default): 61.04735835807847
+COMET (default): 91.62567257881165
+COMET-KIWI (default): 84.77479219436646
+------------------------------
+SYS (rocsmt): Indeed, I think it's time to sleep.
+BLEU (rocsmt): 58.73949094699213
+COMET (rocsmt): 90.26049971580505
+COMET-KIWI (rocsmt): 84.88943576812744
+------------------------------
+SYS (footweets): Indeed, I think it's time to sleep.
+BLEU (footweets): 58.73949094699213
+COMET (footweets): 90.26051163673401
+COMET-KIWI (footweets): 84.88943576812744
+------------------------------
+SYS (mmtc): Indeed, I think it's time to sleep.
+BLEU (mmtc): 58.73949094699213
+COMET (mmtc): 90.26051163673401
+COMET-KIWI (mmtc): 84.88943576812744
+------------------------------
+SYS (pfsmb): Indeed, I think it's time to sleep.
+BLEU (pfsmb): 58.73949094699213
+COMET (pfsmb): 90.26051163673401
+COMET-KIWI (pfsmb): 84.88943576812744
+
+Line 117
+SRC: c est la dernière ligne droite et tu as le potentiel et le charisme du vainqueur, continue comme ça et les rouges c est bien car du coup le public vote encore plus.
+REF: it s the final home straight and you have the potential and charisma of a winner, keep it on and the reds are good because that means the public votes even more.
+------------------------------
+SYS (baseline): It's the last straight and you have the potential and charisma of the winner, keep it up and the reds are good because the audience votes even more.
+BLEU (baseline): 51.41954099338583
+COMET (baseline): 80.37628531455994
+COMET-KIWI (baseline): 75.4531741142273
+------------------------------
+SYS (default): This is the last straight line and you have the potential and charisma of a winner, continue like this and the reds are good because then the public votes even more.
+BLEU (default): 57.238676707596895
+COMET (default): 78.42423915863037
+COMET-KIWI (default): 79.90102767944336
+------------------------------
+SYS (rocsmt): This is the final straight and you have the potential and the charisma of a winner, continue like this and the reds are good because then the public votes even more.
+BLEU (rocsmt): 55.45316164000075
+COMET (rocsmt): 80.61248064041138
+COMET-KIWI (rocsmt): 78.97527813911438
+------------------------------
+SYS (footweets): This is the final straight and you have the potential and the charisma of a winner, continue like this and the reds are good because then the public votes even more.
+BLEU (footweets): 55.45316164000075
+COMET (footweets): 80.61248064041138
+COMET-KIWI (footweets): 78.97527813911438
+------------------------------
+SYS (mmtc): This is the last straight line and you have the potential and charisma of a winner, continue like this and the reds are good because then the public votes even more.
+BLEU (mmtc): 57.238676707596895
+COMET (mmtc): 78.42423915863037
+COMET-KIWI (mmtc): 79.90102767944336
+------------------------------
+SYS (pfsmb): This is the last straight line and you have the potential and the charisma of a winner, continue like this and the reds are good because then the public votes even more.
+BLEU (pfsmb): 51.51316763028396
+COMET (pfsmb): 78.76007556915283
+COMET-KIWI (pfsmb): 80.14020919799805
+
+Line 118
+SRC: c est toi le meilleur...pour nous ...les autres bof.. toi j achete des disques des demain..
+REF: you re the best...for us ...the others meh.. you I'll buy your records as soon as tomorrow..
+------------------------------
+SYS (baseline): You're the best...for us...the others... you're the one I buy records for tomorrow..
+BLEU (baseline): 48.195759813006404
+COMET (baseline): 72.58371710777283
+COMET-KIWI (baseline): 72.81941175460815
+------------------------------
+SYS (default): It's you, the best...for us ...the others, meh... you buy records of tomorrow...
+BLEU (default): 53.80508765742308
+COMET (default): 67.73630976676941
+COMET-KIWI (default): 67.97685623168945
+------------------------------
+SYS (rocsmt): You are the best...for us...the others, meh... you buy records for tomorrow...
+BLEU (rocsmt): 53.26282697974548
+COMET (rocsmt): 73.64181876182556
+COMET-KIWI (rocsmt): 74.84906315803528
+------------------------------
+SYS (footweets): You are the best...for us...the others, meh... you buy records for tomorrow...
+BLEU (footweets): 53.26282697974548
+COMET (footweets): 73.64181876182556
+COMET-KIWI (footweets): 74.84909892082214
+------------------------------
+SYS (mmtc): It's you, the best...for us ...the others, meh... you buy records for tomorrow...
+BLEU (mmtc): 53.80508765742308
+COMET (mmtc): 71.0846483707428
+COMET-KIWI (mmtc): 73.89194965362549
+------------------------------
+SYS (pfsmb): It's you, the best...for us ...the others, meh... you buy records for tomorrow...
+BLEU (pfsmb): 53.80508765742308
+COMET (pfsmb): 71.08467221260071
+COMET-KIWI (pfsmb): 73.89194965362549
+
+Line 119
+SRC: c'est l'heure du d-d-d-d-uel ! (oui, ton qqqquart de final a un drôle d'effet sur moi !)
+REF: time for the d-d-d-d-uel! (yes, your qqqquarterfinal has a bizarre effect on me!)
+------------------------------
+SYS (baseline): It's time for the d-d-d-d-uel! (yes, your quarterfinal qqq has a funny effect on me!)
+BLEU (baseline): 61.50523394042868
+COMET (baseline): 83.94753932952881
+COMET-KIWI (baseline): 54.34247851371765
+------------------------------
+SYS (default): It's time for the d-d-d-d-uel! (Yes, your quarter final has a strange effect on me!)
+BLEU (default): 47.20758038942707
+COMET (default): 82.0485770702362
+COMET-KIWI (default): 58.61515998840332
+------------------------------
+SYS (rocsmt): It's time for the duel! (Yes, your quarter final has a strange effect on me!)
+BLEU (rocsmt): 30.51327880362441
+COMET (rocsmt): 62.306517362594604
+COMET-KIWI (rocsmt): 67.81312227249146
+------------------------------
+SYS (footweets): It's time for the d-d-d-d-uel! (Yes, your quarter final has a strange effect on me!)
+BLEU (footweets): 47.20758038942707
+COMET (footweets): 82.0485770702362
+COMET-KIWI (footweets): 58.61515998840332
+------------------------------
+SYS (mmtc): It's time for the d-d-d-d-uel! (Yes, your quarter final has a strange effect on me!)
+BLEU (mmtc): 47.20758038942707
+COMET (mmtc): 82.0485770702362
+COMET-KIWI (mmtc): 58.61515998840332
+------------------------------
+SYS (pfsmb): It's time for the d-d-d-d-uel! (yes, your quarter final has a strange effect on me!)
+BLEU (pfsmb): 61.50523394042868
+COMET (pfsmb): 83.35474133491516
+COMET-KIWI (pfsmb): 58.535319566726685
+
+Line 122
+SRC: fais réver mecccccccc!!! fait la comme tu c le faire avec ta joie de vivre et t mimique ; )))))))))))
+REF: make people dream duuuuude!!! play it like you know how to play it with ur zest for life and ur funny faces ; )))))))))))
+------------------------------
+SYS (baseline): Make me laugh!!! do it like you do it with your joy of life and your mimicry!
+BLEU (baseline): 6.673104557603011
+COMET (baseline): 64.65533375740051
+COMET-KIWI (baseline): 76.71532034873962
+------------------------------
+SYS (default): Make me dream!!! Do it like you do it with your joy of living and your mimicry ; )))))))))))
+BLEU (default): 39.18549712093119
+COMET (default): 71.51641249656677
+COMET-KIWI (default): 74.31758046150208
+------------------------------
+SYS (rocsmt): Make me dream!!! Do it like you do it with your joy of living and your mimicry ; )))))))))))
+BLEU (rocsmt): 39.18549712093119
+COMET (rocsmt): 71.51643633842468
+COMET-KIWI (rocsmt): 74.31756258010864
+------------------------------
+SYS (footweets): Make me dream!!! Do it like you do it with your joy of living and your mimicry ; )))))))))))
+BLEU (footweets): 39.18549712093119
+COMET (footweets): 71.51641249656677
+COMET-KIWI (footweets): 74.31758642196655
+------------------------------
+SYS (mmtc): Make me dream!!! Do it like you do it with your joy of living and your mimicry ; ))))))))))))
+BLEU (mmtc): 39.29281402238931
+COMET (mmtc): 67.11615920066833
+COMET-KIWI (mmtc): 72.13958501815796
+------------------------------
+SYS (pfsmb): Make me dream!!! Do it like you do it with your joy of living and your mimicry ; ))))))))))))
+BLEU (pfsmb): 39.29281402238931
+COMET (pfsmb): 67.1161413192749
+COMET-KIWI (pfsmb): 72.13958501815796
+
+Line 128
+SRC: ON T'AiME ON TE SOUTiENT TU VAS GAGNER
+REF: WE LOVE YOU WE SUPPORT YOU YOU'RE GOING TO WIN
+------------------------------
+SYS (baseline): We got you, we got you, you're gonna win.
+BLEU (baseline): 0.0
+COMET (baseline): 49.48255121707916
+COMET-KIWI (baseline): 70.50703763961792
+------------------------------
+SYS (default): We love you, we support you, you will win.
+BLEU (default): 0.0
+COMET (default): 65.32545685768127
+COMET-KIWI (default): 86.54053211212158
+------------------------------
+SYS (rocsmt): We love you, we support you, you will win
+BLEU (rocsmt): 0.0
+COMET (rocsmt): 68.83607506752014
+COMET-KIWI (rocsmt): 84.77137684822083
+------------------------------
+SYS (footweets): We love you, we support you, you will win
+BLEU (footweets): 0.0
+COMET (footweets): 68.83607506752014
+COMET-KIWI (footweets): 84.77138876914978
+------------------------------
+SYS (mmtc): We love you, we support you, you will win
+BLEU (mmtc): 0.0
+COMET (mmtc): 68.83607506752014
+COMET-KIWI (mmtc): 84.77137088775635
+------------------------------
+SYS (pfsmb): We love you, we support you, you will win
+BLEU (pfsmb): 0.0
+COMET (pfsmb): 68.83607506752014
+COMET-KIWI (pfsmb): 84.77137088775635
+
+Line 129
+SRC: woyoyoyoyoyoye!!!!!!!Merci de m avoir répondu!!! Non seulement tu est bourré de talent, mais en plus t ai super sympat!!!!! Ne change surtout pas!!!! On t aime comme ça!!!!!
+REF: woyoyoyoyoyoye!!!!!!!Thank you for answering me!!! Not only you're full of talent, but on top of that you're really nice!!!!! Definitely don't change!!!! We love you as is!!!!
+------------------------------
+SYS (baseline): woyoyoyoyoyoye!!!!!!!Thanks for answering me!!! Not only are you full of talent, but you are also super nice!!!!! Don't change!!!! We love you like that!!!!!
+BLEU (baseline): 58.64380482415124
+COMET (baseline): 91.59970879554749
+COMET-KIWI (baseline): 81.9961667060852
+------------------------------
+SYS (default): Wowowowowowowye!!!!!! Thank you for answering me!!! Not only are you full of talent, but in addition, I find you super nice!!!!! Above all, don't change!!! We like it like this!!!
+BLEU (default): 54.63666303890118
+COMET (default): 84.92388129234314
+COMET-KIWI (default): 75.85161328315735
+------------------------------
+SYS (rocsmt): Wow wow wow wow yeaaaaa!!! Thank you for answering me!!! Not only are you full of talent, but I also really like you!!!!! Don't change at all!!!! We love you like this!!!!
+BLEU (rocsmt): 52.02731747852545
+COMET (rocsmt): 83.59442353248596
+COMET-KIWI (rocsmt): 79.09579277038574
+------------------------------
+SYS (footweets): Wow wow wow wow yeaaaaa!!! Thank you for answering me!!! Not only are you full of talent, but I also really like you!!!!! Don't change at all!!!! We love you like this!!!!
+BLEU (footweets): 52.02731747852545
+COMET (footweets): 83.59442353248596
+COMET-KIWI (footweets): 79.09579277038574
+------------------------------
+SYS (mmtc): Wow wow wow wow yeaaaaa!!! Thank you for answering me!!! Not only are you full of talent, but I also really like you!!!!! Don't change at all!!!! We love you like this!!!!
+BLEU (mmtc): 52.02731747852545
+COMET (mmtc): 83.59442353248596
+COMET-KIWI (mmtc): 79.09579277038574
+------------------------------
+SYS (pfsmb): Wow wow wow wow ye!!! Thank you for answering me!!! Not only are you full of talent, but I also really like you!!!!! Don't change at all!!!! We love you like this!!!
+BLEU (pfsmb): 50.00882512885866
+COMET (pfsmb): 82.57536292076111
+COMET-KIWI (pfsmb): 78.72928380966187
+
+Line 152
+SRC: se ki conte c le publique et tu na eu ke des bleu je prefer ta voi ke selle de morane et sincler t un vrait talan
+REF: what maters is the public and you had only blues i prefer your voice than morane's and sinclair's your a real talent
+------------------------------
+SYS (baseline): I like your way better than the moran saddle and you have a real talent
+BLEU (baseline): 8.675381460661162
+COMET (baseline): 44.34128701686859
+COMET-KIWI (baseline): 26.929086446762085
+------------------------------
+SYS (default): If you are telling the public and you have no blue, I prefer to see you rather than a mule and a snail and a true troll
+BLEU (default): 9.941490945601677
+COMET (default): 40.257057547569275
+COMET-KIWI (default): 38.93291652202606
+------------------------------
+SYS (rocsmt): Whoever tells the public and you have no blue, I prefer to see you than a mule and a snail and swear to a true troll
+BLEU (rocsmt): 10.332090908268508
+COMET (rocsmt): 39.6959125995636
+COMET-KIWI (rocsmt): 38.87074887752533
+------------------------------
+SYS (footweets): Who tells the public and you have no blue, I prefer to see you than a mule and shut you up a real troll
+BLEU (footweets): 12.409597120849801
+COMET (footweets): 42.53537952899933
+COMET-KIWI (footweets): 35.88273823261261
+------------------------------
+SYS (mmtc): Who tells the public and you have no blue, I prefer to see you than a mule and a snail and to shut you up a real troll
+BLEU (mmtc): 10.601317434781206
+COMET (mmtc): 41.79092049598694
+COMET-KIWI (mmtc): 37.26465404033661
+------------------------------
+SYS (pfsmb): Whoever tells the public and you haven't got any blue, I prefer to see you than a mule and a snail and call you a real talent
+BLEU (pfsmb): 13.217947626377288
+COMET (pfsmb): 44.059380888938904
+COMET-KIWI (pfsmb): 38.955673575401306
+
+Line 166
+SRC: Cllaude12 Bidule12 on avait dit pas d'after chez toi !
+REF: Cllaude12 Bidule12 we said no afterparty at your place!
+------------------------------
+SYS (baseline): We said no after-dinner at your place!
+BLEU (baseline): 32.01911827891038
+COMET (baseline): 52.12261080741882
+COMET-KIWI (baseline): 48.555707931518555
+------------------------------
+SYS (default): Claude12 Bidule12 was not supposed to come over!
+BLEU (default): 5.0735520042259505
+COMET (default): 56.27721548080444
+COMET-KIWI (default): 35.565927624702454
+------------------------------
+SYS (rocsmt): Claude12 Bidule12 we didn't say to come over to your place!
+BLEU (rocsmt): 15.851165692617148
+COMET (rocsmt): 61.8561327457428
+COMET-KIWI (rocsmt): 42.745956778526306
+------------------------------
+SYS (footweets): Claude12 Bidule12 we didn't say to come over to your place!
+BLEU (footweets): 15.851165692617148
+COMET (footweets): 61.8561327457428
+COMET-KIWI (footweets): 42.745956778526306
+------------------------------
+SYS (mmtc): Claude12 Bidule12 we didn't say to come over to your place!
+BLEU (mmtc): 15.851165692617148
+COMET (mmtc): 61.856138706207275
+COMET-KIWI (mmtc): 42.745956778526306
+------------------------------
+SYS (pfsmb): Claude12 Bidule12 we didn't say to come over to your place!
+BLEU (pfsmb): 15.851165692617148
+COMET (pfsmb): 61.856138706207275
+COMET-KIWI (pfsmb): 42.74596869945526
+
+Line 173
+SRC: CAY UN COMPLOOOOOOOOOOOOOOOW !!!!!!!!!!!!!!!!!!!!!!
+REF: ITS A PLOOOOOOOOOOOOOOOT !!!!!!!!!!!!!!!!!!!!!!
+------------------------------
+SYS (baseline): I'm not going to say that I'm not going to be a good person.
+BLEU (baseline): 0.0
+COMET (baseline): 26.004666090011597
+COMET-KIWI (baseline): 37.16220557689667
+------------------------------
+SYS (default): C'est un complot !!!!!!!!!!!!!!!!!!!!!!
+BLEU (default): 87.2029046714648
+COMET (default): 53.61456274986267
+COMET-KIWI (default): 69.21496391296387
+------------------------------
+SYS (rocsmt): Make a comment! !!!!!!!!!!!!!!!!!!!!!!
+BLEU (rocsmt): 83.6360058744058
+COMET (rocsmt): 44.70427930355072
+COMET-KIWI (rocsmt): 78.24835181236267
+------------------------------
+SYS (footweets): Make a comment! !!!!!!!!!!!!!!!!!!!!!!
+BLEU (footweets): 83.6360058744058
+COMET (footweets): 44.70427930355072
+COMET-KIWI (footweets): 78.24835181236267
+------------------------------
+SYS (mmtc): Make a complete comment!
+BLEU (mmtc): 0.1956508627750418
+COMET (mmtc): 27.14393138885498
+COMET-KIWI (mmtc): 67.95676946640015
+------------------------------
+SYS (pfsmb): Make a COMPLAINT!!!
+BLEU (pfsmb): 1.2733237192898137
+COMET (pfsmb): 35.09952127933502
+COMET-KIWI (pfsmb): 80.67158460617065
+
+Line 186
+SRC: Grave Cllaude32 Bidule32! Ça fait un bail, avec plaisir
+REF: Totally Cllaude32 Bidule32! It's been ages, with pleasure
+------------------------------
+SYS (baseline): Grave Cllaude32 Bidule32 It's been a while, with pleasure
+BLEU (baseline): 22.957488466614326
+COMET (baseline): 68.94037127494812
+COMET-KIWI (baseline): 73.74804019927979
+------------------------------
+SYS (default): Dear Claude32 Bidule32! It's a lease, with pleasure
+BLEU (default): 26.269098944241577
+COMET (default): 57.419031858444214
+COMET-KIWI (default): 45.892396569252014
+------------------------------
+SYS (rocsmt): Serious Claude32 Bidule32! It's been a while, with pleasure
+BLEU (rocsmt): 33.932513407933634
+COMET (rocsmt): 66.53937697410583
+COMET-KIWI (rocsmt): 58.1756591796875
+------------------------------
+SYS (footweets): Serious Claude32 Bidule32! It's been a while, with pleasure
+BLEU (footweets): 33.932513407933634
+COMET (footweets): 66.53937697410583
+COMET-KIWI (footweets): 58.1756591796875
+------------------------------
+SYS (mmtc): Serious Claude32 Bidule32! It's been a while, with pleasure
+BLEU (mmtc): 33.932513407933634
+COMET (mmtc): 66.53936505317688
+COMET-KIWI (mmtc): 58.1756591796875
+------------------------------
+SYS (pfsmb): Serious Claude32 Bidule32! It's a lease, with pleasure
+BLEU (pfsmb): 26.269098944241577
+COMET (pfsmb): 55.44791221618652
+COMET-KIWI (pfsmb): 42.93075501918793
+
+Line 204
+SRC: Mais putaaaaaiiiiînnnn
+REF: But fuuuuuuuuuuuuucck
+------------------------------
+SYS (baseline): But fuck you
+BLEU (baseline): 27.516060407455225
+COMET (baseline): 54.48181629180908
+COMET-KIWI (baseline): 62.438929080963135
+------------------------------
+SYS (default): But putainnnnn
+BLEU (default): 49.99999999999999
+COMET (default): 84.36091542243958
+COMET-KIWI (default): 67.10506081581116
+------------------------------
+SYS (rocsmt): But what the fuck
+BLEU (rocsmt): 15.97357760615681
+COMET (rocsmt): 52.671319246292114
+COMET-KIWI (rocsmt): 75.70086717605591
+------------------------------
+SYS (footweets): But what the fuck
+BLEU (footweets): 15.97357760615681
+COMET (footweets): 52.671319246292114
+COMET-KIWI (footweets): 75.70086717605591
+------------------------------
+SYS (mmtc): But what the fuck
+BLEU (mmtc): 15.97357760615681
+COMET (mmtc): 52.671343088150024
+COMET-KIWI (mmtc): 75.70086717605591
+------------------------------
+SYS (pfsmb): But what the fuck
+BLEU (pfsmb): 15.97357760615681
+COMET (pfsmb): 52.671319246292114
+COMET-KIWI (pfsmb): 75.70086717605591
+
+Line 226
+SRC: Hhhhhhhh , c sûr qu'avec c prix , le bonjour , 1 café svp est recommandé !!!!!
+REF: Hhhhhhhh , obviously with this price , the good morning , 1 coffee please is recommended!!!!!
+------------------------------
+SYS (baseline): Hhhhhhhh, sure with this price, hello, 1 coffee please is recommended!!!!!
+BLEU (baseline): 63.85414244951875
+COMET (baseline): 77.37851738929749
+COMET-KIWI (baseline): 71.62333130836487
+------------------------------
+SYS (default): Definitely, with this price, the "good morning" and a coffee please is recommended!
+BLEU (default): 37.43119524761466
+COMET (default): 71.20372653007507
+COMET-KIWI (default): 70.45124769210815
+------------------------------
+SYS (rocsmt): Definitely, with this price, a "good morning" and a coffee, please, is recommended!
+BLEU (rocsmt): 20.14712052425848
+COMET (rocsmt): 70.55503726005554
+COMET-KIWI (rocsmt): 72.50651121139526
+------------------------------
+SYS (footweets): Oh, definitely with this price, a "hello" and one coffee please is recommended!!
+BLEU (footweets): 34.938923296966394
+COMET (footweets): 70.76213955879211
+COMET-KIWI (footweets): 72.64769673347473
+------------------------------
+SYS (mmtc): Oh, definitely with this price, the "good morning", one coffee please is recommended!!
+BLEU (mmtc): 43.84790478296514
+COMET (mmtc): 77.58885025978088
+COMET-KIWI (mmtc): 66.64384603500366
+------------------------------
+SYS (pfsmb): Oh, definitely with this price, the "good morning", one coffee please is recommended !!!!!
+BLEU (pfsmb): 54.47867160385158
+COMET (pfsmb): 78.550124168396
+COMET-KIWI (pfsmb): 68.06708574295044
+
+Line 243
+SRC: C'est de plus en plus pathétique vos trucs!
+REF: Your stuff is getting more and more pathetic!
+------------------------------
+SYS (baseline): Your stuff is getting more and more pathetic!
+BLEU (baseline): 100.00000000000004
+COMET (baseline): 98.80866408348083
+COMET-KIWI (baseline): 82.26777911186218
+------------------------------
+SYS (default): It's more and more pathetic your tricks!
+BLEU (default): 32.260135189272866
+COMET (default): 80.90324997901917
+COMET-KIWI (default): 75.65656900405884
+------------------------------
+SYS (rocsmt): It's getting more and more pathetic your tricks!
+BLEU (rocsmt): 46.713797772819994
+COMET (rocsmt): 85.32401919364929
+COMET-KIWI (rocsmt): 77.93367505073547
+------------------------------
+SYS (footweets): It's getting more and more pathetic your tricks!
+BLEU (footweets): 46.713797772819994
+COMET (footweets): 85.32403111457825
+COMET-KIWI (footweets): 77.93367505073547
+------------------------------
+SYS (mmtc): It's getting more and more pathetic your tricks!
+BLEU (mmtc): 46.713797772819994
+COMET (mmtc): 85.32405495643616
+COMET-KIWI (mmtc): 77.93367505073547
+------------------------------
+SYS (pfsmb): It's getting more and more pathetic your tricks!
+BLEU (pfsmb): 46.713797772819994
+COMET (pfsmb): 85.32403111457825
+COMET-KIWI (pfsmb): 77.93367505073547
+
+Line 256
+SRC: Waw c koi ce plat de ouf , c pour 150 Personne omoin
+REF: Wow wat is this crazy dish, its at least for 150 people
+------------------------------
+SYS (baseline): Wow, this egg dish is for 150 people.
+BLEU (baseline): 14.786878965208723
+COMET (baseline): 67.33392477035522
+COMET-KIWI (baseline): 44.39286291599274
+------------------------------
+SYS (default): This feeds 150 people, wow.
+BLEU (default): 6.168585410281235
+COMET (default): 54.634106159210205
+COMET-KIWI (default): 45.98265588283539
+------------------------------
+SYS (rocsmt): What a dish of eggs, for 150 people, oh my!
+BLEU (rocsmt): 13.065113298388567
+COMET (rocsmt): 53.734755516052246
+COMET-KIWI (rocsmt): 46.56589329242706
+------------------------------
+SYS (footweets): Wow, what a dish of eggs, for 150 people, oh my!
+BLEU (footweets): 11.633270842295033
+COMET (footweets): 56.633150577545166
+COMET-KIWI (footweets): 51.12190842628479
+------------------------------
+SYS (mmtc): Wow, what a big cake, for 150 people, oh my!
+BLEU (mmtc): 12.011055432195764
+COMET (mmtc): 63.0203902721405
+COMET-KIWI (mmtc): 64.03653621673584
+------------------------------
+SYS (pfsmb): Wow, what a big plate of eggs, for 150 people, oh my!
+BLEU (pfsmb): 10.343603005129705
+COMET (pfsmb): 56.74179196357727
+COMET-KIWI (pfsmb): 53.6076545715332
+
+Line 283
+SRC: Thomas stoplé qitte nabila je te rendrez heureus
+REF: Thomas plizz leave nabila I'll make u happy
+------------------------------
+SYS (baseline): Thomas stople qitte nabila I will make you happy
+BLEU (baseline): 6.742555929751843
+COMET (baseline): 67.74948239326477
+COMET-KIWI (baseline): 38.33909332752228
+------------------------------
+SYS (default): Thomas stopped Nabila, I will make you happy
+BLEU (default): 6.27465531099474
+COMET (default): 66.04860424995422
+COMET-KIWI (default): 44.29088830947876
+------------------------------
+SYS (rocsmt): Thomas stopped Nabila, I will make you happy
+BLEU (rocsmt): 6.27465531099474
+COMET (rocsmt): 66.04861617088318
+COMET-KIWI (rocsmt): 44.29091513156891
+------------------------------
+SYS (footweets): Thomas stopped Nabila, I will make you happy
+BLEU (footweets): 6.27465531099474
+COMET (footweets): 66.04861617088318
+COMET-KIWI (footweets): 44.29091513156891
+------------------------------
+SYS (mmtc): Thomas stopped Nabila, I will make you happy
+BLEU (mmtc): 6.27465531099474
+COMET (mmtc): 66.04860424995422
+COMET-KIWI (mmtc): 44.29091513156891
+------------------------------
+SYS (pfsmb): Thomas stopped Nabila, I will make you happy
+BLEU (pfsmb): 6.27465531099474
+COMET (pfsmb): 66.04860424995422
+COMET-KIWI (pfsmb): 44.29088830947876
+
+Line 284
+SRC: Trot belle ta des haïr de Kim et de rihanna (:
+REF: So beautiful you look a little like Kim and rihanna (:
+------------------------------
+SYS (baseline): You're too pretty to hate Kim and Rihanna (:
+BLEU (baseline): 9.717028343213059
+COMET (baseline): 71.07037901878357
+COMET-KIWI (baseline): 66.660475730896
+------------------------------
+SYS (default): Trot beautifully your hate for Kim and Rihanna (:
+BLEU (default): 9.717028343213059
+COMET (default): 45.450785756111145
+COMET-KIWI (default): 66.82689189910889
+------------------------------
+SYS (rocsmt): Trot beautifully your hate for Kim and Rihanna (:
+BLEU (rocsmt): 9.717028343213059
+COMET (rocsmt): 45.4507976770401
+COMET-KIWI (rocsmt): 66.82689189910889
+------------------------------
+SYS (footweets): Trot beautifully your hate for Kim and Rihanna (:
+BLEU (footweets): 9.717028343213059
+COMET (footweets): 45.450785756111145
+COMET-KIWI (footweets): 66.82689189910889
+------------------------------
+SYS (mmtc): Trot beautifully your hate for Kim and Rihanna (:
+BLEU (mmtc): 9.717028343213059
+COMET (mmtc): 45.450761914253235
+COMET-KIWI (mmtc): 66.82689189910889
+------------------------------
+SYS (pfsmb): Trot beautifully your hate for Kim and Rihanna (:
+BLEU (pfsmb): 9.717028343213059
+COMET (pfsmb): 45.450785756111145
+COMET-KIWI (pfsmb): 66.82689189910889
+
+Line 298
+SRC: Jvou kiff
+REF: Idig u
+------------------------------
+SYS (baseline): I 'll take it.
+BLEU (baseline): 0.0
+COMET (baseline): 49.18679893016815
+COMET-KIWI (baseline): 64.49573636054993
+------------------------------
+SYS (default): You like
+BLEU (default): 0.0
+COMET (default): 55.04051446914673
+COMET-KIWI (default): 58.79249572753906
+------------------------------
+SYS (rocsmt): I like you
+BLEU (rocsmt): 0.0
+COMET (rocsmt): 67.08760857582092
+COMET-KIWI (rocsmt): 77.24347114562988
+------------------------------
+SYS (footweets): I like you
+BLEU (footweets): 0.0
+COMET (footweets): 67.08760857582092
+COMET-KIWI (footweets): 77.24347114562988
+------------------------------
+SYS (mmtc): I like you
+BLEU (mmtc): 0.0
+COMET (mmtc): 67.08760261535645
+COMET-KIWI (mmtc): 77.24347114562988
+------------------------------
+SYS (pfsmb): You're cool
+BLEU (pfsmb): 0.0
+COMET (pfsmb): 64.2031729221344
+COMET-KIWI (pfsmb): 57.17774033546448
+
+Line 303
+SRC: #GoodNight — avec Nabilla Benattia.
+REF: #GoodNight — with Nabilla Benattia.
+------------------------------
+SYS (baseline): #GoodNight  with Nabilla Benattia.
+BLEU (baseline): 51.15078115793242
+COMET (baseline): 96.69414162635803
+COMET-KIWI (baseline): 86.65305376052856
+------------------------------
+SYS (default): Goodnight — with Nabilla Benattia.
+BLEU (default): 64.31870218238025
+COMET (default): 92.90081262588501
+COMET-KIWI (default): 84.53428745269775
+------------------------------
+SYS (rocsmt): Goodnight - with Nabilla Benattia.
+BLEU (rocsmt): 43.01250851313264
+COMET (rocsmt): 92.57950186729431
+COMET-KIWI (rocsmt): 84.85901355743408
+------------------------------
+SYS (footweets): Goodnight - with Nabilla Benattia.
+BLEU (footweets): 43.01250851313264
+COMET (footweets): 92.57950186729431
+COMET-KIWI (footweets): 84.85900163650513
+------------------------------
+SYS (mmtc): Goodnight - with Nabilla Benattia.
+BLEU (mmtc): 43.01250851313264
+COMET (mmtc): 92.57950186729431
+COMET-KIWI (mmtc): 84.85900163650513
+------------------------------
+SYS (pfsmb): Goodnight - with Nabilla Benattia.
+BLEU (pfsmb): 43.01250851313264
+COMET (pfsmb): 92.57950186729431
+COMET-KIWI (pfsmb): 84.85900163650513
+
+Line 306
+SRC: Jcompren pas ceux qui commente pr critiquer surtt que jpense pa que ça la touche elle est loinnnn un pe. leC la vivre comme elle veut nan keske sa peu vs foutrr qu elle dorme maquillé en fait
+REF: I don't get those who comment to criticize espcially since I dont think it affects her she's a bit faaaaar. let her live as she wants eh wat's it to you if she sleeps with makeup meh
+------------------------------
+SYS (baseline): I don't understand those who comment pr criticize surtt that I think pa that it affects her she is loinnnn a pe. leC her live as she wants nan keske sa peu vs fuckrr that she sleeps made up in fact
+BLEU (baseline): 16.518403195711
+COMET (baseline): 49.604007601737976
+COMET-KIWI (baseline): 40.12856483459473
+------------------------------
+SYS (default): I don't understand those who comment and criticize more than I think it affects her. She is far away, a peasant. She lives as she wants, no matter what they think, even if she sleeps with makeup on. In fact.
+BLEU (default): 18.75101317253127
+COMET (default): 60.63147187232971
+COMET-KIWI (default): 54.12952899932861
+------------------------------
+SYS (rocsmt): I don't understand those who comment just to criticize more than what I think doesn't affect her, she is far away, one pe. She lives as she wants in any case, her sleep, whether she sleeps with makeup on, in fact.
+BLEU (rocsmt): 11.0011140030416
+COMET (rocsmt): 59.994322061538696
+COMET-KIWI (rocsmt): 52.15351581573486
+------------------------------
+SYS (footweets): I don't understand those who comment just to criticize more than what I think doesn't affect her, she is far away, one pe. TheC the live as she wants in any case, her sleep, made up in fact.
+BLEU (footweets): 10.231244993296253
+COMET (footweets): 52.74922251701355
+COMET-KIWI (footweets): 44.65385973453522
+------------------------------
+SYS (mmtc): I don't understand those who comment just to criticize more than what I think doesn't affect her, she is far away, one pe. TheC the live as she wants in her own way, her little bit vs fucks what she sleeps masked in fact.
+BLEU (mmtc): 9.731234964861539
+COMET (mmtc): 54.481542110443115
+COMET-KIWI (mmtc): 46.49324715137482
+------------------------------
+SYS (pfsmb): I don't understand those who comment just to criticize more than what I think doesn't affect her, she is far away, one pe. TheC the live as she wants in her own way, no matter if she sleeps with makeup on, in fact.
+BLEU (pfsmb): 16.91016594503071
+COMET (pfsmb): 58.00773501396179
+COMET-KIWI (pfsmb): 52.68014669418335
+
+Line 323
+SRC: Je vien de voir Hunger Games 2 ya meme pas de fin mon frere ils ont cru c'etait une serie et l'episode il sors apres demain ces fdp
+REF: I just saw Hunger Games 2 there's not even an end bro they thought it was a tv show and the next episode is released in two days these motherfuckers
+------------------------------
+SYS (baseline): I just saw Hunger Games 2 and it's not even over, bro. They thought it was a series and the episode comes out the day after tomorrow.
+BLEU (baseline): 27.64219612744866
+COMET (baseline): 74.55841302871704
+COMET-KIWI (baseline): 72.92353510856628
+------------------------------
+SYS (default): I just saw The Hunger Games 2, there's no end yet, my brother thought it was a series and the episode comes out after tomorrow, those fools
+BLEU (default): 16.436148154531303
+COMET (default): 77.64769196510315
+COMET-KIWI (default): 79.4274091720581
+------------------------------
+SYS (rocsmt): I just saw The Hunger Games 2, there's no ending, my brother thought it was a series and the episode comes out after tomorrow, those idiots
+BLEU (rocsmt): 16.175977954491316
+COMET (rocsmt): 77.83980965614319
+COMET-KIWI (rocsmt): 78.87295484542847
+------------------------------
+SYS (footweets): I just saw The Hunger Games 2, there's no ending, my brother thought it was a series and the episode comes out after tomorrow, those idiots
+BLEU (footweets): 16.175977954491316
+COMET (footweets): 77.83979773521423
+COMET-KIWI (footweets): 78.87295484542847
+------------------------------
+SYS (mmtc): I just saw The Hunger Games 2, there's no ending, my brother thought it was a series and the episode comes out after tomorrow, those idiots
+BLEU (mmtc): 16.175977954491316
+COMET (mmtc): 77.83979773521423
+COMET-KIWI (mmtc): 78.87295484542847
+------------------------------
+SYS (pfsmb): I just saw The Hunger Games 2, not even an end. My brother thought it was a series and the episode comes out after tomorrow, those fdp
+BLEU (pfsmb): 24.16826371316464
+COMET (pfsmb): 71.16402983665466
+COMET-KIWI (pfsmb): 69.90805864334106
+
+Line 419
+SRC: Bryan est telment naif putin ! tu px lui faire croie qke les licornes sa existe .. WTF la vi cest un kiwi ?
+REF: Bryan is so fucking naive! you can have him believe that unicorns exist .. WTF is life a kiwi?
+------------------------------
+SYS (baseline): Bryan is so naive, you can make him believe that unicorns exist, but WTF is a kiwi?
+BLEU (baseline): 30.990193767973174
+COMET (baseline): 81.47249817848206
+COMET-KIWI (baseline): 62.98536658287048
+------------------------------
+SYS (default): Bryan is so naive, Putin! You could make him believe that unicorns exist ... WTF is that a kiwi?
+BLEU (default): 43.55774689493692
+COMET (default): 78.43608856201172
+COMET-KIWI (default): 74.58168268203735
+------------------------------
+SYS (rocsmt): Bryan is so naive, Putin! You can make him believe that unicorns exist ... WTF is that a kiwi?
+BLEU (rocsmt): 44.18463817237388
+COMET (rocsmt): 77.90501713752747
+COMET-KIWI (rocsmt): 74.24731254577637
+------------------------------
+SYS (footweets): Bryan is so naive, Putin! You can make him believe that unicorns exist ... WTF is that a kiwi?
+BLEU (footweets): 44.18463817237388
+COMET (footweets): 77.90501713752747
+COMET-KIWI (footweets): 74.24731254577637
+------------------------------
+SYS (mmtc): Bryan is so naive, Putin! You can make him believe that unicorns exist... WTF is that a kiwi?
+BLEU (mmtc): 44.18463817237388
+COMET (mmtc): 78.48785519599915
+COMET-KIWI (mmtc): 74.38113689422607
+------------------------------
+SYS (pfsmb): Bryan is so naive, Putin! You can make him believe that unicorns exist... WTF is that a kiwi?
+BLEU (pfsmb): 44.18463817237388
+COMET (pfsmb): 78.48785519599915
+COMET-KIWI (pfsmb): 74.38113689422607
+
+Line 421
+SRC: Wtf c'est quoi cette mise à jour twitter web, c'est moche :( http://gyazo.com/dfb415e965272f5b44c62f64fc7024f5 …
+REF: Wtf what is this twitter web update, it's ugly :( http://gyazo.com/dfb415e965272f5b44c62f64fc7024f5 …
+------------------------------
+SYS (baseline): Wtf what is this twitter web update, it is ugly: ((http://gyazo.com/dfb415e965272f5b44c62f64fc7024f5...
+BLEU (baseline): 65.18994923950295
+COMET (baseline): 93.25471520423889
+COMET-KIWI (baseline): 77.62906551361084
+------------------------------
+SYS (default): What is this Twitter web update, it's ugly :( http://gyazo.com/dfb415e965272f5b44c62f64fc7024f5 ...
+BLEU (default): 70.47190590884786
+COMET (default): 92.66514778137207
+COMET-KIWI (default): 78.4603476524353
+------------------------------
+SYS (rocsmt): What is this Twitter web update, it's ugly :( http://gyazo.com/dfb415e965272f5b44c62f64fc7024f5 ...
+BLEU (rocsmt): 70.47190590884786
+COMET (rocsmt): 92.66514778137207
+COMET-KIWI (rocsmt): 78.4603476524353
+------------------------------
+SYS (footweets): What is this Twitter web update, it's ugly :( http://gyazo.com/dfb415e965272f5b44c62f64fc7024f5 ...
+BLEU (footweets): 70.47190590884786
+COMET (footweets): 92.66514778137207
+COMET-KIWI (footweets): 78.4603476524353
+------------------------------
+SYS (mmtc): What is this Twitter web update, it's ugly :( http://gyazo.com/dfb415e965272f5b44c62f64fc7024f5 ...
+BLEU (mmtc): 70.47190590884786
+COMET (mmtc): 92.66514778137207
+COMET-KIWI (mmtc): 78.4603476524353
+------------------------------
+SYS (pfsmb): What is this Twitter web update, it's ugly :( http://gyazo.com/dfb415e965272f5b44c62f64fc7024f5 ...
+BLEU (pfsmb): 70.47190590884786
+COMET (pfsmb): 92.66514778137207
+COMET-KIWI (pfsmb): 78.4603476524353
+
+Line 427
+SRC: Jsui trop k.o technique jetai entrain de m'endormir sur lz canapé la jsui au grec je comate tellement jsui morte
+REF: Im so beat I was falling asleep on the couch now Im at the kebab place Im so dozing off Im dead
+------------------------------
+SYS (baseline): I'm too k.o technical I threw myself to sleep on the couch I'm in a coma so I'm dead
+BLEU (baseline): 7.665460920021378
+COMET (baseline): 58.24885368347168
+COMET-KIWI (baseline): 53.814345598220825
+------------------------------
+SYS (default): I am too tired with technique I am falling asleep on the couch, I am in a coma, I am Greek, I am so dead
+BLEU (default): 14.059391325479218
+COMET (default): 56.9798469543457
+COMET-KIWI (default): 55.534130334854126
+------------------------------
+SYS (rocsmt): I am too tired with technology, I was about to fall asleep on the couch, I am in a Greek coma, I am so dead
+BLEU (rocsmt): 10.682827247639555
+COMET (rocsmt): 63.98850083351135
+COMET-KIWI (rocsmt): 58.19581151008606
+------------------------------
+SYS (footweets): I am too coke-ed out, I fell asleep on the couch. I am like Greek, I comatose so much, I am dead.
+BLEU (footweets): 9.992869870690118
+COMET (footweets): 56.476497650146484
+COMET-KIWI (footweets): 53.199076652526855
+------------------------------
+SYS (mmtc): I am too coke-ed out, I fell asleep on their couch. I am like Greek, I comatose so much, I am dead.
+BLEU (mmtc): 3.652945772536268
+COMET (mmtc): 56.58612847328186
+COMET-KIWI (mmtc): 51.40392780303955
+------------------------------
+SYS (pfsmb): I'm too coke'd out, I fell asleep on the couch. I'm like Greek, I'm comatose, I'm so dead.
+BLEU (pfsmb): 11.856660123276004
+COMET (pfsmb): 54.65185046195984
+COMET-KIWI (pfsmb): 48.607489466667175
+
+Line 430
+SRC: Arette de psychoté sur ton poid bordel tes parfaite !<3 — uhm.❤️ WWW25
+REF: Stop freaking out with your weight fuck youre perfect!<3 — uhm.❤️ WWW25
+------------------------------
+SYS (baseline): ♪ I'm gonna be the one who's gonna be the one ♪ ♪ I'm gonna be the one who's gonna be the one ♪
+BLEU (baseline): 0.0
+COMET (baseline): 32.201239466667175
+COMET-KIWI (baseline): 14.789113402366638
+------------------------------
+SYS (default): Psychotic break on your weight, your perfect! <3 — uhm.❤️ WWW25
+BLEU (default): 52.180358518495616
+COMET (default): 64.82600569725037
+COMET-KIWI (default): 42.588600516319275
+------------------------------
+SYS (rocsmt): Weight loss order on your perfect body, bro! ❤️ — uhm.❤️ WWW25
+BLEU (rocsmt): 24.188628508658628
+COMET (rocsmt): 59.96725559234619
+COMET-KIWI (rocsmt): 38.607802987098694
+------------------------------
+SYS (footweets): Weight loss order on your fat ass, perfect! ❤️ — uhm.❤️ WWW25
+BLEU (footweets): 25.576360687094816
+COMET (footweets): 59.6100389957428
+COMET-KIWI (footweets): 38.33265006542206
+------------------------------
+SYS (mmtc): Weight loss order on your perfect body bro! ❤️ — uhm.❤️ WWW25
+BLEU (mmtc): 24.214940317720465
+COMET (mmtc): 61.74889802932739
+COMET-KIWI (mmtc): 38.5950893163681
+------------------------------
+SYS (pfsmb): Weight loss order on your perfect body bro! ❤️ — uhm.❤️ WWW25
+BLEU (pfsmb): 24.214940317720465
+COMET (pfsmb): 61.74889802932739
+COMET-KIWI (pfsmb): 38.5950893163681
+
+Line 438
+SRC: Ptdddddddr ptn Cllaude234 vient de se faire boloss par son keum en balle
+REF: Lmaaaaaaao fck Cllaude234 just got fast-track dumped by her boyfriend
+------------------------------
+SYS (baseline): Cllaude234 just got bollocked by his ball-bearing cheek.
+BLEU (baseline): 17.0653267718276
+COMET (baseline): 43.61492991447449
+COMET-KIWI (baseline): 36.60112917423248
+------------------------------
+SYS (default): Claude234 has just been hit by his ball in the head
+BLEU (default): 4.456882760699063
+COMET (default): 44.32770907878876
+COMET-KIWI (default): 37.24090754985809
+------------------------------
+SYS (rocsmt): Claude234 has just been hit by a ball by his kettle
+BLEU (rocsmt): 4.456882760699063
+COMET (rocsmt): 40.96533954143524
+COMET-KIWI (rocsmt): 35.296204686164856
+------------------------------
+SYS (footweets): Claude234 has just been hit by a ball by his friend
+BLEU (footweets): 4.456882760699063
+COMET (footweets): 45.497795939445496
+COMET-KIWI (footweets): 32.25697875022888
+------------------------------
+SYS (mmtc): Claude234 has just been hit by a ball by her boyfriend
+BLEU (mmtc): 14.991106946711685
+COMET (mmtc): 50.5388081073761
+COMET-KIWI (mmtc): 32.93754756450653
+------------------------------
+SYS (pfsmb): Claude234 just got owned by his ball keeper
+BLEU (pfsmb): 9.51934081834847
+COMET (pfsmb): 41.51110649108887
+COMET-KIWI (pfsmb): 33.00847411155701
+
+Line 465
+SRC: jconnai un mec il di a tt lmonde sa mere c une rebeu ki sapel Cllaude533 alr ke c une babtou nommé Cllaude534 #tweetvisé
+REF: I know a guy he said to everyone that his mum is an arab woman called Cllaude533 when she's a white woman called Cllaude534 #tweetvisé
+------------------------------
+SYS (baseline): I knew a guy he said his mother was a rebeu ki sapel Cllaude533 alr ke c a babtou named Cllaude534 #tweetvisé
+BLEU (baseline): 14.651224663000926
+COMET (baseline): 53.56496572494507
+COMET-KIWI (baseline): 61.92641258239746
+------------------------------
+SYS (default): I know a guy who said to the whole world that his mother is a rebel who knows Claude533 and a baby named Claude534 #tweetfocused
+BLEU (default): 13.232291594986311
+COMET (default): 56.27887845039368
+COMET-KIWI (default): 64.8627758026123
+------------------------------
+SYS (rocsmt): I know a guy who said to the whole world that his mother is a slut who sleeps with Claude533, and there is a guy named Claude534. #tweettargeted
+BLEU (rocsmt): 10.985970458010323
+COMET (rocsmt): 53.49096059799194
+COMET-KIWI (rocsmt): 70.70158123970032
+------------------------------
+SYS (footweets): I know a guy who said to the whole world that his mother is a slut who sleeps with Claude533, and there is a guy named Claude534. #tweettargeted
+BLEU (footweets): 10.985970458010323
+COMET (footweets): 53.49096059799194
+COMET-KIWI (footweets): 70.70160508155823
+------------------------------
+SYS (mmtc): I know a guy who said to the whole world that his mother is a slut who sleeps with Claude533, and there's a guy named Claude534. #tweettargeted
+BLEU (mmtc): 11.372027710077004
+COMET (mmtc): 52.56189703941345
+COMET-KIWI (mmtc): 71.34913802146912
+------------------------------
+SYS (pfsmb): I know a guy who said to the whole world that his mother is a slut who sleeps with Claude533, and there's a guy named Claude534. #tweet targeted
+BLEU (pfsmb): 10.985970458010323
+COMET (pfsmb): 51.74751281738281
+COMET-KIWI (pfsmb): 71.01577520370483
+
+Line 467
+SRC: Ma sooeur elle va mtuer je chante alors kel veux dormir 😝
+REF: My sister she's gonna kill me I'm singing while she wants to sleep 😝
+------------------------------
+SYS (baseline): My sister she's going to mutter I'm singing so I want to sleep
+BLEU (baseline): 15.649318163480594
+COMET (baseline): 62.28218674659729
+COMET-KIWI (baseline): 59.2151403427124
+------------------------------
+SYS (default): My sister is going to give birth, I sing then who wants to sleep 😝
+BLEU (default): 18.20705281109213
+COMET (default): 52.008503675460815
+COMET-KIWI (default): 73.21116328239441
+------------------------------
+SYS (rocsmt): My sister is going to die, I sing then who wants to sleep 😝
+BLEU (rocsmt): 19.56475149792291
+COMET (rocsmt): 51.82468891143799
+COMET-KIWI (rocsmt): 76.15082859992981
+------------------------------
+SYS (footweets): My sister is going to die, I sing then who wants to sleep 😝
+BLEU (footweets): 19.56475149792291
+COMET (footweets): 51.82468891143799
+COMET-KIWI (footweets): 76.15082859992981
+------------------------------
+SYS (mmtc): My sister is going to give birth, I sing then who wants to sleep 😝
+BLEU (mmtc): 18.20705281109213
+COMET (mmtc): 52.008503675460815
+COMET-KIWI (mmtc): 73.21116328239441
+------------------------------
+SYS (pfsmb): My sister is going to die, I sing then who wants to sleep 😝
+BLEU (pfsmb): 19.56475149792291
+COMET (pfsmb): 51.82468891143799
+COMET-KIWI (pfsmb): 76.15082859992981
+
+Line 468
+SRC: Ma reuss kan jvai fr ls courses aek Mama jpense tjr a lui prendre un truk kel aime mai elle je npense pa msouvenir kel ft de mm pr moi -
+REF: My sister when I go shopping with Mama, I always think of getting her something she likes, but her I don't think I remember of anything like that she did for me -
+------------------------------
+SYS (baseline): I think I 'll get her a truck. I like her. I think I 'll remember her.
+BLEU (baseline): 2.7047702818140325
+COMET (baseline): 44.3201869726181
+COMET-KIWI (baseline): 39.420339465141296
+------------------------------
+SYS (default): My success can perhaps drive me to the races again, Mama thinks only of taking a truck that he loves, but I don't think he remembers what kind of truck he prefers for me -
+BLEU (default): 8.151953870233092
+COMET (default): 47.223928570747375
+COMET-KIWI (default): 58.49589705467224
+------------------------------
+SYS (rocsmt): My success can maybe find the races again. Mama I think only to him take a truck that loves me she I don't think not to remember what of him for me -
+BLEU (rocsmt): 8.178007553872165
+COMET (rocsmt): 43.301013112068176
+COMET-KIWI (rocsmt): 44.10415291786194
+------------------------------
+SYS (footweets): My success can maybe find the races again. Mama I think only to him take a truck that loves me she I don't think not to remember what part of him for me -
+BLEU (footweets): 8.170418210184781
+COMET (footweets): 41.464823484420776
+COMET-KIWI (footweets): 43.84487569332123
+------------------------------
+SYS (mmtc): My success can maybe find the races this week. Mama I think only to him take a truck that loves me she I don't think not to remember what of them for me -
+BLEU (mmtc): 8.170418210184781
+COMET (mmtc): 43.146416544914246
+COMET-KIWI (mmtc): 44.343188405036926
+------------------------------
+SYS (pfsmb): My success can maybe find the races again. Mama I think only to him take a truck that loves me she I don't think not to remember what of them for me -
+BLEU (pfsmb): 8.178007553872165
+COMET (pfsmb): 42.94884502887726
+COMET-KIWI (pfsmb): 43.75692903995514
+
+Line 471
+SRC: Apres lbrevet jrefait ma carte didentiter psk la c tres critique jetai zga petite et ma mere elle a zga exagéré sur la coiffure kel ma fait
+REF: After the exam I'll renew my ID bc it's really critical I was so little and my mom went way too far on my hairdo
+------------------------------
+SYS (baseline): After the patent I did my identity card psk the third critic threw zga little and my mother she zga exaggerated on the hairstyle kel my made
+BLEU (baseline): 7.52421768074461
+COMET (baseline): 50.436896085739136
+COMET-KIWI (baseline): 44.9899822473526
+------------------------------
+SYS (default): After the license I made my ID card for the driving test, I was very nervous and my mother exaggerated about my hairstyle, which she did
+BLEU (default): 5.501034142180916
+COMET (default): 61.78015470504761
+COMET-KIWI (default): 47.79388606548309
+------------------------------
+SYS (rocsmt): After the driver's license, I got my ID card, which was quite critical. I was quite small, and my mother, she got quite exaggerated about my hairdo, which she made for me.
+BLEU (rocsmt): 4.319963411401469
+COMET (rocsmt): 62.5926673412323
+COMET-KIWI (rocsmt): 67.97022223472595
+------------------------------
+SYS (footweets): After the driver's license, I got my ID card, which was quite critical. I was quite small, and my mother, she got quite exaggerated about my hairdo, which she made for me.
+BLEU (footweets): 4.319963411401469
+COMET (footweets): 62.59269714355469
+COMET-KIWI (footweets): 67.97022223472595
+------------------------------
+SYS (mmtc): After the driver's license, I got my ID card, which was quite critical. I was quite small, and my mother, she got quite exaggerated about my hairdo, which she made for me.
+BLEU (mmtc): 4.319963411401469
+COMET (mmtc): 62.59269714355469
+COMET-KIWI (mmtc): 67.97022223472595
+------------------------------
+SYS (pfsmb): After the driver's license, I got my ID card, which was quite critical. I was quite small, and my mother, she got quite exaggerated about my hairdo, which she made for me.
+BLEU (pfsmb): 4.319963411401469
+COMET (pfsmb): 62.59269714355469
+COMET-KIWI (pfsmb): 67.97022223472595
+
+Line 503
+SRC: Y'a des gens qui sont contents d'avoir des FAV... ÇA SERT À RIEN LES FAV !!! C'est genre un like ou un TAGGLE stout
+REF: Some people are happy to get FAV... FAV ARE USELESS!!! It's just as a like or a SHUTUP thats all
+------------------------------
+SYS (baseline): Some people are happy to have FAVs... THAT'S NONE OF THAT!!! It's like a like or a TAGGLE stout
+BLEU (baseline): 36.238113481473185
+COMET (baseline): 52.40113139152527
+COMET-KIWI (baseline): 64.48351740837097
+------------------------------
+SYS (default): There are people who are happy to have FAV... FAV SERVE FOR NOTHING!!! It's like a like or a TAGGLE stick
+BLEU (default): 35.2836045371001
+COMET (default): 66.08653664588928
+COMET-KIWI (default): 60.92967987060547
+------------------------------
+SYS (rocsmt): There are people who are happy to have FAV... IT SERVES FOR NOTHING THE FAV !!! It's like a like or a TAGGLE sticker
+BLEU (rocsmt): 28.809912547069015
+COMET (rocsmt): 72.70103096961975
+COMET-KIWI (rocsmt): 59.98557806015015
+------------------------------
+SYS (footweets): There are people who are happy to have FAV... IT SERVES FOR NOTHING THE FAV !!! It's like a like or a TAGGLE sticker
+BLEU (footweets): 28.809912547069015
+COMET (footweets): 72.70103096961975
+COMET-KIWI (footweets): 59.98557806015015
+------------------------------
+SYS (mmtc): There are people who are happy to have FAV... IT SERVES FOR NOTHING THE FAV !!! It's like a like or a TAGGLE stout
+BLEU (mmtc): 28.809912547069015
+COMET (mmtc): 52.580636739730835
+COMET-KIWI (mmtc): 66.78106784820557
+------------------------------
+SYS (pfsmb): There are people who are happy to have FAV... IT SERVES FOR NOTHING THE FAV !!! It's like a like or a TAGGLE stout
+BLEU (pfsmb): 28.809912547069015
+COMET (pfsmb): 52.580636739730835
+COMET-KIWI (pfsmb): 66.78106784820557
+
+Line 523
+SRC: @JohnDoe151 oh trop bien en histoire pdt le controle hihi et ils vont aller en svt ou sp?
+REF: @JohnDoe151 oh so nice, in history class during the test uhuh and they will go to bio or physics?
+------------------------------
+SYS (baseline): @JohnDoe151 oh too good in history pdt the control hihi and they will go to svt or sp?
+BLEU (baseline): 25.452306291173123
+COMET (baseline): 60.70325970649719
+COMET-KIWI (baseline): 63.11337947845459
+------------------------------
+SYS (default): JohnDoe151 oh very well in history before the control hihi and they will go in the south or space?
+BLEU (default): 15.868740832580402
+COMET (default): 52.52692699432373
+COMET-KIWI (default): 61.56103014945984
+------------------------------
+SYS (rocsmt): @JohnDoe151 oh very well in history before the control hihi and they will go in SV or SP?
+BLEU (rocsmt): 18.784850100336804
+COMET (rocsmt): 56.45220875740051
+COMET-KIWI (rocsmt): 73.3052909374237
+------------------------------
+SYS (footweets): @JohnDoe151 oh very well in history before the control hihi and they will go in SV or SP?
+BLEU (footweets): 18.784850100336804
+COMET (footweets): 56.45220875740051
+COMET-KIWI (footweets): 73.3052909374237
+------------------------------
+SYS (mmtc): @JohnDoe151 oh very well in history before the control hihi and they will go in SV or SP?
+BLEU (mmtc): 18.784850100336804
+COMET (mmtc): 56.45220875740051
+COMET-KIWI (mmtc): 73.3052909374237
+------------------------------
+SYS (pfsmb): @JohnDoe151 oh very well in history before the control hihi and they will go in SV or SP?
+BLEU (pfsmb): 18.784850100336804
+COMET (pfsmb): 56.45220875740051
+COMET-KIWI (pfsmb): 73.3052909374237
+
+Line 582
+SRC: C'est qui le fdp qui a inventé les TPE ?! J'ai deux trois mots à lui dire.
+REF: Who's the soab who created TPE?! I want to have a word or two with him.
+------------------------------
+SYS (baseline): Who is the FDP who invented TPE?! I have two or three words to say to him.
+BLEU (baseline): 16.950852799011134
+COMET (baseline): 71.09234929084778
+COMET-KIWI (baseline): 76.82801485061646
+------------------------------
+SYS (default): Who is the FDP that invented TPEs?! I have a few words to say to him.
+BLEU (default): 11.7942240532671
+COMET (default): 69.86308693885803
+COMET-KIWI (default): 73.59017133712769
+------------------------------
+SYS (rocsmt): Who is the FDP that invented TPEs? I have a few words to say to him.
+BLEU (rocsmt): 6.833557619127329
+COMET (rocsmt): 71.74939513206482
+COMET-KIWI (rocsmt): 73.86999726295471
+------------------------------
+SYS (footweets): Who is the FDP that invented TPEs?! I have a few words to say to him.
+BLEU (footweets): 11.7942240532671
+COMET (footweets): 69.86310482025146
+COMET-KIWI (footweets): 73.59020113945007
+------------------------------
+SYS (mmtc): Who is the FDP that invented TPEs?! I have a few words to say to him.
+BLEU (mmtc): 11.7942240532671
+COMET (mmtc): 69.86310482025146
+COMET-KIWI (mmtc): 73.59020113945007
+------------------------------
+SYS (pfsmb): Who is the FDP that invented TPEs?! I have a few words to say to him.
+BLEU (pfsmb): 11.7942240532671
+COMET (pfsmb): 69.86310482025146
+COMET-KIWI (pfsmb): 73.59020113945007
+
+Line 640
+SRC: ptdrrrrrrrrrrrrrrrrr j'en peux plus suis ko #lrt
+REF: loooooooooooooooool I can't take anymore of this I'm beat #lrt
+------------------------------
+SYS (baseline): I can't take it anymore.
+BLEU (baseline): 14.110009442520557
+COMET (baseline): 54.65407967567444
+COMET-KIWI (baseline): 71.17478847503662
+------------------------------
+SYS (default): I can't take it anymore, I'm done #lrt
+BLEU (default): 19.331263581394154
+COMET (default): 74.0622341632843
+COMET-KIWI (default): 81.35411739349365
+------------------------------
+SYS (rocsmt): I can't take it anymore, I'm done #lrt
+BLEU (rocsmt): 19.331263581394154
+COMET (rocsmt): 74.06225800514221
+COMET-KIWI (rocsmt): 81.35412931442261
+------------------------------
+SYS (footweets): I can't take it anymore, I'm done #lrt
+BLEU (footweets): 19.331263581394154
+COMET (footweets): 74.06225800514221
+COMET-KIWI (footweets): 81.35412931442261
+------------------------------
+SYS (mmtc): I can't take it anymore, I'm done #lrt
+BLEU (mmtc): 19.331263581394154
+COMET (mmtc): 74.0622341632843
+COMET-KIWI (mmtc): 81.35412931442261
+------------------------------
+SYS (pfsmb): I can't take it anymore, I'm done #lrt
+BLEU (pfsmb): 19.331263581394154
+COMET (pfsmb): 74.0622341632843
+COMET-KIWI (pfsmb): 81.35411739349365
+
+Line 656
+SRC: Sans blague ? J'travaille a Mcdo je touche du bacon avant de faire vos filets #LRT
+REF: No shit? I work at Mcdo I touch bacon before doing your filets #LRT
+------------------------------
+SYS (baseline): I work at McDowell's, I touch bacon before I make your nets.
+BLEU (baseline): 23.045806594604677
+COMET (baseline): 58.0960750579834
+COMET-KIWI (baseline): 54.15908098220825
+------------------------------
+SYS (default): For real? I work at McDonald's and I touch bacon before making your fillets #LRT
+BLEU (default): 32.22538601891173
+COMET (default): 80.62032461166382
+COMET-KIWI (default): 82.28721618652344
+------------------------------
+SYS (rocsmt): For real? I work at McDonald's and I touch bacon before making your fillets #LRT
+BLEU (rocsmt): 32.22538601891173
+COMET (rocsmt): 80.62032461166382
+COMET-KIWI (rocsmt): 82.28721618652344
+------------------------------
+SYS (footweets): For real? I work at McDonald's and I touch bacon before making your fillets #LRT
+BLEU (footweets): 32.22538601891173
+COMET (footweets): 80.62032461166382
+COMET-KIWI (footweets): 82.28721618652344
+------------------------------
+SYS (mmtc): For real? I work at McDonald's and I touch bacon before making your fillets #LRT
+BLEU (mmtc): 32.22538601891173
+COMET (mmtc): 80.62032461166382
+COMET-KIWI (mmtc): 82.28721618652344
+------------------------------
+SYS (pfsmb): For real? I work at McDonald's and I touch bacon before making your fillets #LRT
+BLEU (pfsmb): 32.22538601891173
+COMET (pfsmb): 80.62032461166382
+COMET-KIWI (pfsmb): 82.28721618652344
+
+Line 657
+SRC: PPPPTTTDDDRRR CHEIH BIEN FT POUR SA GL EN TT KA XPTTTDDDR #LRT
+REF: LLLLMMMAAAOOO IT SERVES HIM DAMN RIGHT ANYWAY LOOOOL #LRT
+------------------------------
+SYS (baseline): I'm not going to be able to do it.
+BLEU (baseline): 0.0
+COMET (baseline): 28.855928778648376
+COMET-KIWI (baseline): 37.57258951663971
+------------------------------
+SYS (default): PPPPTTTDDDRRR CHEIH GOOD FT FOR HIS GL IN TT KA XPTTTDDDR #LRT
+BLEU (default): 6.178110636313396
+COMET (default): 68.3142602443695
+COMET-KIWI (default): 43.349677324295044
+------------------------------
+SYS (rocsmt): PPPPTTTDDDRRR CHAI BEAUTIFUL FOR HIS GL IN TT KA XPTTTDDDR #LRT
+BLEU (rocsmt): 6.772997136689072
+COMET (rocsmt): 67.18311905860901
+COMET-KIWI (rocsmt): 47.65770435333252
+------------------------------
+SYS (footweets): PPPPTTTDDDRRR CHAI BEEN FINE FOR HIS GL IN TT KA XPTTTDDDR #LRT
+BLEU (footweets): 6.178110636313396
+COMET (footweets): 69.39027905464172
+COMET-KIWI (footweets): 44.817474484443665
+------------------------------
+SYS (mmtc): PPPPTTTDDDRRR CHAI BIEN FT POUR SA GL EN TT KA XPTTTDDDR #LRT
+BLEU (mmtc): 6.178110636313396
+COMET (mmtc): 66.05744361877441
+COMET-KIWI (mmtc): 44.09627914428711
+------------------------------
+SYS (pfsmb): PPPPTTTDDDRRR CHIEH BIEN FT POUR SA GL EN TT KA XPTTTDDDR #LRT
+BLEU (pfsmb): 6.178110636313396
+COMET (pfsmb): 63.13164830207825
+COMET-KIWI (pfsmb): 44.60196793079376
+
+Line 669
+SRC: Ils font pitié ces FDP #Lrt ils ont fait pas moins de 16 fautes en un match bande de bâtard
+REF: They're pathetic those SOBs #Lrt they did no less than 16 fouls in one match bunch of bastards
+------------------------------
+SYS (baseline): They pity these FDP #Lrt they made no less than 16 fouls in a game you bastards
+BLEU (baseline): 32.71046263213699
+COMET (baseline): 71.3346779346466
+COMET-KIWI (baseline): 70.51726579666138
+------------------------------
+SYS (default): They pity these FDP #Lrt, they made at least 16 mistakes in one match, a bunch of bastards
+BLEU (default): 13.65914929695546
+COMET (default): 76.06507539749146
+COMET-KIWI (default): 75.20898580551147
+------------------------------
+SYS (rocsmt): They pity these FDP #Lrt they made less than 16 mistakes in a match bunch of bastards
+BLEU (rocsmt): 24.072824011291072
+COMET (rocsmt): 69.6085274219513
+COMET-KIWI (rocsmt): 69.44818496704102
+------------------------------
+SYS (footweets): They pity these FDP #Lrt they made less than 16 mistakes in a match bunch of bastards
+BLEU (footweets): 24.072824011291072
+COMET (footweets): 69.6084976196289
+COMET-KIWI (footweets): 69.44822669029236
+------------------------------
+SYS (mmtc): They pity these FDP #Lrt they made not less than 16 mistakes in a match bunch of bastards
+BLEU (mmtc): 23.987717557009486
+COMET (mmtc): 74.27458167076111
+COMET-KIWI (mmtc): 75.05708336830139
+------------------------------
+SYS (pfsmb): They pity these FDP #Lrt they made not less than 16 mistakes in a match bunch of bastards
+BLEU (pfsmb): 23.987717557009486
+COMET (pfsmb): 74.27458763122559
+COMET-KIWI (pfsmb): 75.05708336830139
+
+Line 683
+SRC: Javooue ma vie elle triste mtn qu'tu mle fais remarquer :(( #lrt
+REF: I confess my life is sad now that you're pointing it out to me :(( #lrt
+------------------------------
+SYS (baseline): My life is sad because you made me notice:
+BLEU (baseline): 7.21555652598855
+COMET (baseline): 55.38073182106018
+COMET-KIWI (baseline): 62.586355209350586
+------------------------------
+SYS (default): I'm living a sad life, even though you make it more noticeable :(( #lrt
+BLEU (default): 21.390191313477015
+COMET (default): 73.57742190361023
+COMET-KIWI (default): 69.1459596157074
+------------------------------
+SYS (rocsmt): I'm annoyed with my life, it's so sad that you make me notice it :(( #lrt
+BLEU (rocsmt): 23.08087288583725
+COMET (rocsmt): 73.9991545677185
+COMET-KIWI (rocsmt): 70.6165075302124
+------------------------------
+SYS (footweets): I'm annoyed with my life, it's so sad that you make me notice it :(( #lrt
+BLEU (footweets): 23.08087288583725
+COMET (footweets): 73.9991545677185
+COMET-KIWI (footweets): 70.6165075302124
+------------------------------
+SYS (mmtc): I'm jealous of my life, it's so sad, even though you make it obvious :(( #lrt
+BLEU (mmtc): 20.82198320914845
+COMET (mmtc): 70.57654857635498
+COMET-KIWI (mmtc): 73.84032607078552
+------------------------------
+SYS (pfsmb): I'm annoyed with my life, it's so sad that you make me notice it :(( #lrt
+BLEU (pfsmb): 23.08087288583725
+COMET (pfsmb): 73.9991545677185
+COMET-KIWI (pfsmb): 70.6165075302124
+
+Line 687
+SRC: Pck elles se sont tous tapper les meme mec , sa leurs fait des point en commun mdddrr #LRT
+REF: Bc they all banged the same guys , they do have things in common loooll #LRT
+------------------------------
+SYS (baseline): They all hit the same guy, so they have things in common mdddrr #LRT
+BLEU (baseline): 21.044281801310863
+COMET (baseline): 70.67109942436218
+COMET-KIWI (baseline): 69.76134777069092
+------------------------------
+SYS (default): They all tapped the same guy, they have common points, #LRT
+BLEU (default): 8.787068484862004
+COMET (default): 62.22760081291199
+COMET-KIWI (default): 59.29166078567505
+------------------------------
+SYS (rocsmt): They all tapped the same guy, they have common points, mdddrr #LRT
+BLEU (rocsmt): 8.817115707477903
+COMET (rocsmt): 62.527018785476685
+COMET-KIWI (rocsmt): 61.86220645904541
+------------------------------
+SYS (footweets): They all tapped the same guy, they have common points, mdddrr #LRT
+BLEU (footweets): 8.817115707477903
+COMET (footweets): 62.527018785476685
+COMET-KIWI (footweets): 61.86220645904541
+------------------------------
+SYS (mmtc): They all tapped the same guy, they have common points, mdddrr #LRT
+BLEU (mmtc): 8.817115707477903
+COMET (mmtc): 62.527018785476685
+COMET-KIWI (mmtc): 61.86220645904541
+------------------------------
+SYS (pfsmb): They all tapped the same guy, they have common points, mdddrr #LRT
+BLEU (pfsmb): 8.817115707477903
+COMET (pfsmb): 62.527018785476685
+COMET-KIWI (pfsmb): 61.86220645904541
+
+Line 688
+SRC: Jvé mourir elle sont folle #lrt
+REF: I'm gonna die they're crazy #lrt
+------------------------------
+SYS (baseline): Jve die they are crazy #lrt
+BLEU (baseline): 26.269098944241588
+COMET (baseline): 80.26126027107239
+COMET-KIWI (baseline): 56.768715381622314
+------------------------------
+SYS (default): She is going to die, they are crazy
+BLEU (default): 5.669791110976001
+COMET (default): 72.79036045074463
+COMET-KIWI (default): 75.55291652679443
+------------------------------
+SYS (rocsmt): She is going to die, they are crazy #lrt
+BLEU (rocsmt): 14.991106946711685
+COMET (rocsmt): 83.96106362342834
+COMET-KIWI (rocsmt): 81.51568174362183
+------------------------------
+SYS (footweets): She's going to die, she's crazy #lrt
+BLEU (footweets): 19.070828081828378
+COMET (footweets): 81.26738667488098
+COMET-KIWI (footweets): 82.51774311065674
+------------------------------
+SYS (mmtc): She's going to die, she's crazy #lrt
+BLEU (mmtc): 19.070828081828378
+COMET (mmtc): 81.26738667488098
+COMET-KIWI (mmtc): 82.5177252292633
+------------------------------
+SYS (pfsmb): She's going to die, she's crazy #lrt
+BLEU (pfsmb): 19.070828081828378
+COMET (pfsmb): 81.26738667488098
+COMET-KIWI (pfsmb): 82.5177252292633
+
+Line 731
+SRC: Flappy Bird, le jeu qui rend fou (de rage) - http://huff.to/1euAs5S
+REF: Flappy Bird, the game that drives you mad (with rage) - http://huff.to/1euAs5S
+------------------------------
+SYS (baseline): Flappy Bird, the game that drives you crazy - http://huff.to/1euAs5S
+BLEU (baseline): 68.80124111534194
+COMET (baseline): 87.33192086219788
+COMET-KIWI (baseline): 84.53487753868103
+------------------------------
+SYS (default): Flappy Bird, the game that drives you crazy (with anger) - http://huff.to/1euAs5S
+BLEU (default): 76.74174160136336
+COMET (default): 92.11413860321045
+COMET-KIWI (default): 84.57705974578857
+------------------------------
+SYS (rocsmt): Flappy Bird, the game that drives you crazy (with anger) - http://huff.to/1euAs5S
+BLEU (rocsmt): 76.74174160136336
+COMET (rocsmt): 92.11413264274597
+COMET-KIWI (rocsmt): 84.57704782485962
+------------------------------
+SYS (footweets): Flappy Bird, the game that drives you crazy (with anger) - http://huff.to/1euAs5S
+BLEU (footweets): 76.74174160136336
+COMET (footweets): 92.11413264274597
+COMET-KIWI (footweets): 84.57704782485962
+------------------------------
+SYS (mmtc): Flappy Bird, the game that drives you crazy (with anger) - http://huff.to/1euAs5S
+BLEU (mmtc): 76.74174160136336
+COMET (mmtc): 92.11413264274597
+COMET-KIWI (mmtc): 84.57704782485962
+------------------------------
+SYS (pfsmb): Flappy Bird, the game that drives you crazy (with anger) - http://huff.to/1euAs5S
+BLEU (pfsmb): 76.74174160136336
+COMET (pfsmb): 92.11413264274597
+COMET-KIWI (pfsmb): 84.57704782485962
+
+Line 744
+SRC: Flappy Bird y mets trop les nerfs c'est quoi ce jeu de fdp mdr
+REF: Flappy Bird it gets you so worked up, what's this motherfucking game lol
+------------------------------
+SYS (baseline): Flappy Bird is too much of a nervous game. What kind of a game is this?
+BLEU (baseline): 5.10809933294318
+COMET (baseline): 59.61212515830994
+COMET-KIWI (baseline): 61.10942363739014
+------------------------------
+SYS (default): Flappy Bird is too stressful, what's this FDP crap?
+BLEU (default): 13.354882484961966
+COMET (default): 59.49600338935852
+COMET-KIWI (default): 60.2810263633728
+------------------------------
+SYS (rocsmt): Flappy Bird is too stressful, what is this game from fdp damn
+BLEU (rocsmt): 7.1933868327348085
+COMET (rocsmt): 60.504984855651855
+COMET-KIWI (rocsmt): 60.47758460044861
+------------------------------
+SYS (footweets): Flappy Bird is too stressful, what is this game from fdp damn
+BLEU (footweets): 7.1933868327348085
+COMET (footweets): 60.504984855651855
+COMET-KIWI (footweets): 60.47758460044861
+------------------------------
+SYS (mmtc): Flappy Bird is too stressful, what is this game of FDP, really?
+BLEU (mmtc): 6.608973813188645
+COMET (mmtc): 61.452704668045044
+COMET-KIWI (mmtc): 63.714224100112915
+------------------------------
+SYS (pfsmb): Flappy Bird is too stressful, what's this game of FDP for real
+BLEU (pfsmb): 14.012771449140205
+COMET (pfsmb): 62.64030337333679
+COMET-KIWI (pfsmb): 62.863606214523315
+
+Line 770
+SRC: le créateur de #flappybird il vas finir en prison a force de laissez des oiseaux ce prendre des tuyaux dans la gueule....
+REF: the #flappybird creator is gonna end up in jail by letting birds getting smashed in the face by pipes....
+------------------------------
+SYS (baseline): The creator of #flappybird is going to jail for forcing birds to take pipes in his mouth....
+BLEU (baseline): 13.963043746641254
+COMET (baseline): 69.19289827346802
+COMET-KIWI (baseline): 75.033700466156
+------------------------------
+SYS (default): The creator of Flappy Bird will end up in prison for letting birds take tubes in their beaks...
+BLEU (default): 11.84081465491892
+COMET (default): 64.37169909477234
+COMET-KIWI (default): 81.05935454368591
+------------------------------
+SYS (rocsmt): The creator of #flappybird will end up in prison for letting birds take tubes in their mouths...
+BLEU (rocsmt): 12.970962571473684
+COMET (rocsmt): 70.12311220169067
+COMET-KIWI (rocsmt): 80.67820072174072
+------------------------------
+SYS (footweets): The creator of #flappybird will end up in prison for letting birds take tubes in their mouths...
+BLEU (footweets): 12.970962571473684
+COMET (footweets): 70.12311220169067
+COMET-KIWI (footweets): 80.67820072174072
+------------------------------
+SYS (mmtc): The creator of #flappybird will end up in prison for letting birds take tubes in their mouths...
+BLEU (mmtc): 12.970962571473684
+COMET (mmtc): 70.12311220169067
+COMET-KIWI (mmtc): 80.67821264266968
+------------------------------
+SYS (pfsmb): The creator of #flappybird will end up in prison for letting birds take tubes down their throats...
+BLEU (pfsmb): 12.691853951858983
+COMET (pfsmb): 70.6217110157013
+COMET-KIWI (pfsmb): 81.51953220367432
+

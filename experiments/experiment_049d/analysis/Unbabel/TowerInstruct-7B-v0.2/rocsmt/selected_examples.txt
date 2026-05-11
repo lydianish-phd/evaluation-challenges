@@ -387,22 +387,22 @@ COMET (default): 86.73314452171326
 COMET-KIWI (default): 86.56506538391113
 ------------------------------
 SYS (rocsmt): Mais chaque fois, ma nmom dit que ce n'est pas possible car quand elle avait mon âge, ses règles duraient 3 jours et étaient très légères.
-BLEU (rocsmt): 40.236368053010146
+BLEU (rocsmt): 40.23636805301016
 COMET (rocsmt): 78.80138754844666
 COMET-KIWI (rocsmt): 84.37345027923584
 ------------------------------
 SYS (footweets): Mais chaque fois, ma nmom dit que ce n'est pas possible car quand elle avait mon âge, ses règles duraient 3 jours et étaient très légères.
-BLEU (footweets): 40.236368053010146
+BLEU (footweets): 40.23636805301016
 COMET (footweets): 78.80138754844666
 COMET-KIWI (footweets): 84.37345027923584
 ------------------------------
 SYS (mmtc): Mais chaque fois, ma nmom dit que ce n'est pas possible car quand elle avait mon âge, ses règles duraient 3 jours et étaient très légères.
-BLEU (mmtc): 40.236368053010146
+BLEU (mmtc): 40.23636805301016
 COMET (mmtc): 78.80138754844666
 COMET-KIWI (mmtc): 84.37345027923584
 ------------------------------
 SYS (pfsmb): Mais chaque fois, ma nmom dit que ce n'est pas possible car quand elle avait mon âge, ses règles duraient 3 jours et étaient très légères.
-BLEU (pfsmb): 40.236368053010146
+BLEU (pfsmb): 40.23636805301016
 COMET (pfsmb): 78.80138754844666
 COMET-KIWI (pfsmb): 84.37345027923584
 

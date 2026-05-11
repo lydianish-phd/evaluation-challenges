@@ -766,17 +766,17 @@ COMET (rocsmt): 55.10126352310181
 COMET-KIWI (rocsmt): 72.56414890289307
 ------------------------------
 SYS (footweets): Seriously Claude32 Bidule32! It's been a while, nice to see you
-BLEU (footweets): 20.448007360218387
+BLEU (footweets): 20.44800736021839
 COMET (footweets): 61.81432604789734
 COMET-KIWI (footweets): 66.488778591156
 ------------------------------
 SYS (mmtc): Seriously Claude32 Bidule32! It's been a while, nice to see you
-BLEU (mmtc): 20.448007360218387
+BLEU (mmtc): 20.44800736021839
 COMET (mmtc): 61.81432604789734
 COMET-KIWI (mmtc): 66.488778591156
 ------------------------------
 SYS (pfsmb): Damn Claude32 Bidule32! It's been a while, nice to see you
-BLEU (pfsmb): 20.448007360218387
+BLEU (pfsmb): 20.44800736021839
 COMET (pfsmb): 62.744373083114624
 COMET-KIWI (pfsmb): 67.47746467590332
 
